@@ -1,0 +1,188 @@
+/* Основной layout */
+.main-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    gap: 20px;
+    min-height: 100vh;
+    padding: 80px 20px 20px 20px;
+    max-width: 1800px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+}
+
+/* Левая колонка */
+.left-column {
+    grid-column: 1;
+    grid-row: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    min-height: 0;
+}
+
+/* Правая колонка */
+.right-column {
+    grid-column: 2;
+    grid-row: 1;
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    gap: 20px;
+    min-height: 0;
+    height: 100%;
+}
+
+.top-right {
+    grid-row: 1;
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+}
+
+.bottom-right {
+    grid-row: 2;
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+}
+
+/* Переключатель тем */
+.theme-switcher {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    display: flex;
+    gap: 10px;
+    z-index: 1000;
+    background: var(--surface);
+    padding: 8px;
+    border-radius: var(--radius);
+    border: 1px solid var(--border);
+    box-shadow: var(--shadow);
+}
+
+.theme-btn {
+    padding: 8px 16px;
+    border: 1px solid var(--border);
+    background: var(--surface);
+    color: var(--text);
+    border-radius: var(--radius);
+    cursor: pointer;
+    font-size: 12px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+}
+
+.theme-btn:hover {
+    background: var(--primary);
+    color: white;
+    transform: translateY(-1px);
+}
+
+.theme-btn.active {
+    background: var(--primary);
+    color: white;
+}
+
+/* Адаптивность для планшетов */
+@media (max-width: 1200px) {
+    .main-layout {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto;
+        gap: 15px;
+        padding: 70px 15px 15px 15px;
+    }
+
+    .left-column {
+        grid-column: 1;
+        grid-row: 1;
+        min-height: min-content;
+    }
+
+    .right-column {
+        grid-column: 1;
+        grid-row: 2;
+        grid-template-rows: 300px 300px;
+        gap: 15px;
+    }
+
+    .theme-switcher {
+        top: 15px;
+        right: 15px;
+    }
+}
+
+/* Адаптивность для мобильных */
+@media (max-width: 768px) {
+    .main-layout {
+        padding: 60px 10px 10px 10px;
+        gap: 12px;
+    }
+
+    .right-column {
+        grid-template-rows: 250px 250px;
+        gap: 12px;
+    }
+
+    .theme-switcher {
+        top: 10px;
+        right: 10px;
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    .theme-btn {
+        padding: 6px 12px;
+        font-size: 11px;
+    }
+}
+
+/* Очень маленькие экраны */
+@media (max-width: 480px) {
+    .main-layout {
+        padding: 50px 8px 8px 8px;
+        gap: 10px;
+    }
+
+    .right-column {
+        grid-template-rows: 200px 200px;
+        gap: 10px;
+    }
+
+    .theme-switcher {
+        top: 8px;
+        right: 8px;
+    }
+}
+
+/* Гарантируем правильное отображение высоты */
+html, body {
+    height: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Улучшаем скролл для терминала */
+.terminal-content {
+    flex: 1;
+    overflow-y: auto;
+    min-height: 0;
+}
+
+/* Убедимся, что все контейнеры правильно растягиваются */
+.panel {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.panel-content {
+    flex: 1;
+    overflow-y: auto;
+    min-height: 0;
+}

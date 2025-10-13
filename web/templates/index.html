@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RTSP Stream - Управление стримингом</title>
+
+    <!-- Подключаем стили -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/layout.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/components.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/themes.css') }}">
+</head>
+<body class="cyber-theme">
+    <div class="theme-switcher">
+        <button onclick="switchTheme('cyber')" class="theme-btn active">Тёмная</button>
+        <button onclick="switchTheme('official')" class="theme-btn">Светлая</button>
+    </div>
+
+    <div class="main-layout">
+        <!-- Левая колонка -->
+        <div class="left-column">
+            <div class="panel">
+                <div class="panel-header">
+                    <h1 class="panel-title">🎥 RTSP Stream System</h1>
+                    <div class="panel-subtitle">Профессиональная система видеотрансляции</div>
+                </div>
+
+                <div class="panel-content">
+                    <!-- Системная информация -->
+                    <div class="collapse-section">
+                        <div class="collapse-header" onclick="toggleSystemInfo()">
+                            <span class="collapse-icon">▶</span>
+                            <span class="collapse-title">Системная информация</span>
+                            <span class="collapse-status" id="systemStatus">Скрыто</span>
+                        </div>
+                        <div class="collapse-content" id="systemInfo">
+                            <div class="grid grid-2">
+                                <div class="info-item">
+                                    <span class="info-label">IP компьютера:</span>
+                                    <span class="info-value">{{ local_ip }}</span>
+                                </div>
+                                <div class="info-item">
+                                    <span class="info-label">FFmpeg:</span>
+                                    <span class="info-value status-{% if ffmpeg_path.exists() %}online{% else %}offline{% endif %}">
+                                        {{ '✅ Доступен' if ffmpeg_path.exists() else '❌ Не найден' }}
+                                    </span>
+                                </div>
+                                <div class="info-item">
+                                    <span class="info-label">MediaMTX:</span>
+                                    <span class="info-value status-{% if mediamtx_path.exists() %}online{% else %}offline{% endif %}">
+                                        {{ '✅ Доступен' if mediamtx_path.exists() else '❌ Не найден' }}
+                                    </span>
+                                </div>
+                                <div class="info-item">
+                                    <span class="info-label">Камеры:</span>
+                                    <span class="info-value">{{ cameras|length }} обнаружено</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Панель управления -->
+                    <div class="panel-section">
+                        <form id="streamForm" class="app-form">
+                            <div class="form-group">
+                                <label for="camera_name" class="form-label">Выбор камеры</label>
+                                <div class="d-flex align-center" style="gap: 12px">
+                                    <select id="camera_name" name="camera_name" required class="form-select">
+                                        {% for camera in cameras %}
+                                        <option value="{{ camera }}" {% if loop.first %}selected{% endif %}>
+                                            {{ camera }}
+                                        </option>
+                                        {% endfor %}
+                                    </select>
+                                    <button type="button" onclick="refreshCameras()" class="btn btn-secondary btn-sm">
+                                        🔄 Обновить
+                                    </button>
+                                </div>
+                            </div>
+
+                            <div class="grid grid-2">
+                                <button type="button" onclick="startStream()" class="btn btn-primary">
+                                    🎬 Запустить стрим
+                                </button>
+                                <button type="button" onclick="stopStream()" class="btn btn-danger">
+                                    ⏹️ Остановить
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+
+                    <!-- Результаты -->
+                    <div id="result" class="panel-section"></div>
+
+                    <!-- Статус системы -->
+                    <div class="panel-section">
+                        <div class="card">
+                            <div class="card-header">
+                                <h3 class="card-title">Статус системы</h3>
+                            </div>
+                            <div class="grid grid-2">
+                                <div class="status-item">
+                                    <span class="status-label">MediaMTX:</span>
+                                    <span class="status-value" id="mediamtxStatus">
+                                        <span class="loading-dots">Проверка</span>
+                                    </span>
+                                </div>
+                                <div class="status-item">
+                                    <span class="status-label">FFmpeg:</span>
+                                    <span class="status-value" id="ffmpegStatus">
+                                        <span class="loading-dots">Проверка</span>
+                                    </span>
+                                </div>
+                            </div>
+                            <button type="button" onclick="checkStatus()" class="btn btn-secondary w-100 mt-2">
+                                🔄 Обновить статус
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Правая колонка -->
+        <div class="right-column">
+            <!-- Терминал -->
+            <div class="top-right">
+                <div class="terminal">
+                    <div class="terminal-header">
+                        <div class="terminal-title">СИСТЕМНЫЙ МОНИТОР</div>
+                        <div class="terminal-controls">
+                            <div class="control-dot red"></div>
+                            <div class="control-dot yellow"></div>
+                            <div class="control-dot green"></div>
+                        </div>
+                    </div>
+                    <div class="terminal-content" id="terminalContent">
+                        <!-- Терминал будет заполняться JavaScript -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- Сетевой доступ -->
+            <div class="bottom-right">
+                <div class="panel">
+                    <div class="panel-header">
+                        <h3>🌐 Сетевой доступ</h3>
+                        <div class="panel-subtitle">Локальная сеть и интернет</div>
+                    </div>
+
+                    <div class="panel-content">
+                        <!-- СЕТЕВАЯ ИНФОРМАЦИЯ -->
+                        <div class="network-info">
+                            <div class="info-group">
+                                <h4 class="info-group-title">📡 Сетевые адреса</h4>
+                                <div class="info-item">
+                                    <span class="info-label">Локальный IP:</span>
+                                    <span class="info-value" id="localIp">{{ local_ip }}</span>
+                                </div>
+                                <div class="info-item">
+                                    <span class="info-label">Внешний IP:</span>
+                                    <span class="info-value" id="externalIp">
+                                        <span class="loading-dots">Определение</span>
+                                    </span>
+                                </div>
+                            </div>
+
+                            <div class="info-group">
+                                <h4 class="info-group-title">🔗 RTSP URL</h4>
+                                <div class="url-item">
+                                    <span class="url-label">Локальная сеть:</span>
+                                    <div class="url-value">
+                                        <code id="localUrl">rtsp://{{ local_ip }}:8554/live/stream</code>
+                                        <button class="btn-copy" onclick="copyLocalUrl()" title="Копировать">
+                                            📋
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="url-item">
+                                    <span class="url-label">Интернет:</span>
+                                    <div class="url-value">
+                                        <code id="externalUrl">
+                                            <span class="loading-dots">Определение</span>
+                                        </code>
+                                        <button class="btn-copy" onclick="copyExternalUrl()" title="Копировать">
+                                            📋
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="info-group">
+                                <h4 class="info-group-title">🔧 Состояние порта</h4>
+                                <div class="status-item">
+                                    <span class="status-label">Порт 8554:</span>
+                                    <span class="status-value" id="portStatus">
+                                        <span class="loading-dots">Проверка</span>
+                                    </span>
+                                </div>
+                            </div>
+
+                            <div class="action-buttons">
+                                <button type="button" onclick="checkPortAccess()" class="btn btn-secondary btn-sm">
+                                    🔄 Проверить доступность
+                                </button>
+                                <button type="button" onclick="configureFirewall()" class="btn btn-primary btn-sm">
+                                    🛡️ Настроить брандмауэр
+                                </button>
+                            </div>
+
+                            <div class="help-section">
+                                <h4 class="help-title">💡 Рекомендации</h4>
+                                <div class="help-content" id="networkHelp">
+                                    <p>Для внешнего доступа настройте проброс порта 8554 в роутере</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Подключаем JavaScript -->
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/terminal.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/api.js') }}"></script>
+</body>
+</html>

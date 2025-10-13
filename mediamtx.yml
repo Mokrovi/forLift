@@ -1,0 +1,13 @@
+# MediaMTX Configuration
+    logLevel: debug
+    readTimeout: 20s
+    writeTimeout: 20s
+
+    # RTSP settings
+    rtspAddress: :8554
+
+    # Simple path configuration
+    paths:
+      live/stream:
+        source: publisher
+    
