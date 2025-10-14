@@ -1,13 +1,7 @@
-#!/usr/bin/env python3
-"""
-RTSP Stream Application - Main Entry Point
-Автоматическая установка и запуск системы стриминга
-"""
-
 import os
 import sys
 import logging
-import time  # ИМЕННО ЭТОТ ИМПОРТ НУЖЕН!
+import time
 from pathlib import Path
 
 # Добавляем корневую директорию в путь Python
@@ -18,6 +12,8 @@ from core.stream_manager import StreamManager
 from web.app import WebApp
 from utils.system_checker import SystemChecker
 from config.settings import AppConfig
+from core.firewall_manager import FirewallManager
+from core.firewall_prompt import FirewallPrompt
 
 # Настройка логирования
 logging.basicConfig(
@@ -40,6 +36,8 @@ class RTSPStreamApp:
         self.system_checker = SystemChecker()
         self.stream_manager = StreamManager(self.config)
         self.web_app = WebApp(self.stream_manager, self.config)
+        self.firewall_manager = FirewallManager()
+        self.firewall_prompt = FirewallPrompt()
 
     def setup_environment(self):
         """Настройка окружения и проверка зависимостей"""
@@ -56,7 +54,66 @@ class RTSPStreamApp:
             logger.warning("⚠️ Не все требования выполнены. Попытка установки...")
             self.system_checker.install_missing_components()
 
+        # НАСТРОЙКА БРАНДМАУЭРА С ЗАПРОСОМ РАЗРЕШЕНИЯ
+        self._configure_firewall_with_prompt()
+
         return self.system_checker.check_critical_requirements()
+
+    def _configure_firewall_with_prompt(self):
+        """Настройка брандмауэра с запросом разрешения пользователя"""
+        logger.info("🛡️ Настройка доступа через брандмауэр Windows...")
+
+        # 1. Показываем инструкцию ДО попытки настройки
+        self._show_firewall_welcome_message()
+
+        # 2. Добавляем приложение в разрешенные программы брандмауэра
+        logger.info("🛡️ Добавляем приложение в разрешенные программы брандмауэра...")
+        app_result = self.firewall_prompt.add_app_to_firewall("RTSP Stream Application")
+
+        if app_result:
+            logger.info("✅ Приложение добавлено в разрешенные программы брандмауэра")
+            logger.info("📋 Если появится запрос от Защитника Windows, нажмите 'Разрешить доступ'")
+        else:
+            logger.warning("⚠️ Не удалось добавить приложение в разрешенные программы")
+            logger.info("💡 Это нормально, если приложение уже было добавлено ранее")
+
+        # 3. Настраиваем правила для портов (требует админ прав)
+        logger.info("🔧 Настраиваем правила для портов...")
+        if self.firewall_prompt.is_admin:
+            firewall_result = self.firewall_manager.configure_rtsp_firewall_rules()
+            if firewall_result.get('success'):
+                logger.info(f"✅ {firewall_result.get('message')}")
+            else:
+                logger.error(f"❌ Ошибка настройки правил портов: {firewall_result.get('message')}")
+        else:
+            logger.info("ℹ️ Для автоматической настройки правил портов запустите программу от имени администратора")
+            logger.info("📋 Вы можете настроить брандмауэр вручную через веб-интерфейс")
+
+        # 4. Даем время для появления запроса брандмауэра
+        time.sleep(2)
+
+    def _show_firewall_welcome_message(self):
+        """Показ приветственного сообщения о настройке брандмауэра"""
+        welcome_msg = """
+        🔒 НАСТРОЙКА ДОСТУПА ЧЕРЕЗ БРАНДМАУЭР
+
+        Сейчас программа попытается настроить брандмауэр Windows.
+        Это необходимо для работы RTSP стриминга.
+
+        ВАЖНО:
+        • Если появится окно Защитника Windows - нажмите "РАЗРЕШИТЬ"
+        • Выберите оба типа сетей (Частные и Публичные)
+        • Это безопасно - программа работает только локально
+
+        Если окно не появилось автоматически, не беспокойтесь - 
+        вы сможете настроить доступ через веб-интерфейс.
+        """
+
+        print("=" * 60)
+        for line in welcome_msg.split('\n'):
+            print(line.strip())
+        print("=" * 60)
+        print()
 
     def start_services(self):
         """Запуск всех сервисов"""
@@ -73,7 +130,9 @@ class RTSPStreamApp:
 
             # ЖДЕМ пока пользователь не остановит приложение
             logger.info("🌐 Веб-интерфейс доступен по адресу: http://localhost:5000")
+            logger.info("📹 RTSP поток будет доступен по адресу: rtsp://ваш-ip:8554/live/stream")
             logger.info("⏹️  Для остановки нажмите Ctrl+C")
+            logger.info("")
 
             # Бесконечный цикл ожидания
             try:
@@ -100,6 +159,7 @@ class RTSPStreamApp:
             print("=" * 50)
             print("🚀 RTSP Stream Application")
             print("=" * 50)
+            print()
 
             # Настройка окружения
             if not self.setup_environment():

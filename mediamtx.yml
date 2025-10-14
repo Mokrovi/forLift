@@ -1,13 +1,27 @@
 # MediaMTX Configuration
-    logLevel: debug
+    logLevel: info
     readTimeout: 20s
     writeTimeout: 20s
 
-    # RTSP settings
+    # RTSP settings - слушаем на всех интерфейсах
     rtspAddress: :8554
 
-    # Simple path configuration
+    # RTP settings - для видео данных
+    rtpAddress: :8000
+    rtcpAddress: :8001
+
+    # HTTP API для мониторинга
+    api: yes
+    apiAddress: :9997
+
+    # Настройки для внешнего доступа
     paths:
       live/stream:
         source: publisher
+        # Разрешаем всем читать поток
+        readUser: ""
+        readPass: ""
+        # Разрешаем всем публиковать  
+        publishUser: ""
+        publishPass: ""
     

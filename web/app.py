@@ -22,7 +22,6 @@ class WebApp:
                          template_folder=str(config.TEMPLATES_DIR),
                          static_folder=str(config.STATIC_DIR))
 
-        # Инициализируем менеджеры ОДИН РАЗ
         self.camera_finder = CameraFinder(str(self.config.get_ffmpeg_path()))
         self.network_manager = NetworkManager()
         self.firewall_manager = FirewallManager()
@@ -174,6 +173,53 @@ class WebApp:
                 return jsonify(result)
             except Exception as e:
                 logger.error(f"❌ Ошибка настройки брандмауэра: {e}")
+                return jsonify({
+                    "success": False,
+                    "message": f"Ошибка: {str(e)}",
+                    "admin_required": True
+                })
+
+        @self.app.route('/api/firewall/configure-advanced', methods=['POST'])
+        def configure_firewall_advanced():
+            """API для расширенной настройки брандмауэра"""
+            try:
+                # Получаем параметры из запроса
+                data = request.get_json() or {}
+                local_ips = data.get('local_ips', [])
+                remote_ips = data.get('remote_ips', [])
+
+                result = self.firewall_manager.configure_rtsp_firewall_rules()
+                return jsonify(result)
+            except Exception as e:
+                logger.error(f"❌ Ошибка расширенной настройки брандмауэра: {e}")
+                return jsonify({
+                    "success": False,
+                    "message": f"Ошибка: {str(e)}",
+                    "admin_required": True
+                })
+
+        @self.app.route('/api/firewall/open-for-all', methods=['POST'])
+        def open_firewall_for_all():
+            """API для открытия порта для всех IP"""
+            try:
+                result = self.firewall_manager.open_port_for_all_ips(8554)
+                return jsonify(result)
+            except Exception as e:
+                logger.error(f"❌ Ошибка открытия порта для всех IP: {e}")
+                return jsonify({
+                    "success": False,
+                    "message": f"Ошибка: {str(e)}",
+                    "admin_required": True
+                })
+
+        @self.app.route('/api/firewall/open-for-local', methods=['POST'])
+        def open_firewall_for_local():
+            """API для открытия порта только для локальной подсети"""
+            try:
+                result = self.firewall_manager.open_port_for_local_subnet(8554)
+                return jsonify(result)
+            except Exception as e:
+                logger.error(f"❌ Ошибка открытия порта для локальной подсети: {e}")
                 return jsonify({
                     "success": False,
                     "message": f"Ошибка: {str(e)}",

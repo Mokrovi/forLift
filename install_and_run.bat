@@ -1,170 +1,104 @@
 @echo off
 chcp 65001
-title RTSP Stream - Установка
-
-echo УСТАНОВКА НАЧАТА > log.txt
-echo Время: %DATE% %TIME% >> log.txt
-echo. >> log.txt
-
-echo ШАГ 1: Проверка Python >> log.txt
-python --version >> log.txt 2>&1
-if errorlevel 1 (
-    echo ОШИБКА: Python не найден >> log.txt
-    echo ❌ Python не найден!
-    echo Проверьте что Python установлен и добавлен в PATH
-    pause
-    exit /b 1
-)
-echo ✅ Python найден >> log.txt
-
-echo. >> log.txt
-echo ШАГ 2: Установка Flask >> log.txt
-echo 📦 Устанавливаю Flask... >> log.txt
-pip install --force-reinstall flask >> log.txt 2>&1
-echo ✅ Flask установлен >> log.txt
-
-echo. >> log.txt
-echo ШАГ 3: Установка requests >> log.txt
-echo 📦 Устанавливаю requests... >> log.txt
-pip install --force-reinstall requests >> log.txt 2>&1
-echo ✅ requests установлен >> log.txt
-
-echo. >> log.txt
-echo ШАГ 4: Проверка установки Flask >> log.txt
-echo 🔧 Проверяю что Flask доступен... >> log.txt
-python -c "import flask; print('SUCCESS: Flask импортирован')" >> log.txt 2>&1
-if errorlevel 1 (
-    echo ❌ КРИТИЧЕСКАЯ ОШИБКА: Flask не может быть импортирован! >> log.txt
-    echo ❌ КРИТИЧЕСКАЯ ОШИБКА: Flask не может быть импортирован!
-    echo.
-    echo Возможные причины:
-    echo 1. Несколько версий Python конфликтуют
-    echo 2. Проблемы с путями установки
-    echo 3. Виртуальное окружение активно
-    echo.
-    echo Решения:
-    echo - Запустите: python -m pip install flask
-    echo - Или используйте: py -3 -m pip install flask
-    echo - Или запустите fix_flask.bat
-    pause
-    exit /b 1
-)
-echo ✅ Flask успешно импортирован >> log.txt
-
-echo. >> log.txt
-echo ШАГ 5: Распаковка FFmpeg из 7z архива >> log.txt
-if exist ffmpeg.exe (
-    echo ✅ ffmpeg.exe уже есть >> log.txt
-) else (
-    echo 🔍 Ищу архив FFmpeg... >> log.txt
-    if exist ffmpeg.7z (
-        echo 📦 Нашел ffmpeg.7z >> log.txt
-        echo 💡 РАСПАКУЙТЕ ffmpeg.7z ВРУЧНУЮ через WinRAR/7-Zip >> log.txt
-        echo 💡 И скопируйте ffmpeg.exe в эту папку >> log.txt
-        echo.
-        echo ❗ ВАЖНО: Распакуйте ffmpeg.7z вручную!
-        echo Путь к ffmpeg.exe в архиве:
-        echo ffmpeg.7z\ffmpeg-8.0-full_build\bin\ffmpeg.exe
-        echo.
-        pause
-    ) else (
-        echo ⚠️ Архив ffmpeg.7z не найден >> log.txt
-    )
-)
-
-echo. >> log.txt
-echo ШАГ 6: Распаковка MediaMTX >> log.txt
-if exist mediamtx.exe (
-    echo ✅ mediamtx.exe уже есть >> log.txt
-) else (
-    echo 🔍 Ищу архив MediaMTX... >> log.txt
-    if exist mediamtx.zip (
-        echo 📦 Нашел mediamtx.zip, распаковываю... >> log.txt
-        powershell -Command "Expand-Archive -Path 'mediamtx.zip' -DestinationPath 'mediamtx_temp' -Force" >> log.txt 2>&1
-
-        echo 🔍 Ищу mediamtx.exe... >> log.txt
-        if exist mediamtx_temp\mediamtx.exe (
-            copy mediamtx_temp\mediamtx.exe . >> log.txt 2>&1
-            echo ✅ mediamtx.exe скопирован >> log.txt
-        )
-
-        :: Копируем mediamtx.yml если есть
-        if exist mediamtx_temp\mediamtx.yml (
-            copy mediamtx_temp\mediamtx.yml . >> log.txt 2>&1
-            echo ✅ mediamtx.yml скопирован >> log.txt
-        )
-
-        rmdir /s /q mediamtx_temp >> log.txt 2>&1
-    ) else (
-        echo ⚠️ Архив mediamtx.zip не найден >> log.txt
-    )
-)
-
-echo. >> log.txt
-echo ШАГ 7: Проверка файлов >> log.txt
-if exist main.py (
-    echo ✅ main.py найден >> log.txt
-) else (
-    echo ОШИБКА: main.py не найден >> log.txt
-    echo ❌ main.py не найден
-    pause
-    exit /b 1
-)
-
-echo Проверка инструментов: >> log.txt
-if exist ffmpeg.exe (
-    echo ✅ ffmpeg.exe найден >> log.txt
-) else (
-    echo ⚠️ ffmpeg.exe не найден >> log.txt
-)
-
-if exist mediamtx.exe (
-    echo ✅ mediamtx.exe найден >> log.txt
-) else (
-    echo ⚠️ mediamtx.exe не найден >> log.txt
-)
-
-echo. >> log.txt
-echo УСТАНОВКА ЗАВЕРШЕНА >> log.txt
+title RTSP Stream - Установка и Запуск
 
 echo.
 echo ========================================
-echo   Установка завершена!
-echo   Проверка файлов:
+echo   🚀 RTSP STREAM APPLICATION
+echo ========================================
 echo.
 
-if exist ffmpeg.exe (
-    echo ✅ ffmpeg.exe - готов
-) else (
-    echo ❌ ffmpeg.exe - отсутствует
-)
-
-if exist mediamtx.exe (
-    echo ✅ mediamtx.exe - готов
-) else (
-    echo ❌ mediamtx.exe - отсутствует
-)
-
+echo 📝 Начинаю установку...
 echo.
-echo 🔧 ФИНАЛЬНАЯ ПРОВЕРКА FLASK...
-python -c "import flask; print('✅ Flask РАБОТАЕТ!')"
+
+echo 🔍 Проверка Python...
+python --version
 if errorlevel 1 (
     echo.
-    echo ❌ КРИТИЧЕСКАЯ ОШИБКА: Flask не работает!
+    echo ❌ Python не найден!
     echo.
-    echo ЗАПУСТИТЕ КОМАНДУ ВРУЧНУЮ:
-    echo python -m pip install flask
+    echo 💡 Решение:
+    echo 1. Скачайте Python с python.org
+    echo 2. Установите, отметив "Add Python to PATH"
+    echo 3. Запустите этот файл снова
     echo.
     pause
     exit /b 1
 )
 
 echo.
-echo 🚀 Запускаю приложение...
+echo 📦 Проверка зависимостей...
+python -c "import flask" 2>nul
+if errorlevel 1 (
+    echo ❌ Flask не установлен, устанавливаю...
+    pip install flask requests waitress
+    echo ✅ Зависимости установлены
+) else (
+    echo ✅ Flask установлен
+)
+
+python -c "import requests" 2>nul
+if errorlevel 1 (
+    echo ❌ Requests не установлен, устанавливаю...
+    pip install requests
+)
+
+echo.
+echo 🔧 Проверка файлов...
+if exist main.py (echo ✅ main.py) else (echo ❌ main.py - ОШИБКА! && pause && exit /b 1)
+if exist ffmpeg.exe (echo ✅ ffmpeg.exe) else (echo ⚠️ ffmpeg.exe отсутствует)
+if exist mediamtx.exe (echo ✅ mediamtx.exe) else (echo ⚠️ mediamtx.exe отсутствует)
+if exist mediamtx.yml (echo ✅ mediamtx.yml) else (echo ⚠️ mediamtx.yml отсутствует)
+
+echo.
+echo 🛡️ Проверка прав доступа...
+net session >nul 2>&1
+if errorlevel 1 (
+    echo ⚠️ Запущено без прав администратора
+    echo 💡 Для настройки брандмауэра запустите от имени администратора
+) else (
+    echo ✅ Запущено с правами администратора
+    echo 💡 Настраиваю брандмауэр...
+    netsh advfirewall firewall add rule name="RTSP Port 8554" dir=in action=allow protocol=TCP localport=8554 remoteip=any
+    netsh advfirewall firewall add rule name="RTSP Port 8000" dir=in action=allow protocol=TCP localport=8000 remoteip=any
+    netsh advfirewall firewall add rule name="RTSP Port 8001" dir=in action=allow protocol=TCP localport=8001 remoteip=any
+    echo ✅ Брандмауэр настроен
+)
+
+echo.
+echo ========================================
+echo   🚀 ЗАПУСК ПРИЛОЖЕНИЯ
+echo ========================================
 echo.
 
+echo 📍 Информация для доступа:
+python -c "
+try:
+    import socket
+    s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+    s.connect(('8.8.8.8', 80))
+    local_ip = s.getsockname()[0]
+    s.close()
+    print(f'📍 Локальный IP: {local_ip}')
+    print(f'📹 RTSP поток: rtsp://{local_ip}:8554/live/stream')
+    print(f'🌐 Веб-интерфейс: http://{local_ip}:5000')
+except:
+    print('📍 Локальный RTSP: rtsp://localhost:8554/live/stream')
+    print('🌐 Веб-интерфейс: http://localhost:5000')
+"
+
+echo.
+echo ⏹️  Для остановки нажмите Ctrl+C
+echo 📄 Логи будут в rtsp_stream.log
+echo.
+
+echo 🚀 ЗАПУСКАЮ ОСНОВНОЕ ПРИЛОЖЕНИЕ...
+echo ========================================
 python main.py
 
 echo.
-echo Приложение завершило работу
+echo ========================================
+echo   📋 ПРИЛОЖЕНИЕ ЗАВЕРШИЛО РАБОТУ
+echo ========================================
+echo.
 pause

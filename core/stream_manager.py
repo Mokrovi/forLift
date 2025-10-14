@@ -126,28 +126,37 @@ class StreamManager:
             return False
 
     def _create_mediamtx_config(self):
-        """Создание конфигурационного файла MediaMTX"""
-        try:
-            config_content = """# MediaMTX Configuration
-    logLevel: debug
+        """Создание конфигурационного файла MediaMTX с внешним доступом"""
+        config_content = """# MediaMTX Configuration
+    logLevel: info
     readTimeout: 20s
     writeTimeout: 20s
 
-    # RTSP settings
+    # RTSP settings - слушаем на всех интерфейсах
     rtspAddress: :8554
 
-    # Simple path configuration
+    # RTP settings - для видео данных
+    rtpAddress: :8000
+    rtcpAddress: :8001
+
+    # HTTP API для мониторинга
+    api: yes
+    apiAddress: :9997
+
+    # Настройки для внешнего доступа
     paths:
       live/stream:
         source: publisher
+        # Разрешаем всем читать поток
+        readUser: ""
+        readPass: ""
+        # Разрешаем всем публиковать  
+        publishUser: ""
+        publishPass: ""
     """
-            self.config.MEDIAMTX_CONFIG_PATH.write_text(config_content, encoding='utf-8')
-            logger.info(f"✅ Конфигурационный файл создан: {self.config.MEDIAMTX_CONFIG_PATH}")
-
-        except Exception as e:
-            logger.error(f"❌ Ошибка создания конфигурационного файла: {e}")
-            raise
-
+        self.config.MEDIAMTX_CONFIG_PATH.write_text(config_content, encoding='utf-8')
+        logger.info("✅ Конфигурационный файл MediaMTX создан")
+        
     def _log_mediamtx_errors(self):
         """Логирование ошибок MediaMTX из stderr"""
         while self.mediamtx_process and self.mediamtx_process.poll() is None:
