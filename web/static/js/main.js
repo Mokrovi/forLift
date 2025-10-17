@@ -143,9 +143,132 @@ function configureFirewall() {
     }
 }
 
+function sendToAndroid() {
+    const ipInput = document.getElementById('androidIp');
+    if (!ipInput) return;
+
+    const androidIp = ipInput.value.trim();
+    if (!androidIp) {
+        alert('Пожалуйста, введите IP адрес Android устройства');
+        return;
+    }
+
+    if (window.app && window.app.api) {
+        window.app.api.sendToAndroid(androidIp);
+    }
+}
+
+function copyLocalUrl() {
+    if (window.app && window.app.api) {
+        window.app.api.copyLocalUrl();
+    }
+}
+
 function copyExternalUrl() {
     if (window.app && window.app.api) {
         window.app.api.copyExternalUrl();
+    }
+}
+
+async function sendToAndroid() {
+    const ipInput = document.getElementById('androidIp');
+    if (!ipInput) {
+        console.error('❌ Поле ввода Android IP не найдено');
+        return;
+    }
+
+    const androidIp = ipInput.value.trim();
+    if (!androidIp) {
+        alert('Пожалуйста, введите IP адрес Android устройства');
+        return;
+    }
+
+    console.log('🚀 Отправка запроса на Android:', androidIp);
+
+    // Показываем сообщение о начале процесса
+    const resultDiv = document.getElementById('result');
+    if (resultDiv) {
+        resultDiv.innerHTML = '<div class="alert alert-success">🚀 Отправка данных на Android...</div>';
+    }
+
+    // Показываем статус отправки
+    const androidStatus = document.getElementById('androidStatus');
+    if (androidStatus) {
+        androidStatus.innerHTML = '<span class="status-sending">🔄 Отправка запроса...</span>';
+    }
+
+    // Логируем в терминал
+    if (window.app && window.app.terminal) {
+        await window.app.terminal.typeMessage(`Начало отправки на Android ${androidIp}...`, 50);
+    }
+
+    try {
+        // Получаем IP адреса через API
+        const networkResponse = await fetch('/api/network');
+        const networkData = await networkResponse.json();
+
+        const localUrl = `rtsp://${networkData.local_ip}:8554/live/stream`;
+        const externalUrl = `rtsp://${networkData.external_ip}:8554/live/stream`;
+
+        const payload = {
+            local_url: localUrl,
+            external_url: externalUrl,
+            timestamp: new Date().toISOString(),
+            source: "rtsp_stream_app"
+        };
+
+        // Логируем что отправляем
+        if (window.app && window.app.terminal) {
+            await window.app.terminal.typeMessage(`Отправка на ${androidIp}:8080/stream`, 50);
+            await window.app.terminal.typeMessage(`Локальный URL: ${localUrl}`, 50);
+            await window.app.terminal.typeMessage(`Внешний URL: ${externalUrl}`, 50);
+        }
+
+        // Отправляем запрос
+        const response = await fetch(`http://${androidIp}:8080/stream`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(payload)
+        });
+
+        const responseText = await response.text();
+
+        // Обновляем статус
+        if (androidStatus) {
+            androidStatus.innerHTML = '<span class="status-success">✅ Запрос отправлен</span>';
+        }
+
+        // Показываем ответ
+        const responseElement = document.getElementById('androidResponse');
+        const responseContent = document.getElementById('androidResponseContent');
+        if (responseElement && responseContent) {
+            responseContent.textContent = responseText;
+            responseElement.style.display = 'block';
+        }
+
+        // Логируем успех
+        if (window.app && window.app.terminal) {
+            await window.app.terminal.typeMessage(`✅ Android ответил: ${responseText}`, 50);
+        }
+
+    } catch (error) {
+        console.error('❌ Ошибка отправки на Android:', error);
+
+        // Показываем ошибку
+        if (androidStatus) {
+            androidStatus.innerHTML = '<span class="status-error">❌ Ошибка отправки</span>';
+        }
+
+        if (resultDiv) {
+            resultDiv.innerHTML = '<div class="alert alert-error">❌ Ошибка отправки на Android</div>';
+        }
+
+        // Логируем ошибку
+        if (window.app && window.app.terminal) {
+            await window.app.terminal.typeMessage(`❌ Ошибка: ${error.message}`, 50);
+        }
     }
 }
 

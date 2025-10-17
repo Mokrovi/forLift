@@ -4,6 +4,25 @@ class APIManager {
         this.baseURL = '';
     }
 
+    hideAndroidResponse() {
+        const responseElement = document.getElementById('androidResponse');
+        if (responseElement) {
+            responseElement.style.display = 'none';
+        }
+    }
+
+    isValidIP(ip) {
+        const ipRegex = /^([0-9]{1,3}\.){3}[0-9]{1,3}$/;
+        if (!ipRegex.test(ip)) return false;
+
+        // Проверяем что каждый октет в диапазоне 0-255
+        const parts = ip.split('.');
+        return parts.every(part => {
+            const num = parseInt(part, 10);
+            return num >= 0 && num <= 255;
+        });
+    }
+
     async request(endpoint, options = {}) {
         try {
             const response = await fetch(endpoint, {
@@ -159,6 +178,10 @@ class APIManager {
     async loadNetworkInfo() {
     try {
         const network = await this.request('/api/network');
+
+        // Сохраняем IP адреса для использования в Android запросах
+        this.localIp = network.local_ip;
+        this.externalIp = network.external_ip;
 
         // Обновляем внешний IP
         const externalIpElement = document.getElementById('externalIp');

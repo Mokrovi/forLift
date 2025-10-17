@@ -100,3 +100,1561 @@
  * Running on http://127.0.0.1:5000
  * Running on http://192.168.0.4:5000
 2025-10-14 11:43:18,570 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-10-17 18:45:53,639 - config.settings - INFO - ✅ FFmpeg найден: C:\Users\Honor\Downloads\Аханабдуле\ffmpeg.exe
+2025-10-17 18:45:54,187 - core.network_manager - INFO - 🌐 Внешний IP: 46.147.70.29
+2025-10-17 18:45:54,193 - __main__ - INFO - 🔧 Настройка окружения...
+2025-10-17 18:45:54,194 - utils.system_checker - INFO - ✅ Python 3.12.3
+2025-10-17 18:45:54,194 - utils.system_checker - INFO - ✅ FFmpeg найден: C:\Users\Honor\Downloads\Аханабдуле\ffmpeg.exe
+2025-10-17 18:45:54,195 - utils.system_checker - INFO - ✅ MediaMTX найден: C:\Users\Honor\Downloads\Аханабдуле\mediamtx.exe
+2025-10-17 18:45:54,195 - utils.system_checker - INFO - ✅ Библиотека flask доступна
+2025-10-17 18:45:54,195 - utils.system_checker - INFO - ✅ Библиотека requests доступна
+2025-10-17 18:45:54,195 - utils.system_checker - INFO - ✅ python: Доступен
+2025-10-17 18:45:54,196 - utils.system_checker - INFO - ✅ ffmpeg: Доступен
+2025-10-17 18:45:54,196 - utils.system_checker - INFO - ✅ mediamtx: Доступен
+2025-10-17 18:45:54,196 - utils.system_checker - INFO - ✅ flask: Доступен
+2025-10-17 18:45:54,196 - utils.system_checker - INFO - ✅ requests: Доступен
+2025-10-17 18:45:54,196 - __main__ - INFO - 🛡️ Настройка доступа через брандмауэр Windows...
+2025-10-17 18:45:54,198 - __main__ - INFO - 🛡️ Добавляем приложение в разрешенные программы брандмауэра...
+2025-10-17 18:45:54,198 - core.firewall_prompt - INFO - 📁 Путь к приложению: C:\Users\Honor\Downloads\Аханабдуле\.venv\Scripts\python.exe
+2025-10-17 18:45:54,283 - core.firewall_prompt - INFO - ℹ️ Правило для приложения уже существует в брандмауэре
+2025-10-17 18:45:54,283 - __main__ - INFO - ✅ Приложение добавлено в разрешенные программы брандмауэра
+2025-10-17 18:45:54,284 - __main__ - INFO - 📋 Если появится запрос от Защитника Windows, нажмите 'Разрешить доступ'
+2025-10-17 18:45:54,284 - __main__ - INFO - 🔧 Настраиваем правила для портов...
+2025-10-17 18:45:54,284 - __main__ - INFO - ℹ️ Для автоматической настройки правил портов запустите программу от имени администратора
+2025-10-17 18:45:54,284 - __main__ - INFO - 📋 Вы можете настроить брандмауэр вручную через веб-интерфейс
+2025-10-17 18:45:56,285 - utils.system_checker - INFO - ✅ Python 3.12.3
+2025-10-17 18:45:56,286 - utils.system_checker - INFO - ✅ FFmpeg найден: C:\Users\Honor\Downloads\Аханабдуле\ffmpeg.exe
+2025-10-17 18:45:56,286 - utils.system_checker - INFO - ✅ MediaMTX найден: C:\Users\Honor\Downloads\Аханабдуле\mediamtx.exe
+2025-10-17 18:45:56,286 - __main__ - INFO - 🚀 Запуск сервисов...
+2025-10-17 18:45:56,328 - core.stream_manager - INFO - 🔄 Завершаем процесс 11312 на порту 8000
+2025-10-17 18:45:57,414 - core.stream_manager - INFO - 🔄 Завершаем процесс 11312 на порту 8000
+2025-10-17 18:46:00,510 - config.settings - INFO - ✅ MediaMTX найден: C:\Users\Honor\Downloads\Аханабдуле\mediamtx.exe
+2025-10-17 18:46:00,511 - core.stream_manager - INFO - 🗑️ Удален старый конфигурационный файл
+2025-10-17 18:46:00,513 - core.stream_manager - INFO - ✅ Конфигурационный файл MediaMTX создан
+2025-10-17 18:46:00,513 - core.stream_manager - INFO - 🔄 Запуск MediaMTX...
+2025-10-17 18:46:00,514 - core.stream_manager - INFO - 📁 Путь к MediaMTX: C:\Users\Honor\Downloads\Аханабдуле\mediamtx.exe
+2025-10-17 18:46:00,577 - core.stream_manager - INFO - MediaMTX: 2025/10/17 18:46:00 INF MediaMTX v1.9.2
+2025-10-17 18:46:00,578 - core.stream_manager - INFO - MediaMTX: 2025/10/17 18:46:00 INF configuration loaded from C:\Users\Honor\Downloads\РђС…Р°РЅР°Р±РґСѓР»Рµ\mediamtx.yml
+2025-10-17 18:46:00,580 - core.stream_manager - INFO - MediaMTX: 2025/10/17 18:46:00 INF [RTSP] listener opened on :8554 (TCP), :8000 (UDP/RTP), :8001 (UDP/RTCP)
+2025-10-17 18:46:00,580 - core.stream_manager - INFO - MediaMTX: 2025/10/17 18:46:00 INF [RTMP] listener opened on :1935
+2025-10-17 18:46:00,581 - core.stream_manager - INFO - MediaMTX: 2025/10/17 18:46:00 INF [HLS] listener opened on :8888
+2025-10-17 18:46:00,581 - core.stream_manager - INFO - MediaMTX: 2025/10/17 18:46:00 INF [WebRTC] listener opened on :8889 (HTTP), :8189 (ICE/UDP)
+2025-10-17 18:46:00,581 - core.stream_manager - INFO - MediaMTX: 2025/10/17 18:46:00 INF [SRT] listener opened on :8890 (UDP)
+2025-10-17 18:46:00,581 - core.stream_manager - INFO - MediaMTX: 2025/10/17 18:46:00 INF [API] listener opened on :9997
+2025-10-17 18:46:03,519 - core.stream_manager - INFO - ✅ MediaMTX успешно запущен
+2025-10-17 18:46:03,520 - web.app - INFO - 🌐 Запуск веб-сервера на 0.0.0.0:5000
+2025-10-17 18:46:03,520 - web.app - INFO - ✅ Веб-интерфейс запущен
+2025-10-17 18:46:03,521 - __main__ - INFO - 🌐 Веб-интерфейс доступен по адресу: http://localhost:5000
+2025-10-17 18:46:03,521 - __main__ - INFO - 📹 RTSP поток будет доступен по адресу: rtsp://ваш-ip:8554/live/stream
+2025-10-17 18:46:03,521 - __main__ - INFO - ⏹️  Для остановки нажмите Ctrl+C
+2025-10-17 18:46:03,521 - __main__ - INFO - 
+2025-10-17 18:46:03,529 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.0.4:5000
+2025-10-17 18:46:03,529 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-10-17 18:46:11,782 - core.camera_finder - INFO - 🔍 Поиск и тестирование камер...
+2025-10-17 18:46:11,783 - core.camera_finder - INFO - 🔍 Поиск доступных камер...
+2025-10-17 18:46:14,069 - core.camera_finder - INFO - ✅ Метод 1: найдено 1 камер
+2025-10-17 18:46:14,379 - core.camera_finder - INFO - ✅ Метод 2: найдено 1 камер
+2025-10-17 18:46:14,380 - core.camera_finder - INFO - 📹 Найдено потенциальных камер: 2
+2025-10-17 18:46:14,380 - core.camera_finder - INFO -    - (video)
+2025-10-17 18:46:14,380 - core.camera_finder - INFO -    - ov9734_azurewave_camera
+2025-10-17 18:46:14,380 - core.camera_finder - INFO - 🔍 Тестируем камеру: (video)
+2025-10-17 18:46:14,381 - core.camera_finder - INFO - 🔄 Попытка 1 для камеры (video)
+2025-10-17 18:46:14,427 - core.camera_finder - INFO - 🔄 Попытка 2 для камеры (video)
+2025-10-17 18:46:14,477 - core.camera_finder - INFO - 🔄 Попытка 3 для камеры (video)
+2025-10-17 18:46:14,526 - core.camera_finder - INFO - ❌ (video) - нерабочая: Ошибка ввода-вывода (проверьте доступ к камере)
+2025-10-17 18:46:14,527 - core.camera_finder - INFO - 🔍 Тестируем камеру: ov9734_azurewave_camera
+2025-10-17 18:46:14,527 - core.camera_finder - INFO - 🔄 Попытка 1 для камеры ov9734_azurewave_camera
+2025-10-17 18:46:18,637 - core.camera_finder - INFO - ✅ Камера 'ov9734_azurewave_camera' - РАБОТАЕТ (попытка 1)
+2025-10-17 18:46:18,637 - core.camera_finder - INFO - ✅ ov9734_azurewave_camera - рабочая
+2025-10-17 18:46:18,637 - core.camera_finder - INFO - 🎯 Рабочие камеры: 1 из 2
+2025-10-17 18:46:18,638 - core.camera_finder - INFO -    ✅ ov9734_azurewave_camera
+2025-10-17 18:46:18,638 - config.settings - INFO - 📡 Локальный IP: 192.168.0.4
+2025-10-17 18:46:19,177 - config.settings - INFO - 🌐 Внешний IP: 46.147.70.29
+2025-10-17 18:46:19,179 - config.settings - INFO - ✅ FFmpeg найден: C:\Users\Honor\Downloads\Аханабдуле\ffmpeg.exe
+2025-10-17 18:46:19,179 - config.settings - INFO - ✅ MediaMTX найден: C:\Users\Honor\Downloads\Аханабдуле\mediamtx.exe
+2025-10-17 18:46:19,190 - werkzeug - INFO - 127.0.0.1 - - [17/Oct/2025 18:46:19] "GET / HTTP/1.1" 200 -
+2025-10-17 18:46:19,256 - werkzeug - INFO - 127.0.0.1 - - [17/Oct/2025 18:46:19] "[36mGET /static/css/main.css HTTP/1.1[0m" 304 -
+2025-10-17 18:46:19,265 - werkzeug - INFO - 127.0.0.1 - - [17/Oct/2025 18:46:19] "[36mGET /static/css/layout.css HTTP/1.1[0m" 304 -
+2025-10-17 18:46:19,529 - werkzeug - INFO - 127.0.0.1 - - [17/Oct/2025 18:46:19] "GET /static/css/components.css HTTP/1.1" 200 -
+2025-10-17 18:46:19,576 - werkzeug - INFO - 127.0.0.1 - - [17/Oct/2025 18:46:19] "[36mGET /static/css/themes.css HTTP/1.1[0m" 304 -
+2025-10-17 18:46:19,577 - werkzeug - INFO - 127.0.0.1 - - [17/Oct/2025 18:46:19] "GET /static/js/main.js HTTP/1.1" 200 -
+2025-10-17 18:46:19,841 - werkzeug - INFO - 127.0.0.1 - - [17/Oct/2025 18:46:19] "[36mGET /static/js/terminal.js HTTP/1.1[0m" 304 -
+2025-10-17 18:46:19,904 - werkzeug - INFO - 127.0.0.1 - - [17/Oct/2025 18:46:19] "GET /static/js/api.js HTTP/1.1" 200 -
+2025-10-17 18:46:20,228 - config.settings - INFO - 📡 Локальный IP: 192.168.0.4
+2025-10-17 18:46:20,229 - werkzeug - INFO - 127.0.0.1 - - [17/Oct/2025 18:46:20] "GET /api/status HTTP/1.1" 200 -
+2025-10-17 18:46:20,496 - werkzeug - INFO - 127.0.0.1 - - [17/Oct/2025 18:46:20] "GET /api/network HTTP/1.1" 200 -
+2025-10-17 18:46:20,544 - werkzeug - INFO - 127.0.0.1 - - [17/Oct/2025 18:46:20] "GET /api/network/port-check HTTP/1.1" 200 -
+2025-10-17 18:46:20,546 - core.stream_manager - INFO - MediaMTX: 2025/10/17 18:46:20 INF [RTSP] [conn 127.0.0.1:49238] opened
+2025-10-17 18:46:20,549 - core.stream_manager - INFO - MediaMTX: 2025/10/17 18:46:20 INF [RTSP] [conn 127.0.0.1:49238] closed: EOF
+2025-10-17 18:46:29,931 - config.settings - INFO - 📡 Локальный IP: 192.168.0.4
+2025-10-17 18:46:29,932 - werkzeug - INFO - 127.0.0.1 - - [17/Oct/2025 18:46:29] "GET /api/status HTTP/1.1" 200 -
+2025-10-17 18:46:38,674 - core.camera_finder - INFO - 🔍 Тестируем камеру: ov9734_azurewave_camera
+2025-10-17 18:46:38,675 - core.camera_finder - INFO - 🔄 Попытка 1 для камеры ov9734_azurewave_camera
+2025-10-17 18:46:39,928 - config.settings - INFO - 📡 Локальный IP: 192.168.0.4
+2025-10-17 18:46:39,929 - werkzeug - INFO - 127.0.0.1 - - [17/Oct/2025 18:46:39] "GET /api/status HTTP/1.1" 200 -
+2025-10-17 18:46:41,837 - core.stream_manager - INFO - MediaMTX: 2025/10/17 18:46:41 INF [RTSP] [conn 127.0.0.1:49260] opened
+2025-10-17 18:46:41,838 - core.stream_manager - INFO - MediaMTX: 2025/10/17 18:46:41 INF [RTSP] [conn 127.0.0.1:49260] closed: invalid URL (/stream)
+2025-10-17 18:46:41,876 - core.stream_manager - INFO - MediaMTX: 2025/10/17 18:46:41 INF [RTSP] [conn 127.0.0.1:49261] opened
+2025-10-17 18:46:41,876 - core.stream_manager - INFO - MediaMTX: 2025/10/17 18:46:41 INF [RTSP] [conn 127.0.0.1:49261] closed: invalid URL (/stream)
+2025-10-17 18:46:42,839 - core.camera_finder - INFO - ✅ Камера 'ov9734_azurewave_camera' - РАБОТАЕТ (попытка 1)
+2025-10-17 18:46:42,840 - config.settings - INFO - ✅ FFmpeg найден: C:\Users\Honor\Downloads\Аханабдуле\ffmpeg.exe
+2025-10-17 18:46:42,840 - config.settings - INFO - 📡 Локальный IP: 192.168.0.4
+2025-10-17 18:46:42,841 - core.stream_manager - INFO - 🎬 Попытка 1 запуска стрима с камеры: ov9734_azurewave_camera
+2025-10-17 18:46:42,841 - core.stream_manager - INFO - 🔧 Команда: C:\Users\Honor\Downloads\Аханабдуле\ffmpeg.exe -f dshow -i video=ov9734_azurewave_camera -c:v libx264 -preset ultrafast -tune zerolatency -g 15 -keyint_min 15 -crf 25 -profile:v baseline -level 3.1 -pix_fmt yuv420p -f rtsp -rtsp_transport tcp rtsp://localhost:8554/live/stream
+2025-10-17 18:46:42,866 - core.stream_manager - INFO - FFmpeg: ffmpeg version 8.0-full_build-www.gyan.dev Copyright (c) 2000-2025 the FFmpeg developers
+2025-10-17 18:46:42,867 - core.stream_manager - INFO - FFmpeg: built with gcc 15.2.0 (Rev8, Built by MSYS2 project)
+2025-10-17 18:46:42,867 - core.stream_manager - INFO - FFmpeg: configuration: --enable-gpl --enable-version3 --enable-static --disable-w32threads --disable-autodetect --enable-fontconfig --enable-iconv --enable-gnutls --enable-lcms2 --enable-libxml2 --enable-gmp --enable-bzlib --enable-lzma --enable-libsnappy --enable-zlib --enable-librist --enable-libsrt --enable-libssh --enable-libzmq --enable-avisynth --enable-libbluray --enable-libcaca --enable-libdvdnav --enable-libdvdread --enable-sdl2 --enable-libaribb24 --enable-libaribcaption --enable-libdav1d --enable-libdavs2 --enable-libopenjpeg --enable-libquirc --enable-libuavs3d --enable-libxevd --enable-libzvbi --enable-liboapv --enable-libqrencode --enable-librav1e --enable-libsvtav1 --enable-libvvenc --enable-libwebp --enable-libx264 --enable-libx265 --enable-libxavs2 --enable-libxeve --enable-libxvid --enable-libaom --enable-libjxl --enable-libvpx --enable-mediafoundation --enable-libass --enable-frei0r --enable-libfreetype --enable-libfribidi --enable-libharfbuzz --enable-liblensfun --enable-libvidstab --enable-libvmaf --enable-libzimg --enable-amf --enable-cuda-llvm --enable-cuvid --enable-dxva2 --enable-d3d11va --enable-d3d12va --enable-ffnvcodec --enable-libvpl --enable-nvdec --enable-nvenc --enable-vaapi --enable-libshaderc --enable-vulkan --enable-libplacebo --enable-opencl --enable-libcdio --enable-openal --enable-libgme --enable-libmodplug --enable-libopenmpt --enable-libopencore-amrwb --enable-libmp3lame --enable-libshine --enable-libtheora --enable-libtwolame --enable-libvo-amrwbenc --enable-libcodec2 --enable-libilbc --enable-libgsm --enable-liblc3 --enable-libopencore-amrnb --enable-libopus --enable-libspeex --enable-libvorbis --enable-ladspa --enable-libbs2b --enable-libflite --enable-libmysofa --enable-librubberband --enable-libsoxr --enable-chromaprint --enable-whisper
+2025-10-17 18:46:42,867 - core.stream_manager - INFO - FFmpeg: libavutil      60.  8.100 / 60.  8.100
+2025-10-17 18:46:42,868 - core.stream_manager - INFO - FFmpeg: libavcodec     62. 11.100 / 62. 11.100
+2025-10-17 18:46:42,868 - core.stream_manager - INFO - FFmpeg: libavformat    62.  3.100 / 62.  3.100
+2025-10-17 18:46:42,868 - core.stream_manager - INFO - FFmpeg: libavdevice    62.  1.100 / 62.  1.100
+2025-10-17 18:46:42,868 - core.stream_manager - INFO - FFmpeg: libavfilter    11.  4.100 / 11.  4.100
+2025-10-17 18:46:42,868 - core.stream_manager - INFO - FFmpeg: libswscale      9.  1.100 /  9.  1.100
+2025-10-17 18:46:42,869 - core.stream_manager - INFO - FFmpeg: libswresample   6.  1.100 /  6.  1.100
+2025-10-17 18:46:43,374 - core.stream_manager - INFO - FFmpeg: Duration: N/A, start: 155168.874629, bitrate: N/A
+2025-10-17 18:46:43,374 - core.stream_manager - INFO - FFmpeg: Stream #0:0: Video: mjpeg (Baseline) (MJPG / 0x47504A4D), yuvj422p(pc, bt470bg/unknown/unknown), 1280x720, 30 fps, 30 tbr, 10000k tbn, start 155168.874629
+2025-10-17 18:46:43,384 - core.stream_manager - ERROR - FFmpeg ERROR: Input #0, dshow, from 'video=ov9734_azurewave_camera':Stream mapping:
+2025-10-17 18:46:43,385 - core.stream_manager - ERROR - FFmpeg ERROR: Press [q] to stop, [?] for help
+2025-10-17 18:46:43,384 - core.stream_manager - INFO - FFmpeg: Stream #0:0 -> #0:0 (mjpeg (native) -> h264 (libx264))
+2025-10-17 18:46:43,397 - core.stream_manager - ERROR - FFmpeg ERROR: [swscaler @ 0000024729a76780] deprecated pixel format used, make sure you did set range correctly
+2025-10-17 18:46:43,408 - core.stream_manager - ERROR - FFmpeg ERROR: using cpu capabilities: MMX2 SSE2Fast SSSE3 SSE4.2 AVX FMA3 BMI2 AVX2
+2025-10-17 18:46:43,411 - core.stream_manager - ERROR - FFmpeg ERROR: profile Constrained Baseline, level 3.1, 4:2:0, 8-bit
+2025-10-17 18:46:43,411 - core.stream_manager - INFO - FFmpeg: [libx264 @ 0000024729a605c0][libx264 @ 0000024729a605c0][libx264 @ 0000024729a605c0] 264 - core 165 r3222 b35605a - H.264/MPEG-4 AVC codec - Copyleft 2003-2025 - http://www.videolan.org/x264.html - options: cabac=0 ref=1 deblock=0:0:0 analyse=0:0 me=dia subme=0 psy=1 psy_rd=1.00:0.00 mixed_ref=0 me_range=16 chroma_me=1 trellis=0 8x8dct=0 cqm=0 deadzone=21,11 fast_pskip=1 chroma_qp_offset=0 threads=6 lookahead_threads=6 sliced_threads=1 slices=6 nr=0 decimate=1 interlaced=0 bluray_compat=0 constrained_intra=0 bframes=0 weightp=0 keyint=15 keyint_min=8 scenecut=0 intra_refresh=0 rc=crf mbtree=0 crf=25.0 qcomp=0.60 qpmin=0 qpmax=69 qpstep=4 ip_ratio=1.40 aq=0
+2025-10-17 18:46:43,416 - core.stream_manager - INFO - MediaMTX: 2025/10/17 18:46:43 INF [RTSP] [conn [::1]:49262] opened
+2025-10-17 18:46:43,418 - core.stream_manager - INFO - MediaMTX: 2025/10/17 18:46:43 INF [RTSP] [session c1bde4b7] created by [::1]:49262
+2025-10-17 18:46:43,422 - core.stream_manager - INFO - FFmpeg: method ANNOUNCE failed: 401 Unauthorized
+2025-10-17 18:46:43,422 - core.stream_manager - INFO - MediaMTX: 2025/10/17 18:46:43 INF [RTSP] [conn [::1]:49262] closed: EOF
+2025-10-17 18:46:43,422 - core.stream_manager - INFO - FFmpeg: [out#0/rtsp @ 0000024729a5c780] Could not write header (incorrect codec parameters ?): Server returned 401 Unauthorized (authorization failed)
+2025-10-17 18:46:43,422 - core.stream_manager - INFO - MediaMTX: 2025/10/17 18:46:43 INF [RTSP] [session c1bde4b7] destroyed: not in use
+2025-10-17 18:46:43,423 - core.stream_manager - INFO - FFmpeg: [vf#0:0 @ 0000024729a66540] Error sending frames to consumers: Server returned 401 Unauthorized (authorization failed)
+2025-10-17 18:46:43,423 - core.stream_manager - INFO - FFmpeg: Task finished with error code: -825242872 (Server returned 401 Unauthorized (authorization failed))
+2025-10-17 18:46:43,423 - core.stream_manager - INFO - FFmpeg: [vf#0:0 @ 0000024729a66540] Terminating thread with return code -825242872 (Server returned 401 Unauthorized (authorization failed))
+2025-10-17 18:46:43,490 - core.stream_manager - INFO - FFmpeg: Nothing was written into output file, because at least one of its streams received no packets.
+2025-10-17 18:46:43,999 - core.stream_manager - ERROR - FFmpeg ERROR: [rtsp @ 0000024729a4aec0] [vf#0:0 @ 0000024729a66540] [out#0/rtsp @ 0000024729a5c780] Conversion failed!
+2025-10-17 18:46:45,847 - core.stream_manager - ERROR - ❌ Попытка 1 не удалась: FFmpeg завершился с ошибкой
+2025-10-17 18:46:45,858 - core.stream_manager - INFO - 🎬 Попытка 2 запуска стрима с камеры: ov9734_azurewave_camera
+2025-10-17 18:46:45,858 - core.stream_manager - INFO - 🔧 Команда: C:\Users\Honor\Downloads\Аханабдуле\ffmpeg.exe -f dshow -i video=ov9734_azurewave_camera -c:v libx264 -preset ultrafast -tune zerolatency -g 15 -keyint_min 15 -crf 25 -profile:v baseline -level 3.1 -pix_fmt yuv420p -f rtsp -rtsp_transport tcp rtsp://:@192.168.0.4:8554/live/stream
+2025-10-17 18:46:45,885 - core.stream_manager - INFO - FFmpeg: ffmpeg version 8.0-full_build-www.gyan.dev Copyright (c) 2000-2025 the FFmpeg developers
+2025-10-17 18:46:45,886 - core.stream_manager - INFO - FFmpeg: built with gcc 15.2.0 (Rev8, Built by MSYS2 project)
+2025-10-17 18:46:45,886 - core.stream_manager - INFO - FFmpeg: configuration: --enable-gpl --enable-version3 --enable-static --disable-w32threads --disable-autodetect --enable-fontconfig --enable-iconv --enable-gnutls --enable-lcms2 --enable-libxml2 --enable-gmp --enable-bzlib --enable-lzma --enable-libsnappy --enable-zlib --enable-librist --enable-libsrt --enable-libssh --enable-libzmq --enable-avisynth --enable-libbluray --enable-libcaca --enable-libdvdnav --enable-libdvdread --enable-sdl2 --enable-libaribb24 --enable-libaribcaption --enable-libdav1d --enable-libdavs2 --enable-libopenjpeg --enable-libquirc --enable-libuavs3d --enable-libxevd --enable-libzvbi --enable-liboapv --enable-libqrencode --enable-librav1e --enable-libsvtav1 --enable-libvvenc --enable-libwebp --enable-libx264 --enable-libx265 --enable-libxavs2 --enable-libxeve --enable-libxvid --enable-libaom --enable-libjxl --enable-libvpx --enable-mediafoundation --enable-libass --enable-frei0r --enable-libfreetype --enable-libfribidi --enable-libharfbuzz --enable-liblensfun --enable-libvidstab --enable-libvmaf --enable-libzimg --enable-amf --enable-cuda-llvm --enable-cuvid --enable-dxva2 --enable-d3d11va --enable-d3d12va --enable-ffnvcodec --enable-libvpl --enable-nvdec --enable-nvenc --enable-vaapi --enable-libshaderc --enable-vulkan --enable-libplacebo --enable-opencl --enable-libcdio --enable-openal --enable-libgme --enable-libmodplug --enable-libopenmpt --enable-libopencore-amrwb --enable-libmp3lame --enable-libshine --enable-libtheora --enable-libtwolame --enable-libvo-amrwbenc --enable-libcodec2 --enable-libilbc --enable-libgsm --enable-liblc3 --enable-libopencore-amrnb --enable-libopus --enable-libspeex --enable-libvorbis --enable-ladspa --enable-libbs2b --enable-libflite --enable-libmysofa --enable-librubberband --enable-libsoxr --enable-chromaprint --enable-whisper
+2025-10-17 18:46:45,886 - core.stream_manager - INFO - FFmpeg: libavutil      60.  8.100 / 60.  8.100
+2025-10-17 18:46:45,887 - core.stream_manager - INFO - FFmpeg: libavcodec     62. 11.100 / 62. 11.100
+2025-10-17 18:46:45,888 - core.stream_manager - INFO - FFmpeg: libavformat    62.  3.100 / 62.  3.100
+2025-10-17 18:46:45,888 - core.stream_manager - INFO - FFmpeg: libavdevice    62.  1.100 / 62.  1.100
+2025-10-17 18:46:45,888 - core.stream_manager - INFO - FFmpeg: libavfilter    11.  4.100 / 11.  4.100
+2025-10-17 18:46:45,888 - core.stream_manager - INFO - FFmpeg: libswscale      9.  1.100 /  9.  1.100
+2025-10-17 18:46:45,888 - core.stream_manager - INFO - FFmpeg: libswresample   6.  1.100 /  6.  1.100
+2025-10-17 18:46:46,391 - core.stream_manager - INFO - FFmpeg: Duration: N/A, start: 155171.891229, bitrate: N/A
+2025-10-17 18:46:46,392 - core.stream_manager - INFO - FFmpeg: Stream #0:0: Video: mjpeg (Baseline) (MJPG / 0x47504A4D), yuvj422p(pc, bt470bg/unknown/unknown), 1280x720, 30 fps, 30 tbr, 10000k tbn, start 155171.891229
+2025-10-17 18:46:46,392 - core.stream_manager - ERROR - FFmpeg ERROR: Input #0, dshow, from 'video=ov9734_azurewave_camera':Stream mapping:
+2025-10-17 18:46:46,392 - core.stream_manager - INFO - FFmpeg: Stream #0:0 -> #0:0 (mjpeg (native) -> h264 (libx264))
+2025-10-17 18:46:46,392 - core.stream_manager - ERROR - FFmpeg ERROR: Press [q] to stop, [?] for help
+2025-10-17 18:46:46,402 - core.stream_manager - ERROR - FFmpeg ERROR: deprecated pixel format used, make sure you did set range correctly
+2025-10-17 18:46:46,408 - core.stream_manager - ERROR - FFmpeg ERROR: using cpu capabilities: MMX2 SSE2Fast SSSE3 SSE4.2 AVX FMA3 BMI2 AVX2
+2025-10-17 18:46:46,410 - core.stream_manager - ERROR - FFmpeg ERROR: profile Constrained Baseline, level 3.1, 4:2:0, 8-bit
+2025-10-17 18:46:46,411 - core.stream_manager - ERROR - FFmpeg ERROR: [libx264 @ 000002ae8530f7c0] 264 - core 165 r3222 b35605a - H.264/MPEG-4 AVC codec - Copyleft 2003-2025 - http://www.videolan.org/x264.html - options: cabac=0 ref=1 deblock=0:0:0 analyse=0:0 me=dia subme=0 psy=1 psy_rd=1.00:0.00 mixed_ref=0 me_range=16 chroma_me=1 trellis=0 8x8dct=0 cqm=0 deadzone=21,11 fast_pskip=1 chroma_qp_offset=0 threads=6 lookahead_threads=6 sliced_threads=1 slices=6 nr=0 decimate=1 interlaced=0 bluray_compat=0 constrained_intra=0 bframes=0 weightp=0 keyint=15 keyint_min=8 scenecut=0 intra_refresh=0 rc=crf mbtree=0 crf=25.0 qcomp=0.60 qpmin=0 qpmax=69 qpstep=4 ip_ratio=1.40 aq=0
+2025-10-17 18:46:46,412 - core.stream_manager - INFO - MediaMTX: 2025/10/17 18:46:46 INF [RTSP] [conn 192.168.0.4:49264] opened
+2025-10-17 18:46:46,413 - core.stream_manager - INFO - MediaMTX: 2025/10/17 18:46:46 INF [RTSP] [session 4054a1a6] created by 192.168.0.4:49264
+2025-10-17 18:46:46,425 - core.stream_manager - INFO - MediaMTX: 2025/10/17 18:46:46 INF [RTSP] [session 4054a1a6] is publishing to path 'live/stream', 1 track (H264)
+2025-10-17 18:46:46,426 - core.stream_manager - ERROR - FFmpeg ERROR: Metadata:
+2025-10-17 18:46:46,426 - core.stream_manager - INFO - FFmpeg: [swscaler @ 000002ae85326500] [libx264 @ 000002ae8530f7c0][libx264 @ 000002ae8530f7c0]Output #0, rtsp, to 'rtsp://:@192.168.0.4:8554/live/stream':    Metadata:
+2025-10-17 18:46:46,426 - core.stream_manager - ERROR - FFmpeg ERROR: encoder         : Lavc62.11.100 libx264
+2025-10-17 18:46:46,426 - core.stream_manager - INFO - FFmpeg: Side data:
+2025-10-17 18:46:46,426 - core.stream_manager - ERROR - FFmpeg ERROR: cpb: bitrate max/min/avg: 0/0/0 buffer size: 0 vbv_delay: N/A
+2025-10-17 18:46:48,865 - core.stream_manager - INFO - ✅ Стрим успешно запущен (попытка 2)
+2025-10-17 18:46:48,866 - config.settings - INFO - 📡 Локальный IP: 192.168.0.4
+2025-10-17 18:46:48,866 - werkzeug - INFO - 127.0.0.1 - - [17/Oct/2025 18:46:48] "POST /api/stream/start HTTP/1.1" 200 -
+2025-10-17 18:46:50,230 - config.settings - INFO - 📡 Локальный IP: 192.168.0.4
+2025-10-17 18:46:50,230 - werkzeug - INFO - 127.0.0.1 - - [17/Oct/2025 18:46:50] "GET /api/status HTTP/1.1" 200 -
+2025-10-17 18:46:52,840 - core.stream_manager - INFO - MediaMTX: 2025/10/17 18:46:52 INF [RTSP] [conn 192.168.0.4:49271] opened
+2025-10-17 18:46:52,847 - core.stream_manager - INFO - MediaMTX: 2025/10/17 18:46:52 INF [RTSP] [session c7a430ed] created by 192.168.0.4:49271
+2025-10-17 18:46:52,848 - core.stream_manager - INFO - MediaMTX: 2025/10/17 18:46:52 INF [RTSP] [session c7a430ed] is reading from path 'live/stream', with UDP, 1 track (H264)
+2025-10-17 18:46:53,306 - config.settings - INFO - 📡 Локальный IP: 192.168.0.4
+2025-10-17 18:46:53,307 - werkzeug - INFO - 127.0.0.1 - - [17/Oct/2025 18:46:53] "GET /api/status HTTP/1.1" 200 -
+2025-10-17 18:46:57,918 - core.stream_manager - INFO - MediaMTX: 2025/10/17 18:46:57 INF [RTSP] [session c7a430ed] destroyed: torn down by 192.168.0.4:49271
+2025-10-17 18:46:57,920 - core.stream_manager - INFO - MediaMTX: 2025/10/17 18:46:57 INF [RTSP] [conn 192.168.0.4:49271] closed: read tcp 192.168.0.4:8554->192.168.0.4:49271: wsarecv: An established connection was aborted by the software in your host machine.
+2025-10-17 18:47:00,235 - config.settings - INFO - 📡 Локальный IP: 192.168.0.4
+2025-10-17 18:47:00,235 - werkzeug - INFO - 127.0.0.1 - - [17/Oct/2025 18:47:00] "GET /api/status HTTP/1.1" 200 -
+2025-10-17 18:47:02,024 - core.stream_manager - INFO - MediaMTX: 2025/10/17 18:47:02 INF [RTSP] [conn 192.168.0.4:49264] closed: read tcp 192.168.0.4:8554->192.168.0.4:49264: wsarecv: An existing connection was forcibly closed by the remote host.
+2025-10-17 18:47:02,025 - core.stream_manager - INFO - MediaMTX: 2025/10/17 18:47:02 INF [RTSP] [session 4054a1a6] destroyed: not in use
+2025-10-17 18:47:02,029 - core.stream_manager - INFO - ⏹️ Стрим остановлен
+2025-10-17 18:47:02,029 - werkzeug - INFO - 127.0.0.1 - - [17/Oct/2025 18:47:02] "POST /api/stream/stop HTTP/1.1" 200 -
+2025-10-17 18:47:04,649 - __main__ - INFO - 📋 Получен сигнал прерывания от пользователя
+2025-10-17 18:47:04,649 - core.stream_manager - INFO - MediaMTX: 2025/10/17 18:47:04 INF shutting down gracefully
+2025-10-17 18:47:04,649 - __main__ - INFO - ✅ Приложение завершило работу успешно
+2025-10-17 18:47:04,649 - core.stream_manager - INFO - MediaMTX: 2025/10/17 18:47:04 INF [API] listener is closing
+2025-10-17 18:54:09,587 - config.settings - INFO - ✅ FFmpeg найден: C:\Users\Honor\Downloads\Аханабдуле\ffmpeg.exe
+2025-10-17 18:54:10,148 - core.network_manager - INFO - 🌐 Внешний IP: 46.147.70.29
+2025-10-17 18:54:10,155 - __main__ - INFO - 🔧 Настройка окружения...
+2025-10-17 18:54:10,155 - utils.system_checker - INFO - ✅ Python 3.12.3
+2025-10-17 18:54:10,156 - utils.system_checker - INFO - ✅ FFmpeg найден: C:\Users\Honor\Downloads\Аханабдуле\ffmpeg.exe
+2025-10-17 18:54:10,156 - utils.system_checker - INFO - ✅ MediaMTX найден: C:\Users\Honor\Downloads\Аханабдуле\mediamtx.exe
+2025-10-17 18:54:10,156 - utils.system_checker - INFO - ✅ Библиотека flask доступна
+2025-10-17 18:54:10,156 - utils.system_checker - INFO - ✅ Библиотека requests доступна
+2025-10-17 18:54:10,157 - utils.system_checker - INFO - ✅ python: Доступен
+2025-10-17 18:54:10,157 - utils.system_checker - INFO - ✅ ffmpeg: Доступен
+2025-10-17 18:54:10,157 - utils.system_checker - INFO - ✅ mediamtx: Доступен
+2025-10-17 18:54:10,157 - utils.system_checker - INFO - ✅ flask: Доступен
+2025-10-17 18:54:10,157 - utils.system_checker - INFO - ✅ requests: Доступен
+2025-10-17 18:54:10,157 - __main__ - INFO - 🛡️ Настройка доступа через брандмауэр Windows...
+2025-10-17 18:54:10,159 - __main__ - INFO - 🛡️ Добавляем приложение в разрешенные программы брандмауэра...
+2025-10-17 18:54:10,160 - core.firewall_prompt - INFO - 📁 Путь к приложению: C:\Users\Honor\Downloads\Аханабдуле\.venv\Scripts\python.exe
+2025-10-17 18:54:10,228 - core.firewall_prompt - INFO - ℹ️ Правило для приложения уже существует в брандмауэре
+2025-10-17 18:54:10,228 - __main__ - INFO - ✅ Приложение добавлено в разрешенные программы брандмауэра
+2025-10-17 18:54:10,228 - __main__ - INFO - 📋 Если появится запрос от Защитника Windows, нажмите 'Разрешить доступ'
+2025-10-17 18:54:10,229 - __main__ - INFO - 🔧 Настраиваем правила для портов...
+2025-10-17 18:54:10,229 - __main__ - INFO - ℹ️ Для автоматической настройки правил портов запустите программу от имени администратора
+2025-10-17 18:54:10,229 - __main__ - INFO - 📋 Вы можете настроить брандмауэр вручную через веб-интерфейс
+2025-10-17 18:54:12,230 - utils.system_checker - INFO - ✅ Python 3.12.3
+2025-10-17 18:54:12,231 - utils.system_checker - INFO - ✅ FFmpeg найден: C:\Users\Honor\Downloads\Аханабдуле\ffmpeg.exe
+2025-10-17 18:54:12,231 - utils.system_checker - INFO - ✅ MediaMTX найден: C:\Users\Honor\Downloads\Аханабдуле\mediamtx.exe
+2025-10-17 18:54:12,231 - __main__ - INFO - 🚀 Запуск сервисов...
+2025-10-17 18:54:14,289 - config.settings - INFO - ✅ MediaMTX найден: C:\Users\Honor\Downloads\Аханабдуле\mediamtx.exe
+2025-10-17 18:54:14,290 - core.stream_manager - INFO - 🗑️ Удален старый конфигурационный файл
+2025-10-17 18:54:14,292 - core.stream_manager - INFO - ✅ Конфигурационный файл MediaMTX создан
+2025-10-17 18:54:14,292 - core.stream_manager - INFO - 🔄 Запуск MediaMTX...
+2025-10-17 18:54:14,292 - core.stream_manager - INFO - 📁 Путь к MediaMTX: C:\Users\Honor\Downloads\Аханабдуле\mediamtx.exe
+2025-10-17 18:54:14,350 - core.stream_manager - INFO - MediaMTX: 2025/10/17 18:54:14 INF MediaMTX v1.9.2
+2025-10-17 18:54:14,350 - core.stream_manager - INFO - MediaMTX: 2025/10/17 18:54:14 INF configuration loaded from C:\Users\Honor\Downloads\РђС…Р°РЅР°Р±РґСѓР»Рµ\mediamtx.yml
+2025-10-17 18:54:14,352 - core.stream_manager - INFO - MediaMTX: 2025/10/17 18:54:14 INF [RTSP] listener opened on :8554 (TCP), :8000 (UDP/RTP), :8001 (UDP/RTCP)
+2025-10-17 18:54:14,352 - core.stream_manager - INFO - MediaMTX: 2025/10/17 18:54:14 INF [RTMP] listener opened on :1935
+2025-10-17 18:54:14,352 - core.stream_manager - INFO - MediaMTX: 2025/10/17 18:54:14 INF [HLS] listener opened on :8888
+2025-10-17 18:54:14,352 - core.stream_manager - INFO - MediaMTX: 2025/10/17 18:54:14 INF [WebRTC] listener opened on :8889 (HTTP), :8189 (ICE/UDP)
+2025-10-17 18:54:14,353 - core.stream_manager - INFO - MediaMTX: 2025/10/17 18:54:14 INF [SRT] listener opened on :8890 (UDP)
+2025-10-17 18:54:14,353 - core.stream_manager - INFO - MediaMTX: 2025/10/17 18:54:14 INF [API] listener opened on :9997
+2025-10-17 18:54:17,298 - core.stream_manager - INFO - ✅ MediaMTX успешно запущен
+2025-10-17 18:54:17,299 - web.app - INFO - 🌐 Запуск веб-сервера на 0.0.0.0:5000
+2025-10-17 18:54:17,300 - web.app - INFO - ✅ Веб-интерфейс запущен
+2025-10-17 18:54:17,301 - __main__ - INFO - 🌐 Веб-интерфейс доступен по адресу: http://localhost:5000
+2025-10-17 18:54:17,301 - __main__ - INFO - 📹 RTSP поток будет доступен по адресу: rtsp://ваш-ip:8554/live/stream
+2025-10-17 18:54:17,302 - __main__ - INFO - ⏹️  Для остановки нажмите Ctrl+C
+2025-10-17 18:54:17,302 - __main__ - INFO - 
+2025-10-17 18:54:17,318 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.0.4:5000
+2025-10-17 18:54:17,318 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-10-17 18:54:23,840 - core.camera_finder - INFO - 🔍 Поиск и тестирование камер...
+2025-10-17 18:54:23,840 - core.camera_finder - INFO - 🔍 Поиск доступных камер...
+2025-10-17 18:54:24,279 - core.camera_finder - INFO - ✅ Метод 1: найдено 1 камер
+2025-10-17 18:54:24,573 - core.camera_finder - INFO - ✅ Метод 2: найдено 1 камер
+2025-10-17 18:54:24,574 - core.camera_finder - INFO - 📹 Найдено потенциальных камер: 2
+2025-10-17 18:54:24,574 - core.camera_finder - INFO -    - (video)
+2025-10-17 18:54:24,574 - core.camera_finder - INFO -    - ov9734_azurewave_camera
+2025-10-17 18:54:24,575 - core.camera_finder - INFO - 🔍 Тестируем камеру: (video)
+2025-10-17 18:54:24,575 - core.camera_finder - INFO - 🔄 Попытка 1 для камеры (video)
+2025-10-17 18:54:24,622 - core.camera_finder - INFO - 🔄 Попытка 2 для камеры (video)
+2025-10-17 18:54:24,668 - core.camera_finder - INFO - 🔄 Попытка 3 для камеры (video)
+2025-10-17 18:54:24,713 - core.camera_finder - INFO - ❌ (video) - нерабочая: Ошибка ввода-вывода (проверьте доступ к камере)
+2025-10-17 18:54:24,714 - core.camera_finder - INFO - 🔍 Тестируем камеру: ov9734_azurewave_camera
+2025-10-17 18:54:24,714 - core.camera_finder - INFO - 🔄 Попытка 1 для камеры ov9734_azurewave_camera
+2025-10-17 18:54:28,728 - core.camera_finder - INFO - ✅ Камера 'ov9734_azurewave_camera' - РАБОТАЕТ (попытка 1)
+2025-10-17 18:54:28,728 - core.camera_finder - INFO - ✅ ov9734_azurewave_camera - рабочая
+2025-10-17 18:54:28,728 - core.camera_finder - INFO - 🎯 Рабочие камеры: 1 из 2
+2025-10-17 18:54:28,728 - core.camera_finder - INFO -    ✅ ov9734_azurewave_camera
+2025-10-17 18:54:28,729 - config.settings - INFO - 📡 Локальный IP: 192.168.0.4
+2025-10-17 18:54:29,270 - config.settings - INFO - 🌐 Внешний IP: 46.147.70.29
+2025-10-17 18:54:29,271 - config.settings - INFO - ✅ FFmpeg найден: C:\Users\Honor\Downloads\Аханабдуле\ffmpeg.exe
+2025-10-17 18:54:29,272 - config.settings - INFO - ✅ MediaMTX найден: C:\Users\Honor\Downloads\Аханабдуле\mediamtx.exe
+2025-10-17 18:54:29,282 - werkzeug - INFO - 127.0.0.1 - - [17/Oct/2025 18:54:29] "GET / HTTP/1.1" 200 -
+2025-10-17 18:54:29,362 - werkzeug - INFO - 127.0.0.1 - - [17/Oct/2025 18:54:29] "[36mGET /static/css/main.css HTTP/1.1[0m" 304 -
+2025-10-17 18:54:29,368 - werkzeug - INFO - 127.0.0.1 - - [17/Oct/2025 18:54:29] "[36mGET /static/css/layout.css HTTP/1.1[0m" 304 -
+2025-10-17 18:54:29,620 - werkzeug - INFO - 127.0.0.1 - - [17/Oct/2025 18:54:29] "[36mGET /static/css/components.css HTTP/1.1[0m" 304 -
+2025-10-17 18:54:29,621 - werkzeug - INFO - 127.0.0.1 - - [17/Oct/2025 18:54:29] "[36mGET /static/css/themes.css HTTP/1.1[0m" 304 -
+2025-10-17 18:54:29,622 - werkzeug - INFO - 127.0.0.1 - - [17/Oct/2025 18:54:29] "[36mGET /static/js/terminal.js HTTP/1.1[0m" 304 -
+2025-10-17 18:54:29,622 - werkzeug - INFO - 127.0.0.1 - - [17/Oct/2025 18:54:29] "GET /static/js/main.js HTTP/1.1" 200 -
+2025-10-17 18:54:29,674 - werkzeug - INFO - 127.0.0.1 - - [17/Oct/2025 18:54:29] "GET /static/js/api.js HTTP/1.1" 200 -
+2025-10-17 18:54:30,071 - config.settings - INFO - 📡 Локальный IP: 192.168.0.4
+2025-10-17 18:54:30,071 - werkzeug - INFO - 127.0.0.1 - - [17/Oct/2025 18:54:30] "GET /api/status HTTP/1.1" 200 -
+2025-10-17 18:54:30,330 - werkzeug - INFO - 127.0.0.1 - - [17/Oct/2025 18:54:30] "GET /api/network HTTP/1.1" 200 -
+2025-10-17 18:54:30,394 - werkzeug - INFO - 127.0.0.1 - - [17/Oct/2025 18:54:30] "GET /api/network/port-check HTTP/1.1" 200 -
+2025-10-17 18:54:30,394 - core.stream_manager - INFO - MediaMTX: 2025/10/17 18:54:30 INF [RTSP] [conn 127.0.0.1:49381] opened
+2025-10-17 18:54:30,394 - core.stream_manager - INFO - MediaMTX: 2025/10/17 18:54:30 INF [RTSP] [conn 127.0.0.1:49381] closed: EOF
+2025-10-17 18:54:39,764 - config.settings - INFO - 📡 Локальный IP: 192.168.0.4
+2025-10-17 18:54:39,765 - werkzeug - INFO - 127.0.0.1 - - [17/Oct/2025 18:54:39] "GET /api/status HTTP/1.1" 200 -
+2025-10-17 18:54:50,079 - config.settings - INFO - 📡 Локальный IP: 192.168.0.4
+2025-10-17 18:54:50,079 - werkzeug - INFO - 127.0.0.1 - - [17/Oct/2025 18:54:50] "GET /api/status HTTP/1.1" 200 -
+2025-10-17 18:54:52,629 - core.camera_finder - INFO - 🔍 Тестируем камеру: ov9734_azurewave_camera
+2025-10-17 18:54:52,630 - core.camera_finder - INFO - 🔄 Попытка 1 для камеры ov9734_azurewave_camera
+2025-10-17 18:54:56,770 - core.camera_finder - INFO - ✅ Камера 'ov9734_azurewave_camera' - РАБОТАЕТ (попытка 1)
+2025-10-17 18:54:56,770 - config.settings - INFO - ✅ FFmpeg найден: C:\Users\Honor\Downloads\Аханабдуле\ffmpeg.exe
+2025-10-17 18:54:56,770 - config.settings - INFO - 📡 Локальный IP: 192.168.0.4
+2025-10-17 18:54:56,770 - core.stream_manager - INFO - 🎬 Попытка 1 запуска стрима с камеры: ov9734_azurewave_camera
+2025-10-17 18:54:56,770 - core.stream_manager - INFO - 🔧 Команда: C:\Users\Honor\Downloads\Аханабдуле\ffmpeg.exe -f dshow -i video=ov9734_azurewave_camera -c:v libx264 -preset ultrafast -tune zerolatency -g 15 -keyint_min 15 -crf 25 -profile:v baseline -level 3.1 -pix_fmt yuv420p -f rtsp -rtsp_transport tcp rtsp://localhost:8554/live/stream
+2025-10-17 18:54:56,792 - core.stream_manager - INFO - FFmpeg: ffmpeg version 8.0-full_build-www.gyan.dev Copyright (c) 2000-2025 the FFmpeg developers
+2025-10-17 18:54:56,792 - core.stream_manager - INFO - FFmpeg: built with gcc 15.2.0 (Rev8, Built by MSYS2 project)
+2025-10-17 18:54:56,792 - core.stream_manager - INFO - FFmpeg: configuration: --enable-gpl --enable-version3 --enable-static --disable-w32threads --disable-autodetect --enable-fontconfig --enable-iconv --enable-gnutls --enable-lcms2 --enable-libxml2 --enable-gmp --enable-bzlib --enable-lzma --enable-libsnappy --enable-zlib --enable-librist --enable-libsrt --enable-libssh --enable-libzmq --enable-avisynth --enable-libbluray --enable-libcaca --enable-libdvdnav --enable-libdvdread --enable-sdl2 --enable-libaribb24 --enable-libaribcaption --enable-libdav1d --enable-libdavs2 --enable-libopenjpeg --enable-libquirc --enable-libuavs3d --enable-libxevd --enable-libzvbi --enable-liboapv --enable-libqrencode --enable-librav1e --enable-libsvtav1 --enable-libvvenc --enable-libwebp --enable-libx264 --enable-libx265 --enable-libxavs2 --enable-libxeve --enable-libxvid --enable-libaom --enable-libjxl --enable-libvpx --enable-mediafoundation --enable-libass --enable-frei0r --enable-libfreetype --enable-libfribidi --enable-libharfbuzz --enable-liblensfun --enable-libvidstab --enable-libvmaf --enable-libzimg --enable-amf --enable-cuda-llvm --enable-cuvid --enable-dxva2 --enable-d3d11va --enable-d3d12va --enable-ffnvcodec --enable-libvpl --enable-nvdec --enable-nvenc --enable-vaapi --enable-libshaderc --enable-vulkan --enable-libplacebo --enable-opencl --enable-libcdio --enable-openal --enable-libgme --enable-libmodplug --enable-libopenmpt --enable-libopencore-amrwb --enable-libmp3lame --enable-libshine --enable-libtheora --enable-libtwolame --enable-libvo-amrwbenc --enable-libcodec2 --enable-libilbc --enable-libgsm --enable-liblc3 --enable-libopencore-amrnb --enable-libopus --enable-libspeex --enable-libvorbis --enable-ladspa --enable-libbs2b --enable-libflite --enable-libmysofa --enable-librubberband --enable-libsoxr --enable-chromaprint --enable-whisper
+2025-10-17 18:54:56,792 - core.stream_manager - INFO - FFmpeg: libavutil      60.  8.100 / 60.  8.100
+2025-10-17 18:54:56,792 - core.stream_manager - INFO - FFmpeg: libavcodec     62. 11.100 / 62. 11.100
+2025-10-17 18:54:56,792 - core.stream_manager - INFO - FFmpeg: libavformat    62.  3.100 / 62.  3.100
+2025-10-17 18:54:56,792 - core.stream_manager - INFO - FFmpeg: libavdevice    62.  1.100 / 62.  1.100
+2025-10-17 18:54:56,792 - core.stream_manager - INFO - FFmpeg: libavfilter    11.  4.100 / 11.  4.100
+2025-10-17 18:54:56,792 - core.stream_manager - INFO - FFmpeg: libswscale      9.  1.100 /  9.  1.100
+2025-10-17 18:54:56,792 - core.stream_manager - INFO - FFmpeg: libswresample   6.  1.100 /  6.  1.100
+2025-10-17 18:54:57,308 - core.stream_manager - INFO - FFmpeg: Duration: N/A, start: 155662.799628, bitrate: N/A
+2025-10-17 18:54:57,308 - core.stream_manager - ERROR - FFmpeg ERROR: Input #0, dshow, from 'video=ov9734_azurewave_camera':Stream mapping:
+2025-10-17 18:54:57,308 - core.stream_manager - INFO - FFmpeg: Stream #0:0 -> #0:0 (mjpeg (native) -> h264 (libx264))
+2025-10-17 18:54:57,309 - core.stream_manager - ERROR - FFmpeg ERROR: Press [q] to stop, [?] for help
+2025-10-17 18:54:57,316 - core.stream_manager - ERROR - FFmpeg ERROR: deprecated pixel format used, make sure you did set range correctly
+2025-10-17 18:54:57,321 - core.stream_manager - ERROR - FFmpeg ERROR: using cpu capabilities: MMX2 SSE2Fast SSSE3 SSE4.2 AVX FMA3 BMI2 AVX2
+2025-10-17 18:54:57,323 - core.stream_manager - ERROR - FFmpeg ERROR: profile Constrained Baseline, level 3.1, 4:2:0, 8-bit
+2025-10-17 18:54:57,323 - core.stream_manager - ERROR - FFmpeg ERROR: [libx264 @ 000001ee0c32fd00] 264 - core 165 r3222 b35605a - H.264/MPEG-4 AVC codec - Copyleft 2003-2025 - http://www.videolan.org/x264.html - options: cabac=0 ref=1 deblock=0:0:0 analyse=0:0 me=dia subme=0 psy=1 psy_rd=1.00:0.00 mixed_ref=0 me_range=16 chroma_me=1 trellis=0 8x8dct=0 cqm=0 deadzone=21,11 fast_pskip=1 chroma_qp_offset=0 threads=6 lookahead_threads=6 sliced_threads=1 slices=6 nr=0 decimate=1 interlaced=0 bluray_compat=0 constrained_intra=0 bframes=0 weightp=0 keyint=15 keyint_min=8 scenecut=0 intra_refresh=0 rc=crf mbtree=0 crf=25.0 qcomp=0.60 qpmin=0 qpmax=69 qpstep=4 ip_ratio=1.40 aq=0
+2025-10-17 18:54:57,328 - core.stream_manager - INFO - MediaMTX: 2025/10/17 18:54:57 INF [RTSP] [conn [::1]:49387] opened
+2025-10-17 18:54:57,329 - core.stream_manager - INFO - MediaMTX: 2025/10/17 18:54:57 INF [RTSP] [session 32b82750] created by [::1]:49387
+2025-10-17 18:54:57,329 - core.stream_manager - INFO - FFmpeg: [swscaler @ 000001ee0c346840] [libx264 @ 000001ee0c32fd00][libx264 @ 000001ee0c32fd00][rtsp @ 000001ee0c32b640] method ANNOUNCE failed: 401 Unauthorized
+2025-10-17 18:54:57,329 - core.stream_manager - INFO - MediaMTX: 2025/10/17 18:54:57 INF [RTSP] [conn [::1]:49387] closed: EOF
+2025-10-17 18:54:57,330 - core.stream_manager - ERROR - FFmpeg ERROR: [out#0/rtsp @ 000001ee0c32bf00] Could not write header (incorrect codec parameters ?): Server returned 401 Unauthorized (authorization failed)
+2025-10-17 18:54:57,330 - core.stream_manager - INFO - FFmpeg: [vf#0:0 @ 000001ee0c330740] Error sending frames to consumers: Server returned 401 Unauthorized (authorization failed)
+2025-10-17 18:54:57,330 - core.stream_manager - INFO - MediaMTX: 2025/10/17 18:54:57 INF [RTSP] [session 32b82750] destroyed: not in use
+2025-10-17 18:54:57,331 - core.stream_manager - INFO - FFmpeg: Task finished with error code: -825242872 (Server returned 401 Unauthorized (authorization failed))
+2025-10-17 18:54:57,331 - core.stream_manager - INFO - FFmpeg: [vf#0:0 @ 000001ee0c330740] Terminating thread with return code -825242872 (Server returned 401 Unauthorized (authorization failed))
+2025-10-17 18:54:57,434 - core.stream_manager - INFO - FFmpeg: Nothing was written into output file, because at least one of its streams received no packets.
+2025-10-17 18:54:57,927 - core.stream_manager - ERROR - FFmpeg ERROR: [vf#0:0 @ 000001ee0c330740] [out#0/rtsp @ 000001ee0c32bf00] Conversion failed!
+2025-10-17 18:54:59,779 - core.stream_manager - ERROR - ❌ Попытка 1 не удалась: FFmpeg завершился с ошибкой
+2025-10-17 18:54:59,779 - core.stream_manager - INFO - 🎬 Попытка 2 запуска стрима с камеры: ov9734_azurewave_camera
+2025-10-17 18:54:59,780 - core.stream_manager - INFO - 🔧 Команда: C:\Users\Honor\Downloads\Аханабдуле\ffmpeg.exe -f dshow -i video=ov9734_azurewave_camera -c:v libx264 -preset ultrafast -tune zerolatency -g 15 -keyint_min 15 -crf 25 -profile:v baseline -level 3.1 -pix_fmt yuv420p -f rtsp -rtsp_transport tcp rtsp://:@192.168.0.4:8554/live/stream
+2025-10-17 18:54:59,806 - core.stream_manager - ERROR - FFmpeg ERROR: Copyright (c) 2000-2025 the FFmpeg developers
+2025-10-17 18:54:59,807 - core.stream_manager - ERROR - FFmpeg ERROR: built with gcc 15.2.0 (Rev8, Built by MSYS2 project)
+2025-10-17 18:54:59,807 - core.stream_manager - ERROR - FFmpeg ERROR: configuration: --enable-gpl --enable-version3 --enable-static --disable-w32threads --disable-autodetect --enable-fontconfig --enable-iconv --enable-gnutls --enable-lcms2 --enable-libxml2 --enable-gmp --enable-bzlib --enable-lzma --enable-libsnappy --enable-zlib --enable-librist --enable-libsrt --enable-libssh --enable-libzmq --enable-avisynth --enable-libbluray --enable-libcaca --enable-libdvdnav --enable-libdvdread --enable-sdl2 --enable-libaribb24 --enable-libaribcaption --enable-libdav1d --enable-libdavs2 --enable-libopenjpeg --enable-libquirc --enable-libuavs3d --enable-libxevd --enable-libzvbi --enable-liboapv --enable-libqrencode --enable-librav1e --enable-libsvtav1 --enable-libvvenc --enable-libwebp --enable-libx264 --enable-libx265 --enable-libxavs2 --enable-libxeve --enable-libxvid --enable-libaom --enable-libjxl --enable-libvpx --enable-mediafoundation --enable-libass --enable-frei0r --enable-libfreetype --enable-libfribidi --enable-libharfbuzz --enable-liblensfun --enable-libvidstab --enable-libvmaf --enable-libzimg --enable-amf --enable-cuda-llvm --enable-cuvid --enable-dxva2 --enable-d3d11va --enable-d3d12va --enable-ffnvcodec --enable-libvpl --enable-nvdec --enable-nvenc --enable-vaapi --enable-libshaderc --enable-vulkan --enable-libplacebo --enable-opencl --enable-libcdio --enable-openal --enable-libgme --enable-libmodplug --enable-libopenmpt --enable-libopencore-amrwb --enable-libmp3lame --enable-libshine --enable-libtheora --enable-libtwolame --enable-libvo-amrwbenc --enable-libcodec2 --enable-libilbc --enable-libgsm --enable-liblc3 --enable-libopencore-amrnb --enable-libopus --enable-libspeex --enable-libvorbis --enable-ladspa --enable-libbs2b --enable-libflite --enable-libmysofa --enable-librubberband --enable-libsoxr --enable-chromaprint --enable-whisper
+2025-10-17 18:54:59,808 - core.stream_manager - ERROR - FFmpeg ERROR: libavutil      60.  8.100 / 60.  8.100
+2025-10-17 18:54:59,808 - core.stream_manager - ERROR - FFmpeg ERROR: libavcodec     62. 11.100 / 62. 11.100
+2025-10-17 18:54:59,808 - core.stream_manager - ERROR - FFmpeg ERROR: libavformat    62.  3.100 / 62.  3.100
+2025-10-17 18:54:59,808 - core.stream_manager - ERROR - FFmpeg ERROR: libavdevice    62.  1.100 / 62.  1.100
+2025-10-17 18:54:59,809 - core.stream_manager - ERROR - FFmpeg ERROR: libavfilter    11.  4.100 / 11.  4.100
+2025-10-17 18:54:59,809 - core.stream_manager - ERROR - FFmpeg ERROR: libswscale      9.  1.100 /  9.  1.100
+2025-10-17 18:54:59,809 - core.stream_manager - ERROR - FFmpeg ERROR: libswresample   6.  1.100 /  6.  1.100
+2025-10-17 18:55:00,077 - config.settings - INFO - 📡 Локальный IP: 192.168.0.4
+2025-10-17 18:55:00,077 - werkzeug - INFO - 127.0.0.1 - - [17/Oct/2025 18:55:00] "GET /api/status HTTP/1.1" 200 -
+2025-10-17 18:55:00,314 - core.stream_manager - ERROR - FFmpeg ERROR: Duration: N/A, start: 155665.811691, bitrate: N/A
+2025-10-17 18:55:00,314 - core.stream_manager - ERROR - FFmpeg ERROR: Stream #0:0: Video: mjpeg (Baseline) (MJPG / 0x47504A4D), yuvj422p(pc, bt470bg/unknown/unknown), 1280x720, 30 fps, 30 tbr, 10000k tbn, start 155665.811691
+2025-10-17 18:55:00,315 - core.stream_manager - INFO - FFmpeg: ffmpeg version 8.0-full_build-www.gyan.devInput #0, dshow, from 'video=ov9734_azurewave_camera':Stream mapping:
+2025-10-17 18:55:00,315 - core.stream_manager - ERROR - FFmpeg ERROR: Stream #0:0 -> #0:0 (mjpeg (native) -> h264 (libx264))
+2025-10-17 18:55:00,315 - core.stream_manager - INFO - FFmpeg: Press [q] to stop, [?] for help
+2025-10-17 18:55:00,323 - core.stream_manager - INFO - FFmpeg: deprecated pixel format used, make sure you did set range correctly
+2025-10-17 18:55:00,328 - core.stream_manager - INFO - FFmpeg: using cpu capabilities: MMX2 SSE2Fast SSSE3 SSE4.2 AVX FMA3 BMI2 AVX2
+2025-10-17 18:55:00,330 - core.stream_manager - INFO - FFmpeg: profile Constrained Baseline, level 3.1, 4:2:0, 8-bit
+2025-10-17 18:55:00,331 - core.stream_manager - INFO - FFmpeg: [libx264 @ 0000023a8a2d05c0] 264 - core 165 r3222 b35605a - H.264/MPEG-4 AVC codec - Copyleft 2003-2025 - http://www.videolan.org/x264.html - options: cabac=0 ref=1 deblock=0:0:0 analyse=0:0 me=dia subme=0 psy=1 psy_rd=1.00:0.00 mixed_ref=0 me_range=16 chroma_me=1 trellis=0 8x8dct=0 cqm=0 deadzone=21,11 fast_pskip=1 chroma_qp_offset=0 threads=6 lookahead_threads=6 sliced_threads=1 slices=6 nr=0 decimate=1 interlaced=0 bluray_compat=0 constrained_intra=0 bframes=0 weightp=0 keyint=15 keyint_min=8 scenecut=0 intra_refresh=0 rc=crf mbtree=0 crf=25.0 qcomp=0.60 qpmin=0 qpmax=69 qpstep=4 ip_ratio=1.40 aq=0
+2025-10-17 18:55:00,332 - core.stream_manager - INFO - MediaMTX: 2025/10/17 18:55:00 INF [RTSP] [conn 192.168.0.4:49390] opened
+2025-10-17 18:55:00,332 - core.stream_manager - INFO - MediaMTX: 2025/10/17 18:55:00 INF [RTSP] [session 6d5b2926] created by 192.168.0.4:49390
+2025-10-17 18:55:00,333 - core.stream_manager - INFO - MediaMTX: 2025/10/17 18:55:00 INF [RTSP] [session 6d5b2926] is publishing to path 'live/stream', 1 track (H264)
+2025-10-17 18:55:00,334 - core.stream_manager - ERROR - FFmpeg ERROR: [swscaler @ 0000023a8a2e6780] [libx264 @ 0000023a8a2d05c0][libx264 @ 0000023a8a2d05c0]Output #0, rtsp, to 'rtsp://:@192.168.0.4:8554/live/stream':
+2025-10-17 18:55:00,334 - core.stream_manager - INFO - FFmpeg: 30 fps, 90k tbn
+2025-10-17 18:55:00,334 - core.stream_manager - ERROR - FFmpeg ERROR: Metadata:
+2025-10-17 18:55:00,334 - core.stream_manager - INFO - FFmpeg: encoder         : Lavc62.11.100 libx264
+2025-10-17 18:55:00,334 - core.stream_manager - ERROR - FFmpeg ERROR: Side data:
+2025-10-17 18:55:00,334 - core.stream_manager - INFO - FFmpeg: cpb: bitrate max/min/avg: 0/0/0 buffer size: 0 vbv_delay: N/A
+2025-10-17 18:55:02,786 - core.stream_manager - INFO - ✅ Стрим успешно запущен (попытка 2)
+2025-10-17 18:55:02,787 - config.settings - INFO - 📡 Локальный IP: 192.168.0.4
+2025-10-17 18:55:02,787 - werkzeug - INFO - 127.0.0.1 - - [17/Oct/2025 18:55:02] "POST /api/stream/start HTTP/1.1" 200 -
+2025-10-17 18:55:07,513 - config.settings - INFO - 📡 Локальный IP: 192.168.0.4
+2025-10-17 18:55:07,513 - werkzeug - INFO - 127.0.0.1 - - [17/Oct/2025 18:55:07] "GET /api/status HTTP/1.1" 200 -
+2025-10-17 18:55:09,777 - config.settings - INFO - 📡 Локальный IP: 192.168.0.4
+2025-10-17 18:55:09,778 - werkzeug - INFO - 127.0.0.1 - - [17/Oct/2025 18:55:09] "GET /api/status HTTP/1.1" 200 -
+2025-10-17 18:55:20,073 - config.settings - INFO - 📡 Локальный IP: 192.168.0.4
+2025-10-17 18:55:20,074 - werkzeug - INFO - 127.0.0.1 - - [17/Oct/2025 18:55:20] "GET /api/status HTTP/1.1" 200 -
+2025-10-17 18:55:29,972 - config.settings - INFO - 📡 Локальный IP: 192.168.0.4
+2025-10-17 18:55:29,972 - werkzeug - INFO - 127.0.0.1 - - [17/Oct/2025 18:55:29] "GET /api/status HTTP/1.1" 200 -
+2025-10-17 18:55:41,088 - config.settings - INFO - 📡 Локальный IP: 192.168.0.4
+2025-10-17 18:55:41,089 - werkzeug - INFO - 127.0.0.1 - - [17/Oct/2025 18:55:41] "GET /api/status HTTP/1.1" 200 -
+2025-10-17 18:55:50,764 - config.settings - INFO - 📡 Локальный IP: 192.168.0.4
+2025-10-17 18:55:50,765 - werkzeug - INFO - 127.0.0.1 - - [17/Oct/2025 18:55:50] "GET /api/status HTTP/1.1" 200 -
+2025-10-17 18:55:51,863 - core.stream_manager - ERROR - FFmpeg ERROR: [vf#0:0 @ 0000023a8a2d72c0] frame= 1515 fps= 30 q=25.0 size=N/A time=00:00:50.49 bitrate=N/A dup=1004 drop=0 speed=   1x elapsed=0:00:50.51
+2025-10-17 18:56:00,078 - config.settings - INFO - 📡 Локальный IP: 192.168.0.4
+2025-10-17 18:56:00,078 - werkzeug - INFO - 127.0.0.1 - - [17/Oct/2025 18:56:00] "GET /api/status HTTP/1.1" 200 -
+2025-10-17 18:56:09,766 - config.settings - INFO - 📡 Локальный IP: 192.168.0.4
+2025-10-17 18:56:09,767 - werkzeug - INFO - 127.0.0.1 - - [17/Oct/2025 18:56:09] "GET /api/status HTTP/1.1" 200 -
+2025-10-17 18:56:20,070 - config.settings - INFO - 📡 Локальный IP: 192.168.0.4
+2025-10-17 18:56:20,071 - werkzeug - INFO - 127.0.0.1 - - [17/Oct/2025 18:56:20] "GET /api/status HTTP/1.1" 200 -
+2025-10-17 18:56:29,761 - config.settings - INFO - 📡 Локальный IP: 192.168.0.4
+2025-10-17 18:56:29,762 - werkzeug - INFO - 127.0.0.1 - - [17/Oct/2025 18:56:29] "GET /api/status HTTP/1.1" 200 -
+2025-10-17 18:56:40,073 - config.settings - INFO - 📡 Локальный IP: 192.168.0.4
+2025-10-17 18:56:40,073 - werkzeug - INFO - 127.0.0.1 - - [17/Oct/2025 18:56:40] "GET /api/status HTTP/1.1" 200 -
+2025-10-17 18:56:49,769 - config.settings - INFO - 📡 Локальный IP: 192.168.0.4
+2025-10-17 18:56:49,769 - werkzeug - INFO - 127.0.0.1 - - [17/Oct/2025 18:56:49] "GET /api/status HTTP/1.1" 200 -
+2025-10-17 18:57:00,072 - config.settings - INFO - 📡 Локальный IP: 192.168.0.4
+2025-10-17 18:57:00,072 - werkzeug - INFO - 127.0.0.1 - - [17/Oct/2025 18:57:00] "GET /api/status HTTP/1.1" 200 -
+2025-10-17 18:57:09,761 - config.settings - INFO - 📡 Локальный IP: 192.168.0.4
+2025-10-17 18:57:09,762 - werkzeug - INFO - 127.0.0.1 - - [17/Oct/2025 18:57:09] "GET /api/status HTTP/1.1" 200 -
+2025-10-17 18:57:20,082 - config.settings - INFO - 📡 Локальный IP: 192.168.0.4
+2025-10-17 18:57:20,082 - werkzeug - INFO - 127.0.0.1 - - [17/Oct/2025 18:57:20] "GET /api/status HTTP/1.1" 200 -
+2025-10-17 18:57:29,772 - config.settings - INFO - 📡 Локальный IP: 192.168.0.4
+2025-10-17 18:57:29,773 - werkzeug - INFO - 127.0.0.1 - - [17/Oct/2025 18:57:29] "GET /api/status HTTP/1.1" 200 -
+2025-10-17 18:57:40,072 - config.settings - INFO - 📡 Локальный IP: 192.168.0.4
+2025-10-17 18:57:40,072 - werkzeug - INFO - 127.0.0.1 - - [17/Oct/2025 18:57:40] "GET /api/status HTTP/1.1" 200 -
+2025-10-17 18:57:50,890 - __main__ - INFO - 📋 Получен сигнал прерывания от пользователя
+2025-10-17 18:57:50,890 - core.stream_manager - INFO - MediaMTX: 2025/10/17 18:57:50 INF shutting down gracefully
+2025-10-17 18:57:50,890 - __main__ - INFO - ✅ Приложение завершило работу успешно
+2025-10-17 18:59:25,816 - config.settings - INFO - ✅ FFmpeg найден: C:\Users\Honor\Downloads\Аханабдуле\ffmpeg.exe
+2025-10-17 18:59:26,358 - core.network_manager - INFO - 🌐 Внешний IP: 46.147.70.29
+2025-10-17 18:59:26,365 - __main__ - INFO - 🔧 Настройка окружения...
+2025-10-17 18:59:26,366 - utils.system_checker - INFO - ✅ Python 3.12.3
+2025-10-17 18:59:26,366 - utils.system_checker - INFO - ✅ FFmpeg найден: C:\Users\Honor\Downloads\Аханабдуле\ffmpeg.exe
+2025-10-17 18:59:26,367 - utils.system_checker - INFO - ✅ MediaMTX найден: C:\Users\Honor\Downloads\Аханабдуле\mediamtx.exe
+2025-10-17 18:59:26,367 - utils.system_checker - INFO - ✅ Библиотека flask доступна
+2025-10-17 18:59:26,367 - utils.system_checker - INFO - ✅ Библиотека requests доступна
+2025-10-17 18:59:26,367 - utils.system_checker - INFO - ✅ python: Доступен
+2025-10-17 18:59:26,367 - utils.system_checker - INFO - ✅ ffmpeg: Доступен
+2025-10-17 18:59:26,368 - utils.system_checker - INFO - ✅ mediamtx: Доступен
+2025-10-17 18:59:26,368 - utils.system_checker - INFO - ✅ flask: Доступен
+2025-10-17 18:59:26,368 - utils.system_checker - INFO - ✅ requests: Доступен
+2025-10-17 18:59:26,368 - __main__ - INFO - 🛡️ Настройка доступа через брандмауэр Windows...
+2025-10-17 18:59:26,370 - __main__ - INFO - 🛡️ Добавляем приложение в разрешенные программы брандмауэра...
+2025-10-17 18:59:26,370 - core.firewall_prompt - INFO - 📁 Путь к приложению: C:\Users\Honor\Downloads\Аханабдуле\.venv\Scripts\python.exe
+2025-10-17 18:59:26,436 - core.firewall_prompt - INFO - ℹ️ Правило для приложения уже существует в брандмауэре
+2025-10-17 18:59:26,436 - __main__ - INFO - ✅ Приложение добавлено в разрешенные программы брандмауэра
+2025-10-17 18:59:26,436 - __main__ - INFO - 📋 Если появится запрос от Защитника Windows, нажмите 'Разрешить доступ'
+2025-10-17 18:59:26,437 - __main__ - INFO - 🔧 Настраиваем правила для портов...
+2025-10-17 18:59:26,437 - __main__ - INFO - ℹ️ Для автоматической настройки правил портов запустите программу от имени администратора
+2025-10-17 18:59:26,437 - __main__ - INFO - 📋 Вы можете настроить брандмауэр вручную через веб-интерфейс
+2025-10-17 18:59:28,438 - utils.system_checker - INFO - ✅ Python 3.12.3
+2025-10-17 18:59:28,439 - utils.system_checker - INFO - ✅ FFmpeg найден: C:\Users\Honor\Downloads\Аханабдуле\ffmpeg.exe
+2025-10-17 18:59:28,439 - utils.system_checker - INFO - ✅ MediaMTX найден: C:\Users\Honor\Downloads\Аханабдуле\mediamtx.exe
+2025-10-17 18:59:28,439 - __main__ - INFO - 🚀 Запуск сервисов...
+2025-10-17 18:59:30,503 - config.settings - INFO - ✅ MediaMTX найден: C:\Users\Honor\Downloads\Аханабдуле\mediamtx.exe
+2025-10-17 18:59:30,504 - core.stream_manager - INFO - 🗑️ Удален старый конфигурационный файл
+2025-10-17 18:59:30,506 - core.stream_manager - INFO - ✅ Конфигурационный файл MediaMTX создан
+2025-10-17 18:59:30,506 - core.stream_manager - INFO - 🔄 Запуск MediaMTX...
+2025-10-17 18:59:30,506 - core.stream_manager - INFO - 📁 Путь к MediaMTX: C:\Users\Honor\Downloads\Аханабдуле\mediamtx.exe
+2025-10-17 18:59:30,568 - core.stream_manager - INFO - MediaMTX: 2025/10/17 18:59:30 INF MediaMTX v1.9.2
+2025-10-17 18:59:30,569 - core.stream_manager - INFO - MediaMTX: 2025/10/17 18:59:30 INF configuration loaded from C:\Users\Honor\Downloads\РђС…Р°РЅР°Р±РґСѓР»Рµ\mediamtx.yml
+2025-10-17 18:59:30,571 - core.stream_manager - INFO - MediaMTX: 2025/10/17 18:59:30 INF [RTSP] listener opened on :8554 (TCP), :8000 (UDP/RTP), :8001 (UDP/RTCP)
+2025-10-17 18:59:30,571 - core.stream_manager - INFO - MediaMTX: 2025/10/17 18:59:30 INF [RTMP] listener opened on :1935
+2025-10-17 18:59:30,571 - core.stream_manager - INFO - MediaMTX: 2025/10/17 18:59:30 INF [HLS] listener opened on :8888
+2025-10-17 18:59:30,571 - core.stream_manager - INFO - MediaMTX: 2025/10/17 18:59:30 INF [WebRTC] listener opened on :8889 (HTTP), :8189 (ICE/UDP)
+2025-10-17 18:59:30,571 - core.stream_manager - INFO - MediaMTX: 2025/10/17 18:59:30 INF [SRT] listener opened on :8890 (UDP)
+2025-10-17 18:59:30,572 - core.stream_manager - INFO - MediaMTX: 2025/10/17 18:59:30 INF [API] listener opened on :9997
+2025-10-17 18:59:33,512 - core.stream_manager - INFO - ✅ MediaMTX успешно запущен
+2025-10-17 18:59:33,512 - web.app - INFO - 🌐 Запуск веб-сервера на 0.0.0.0:5000
+2025-10-17 18:59:33,512 - web.app - INFO - ✅ Веб-интерфейс запущен
+2025-10-17 18:59:33,512 - __main__ - INFO - 🌐 Веб-интерфейс доступен по адресу: http://localhost:5000
+2025-10-17 18:59:33,512 - __main__ - INFO - 📹 RTSP поток будет доступен по адресу: rtsp://ваш-ip:8554/live/stream
+2025-10-17 18:59:33,512 - __main__ - INFO - ⏹️  Для остановки нажмите Ctrl+C
+2025-10-17 18:59:33,512 - __main__ - INFO - 
+2025-10-17 18:59:33,512 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.0.4:5000
+2025-10-17 18:59:33,512 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-10-17 18:59:34,068 - config.settings - INFO - 📡 Локальный IP: 192.168.0.4
+2025-10-17 18:59:34,068 - werkzeug - INFO - 127.0.0.1 - - [17/Oct/2025 18:59:34] "GET /api/status HTTP/1.1" 200 -
+2025-10-17 18:59:36,687 - core.camera_finder - INFO - 🔍 Поиск и тестирование камер...
+2025-10-17 18:59:36,687 - core.camera_finder - INFO - 🔍 Поиск доступных камер...
+2025-10-17 18:59:37,142 - core.camera_finder - INFO - ✅ Метод 1: найдено 1 камер
+2025-10-17 18:59:37,445 - core.camera_finder - INFO - ✅ Метод 2: найдено 1 камер
+2025-10-17 18:59:37,445 - core.camera_finder - INFO - 📹 Найдено потенциальных камер: 2
+2025-10-17 18:59:37,445 - core.camera_finder - INFO -    - (video)
+2025-10-17 18:59:37,445 - core.camera_finder - INFO -    - ov9734_azurewave_camera
+2025-10-17 18:59:37,446 - core.camera_finder - INFO - 🔍 Тестируем камеру: (video)
+2025-10-17 18:59:37,446 - core.camera_finder - INFO - 🔄 Попытка 1 для камеры (video)
+2025-10-17 18:59:37,498 - core.camera_finder - INFO - 🔄 Попытка 2 для камеры (video)
+2025-10-17 18:59:37,548 - core.camera_finder - INFO - 🔄 Попытка 3 для камеры (video)
+2025-10-17 18:59:37,598 - core.camera_finder - INFO - ❌ (video) - нерабочая: Ошибка ввода-вывода (проверьте доступ к камере)
+2025-10-17 18:59:37,598 - core.camera_finder - INFO - 🔍 Тестируем камеру: ov9734_azurewave_camera
+2025-10-17 18:59:37,598 - core.camera_finder - INFO - 🔄 Попытка 1 для камеры ov9734_azurewave_camera
+2025-10-17 18:59:41,661 - core.camera_finder - INFO - ✅ Камера 'ov9734_azurewave_camera' - РАБОТАЕТ (попытка 1)
+2025-10-17 18:59:41,662 - core.camera_finder - INFO - ✅ ov9734_azurewave_camera - рабочая
+2025-10-17 18:59:41,662 - core.camera_finder - INFO - 🎯 Рабочие камеры: 1 из 2
+2025-10-17 18:59:41,662 - core.camera_finder - INFO -    ✅ ov9734_azurewave_camera
+2025-10-17 18:59:41,662 - web.app - ERROR - Exception on / [GET]
+Traceback (most recent call last):
+  File "C:\Users\Honor\Downloads\Аханабдуле\.venv\Lib\site-packages\flask\app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Honor\Downloads\Аханабдуле\.venv\Lib\site-packages\flask\app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Honor\Downloads\Аханабдуле\.venv\Lib\site-packages\flask\app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Honor\Downloads\Аханабдуле\.venv\Lib\site-packages\flask\app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Honor\Downloads\Аханабдуле\web\app.py", line 41, in index
+    local_ip=self.config.LOCAL_IP,
+             ^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'AppConfig' object has no attribute 'LOCAL_IP'
+2025-10-17 18:59:41,683 - web.app - ERROR - ❌ Внутренняя ошибка сервера: 500 Internal Server Error: The server encountered an internal error and was unable to complete your request. Either the server is overloaded or there is an error in the application.
+2025-10-17 18:59:41,683 - werkzeug - INFO - 127.0.0.1 - - [17/Oct/2025 18:59:41] "[35m[1mGET / HTTP/1.1[0m" 500 -
+2025-10-17 18:59:47,356 - config.settings - INFO - 📡 Локальный IP: 192.168.0.4
+2025-10-17 18:59:47,357 - werkzeug - INFO - 127.0.0.1 - - [17/Oct/2025 18:59:47] "GET /api/status HTTP/1.1" 200 -
+2025-10-17 18:59:50,233 - config.settings - INFO - 📡 Локальный IP: 192.168.0.4
+2025-10-17 18:59:50,234 - werkzeug - INFO - 127.0.0.1 - - [17/Oct/2025 18:59:50] "GET /api/status HTTP/1.1" 200 -
+2025-10-17 18:59:53,279 - core.camera_finder - INFO - 🔍 Поиск и тестирование камер...
+2025-10-17 18:59:53,282 - core.camera_finder - INFO - 🔍 Поиск доступных камер...
+2025-10-17 18:59:53,656 - core.camera_finder - INFO - ✅ Метод 1: найдено 1 камер
+2025-10-17 18:59:53,955 - core.camera_finder - INFO - ✅ Метод 2: найдено 1 камер
+2025-10-17 18:59:53,955 - core.camera_finder - INFO - 📹 Найдено потенциальных камер: 2
+2025-10-17 18:59:53,955 - core.camera_finder - INFO -    - (video)
+2025-10-17 18:59:53,956 - core.camera_finder - INFO -    - ov9734_azurewave_camera
+2025-10-17 18:59:53,956 - core.camera_finder - INFO - 🔍 Тестируем камеру: (video)
+2025-10-17 18:59:53,956 - core.camera_finder - INFO - 🔄 Попытка 1 для камеры (video)
+2025-10-17 18:59:54,023 - core.camera_finder - INFO - 🔄 Попытка 2 для камеры (video)
+2025-10-17 18:59:54,067 - core.camera_finder - INFO - 🔄 Попытка 3 для камеры (video)
+2025-10-17 18:59:54,112 - core.camera_finder - INFO - ❌ (video) - нерабочая: Ошибка ввода-вывода (проверьте доступ к камере)
+2025-10-17 18:59:54,113 - core.camera_finder - INFO - 🔍 Тестируем камеру: ov9734_azurewave_camera
+2025-10-17 18:59:54,113 - core.camera_finder - INFO - 🔄 Попытка 1 для камеры ov9734_azurewave_camera
+2025-10-17 18:59:58,191 - core.camera_finder - INFO - ✅ Камера 'ov9734_azurewave_camera' - РАБОТАЕТ (попытка 1)
+2025-10-17 18:59:58,192 - core.camera_finder - INFO - ✅ ov9734_azurewave_camera - рабочая
+2025-10-17 18:59:58,192 - core.camera_finder - INFO - 🎯 Рабочие камеры: 1 из 2
+2025-10-17 18:59:58,192 - core.camera_finder - INFO -    ✅ ov9734_azurewave_camera
+2025-10-17 18:59:58,193 - web.app - ERROR - Exception on / [GET]
+Traceback (most recent call last):
+  File "C:\Users\Honor\Downloads\Аханабдуле\.venv\Lib\site-packages\flask\app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Honor\Downloads\Аханабдуле\.venv\Lib\site-packages\flask\app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Honor\Downloads\Аханабдуле\.venv\Lib\site-packages\flask\app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Honor\Downloads\Аханабдуле\.venv\Lib\site-packages\flask\app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Honor\Downloads\Аханабдуле\web\app.py", line 41, in index
+    local_ip=self.config.LOCAL_IP,
+             ^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'AppConfig' object has no attribute 'LOCAL_IP'
+2025-10-17 18:59:58,195 - web.app - ERROR - ❌ Внутренняя ошибка сервера: 500 Internal Server Error: The server encountered an internal error and was unable to complete your request. Either the server is overloaded or there is an error in the application.
+2025-10-17 18:59:58,195 - werkzeug - INFO - 127.0.0.1 - - [17/Oct/2025 18:59:58] "[35m[1mGET / HTTP/1.1[0m" 500 -
+2025-10-17 19:04:25,596 - __main__ - INFO - 📋 Получен сигнал прерывания от пользователя
+2025-10-17 19:04:25,596 - core.stream_manager - INFO - MediaMTX: 2025/10/17 19:04:25 INF shutting down gracefully
+2025-10-17 19:04:25,596 - __main__ - INFO - ✅ Приложение завершило работу успешно
+2025-10-17 19:04:25,596 - core.stream_manager - INFO - MediaMTX: 2025/10/17 19:04:25 INF [API] listener is closing
+2025-10-17 19:04:29,619 - config.settings - INFO - ✅ FFmpeg найден: C:\Users\Honor\Downloads\Аханабдуле\ffmpeg.exe
+2025-10-17 19:04:30,148 - core.network_manager - INFO - 🌐 Внешний IP: 46.147.70.29
+2025-10-17 19:04:30,154 - __main__ - INFO - 🔧 Настройка окружения...
+2025-10-17 19:04:30,155 - utils.system_checker - INFO - ✅ Python 3.12.3
+2025-10-17 19:04:30,155 - utils.system_checker - INFO - ✅ FFmpeg найден: C:\Users\Honor\Downloads\Аханабдуле\ffmpeg.exe
+2025-10-17 19:04:30,156 - utils.system_checker - INFO - ✅ MediaMTX найден: C:\Users\Honor\Downloads\Аханабдуле\mediamtx.exe
+2025-10-17 19:04:30,156 - utils.system_checker - INFO - ✅ Библиотека flask доступна
+2025-10-17 19:04:30,156 - utils.system_checker - INFO - ✅ Библиотека requests доступна
+2025-10-17 19:04:30,156 - utils.system_checker - INFO - ✅ python: Доступен
+2025-10-17 19:04:30,156 - utils.system_checker - INFO - ✅ ffmpeg: Доступен
+2025-10-17 19:04:30,156 - utils.system_checker - INFO - ✅ mediamtx: Доступен
+2025-10-17 19:04:30,157 - utils.system_checker - INFO - ✅ flask: Доступен
+2025-10-17 19:04:30,157 - utils.system_checker - INFO - ✅ requests: Доступен
+2025-10-17 19:04:30,157 - __main__ - INFO - 🛡️ Настройка доступа через брандмауэр Windows...
+2025-10-17 19:04:30,158 - __main__ - INFO - 🛡️ Добавляем приложение в разрешенные программы брандмауэра...
+2025-10-17 19:04:30,158 - core.firewall_prompt - INFO - 📁 Путь к приложению: C:\Users\Honor\Downloads\Аханабдуле\.venv\Scripts\python.exe
+2025-10-17 19:04:30,227 - core.firewall_prompt - INFO - ℹ️ Правило для приложения уже существует в брандмауэре
+2025-10-17 19:04:30,227 - __main__ - INFO - ✅ Приложение добавлено в разрешенные программы брандмауэра
+2025-10-17 19:04:30,227 - __main__ - INFO - 📋 Если появится запрос от Защитника Windows, нажмите 'Разрешить доступ'
+2025-10-17 19:04:30,227 - __main__ - INFO - 🔧 Настраиваем правила для портов...
+2025-10-17 19:04:30,228 - __main__ - INFO - ℹ️ Для автоматической настройки правил портов запустите программу от имени администратора
+2025-10-17 19:04:30,228 - __main__ - INFO - 📋 Вы можете настроить брандмауэр вручную через веб-интерфейс
+2025-10-17 19:04:32,228 - utils.system_checker - INFO - ✅ Python 3.12.3
+2025-10-17 19:04:32,229 - utils.system_checker - INFO - ✅ FFmpeg найден: C:\Users\Honor\Downloads\Аханабдуле\ffmpeg.exe
+2025-10-17 19:04:32,229 - utils.system_checker - INFO - ✅ MediaMTX найден: C:\Users\Honor\Downloads\Аханабдуле\mediamtx.exe
+2025-10-17 19:04:32,229 - __main__ - INFO - 🚀 Запуск сервисов...
+2025-10-17 19:04:34,289 - config.settings - INFO - ✅ MediaMTX найден: C:\Users\Honor\Downloads\Аханабдуле\mediamtx.exe
+2025-10-17 19:04:34,290 - core.stream_manager - INFO - 🗑️ Удален старый конфигурационный файл
+2025-10-17 19:04:34,292 - core.stream_manager - INFO - ✅ Конфигурационный файл MediaMTX создан
+2025-10-17 19:04:34,292 - core.stream_manager - INFO - 🔄 Запуск MediaMTX...
+2025-10-17 19:04:34,292 - core.stream_manager - INFO - 📁 Путь к MediaMTX: C:\Users\Honor\Downloads\Аханабдуле\mediamtx.exe
+2025-10-17 19:04:34,345 - core.stream_manager - INFO - MediaMTX: 2025/10/17 19:04:34 INF MediaMTX v1.9.2
+2025-10-17 19:04:34,345 - core.stream_manager - INFO - MediaMTX: 2025/10/17 19:04:34 INF configuration loaded from C:\Users\Honor\Downloads\РђС…Р°РЅР°Р±РґСѓР»Рµ\mediamtx.yml
+2025-10-17 19:04:34,346 - core.stream_manager - INFO - MediaMTX: 2025/10/17 19:04:34 INF [RTSP] listener opened on :8554 (TCP), :8000 (UDP/RTP), :8001 (UDP/RTCP)
+2025-10-17 19:04:34,347 - core.stream_manager - INFO - MediaMTX: 2025/10/17 19:04:34 INF [RTMP] listener opened on :1935
+2025-10-17 19:04:34,347 - core.stream_manager - INFO - MediaMTX: 2025/10/17 19:04:34 INF [HLS] listener opened on :8888
+2025-10-17 19:04:34,347 - core.stream_manager - INFO - MediaMTX: 2025/10/17 19:04:34 INF [WebRTC] listener opened on :8889 (HTTP), :8189 (ICE/UDP)
+2025-10-17 19:04:34,355 - core.stream_manager - INFO - MediaMTX: 2025/10/17 19:04:34 INF [SRT] listener opened on :8890 (UDP)
+2025-10-17 19:04:34,356 - core.stream_manager - INFO - MediaMTX: 2025/10/17 19:04:34 INF [API] listener opened on :9997
+2025-10-17 19:04:37,298 - core.stream_manager - INFO - ✅ MediaMTX успешно запущен
+2025-10-17 19:04:37,299 - web.app - INFO - 🌐 Запуск веб-сервера на 0.0.0.0:5000
+2025-10-17 19:04:37,299 - web.app - INFO - ✅ Веб-интерфейс запущен
+2025-10-17 19:04:37,300 - __main__ - INFO - 🌐 Веб-интерфейс доступен по адресу: http://localhost:5000
+2025-10-17 19:04:37,300 - __main__ - INFO - 📹 RTSP поток будет доступен по адресу: rtsp://ваш-ip:8554/live/stream
+2025-10-17 19:04:37,300 - __main__ - INFO - ⏹️  Для остановки нажмите Ctrl+C
+2025-10-17 19:04:37,300 - __main__ - INFO - 
+2025-10-17 19:04:37,308 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.0.4:5000
+2025-10-17 19:04:37,308 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-10-17 19:04:39,959 - core.camera_finder - INFO - 🔍 Поиск и тестирование камер...
+2025-10-17 19:04:39,959 - core.camera_finder - INFO - 🔍 Поиск доступных камер...
+2025-10-17 19:04:40,405 - core.camera_finder - INFO - ✅ Метод 1: найдено 1 камер
+2025-10-17 19:04:40,711 - core.camera_finder - INFO - ✅ Метод 2: найдено 1 камер
+2025-10-17 19:04:40,711 - core.camera_finder - INFO - 📹 Найдено потенциальных камер: 2
+2025-10-17 19:04:40,711 - core.camera_finder - INFO -    - (video)
+2025-10-17 19:04:40,712 - core.camera_finder - INFO -    - ov9734_azurewave_camera
+2025-10-17 19:04:40,712 - core.camera_finder - INFO - 🔍 Тестируем камеру: (video)
+2025-10-17 19:04:40,712 - core.camera_finder - INFO - 🔄 Попытка 1 для камеры (video)
+2025-10-17 19:04:40,761 - core.camera_finder - INFO - 🔄 Попытка 2 для камеры (video)
+2025-10-17 19:04:40,807 - core.camera_finder - INFO - 🔄 Попытка 3 для камеры (video)
+2025-10-17 19:04:40,854 - core.camera_finder - INFO - ❌ (video) - нерабочая: Ошибка ввода-вывода (проверьте доступ к камере)
+2025-10-17 19:04:40,854 - core.camera_finder - INFO - 🔍 Тестируем камеру: ov9734_azurewave_camera
+2025-10-17 19:04:40,854 - core.camera_finder - INFO - 🔄 Попытка 1 для камеры ov9734_azurewave_camera
+2025-10-17 19:04:44,946 - core.camera_finder - INFO - ✅ Камера 'ov9734_azurewave_camera' - РАБОТАЕТ (попытка 1)
+2025-10-17 19:04:44,947 - core.camera_finder - INFO - ✅ ov9734_azurewave_camera - рабочая
+2025-10-17 19:04:44,947 - core.camera_finder - INFO - 🎯 Рабочие камеры: 1 из 2
+2025-10-17 19:04:44,947 - core.camera_finder - INFO -    ✅ ov9734_azurewave_camera
+2025-10-17 19:04:44,948 - config.settings - INFO - 📡 Локальный IP: 192.168.0.4
+2025-10-17 19:04:45,515 - config.settings - INFO - 🌐 Внешний IP: 46.147.70.29
+2025-10-17 19:04:45,516 - config.settings - INFO - ✅ FFmpeg найден: C:\Users\Honor\Downloads\Аханабдуле\ffmpeg.exe
+2025-10-17 19:04:45,517 - config.settings - INFO - ✅ MediaMTX найден: C:\Users\Honor\Downloads\Аханабдуле\mediamtx.exe
+2025-10-17 19:04:45,527 - werkzeug - INFO - 127.0.0.1 - - [17/Oct/2025 19:04:45] "GET / HTTP/1.1" 200 -
+2025-10-17 19:04:45,607 - werkzeug - INFO - 127.0.0.1 - - [17/Oct/2025 19:04:45] "[36mGET /static/css/main.css HTTP/1.1[0m" 304 -
+2025-10-17 19:04:45,611 - werkzeug - INFO - 127.0.0.1 - - [17/Oct/2025 19:04:45] "[36mGET /static/css/layout.css HTTP/1.1[0m" 304 -
+2025-10-17 19:04:45,866 - werkzeug - INFO - 127.0.0.1 - - [17/Oct/2025 19:04:45] "[36mGET /static/css/components.css HTTP/1.1[0m" 304 -
+2025-10-17 19:04:45,867 - werkzeug - INFO - 127.0.0.1 - - [17/Oct/2025 19:04:45] "[36mGET /static/css/themes.css HTTP/1.1[0m" 304 -
+2025-10-17 19:04:45,869 - werkzeug - INFO - 127.0.0.1 - - [17/Oct/2025 19:04:45] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-10-17 19:04:45,870 - werkzeug - INFO - 127.0.0.1 - - [17/Oct/2025 19:04:45] "[36mGET /static/js/terminal.js HTTP/1.1[0m" 304 -
+2025-10-17 19:04:45,914 - werkzeug - INFO - 127.0.0.1 - - [17/Oct/2025 19:04:45] "GET /static/js/api.js HTTP/1.1" 200 -
+2025-10-17 19:04:46,303 - config.settings - INFO - 📡 Локальный IP: 192.168.0.4
+2025-10-17 19:04:46,304 - werkzeug - INFO - 127.0.0.1 - - [17/Oct/2025 19:04:46] "GET /api/status HTTP/1.1" 200 -
+2025-10-17 19:04:46,567 - werkzeug - INFO - 127.0.0.1 - - [17/Oct/2025 19:04:46] "GET /api/network HTTP/1.1" 200 -
+2025-10-17 19:04:46,622 - werkzeug - INFO - 127.0.0.1 - - [17/Oct/2025 19:04:46] "GET /api/network/port-check HTTP/1.1" 200 -
+2025-10-17 19:04:46,622 - core.stream_manager - INFO - MediaMTX: 2025/10/17 19:04:46 INF [RTSP] [conn 127.0.0.1:49517] opened
+2025-10-17 19:04:46,622 - core.stream_manager - INFO - MediaMTX: 2025/10/17 19:04:46 INF [RTSP] [conn 127.0.0.1:49517] closed: EOF
+2025-10-17 19:04:55,998 - config.settings - INFO - 📡 Локальный IP: 192.168.0.4
+2025-10-17 19:04:55,998 - werkzeug - INFO - 127.0.0.1 - - [17/Oct/2025 19:04:55] "GET /api/status HTTP/1.1" 200 -
+2025-10-17 19:05:06,317 - config.settings - INFO - 📡 Локальный IP: 192.168.0.4
+2025-10-17 19:05:06,317 - werkzeug - INFO - 127.0.0.1 - - [17/Oct/2025 19:05:06] "GET /api/status HTTP/1.1" 200 -
+2025-10-17 19:05:16,761 - config.settings - INFO - 📡 Локальный IP: 192.168.0.4
+2025-10-17 19:05:16,761 - werkzeug - INFO - 127.0.0.1 - - [17/Oct/2025 19:05:16] "GET /api/status HTTP/1.1" 200 -
+2025-10-17 19:05:27,068 - config.settings - INFO - 📡 Локальный IP: 192.168.0.4
+2025-10-17 19:05:27,069 - werkzeug - INFO - 127.0.0.1 - - [17/Oct/2025 19:05:27] "GET /api/status HTTP/1.1" 200 -
+2025-10-17 19:05:36,757 - config.settings - INFO - 📡 Локальный IP: 192.168.0.4
+2025-10-17 19:05:36,757 - werkzeug - INFO - 127.0.0.1 - - [17/Oct/2025 19:05:36] "GET /api/status HTTP/1.1" 200 -
+2025-10-17 19:05:47,089 - config.settings - INFO - 📡 Локальный IP: 192.168.0.4
+2025-10-17 19:05:47,090 - werkzeug - INFO - 127.0.0.1 - - [17/Oct/2025 19:05:47] "GET /api/status HTTP/1.1" 200 -
+2025-10-17 19:05:56,763 - config.settings - INFO - 📡 Локальный IP: 192.168.0.4
+2025-10-17 19:05:56,764 - werkzeug - INFO - 127.0.0.1 - - [17/Oct/2025 19:05:56] "GET /api/status HTTP/1.1" 200 -
+2025-10-17 19:06:07,074 - config.settings - INFO - 📡 Локальный IP: 192.168.0.4
+2025-10-17 19:06:07,075 - werkzeug - INFO - 127.0.0.1 - - [17/Oct/2025 19:06:07] "GET /api/status HTTP/1.1" 200 -
+2025-10-17 19:06:16,774 - config.settings - INFO - 📡 Локальный IP: 192.168.0.4
+2025-10-17 19:06:16,774 - werkzeug - INFO - 127.0.0.1 - - [17/Oct/2025 19:06:16] "GET /api/status HTTP/1.1" 200 -
+2025-10-17 19:06:34,080 - config.settings - INFO - 📡 Локальный IP: 192.168.0.4
+2025-10-17 19:06:34,080 - werkzeug - INFO - 127.0.0.1 - - [17/Oct/2025 19:06:34] "GET /api/status HTTP/1.1" 200 -
+2025-10-17 19:07:33,776 - config.settings - INFO - 📡 Локальный IP: 192.168.0.4
+2025-10-17 19:07:33,777 - werkzeug - INFO - 127.0.0.1 - - [17/Oct/2025 19:07:33] "GET /api/status HTTP/1.1" 200 -
+2025-10-17 19:08:34,070 - config.settings - INFO - 📡 Локальный IP: 192.168.0.4
+2025-10-17 19:08:34,071 - werkzeug - INFO - 127.0.0.1 - - [17/Oct/2025 19:08:34] "GET /api/status HTTP/1.1" 200 -
+2025-10-17 19:09:33,771 - config.settings - INFO - 📡 Локальный IP: 192.168.0.4
+2025-10-17 19:09:33,771 - werkzeug - INFO - 127.0.0.1 - - [17/Oct/2025 19:09:33] "GET /api/status HTTP/1.1" 200 -
+2025-10-17 19:20:12,556 - __main__ - INFO - 📋 Получен сигнал прерывания от пользователя
+2025-10-17 19:20:12,556 - core.stream_manager - INFO - MediaMTX: 2025/10/17 19:20:12 INF shutting down gracefully
+2025-10-17 19:20:12,556 - __main__ - INFO - ✅ Приложение завершило работу успешно
+2025-10-17 19:27:07,900 - config.settings - INFO - ✅ FFmpeg найден: C:\Users\Honor\Downloads\Аханабдуле\ffmpeg.exe
+2025-10-17 19:27:08,437 - core.network_manager - INFO - 🌐 Внешний IP: 46.147.70.29
+2025-10-17 19:27:08,452 - __main__ - INFO - 🔧 Настройка окружения...
+2025-10-17 19:27:08,452 - utils.system_checker - INFO - ✅ Python 3.12.3
+2025-10-17 19:27:08,452 - utils.system_checker - INFO - ✅ FFmpeg найден: C:\Users\Honor\Downloads\Аханабдуле\ffmpeg.exe
+2025-10-17 19:27:08,452 - utils.system_checker - INFO - ✅ MediaMTX найден: C:\Users\Honor\Downloads\Аханабдуле\mediamtx.exe
+2025-10-17 19:27:08,452 - utils.system_checker - INFO - ✅ Библиотека flask доступна
+2025-10-17 19:27:08,452 - utils.system_checker - INFO - ✅ Библиотека requests доступна
+2025-10-17 19:27:08,452 - utils.system_checker - INFO - ✅ python: Доступен
+2025-10-17 19:27:08,452 - utils.system_checker - INFO - ✅ ffmpeg: Доступен
+2025-10-17 19:27:08,452 - utils.system_checker - INFO - ✅ mediamtx: Доступен
+2025-10-17 19:27:08,452 - utils.system_checker - INFO - ✅ flask: Доступен
+2025-10-17 19:27:08,452 - utils.system_checker - INFO - ✅ requests: Доступен
+2025-10-17 19:27:08,452 - __main__ - INFO - 🛡️ Настройка доступа через брандмауэр Windows...
+2025-10-17 19:27:08,452 - __main__ - INFO - 🛡️ Добавляем приложение в разрешенные программы брандмауэра...
+2025-10-17 19:27:08,452 - core.firewall_prompt - INFO - 📁 Путь к приложению: C:\Users\Honor\Downloads\Аханабдуле\.venv\Scripts\python.exe
+2025-10-17 19:27:08,530 - core.firewall_prompt - INFO - ℹ️ Правило для приложения уже существует в брандмауэре
+2025-10-17 19:27:08,530 - __main__ - INFO - ✅ Приложение добавлено в разрешенные программы брандмауэра
+2025-10-17 19:27:08,530 - __main__ - INFO - 📋 Если появится запрос от Защитника Windows, нажмите 'Разрешить доступ'
+2025-10-17 19:27:08,530 - __main__ - INFO - 🔧 Настраиваем правила для портов...
+2025-10-17 19:27:08,530 - __main__ - INFO - ℹ️ Для автоматической настройки правил портов запустите программу от имени администратора
+2025-10-17 19:27:08,530 - __main__ - INFO - 📋 Вы можете настроить брандмауэр вручную через веб-интерфейс
+2025-10-17 19:27:10,537 - utils.system_checker - INFO - ✅ Python 3.12.3
+2025-10-17 19:27:10,537 - utils.system_checker - INFO - ✅ FFmpeg найден: C:\Users\Honor\Downloads\Аханабдуле\ffmpeg.exe
+2025-10-17 19:27:10,537 - utils.system_checker - INFO - ✅ MediaMTX найден: C:\Users\Honor\Downloads\Аханабдуле\mediamtx.exe
+2025-10-17 19:27:10,537 - __main__ - INFO - 🚀 Запуск сервисов...
+2025-10-17 19:27:12,605 - config.settings - INFO - ✅ MediaMTX найден: C:\Users\Honor\Downloads\Аханабдуле\mediamtx.exe
+2025-10-17 19:27:12,605 - core.stream_manager - INFO - 🗑️ Удален старый конфигурационный файл
+2025-10-17 19:27:12,605 - core.stream_manager - INFO - ✅ Конфигурационный файл MediaMTX создан
+2025-10-17 19:27:12,605 - core.stream_manager - INFO - 🔄 Запуск MediaMTX...
+2025-10-17 19:27:12,605 - core.stream_manager - INFO - 📁 Путь к MediaMTX: C:\Users\Honor\Downloads\Аханабдуле\mediamtx.exe
+2025-10-17 19:27:12,667 - core.stream_manager - INFO - MediaMTX: 2025/10/17 19:27:12 INF MediaMTX v1.9.2
+2025-10-17 19:27:12,667 - core.stream_manager - INFO - MediaMTX: 2025/10/17 19:27:12 INF configuration loaded from C:\Users\Honor\Downloads\РђС…Р°РЅР°Р±РґСѓР»Рµ\mediamtx.yml
+2025-10-17 19:27:12,669 - core.stream_manager - INFO - MediaMTX: 2025/10/17 19:27:12 INF [RTSP] listener opened on :8554 (TCP), :8000 (UDP/RTP), :8001 (UDP/RTCP)
+2025-10-17 19:27:12,670 - core.stream_manager - INFO - MediaMTX: 2025/10/17 19:27:12 INF [RTMP] listener opened on :1935
+2025-10-17 19:27:12,670 - core.stream_manager - INFO - MediaMTX: 2025/10/17 19:27:12 INF [HLS] listener opened on :8888
+2025-10-17 19:27:12,670 - core.stream_manager - INFO - MediaMTX: 2025/10/17 19:27:12 INF [WebRTC] listener opened on :8889 (HTTP), :8189 (ICE/UDP)
+2025-10-17 19:27:12,670 - core.stream_manager - INFO - MediaMTX: 2025/10/17 19:27:12 INF [SRT] listener opened on :8890 (UDP)
+2025-10-17 19:27:12,670 - core.stream_manager - INFO - MediaMTX: 2025/10/17 19:27:12 INF [API] listener opened on :9997
+2025-10-17 19:27:15,619 - core.stream_manager - INFO - ✅ MediaMTX успешно запущен
+2025-10-17 19:27:15,620 - web.app - INFO - 🌐 Запуск веб-сервера на 0.0.0.0:5000
+2025-10-17 19:27:15,620 - web.app - INFO - ✅ Веб-интерфейс запущен
+2025-10-17 19:27:15,620 - __main__ - INFO - 🌐 Веб-интерфейс доступен по адресу: http://localhost:5000
+2025-10-17 19:27:15,621 - __main__ - INFO - 📹 RTSP поток будет доступен по адресу: rtsp://ваш-ip:8554/live/stream
+2025-10-17 19:27:15,621 - __main__ - INFO - ⏹️  Для остановки нажмите Ctrl+C
+2025-10-17 19:27:15,621 - __main__ - INFO - 
+2025-10-17 19:27:15,628 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.0.4:5000
+2025-10-17 19:27:15,629 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-10-17 19:27:19,417 - core.camera_finder - INFO - 🔍 Поиск и тестирование камер...
+2025-10-17 19:27:19,418 - core.camera_finder - INFO - 🔍 Поиск доступных камер...
+2025-10-17 19:27:19,881 - core.camera_finder - INFO - ✅ Метод 1: найдено 1 камер
+2025-10-17 19:27:20,179 - core.camera_finder - INFO - ✅ Метод 2: найдено 1 камер
+2025-10-17 19:27:20,181 - core.camera_finder - INFO - 📹 Найдено потенциальных камер: 2
+2025-10-17 19:27:20,181 - core.camera_finder - INFO -    - ov9734_azurewave_camera
+2025-10-17 19:27:20,181 - core.camera_finder - INFO -    - (video)
+2025-10-17 19:27:20,181 - core.camera_finder - INFO - 🔍 Тестируем камеру: ov9734_azurewave_camera
+2025-10-17 19:27:20,181 - core.camera_finder - INFO - 🔄 Попытка 1 для камеры ov9734_azurewave_camera
+2025-10-17 19:27:24,273 - core.camera_finder - INFO - ✅ Камера 'ov9734_azurewave_camera' - РАБОТАЕТ (попытка 1)
+2025-10-17 19:27:24,273 - core.camera_finder - INFO - ✅ ov9734_azurewave_camera - рабочая
+2025-10-17 19:27:24,274 - core.camera_finder - INFO - 🔍 Тестируем камеру: (video)
+2025-10-17 19:27:24,274 - core.camera_finder - INFO - 🔄 Попытка 1 для камеры (video)
+2025-10-17 19:27:24,320 - core.camera_finder - INFO - 🔄 Попытка 2 для камеры (video)
+2025-10-17 19:27:24,366 - core.camera_finder - INFO - 🔄 Попытка 3 для камеры (video)
+2025-10-17 19:27:24,412 - core.camera_finder - INFO - ❌ (video) - нерабочая: Ошибка ввода-вывода (проверьте доступ к камере)
+2025-10-17 19:27:24,412 - core.camera_finder - INFO - 🎯 Рабочие камеры: 1 из 2
+2025-10-17 19:27:24,412 - core.camera_finder - INFO -    ✅ ov9734_azurewave_camera
+2025-10-17 19:27:24,413 - config.settings - INFO - 📡 Локальный IP: 192.168.0.4
+2025-10-17 19:27:24,927 - config.settings - INFO - 🌐 Внешний IP: 46.147.70.29
+2025-10-17 19:27:24,930 - config.settings - INFO - ✅ FFmpeg найден: C:\Users\Honor\Downloads\Аханабдуле\ffmpeg.exe
+2025-10-17 19:27:24,930 - config.settings - INFO - ✅ MediaMTX найден: C:\Users\Honor\Downloads\Аханабдуле\mediamtx.exe
+2025-10-17 19:27:24,941 - werkzeug - INFO - 127.0.0.1 - - [17/Oct/2025 19:27:24] "GET / HTTP/1.1" 200 -
+2025-10-17 19:27:25,026 - werkzeug - INFO - 127.0.0.1 - - [17/Oct/2025 19:27:25] "[36mGET /static/css/main.css HTTP/1.1[0m" 304 -
+2025-10-17 19:27:25,030 - werkzeug - INFO - 127.0.0.1 - - [17/Oct/2025 19:27:25] "[36mGET /static/css/layout.css HTTP/1.1[0m" 304 -
+2025-10-17 19:27:25,289 - werkzeug - INFO - 127.0.0.1 - - [17/Oct/2025 19:27:25] "[36mGET /static/css/components.css HTTP/1.1[0m" 304 -
+2025-10-17 19:27:25,290 - werkzeug - INFO - 127.0.0.1 - - [17/Oct/2025 19:27:25] "[36mGET /static/css/themes.css HTTP/1.1[0m" 304 -
+2025-10-17 19:27:25,290 - werkzeug - INFO - 127.0.0.1 - - [17/Oct/2025 19:27:25] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-10-17 19:27:25,291 - werkzeug - INFO - 127.0.0.1 - - [17/Oct/2025 19:27:25] "[36mGET /static/js/terminal.js HTTP/1.1[0m" 304 -
+2025-10-17 19:27:25,334 - werkzeug - INFO - 127.0.0.1 - - [17/Oct/2025 19:27:25] "GET /static/js/api.js HTTP/1.1" 200 -
+2025-10-17 19:27:25,730 - config.settings - INFO - 📡 Локальный IP: 192.168.0.4
+2025-10-17 19:27:25,731 - werkzeug - INFO - 127.0.0.1 - - [17/Oct/2025 19:27:25] "GET /api/status HTTP/1.1" 200 -
+2025-10-17 19:27:25,996 - werkzeug - INFO - 127.0.0.1 - - [17/Oct/2025 19:27:25] "GET /api/network HTTP/1.1" 200 -
+2025-10-17 19:27:26,044 - werkzeug - INFO - 127.0.0.1 - - [17/Oct/2025 19:27:26] "GET /api/network/port-check HTTP/1.1" 200 -
+2025-10-17 19:27:26,044 - core.stream_manager - INFO - MediaMTX: 2025/10/17 19:27:26 INF [RTSP] [conn 127.0.0.1:49640] opened
+2025-10-17 19:27:26,044 - core.stream_manager - INFO - MediaMTX: 2025/10/17 19:27:26 INF [RTSP] [conn 127.0.0.1:49640] closed: EOF
+2025-10-17 19:27:35,423 - config.settings - INFO - 📡 Локальный IP: 192.168.0.4
+2025-10-17 19:27:35,424 - werkzeug - INFO - 127.0.0.1 - - [17/Oct/2025 19:27:35] "GET /api/status HTTP/1.1" 200 -
+2025-10-17 19:27:46,082 - config.settings - INFO - 📡 Локальный IP: 192.168.0.4
+2025-10-17 19:27:46,082 - werkzeug - INFO - 127.0.0.1 - - [17/Oct/2025 19:27:46] "GET /api/status HTTP/1.1" 200 -
+2025-10-17 19:27:55,766 - config.settings - INFO - 📡 Локальный IP: 192.168.0.4
+2025-10-17 19:27:55,766 - werkzeug - INFO - 127.0.0.1 - - [17/Oct/2025 19:27:55] "GET /api/status HTTP/1.1" 200 -
+2025-10-17 19:28:06,076 - config.settings - INFO - 📡 Локальный IP: 192.168.0.4
+2025-10-17 19:28:06,076 - werkzeug - INFO - 127.0.0.1 - - [17/Oct/2025 19:28:06] "GET /api/status HTTP/1.1" 200 -
+2025-10-17 19:28:15,773 - config.settings - INFO - 📡 Локальный IP: 192.168.0.4
+2025-10-17 19:28:15,773 - werkzeug - INFO - 127.0.0.1 - - [17/Oct/2025 19:28:15] "GET /api/status HTTP/1.1" 200 -
+2025-10-17 19:28:26,077 - config.settings - INFO - 📡 Локальный IP: 192.168.0.4
+2025-10-17 19:28:26,078 - werkzeug - INFO - 127.0.0.1 - - [17/Oct/2025 19:28:26] "GET /api/status HTTP/1.1" 200 -
+2025-10-17 19:28:35,775 - config.settings - INFO - 📡 Локальный IP: 192.168.0.4
+2025-10-17 19:28:35,776 - werkzeug - INFO - 127.0.0.1 - - [17/Oct/2025 19:28:35] "GET /api/status HTTP/1.1" 200 -
+2025-10-17 19:29:34,075 - config.settings - INFO - 📡 Локальный IP: 192.168.0.4
+2025-10-17 19:29:34,076 - werkzeug - INFO - 127.0.0.1 - - [17/Oct/2025 19:29:34] "GET /api/status HTTP/1.1" 200 -
+2025-10-17 19:30:33,774 - config.settings - INFO - 📡 Локальный IP: 192.168.0.4
+2025-10-17 19:30:33,775 - werkzeug - INFO - 127.0.0.1 - - [17/Oct/2025 19:30:33] "GET /api/status HTTP/1.1" 200 -
+2025-10-17 19:31:34,076 - config.settings - INFO - 📡 Локальный IP: 192.168.0.4
+2025-10-17 19:31:34,077 - werkzeug - INFO - 127.0.0.1 - - [17/Oct/2025 19:31:34] "GET /api/status HTTP/1.1" 200 -
+2025-10-17 19:32:33,766 - config.settings - INFO - 📡 Локальный IP: 192.168.0.4
+2025-10-17 19:32:33,766 - werkzeug - INFO - 127.0.0.1 - - [17/Oct/2025 19:32:33] "GET /api/status HTTP/1.1" 200 -
+2025-10-17 19:33:18,879 - config.settings - INFO - 📡 Локальный IP: 192.168.0.4
+2025-10-17 19:33:18,879 - werkzeug - INFO - 127.0.0.1 - - [17/Oct/2025 19:33:18] "GET /api/status HTTP/1.1" 200 -
+2025-10-17 19:33:25,427 - config.settings - INFO - 📡 Локальный IP: 192.168.0.4
+2025-10-17 19:33:25,428 - werkzeug - INFO - 127.0.0.1 - - [17/Oct/2025 19:33:25] "GET /api/status HTTP/1.1" 200 -
+2025-10-17 19:33:35,742 - config.settings - INFO - 📡 Локальный IP: 192.168.0.4
+2025-10-17 19:33:35,742 - werkzeug - INFO - 127.0.0.1 - - [17/Oct/2025 19:33:35] "GET /api/status HTTP/1.1" 200 -
+2025-10-17 19:33:45,425 - config.settings - INFO - 📡 Локальный IP: 192.168.0.4
+2025-10-17 19:33:45,426 - werkzeug - INFO - 127.0.0.1 - - [17/Oct/2025 19:33:45] "GET /api/status HTTP/1.1" 200 -
+2025-10-17 19:33:46,172 - core.camera_finder - INFO - 🔍 Тестируем камеру: ov9734_azurewave_camera
+2025-10-17 19:33:46,173 - core.camera_finder - INFO - 🔄 Попытка 1 для камеры ov9734_azurewave_camera
+2025-10-17 19:33:50,430 - core.camera_finder - INFO - ✅ Камера 'ov9734_azurewave_camera' - РАБОТАЕТ (попытка 1)
+2025-10-17 19:33:50,430 - config.settings - INFO - ✅ FFmpeg найден: C:\Users\Honor\Downloads\Аханабдуле\ffmpeg.exe
+2025-10-17 19:33:50,430 - config.settings - INFO - 📡 Локальный IP: 192.168.0.4
+2025-10-17 19:33:50,430 - core.stream_manager - INFO - 🎬 Попытка 1 запуска стрима с камеры: ov9734_azurewave_camera
+2025-10-17 19:33:50,430 - core.stream_manager - INFO - 🔧 Команда: C:\Users\Honor\Downloads\Аханабдуле\ffmpeg.exe -f dshow -i video=ov9734_azurewave_camera -c:v libx264 -preset ultrafast -tune zerolatency -g 15 -keyint_min 15 -crf 25 -profile:v baseline -level 3.1 -pix_fmt yuv420p -f rtsp -rtsp_transport tcp rtsp://localhost:8554/live/stream
+2025-10-17 19:33:50,446 - core.stream_manager - INFO - FFmpeg: ffmpeg version 8.0-full_build-www.gyan.dev Copyright (c) 2000-2025 the FFmpeg developers
+2025-10-17 19:33:50,446 - core.stream_manager - INFO - FFmpeg: built with gcc 15.2.0 (Rev8, Built by MSYS2 project)
+2025-10-17 19:33:50,446 - core.stream_manager - INFO - FFmpeg: configuration: --enable-gpl --enable-version3 --enable-static --disable-w32threads --disable-autodetect --enable-fontconfig --enable-iconv --enable-gnutls --enable-lcms2 --enable-libxml2 --enable-gmp --enable-bzlib --enable-lzma --enable-libsnappy --enable-zlib --enable-librist --enable-libsrt --enable-libssh --enable-libzmq --enable-avisynth --enable-libbluray --enable-libcaca --enable-libdvdnav --enable-libdvdread --enable-sdl2 --enable-libaribb24 --enable-libaribcaption --enable-libdav1d --enable-libdavs2 --enable-libopenjpeg --enable-libquirc --enable-libuavs3d --enable-libxevd --enable-libzvbi --enable-liboapv --enable-libqrencode --enable-librav1e --enable-libsvtav1 --enable-libvvenc --enable-libwebp --enable-libx264 --enable-libx265 --enable-libxavs2 --enable-libxeve --enable-libxvid --enable-libaom --enable-libjxl --enable-libvpx --enable-mediafoundation --enable-libass --enable-frei0r --enable-libfreetype --enable-libfribidi --enable-libharfbuzz --enable-liblensfun --enable-libvidstab --enable-libvmaf --enable-libzimg --enable-amf --enable-cuda-llvm --enable-cuvid --enable-dxva2 --enable-d3d11va --enable-d3d12va --enable-ffnvcodec --enable-libvpl --enable-nvdec --enable-nvenc --enable-vaapi --enable-libshaderc --enable-vulkan --enable-libplacebo --enable-opencl --enable-libcdio --enable-openal --enable-libgme --enable-libmodplug --enable-libopenmpt --enable-libopencore-amrwb --enable-libmp3lame --enable-libshine --enable-libtheora --enable-libtwolame --enable-libvo-amrwbenc --enable-libcodec2 --enable-libilbc --enable-libgsm --enable-liblc3 --enable-libopencore-amrnb --enable-libopus --enable-libspeex --enable-libvorbis --enable-ladspa --enable-libbs2b --enable-libflite --enable-libmysofa --enable-librubberband --enable-libsoxr --enable-chromaprint --enable-whisper
+2025-10-17 19:33:50,462 - core.stream_manager - INFO - FFmpeg: libavutil      60.  8.100 / 60.  8.100
+2025-10-17 19:33:50,462 - core.stream_manager - INFO - FFmpeg: libavcodec     62. 11.100 / 62. 11.100
+2025-10-17 19:33:50,462 - core.stream_manager - INFO - FFmpeg: libavformat    62.  3.100 / 62.  3.100
+2025-10-17 19:33:50,462 - core.stream_manager - INFO - FFmpeg: libavdevice    62.  1.100 / 62.  1.100
+2025-10-17 19:33:50,462 - core.stream_manager - INFO - FFmpeg: libavfilter    11.  4.100 / 11.  4.100
+2025-10-17 19:33:50,462 - core.stream_manager - INFO - FFmpeg: libswscale      9.  1.100 /  9.  1.100
+2025-10-17 19:33:50,462 - core.stream_manager - INFO - FFmpeg: libswresample   6.  1.100 /  6.  1.100
+2025-10-17 19:33:50,968 - core.stream_manager - ERROR - FFmpeg ERROR: Input #0, dshow, from 'video=ov9734_azurewave_camera':
+2025-10-17 19:33:50,968 - core.stream_manager - INFO - FFmpeg: : Video: mjpeg (Baseline) (MJPG / 0x47504A4D), yuvj422p(pc, bt470bg/unknown/unknown), 1280x720, 30 fps, 30 tbr, 10000k tbn, start 157996.464174
+2025-10-17 19:33:50,969 - core.stream_manager - ERROR - FFmpeg ERROR: Stream mapping:
+2025-10-17 19:33:50,969 - core.stream_manager - INFO - FFmpeg: Stream #0:0 -> #0:0 (mjpeg (native) -> h264 (libx264))
+2025-10-17 19:33:50,969 - core.stream_manager - ERROR - FFmpeg ERROR: Press [q] to stop, [?] for help
+2025-10-17 19:33:50,977 - core.stream_manager - ERROR - FFmpeg ERROR: deprecated pixel format used, make sure you did set range correctly
+2025-10-17 19:33:50,982 - core.stream_manager - INFO - FFmpeg: [swscaler @ 0000023ad1626780] [libx264 @ 0000023ad160fa80] using cpu capabilities: MMX2 SSE2Fast SSSE3 SSE4.2 AVX FMA3 BMI2 AVX2
+2025-10-17 19:33:50,983 - core.stream_manager - ERROR - FFmpeg ERROR: [libx264 @ 0000023ad160fa80] profile Constrained Baseline, level 3.1, 4:2:0, 8-bit
+2025-10-17 19:33:50,984 - core.stream_manager - ERROR - FFmpeg ERROR: [libx264 @ 0000023ad160fa80] 264 - core 165 r3222 b35605a - H.264/MPEG-4 AVC codec - Copyleft 2003-2025 - http://www.videolan.org/x264.html - options: cabac=0 ref=1 deblock=0:0:0 analyse=0:0 me=dia subme=0 psy=1 psy_rd=1.00:0.00 mixed_ref=0 me_range=16 chroma_me=1 trellis=0 8x8dct=0 cqm=0 deadzone=21,11 fast_pskip=1 chroma_qp_offset=0 threads=6 lookahead_threads=6 sliced_threads=1 slices=6 nr=0 decimate=1 interlaced=0 bluray_compat=0 constrained_intra=0 bframes=0 weightp=0 keyint=15 keyint_min=8 scenecut=0 intra_refresh=0 rc=crf mbtree=0 crf=25.0 qcomp=0.60 qpmin=0 qpmax=69 qpstep=4 ip_ratio=1.40 aq=0
+2025-10-17 19:33:50,988 - core.stream_manager - INFO - MediaMTX: 2025/10/17 19:33:50 INF [RTSP] [conn [::1]:49709] opened
+2025-10-17 19:33:50,989 - core.stream_manager - INFO - MediaMTX: 2025/10/17 19:33:50 INF [RTSP] [session 4d142fff] created by [::1]:49709
+2025-10-17 19:33:50,989 - core.stream_manager - INFO - FFmpeg: [rtsp @ 0000023ad160b640] method ANNOUNCE failed: 401 Unauthorized
+2025-10-17 19:33:50,990 - core.stream_manager - ERROR - FFmpeg ERROR: [out#0/rtsp @ 0000023ad160c000] Could not write header (incorrect codec parameters ?): Server returned 401 Unauthorized (authorization failed)
+2025-10-17 19:33:50,990 - core.stream_manager - INFO - MediaMTX: 2025/10/17 19:33:50 INF [RTSP] [conn [::1]:49709] closed: EOF
+2025-10-17 19:33:50,990 - core.stream_manager - INFO - FFmpeg: [vf#0:0 @ 0000023ad16104c0] Error sending frames to consumers: Server returned 401 Unauthorized (authorization failed)
+2025-10-17 19:33:50,990 - core.stream_manager - INFO - MediaMTX: 2025/10/17 19:33:50 INF [RTSP] [session 4d142fff] destroyed: not in use
+2025-10-17 19:33:50,990 - core.stream_manager - ERROR - FFmpeg ERROR: [vf#0:0 @ 0000023ad16104c0] Task finished with error code: -825242872 (Server returned 401 Unauthorized (authorization failed))
+2025-10-17 19:33:50,990 - core.stream_manager - ERROR - FFmpeg ERROR: [vf#0:0 @ 0000023ad16104c0] Terminating thread with return code -825242872 (Server returned 401 Unauthorized (authorization failed))
+2025-10-17 19:33:51,083 - core.stream_manager - ERROR - FFmpeg ERROR: Nothing was written into output file, because at least one of its streams received no packets.
+2025-10-17 19:33:51,579 - core.stream_manager - INFO - FFmpeg: [out#0/rtsp @ 0000023ad160c000] Conversion failed!
+2025-10-17 19:33:53,439 - core.stream_manager - ERROR - ❌ Попытка 1 не удалась: FFmpeg завершился с ошибкой
+2025-10-17 19:33:53,439 - core.stream_manager - INFO - 🎬 Попытка 2 запуска стрима с камеры: ov9734_azurewave_camera
+2025-10-17 19:33:53,439 - core.stream_manager - INFO - 🔧 Команда: C:\Users\Honor\Downloads\Аханабдуле\ffmpeg.exe -f dshow -i video=ov9734_azurewave_camera -c:v libx264 -preset ultrafast -tune zerolatency -g 15 -keyint_min 15 -crf 25 -profile:v baseline -level 3.1 -pix_fmt yuv420p -f rtsp -rtsp_transport tcp rtsp://:@192.168.0.4:8554/live/stream
+2025-10-17 19:33:53,471 - core.stream_manager - INFO - FFmpeg: ffmpeg version 8.0-full_build-www.gyan.dev Copyright (c) 2000-2025 the FFmpeg developers
+2025-10-17 19:33:53,471 - core.stream_manager - INFO - FFmpeg: built with gcc 15.2.0 (Rev8, Built by MSYS2 project)
+2025-10-17 19:33:53,471 - core.stream_manager - INFO - FFmpeg: configuration: --enable-gpl --enable-version3 --enable-static --disable-w32threads --disable-autodetect --enable-fontconfig --enable-iconv --enable-gnutls --enable-lcms2 --enable-libxml2 --enable-gmp --enable-bzlib --enable-lzma --enable-libsnappy --enable-zlib --enable-librist --enable-libsrt --enable-libssh --enable-libzmq --enable-avisynth --enable-libbluray --enable-libcaca --enable-libdvdnav --enable-libdvdread --enable-sdl2 --enable-libaribb24 --enable-libaribcaption --enable-libdav1d --enable-libdavs2 --enable-libopenjpeg --enable-libquirc --enable-libuavs3d --enable-libxevd --enable-libzvbi --enable-liboapv --enable-libqrencode --enable-librav1e --enable-libsvtav1 --enable-libvvenc --enable-libwebp --enable-libx264 --enable-libx265 --enable-libxavs2 --enable-libxeve --enable-libxvid --enable-libaom --enable-libjxl --enable-libvpx --enable-mediafoundation --enable-libass --enable-frei0r --enable-libfreetype --enable-libfribidi --enable-libharfbuzz --enable-liblensfun --enable-libvidstab --enable-libvmaf --enable-libzimg --enable-amf --enable-cuda-llvm --enable-cuvid --enable-dxva2 --enable-d3d11va --enable-d3d12va --enable-ffnvcodec --enable-libvpl --enable-nvdec --enable-nvenc --enable-vaapi --enable-libshaderc --enable-vulkan --enable-libplacebo --enable-opencl --enable-libcdio --enable-openal --enable-libgme --enable-libmodplug --enable-libopenmpt --enable-libopencore-amrwb --enable-libmp3lame --enable-libshine --enable-libtheora --enable-libtwolame --enable-libvo-amrwbenc --enable-libcodec2 --enable-libilbc --enable-libgsm --enable-liblc3 --enable-libopencore-amrnb --enable-libopus --enable-libspeex --enable-libvorbis --enable-ladspa --enable-libbs2b --enable-libflite --enable-libmysofa --enable-librubberband --enable-libsoxr --enable-chromaprint --enable-whisper
+2025-10-17 19:33:53,471 - core.stream_manager - INFO - FFmpeg: libavutil      60.  8.100 / 60.  8.100
+2025-10-17 19:33:53,471 - core.stream_manager - INFO - FFmpeg: libavcodec     62. 11.100 / 62. 11.100
+2025-10-17 19:33:53,471 - core.stream_manager - INFO - FFmpeg: libavformat    62.  3.100 / 62.  3.100
+2025-10-17 19:33:53,471 - core.stream_manager - INFO - FFmpeg: libavdevice    62.  1.100 / 62.  1.100
+2025-10-17 19:33:53,471 - core.stream_manager - INFO - FFmpeg: libavfilter    11.  4.100 / 11.  4.100
+2025-10-17 19:33:53,471 - core.stream_manager - INFO - FFmpeg: libswscale      9.  1.100 /  9.  1.100
+2025-10-17 19:33:53,471 - core.stream_manager - INFO - FFmpeg: libswresample   6.  1.100 /  6.  1.100
+2025-10-17 19:33:53,982 - core.stream_manager - INFO - FFmpeg: Duration: N/A, start: 157999.479855, bitrate: N/A
+2025-10-17 19:33:53,982 - core.stream_manager - INFO - FFmpeg: Stream #0:0: Video: mjpeg (Baseline) (MJPG / 0x47504A4D), yuvj422p(pc, bt470bg/unknown/unknown), 1280x720, 30 fps, 30 tbr, 10000k tbn, start 157999.479855
+2025-10-17 19:33:53,982 - core.stream_manager - ERROR - FFmpeg ERROR: Input #0, dshow, from 'video=ov9734_azurewave_camera':Stream mapping:
+2025-10-17 19:33:53,982 - core.stream_manager - INFO - FFmpeg: Stream #0:0 -> #0:0 (mjpeg (native) -> h264 (libx264))
+2025-10-17 19:33:53,982 - core.stream_manager - ERROR - FFmpeg ERROR: Press [q] to stop, [?] for help
+2025-10-17 19:33:53,991 - core.stream_manager - ERROR - FFmpeg ERROR: deprecated pixel format used, make sure you did set range correctly
+2025-10-17 19:33:53,996 - core.stream_manager - INFO - FFmpeg: [swscaler @ 000001f4fc416800] [libx264 @ 000001f4fc400680] using cpu capabilities: MMX2 SSE2Fast SSSE3 SSE4.2 AVX FMA3 BMI2 AVX2
+2025-10-17 19:33:53,998 - core.stream_manager - ERROR - FFmpeg ERROR: [libx264 @ 000001f4fc400680] profile Constrained Baseline, level 3.1, 4:2:0, 8-bit
+2025-10-17 19:33:53,998 - core.stream_manager - ERROR - FFmpeg ERROR: [libx264 @ 000001f4fc400680] 264 - core 165 r3222 b35605a - H.264/MPEG-4 AVC codec - Copyleft 2003-2025 - http://www.videolan.org/x264.html - options: cabac=0 ref=1 deblock=0:0:0 analyse=0:0 me=dia subme=0 psy=1 psy_rd=1.00:0.00 mixed_ref=0 me_range=16 chroma_me=1 trellis=0 8x8dct=0 cqm=0 deadzone=21,11 fast_pskip=1 chroma_qp_offset=0 threads=6 lookahead_threads=6 sliced_threads=1 slices=6 nr=0 decimate=1 interlaced=0 bluray_compat=0 constrained_intra=0 bframes=0 weightp=0 keyint=15 keyint_min=8 scenecut=0 intra_refresh=0 rc=crf mbtree=0 crf=25.0 qcomp=0.60 qpmin=0 qpmax=69 qpstep=4 ip_ratio=1.40 aq=0
+2025-10-17 19:33:54,010 - core.stream_manager - INFO - MediaMTX: 2025/10/17 19:33:54 INF [RTSP] [conn 192.168.0.4:49710] opened
+2025-10-17 19:33:54,011 - core.stream_manager - INFO - MediaMTX: 2025/10/17 19:33:54 INF [RTSP] [session d9289eaa] created by 192.168.0.4:49710
+2025-10-17 19:33:54,012 - core.stream_manager - INFO - MediaMTX: 2025/10/17 19:33:54 INF [RTSP] [session d9289eaa] is publishing to path 'live/stream', 1 track (H264)
+2025-10-17 19:33:54,012 - core.stream_manager - INFO - FFmpeg: Output #0, rtsp, to 'rtsp://:@192.168.0.4:8554/live/stream':
+2025-10-17 19:33:54,013 - core.stream_manager - INFO - FFmpeg: Metadata:
+2025-10-17 19:33:54,013 - core.stream_manager - INFO - FFmpeg: encoder         : Lavf62.3.100
+2025-10-17 19:33:54,013 - core.stream_manager - INFO - FFmpeg: Stream #0:0: Video: h264, yuv420p(pc, bt470bg/unknown/unknown, progressive), 1280x720, q=2-31, 30 fps, 90k tbn
+2025-10-17 19:33:54,013 - core.stream_manager - INFO - FFmpeg: Metadata:
+2025-10-17 19:33:54,013 - core.stream_manager - INFO - FFmpeg: encoder         : Lavc62.11.100 libx264
+2025-10-17 19:33:54,013 - core.stream_manager - INFO - FFmpeg: Side data:
+2025-10-17 19:33:54,014 - core.stream_manager - INFO - FFmpeg: cpb: bitrate max/min/avg: 0/0/0 buffer size: 0 vbv_delay: N/A
+2025-10-17 19:33:55,421 - config.settings - INFO - 📡 Локальный IP: 192.168.0.4
+2025-10-17 19:33:55,422 - werkzeug - INFO - 127.0.0.1 - - [17/Oct/2025 19:33:55] "GET /api/status HTTP/1.1" 200 -
+2025-10-17 19:33:56,451 - core.stream_manager - INFO - ✅ Стрим успешно запущен (попытка 2)
+2025-10-17 19:33:56,452 - config.settings - INFO - 📡 Локальный IP: 192.168.0.4
+2025-10-17 19:33:56,452 - werkzeug - INFO - 127.0.0.1 - - [17/Oct/2025 19:33:56] "POST /api/stream/start HTTP/1.1" 200 -
+2025-10-17 19:34:01,988 - config.settings - INFO - 📡 Локальный IP: 192.168.0.4
+2025-10-17 19:34:01,989 - werkzeug - INFO - 127.0.0.1 - - [17/Oct/2025 19:34:01] "GET /api/status HTTP/1.1" 200 -
+2025-10-17 19:34:05,434 - config.settings - INFO - 📡 Локальный IP: 192.168.0.4
+2025-10-17 19:34:05,434 - werkzeug - INFO - 127.0.0.1 - - [17/Oct/2025 19:34:05] "GET /api/status HTTP/1.1" 200 -
+2025-10-17 19:34:15,732 - config.settings - INFO - 📡 Локальный IP: 192.168.0.4
+2025-10-17 19:34:15,733 - werkzeug - INFO - 127.0.0.1 - - [17/Oct/2025 19:34:15] "GET /api/status HTTP/1.1" 200 -
+2025-10-17 19:34:25,433 - config.settings - INFO - 📡 Локальный IP: 192.168.0.4
+2025-10-17 19:34:25,433 - werkzeug - INFO - 127.0.0.1 - - [17/Oct/2025 19:34:25] "GET /api/status HTTP/1.1" 200 -
+2025-10-17 19:34:35,734 - config.settings - INFO - 📡 Локальный IP: 192.168.0.4
+2025-10-17 19:34:35,734 - werkzeug - INFO - 127.0.0.1 - - [17/Oct/2025 19:34:35] "GET /api/status HTTP/1.1" 200 -
+2025-10-17 19:34:45,655 - config.settings - INFO - 📡 Локальный IP: 192.168.0.4
+2025-10-17 19:34:45,655 - werkzeug - INFO - 127.0.0.1 - - [17/Oct/2025 19:34:45] "GET /api/status HTTP/1.1" 200 -
+2025-10-17 19:34:47,844 - core.stream_manager - INFO - FFmpeg: More than 1000 frames duplicated
+2025-10-17 19:34:48,630 - core.stream_manager - ERROR - FFmpeg ERROR: [vf#0:0 @ 000001f4fc407340] frame= 1623 fps= 30 q=26.0 size=N/A time=00:00:54.09 bitrate=N/A dup=1008 drop=0 speed=0.999x elapsed=0:00:54.13
+2025-10-17 19:34:55,740 - config.settings - INFO - 📡 Локальный IP: 192.168.0.4
+2025-10-17 19:34:55,740 - werkzeug - INFO - 127.0.0.1 - - [17/Oct/2025 19:34:55] "GET /api/status HTTP/1.1" 200 -
+2025-10-17 19:35:05,423 - config.settings - INFO - 📡 Локальный IP: 192.168.0.4
+2025-10-17 19:35:05,424 - werkzeug - INFO - 127.0.0.1 - - [17/Oct/2025 19:35:05] "GET /api/status HTTP/1.1" 200 -
+2025-10-17 19:35:15,731 - config.settings - INFO - 📡 Локальный IP: 192.168.0.4
+2025-10-17 19:35:15,731 - werkzeug - INFO - 127.0.0.1 - - [17/Oct/2025 19:35:15] "GET /api/status HTTP/1.1" 200 -
+2025-10-17 19:35:25,424 - config.settings - INFO - 📡 Локальный IP: 192.168.0.4
+2025-10-17 19:35:25,426 - werkzeug - INFO - 127.0.0.1 - - [17/Oct/2025 19:35:25] "GET /api/status HTTP/1.1" 200 -
+2025-10-17 19:35:36,073 - config.settings - INFO - 📡 Локальный IP: 192.168.0.4
+2025-10-17 19:35:36,073 - werkzeug - INFO - 127.0.0.1 - - [17/Oct/2025 19:35:36] "GET /api/status HTTP/1.1" 200 -
+2025-10-17 19:35:45,756 - config.settings - INFO - 📡 Локальный IP: 192.168.0.4
+2025-10-17 19:35:45,757 - werkzeug - INFO - 127.0.0.1 - - [17/Oct/2025 19:35:45] "GET /api/status HTTP/1.1" 200 -
+2025-10-17 19:35:56,071 - config.settings - INFO - 📡 Локальный IP: 192.168.0.4
+2025-10-17 19:35:56,072 - werkzeug - INFO - 127.0.0.1 - - [17/Oct/2025 19:35:56] "GET /api/status HTTP/1.1" 200 -
+2025-10-17 19:36:05,773 - config.settings - INFO - 📡 Локальный IP: 192.168.0.4
+2025-10-17 19:36:05,774 - werkzeug - INFO - 127.0.0.1 - - [17/Oct/2025 19:36:05] "GET /api/status HTTP/1.1" 200 -
+2025-10-17 19:36:16,069 - config.settings - INFO - 📡 Локальный IP: 192.168.0.4
+2025-10-17 19:36:16,070 - werkzeug - INFO - 127.0.0.1 - - [17/Oct/2025 19:36:16] "GET /api/status HTTP/1.1" 200 -
+2025-10-17 19:36:25,757 - config.settings - INFO - 📡 Локальный IP: 192.168.0.4
+2025-10-17 19:36:25,758 - werkzeug - INFO - 127.0.0.1 - - [17/Oct/2025 19:36:25] "GET /api/status HTTP/1.1" 200 -
+2025-10-17 19:37:19,903 - __main__ - INFO - 📋 Получен сигнал прерывания от пользователя
+2025-10-17 19:37:19,903 - core.stream_manager - INFO - MediaMTX: 2025/10/17 19:37:19 INF shutting down gracefully
+2025-10-17 19:37:19,903 - __main__ - INFO - ✅ Приложение завершило работу успешно
+2025-10-17 19:37:50,216 - config.settings - INFO - ✅ FFmpeg найден: C:\Users\Honor\Downloads\Аханабдуле\ffmpeg.exe
+2025-10-17 19:37:50,761 - core.network_manager - INFO - 🌐 Внешний IP: 46.147.70.29
+2025-10-17 19:37:50,767 - __main__ - INFO - 🔧 Настройка окружения...
+2025-10-17 19:37:50,768 - utils.system_checker - INFO - ✅ Python 3.12.3
+2025-10-17 19:37:50,768 - utils.system_checker - INFO - ✅ FFmpeg найден: C:\Users\Honor\Downloads\Аханабдуле\ffmpeg.exe
+2025-10-17 19:37:50,768 - utils.system_checker - INFO - ✅ MediaMTX найден: C:\Users\Honor\Downloads\Аханабдуле\mediamtx.exe
+2025-10-17 19:37:50,768 - utils.system_checker - INFO - ✅ Библиотека flask доступна
+2025-10-17 19:37:50,768 - utils.system_checker - INFO - ✅ Библиотека requests доступна
+2025-10-17 19:37:50,769 - utils.system_checker - INFO - ✅ python: Доступен
+2025-10-17 19:37:50,769 - utils.system_checker - INFO - ✅ ffmpeg: Доступен
+2025-10-17 19:37:50,769 - utils.system_checker - INFO - ✅ mediamtx: Доступен
+2025-10-17 19:37:50,769 - utils.system_checker - INFO - ✅ flask: Доступен
+2025-10-17 19:37:50,769 - utils.system_checker - INFO - ✅ requests: Доступен
+2025-10-17 19:37:50,769 - __main__ - INFO - 🛡️ Настройка доступа через брандмауэр Windows...
+2025-10-17 19:37:50,771 - __main__ - INFO - 🛡️ Добавляем приложение в разрешенные программы брандмауэра...
+2025-10-17 19:37:50,771 - core.firewall_prompt - INFO - 📁 Путь к приложению: C:\Users\Honor\Downloads\Аханабдуле\.venv\Scripts\python.exe
+2025-10-17 19:37:50,866 - core.firewall_prompt - INFO - ℹ️ Правило для приложения уже существует в брандмауэре
+2025-10-17 19:37:50,867 - __main__ - INFO - ✅ Приложение добавлено в разрешенные программы брандмауэра
+2025-10-17 19:37:50,867 - __main__ - INFO - 📋 Если появится запрос от Защитника Windows, нажмите 'Разрешить доступ'
+2025-10-17 19:37:50,867 - __main__ - INFO - 🔧 Настраиваем правила для портов...
+2025-10-17 19:37:50,867 - __main__ - INFO - ℹ️ Для автоматической настройки правил портов запустите программу от имени администратора
+2025-10-17 19:37:50,867 - __main__ - INFO - 📋 Вы можете настроить брандмауэр вручную через веб-интерфейс
+2025-10-17 19:37:52,868 - utils.system_checker - INFO - ✅ Python 3.12.3
+2025-10-17 19:37:52,869 - utils.system_checker - INFO - ✅ FFmpeg найден: C:\Users\Honor\Downloads\Аханабдуле\ffmpeg.exe
+2025-10-17 19:37:52,870 - utils.system_checker - INFO - ✅ MediaMTX найден: C:\Users\Honor\Downloads\Аханабдуле\mediamtx.exe
+2025-10-17 19:37:52,870 - __main__ - INFO - 🚀 Запуск сервисов...
+2025-10-17 19:37:54,935 - config.settings - INFO - ✅ MediaMTX найден: C:\Users\Honor\Downloads\Аханабдуле\mediamtx.exe
+2025-10-17 19:37:54,937 - core.stream_manager - INFO - 🗑️ Удален старый конфигурационный файл
+2025-10-17 19:37:54,938 - core.stream_manager - INFO - ✅ Конфигурационный файл MediaMTX создан
+2025-10-17 19:37:54,939 - core.stream_manager - INFO - 🔄 Запуск MediaMTX...
+2025-10-17 19:37:54,939 - core.stream_manager - INFO - 📁 Путь к MediaMTX: C:\Users\Honor\Downloads\Аханабдуле\mediamtx.exe
+2025-10-17 19:37:54,993 - core.stream_manager - INFO - MediaMTX: 2025/10/17 19:37:54 INF MediaMTX v1.9.2
+2025-10-17 19:37:54,994 - core.stream_manager - INFO - MediaMTX: 2025/10/17 19:37:54 INF configuration loaded from C:\Users\Honor\Downloads\РђС…Р°РЅР°Р±РґСѓР»Рµ\mediamtx.yml
+2025-10-17 19:37:54,994 - core.stream_manager - INFO - MediaMTX: 2025/10/17 19:37:54 INF [RTSP] listener opened on :8554 (TCP), :8000 (UDP/RTP), :8001 (UDP/RTCP)
+2025-10-17 19:37:54,995 - core.stream_manager - INFO - MediaMTX: 2025/10/17 19:37:54 INF [RTMP] listener opened on :1935
+2025-10-17 19:37:54,995 - core.stream_manager - INFO - MediaMTX: 2025/10/17 19:37:54 INF [HLS] listener opened on :8888
+2025-10-17 19:37:54,995 - core.stream_manager - INFO - MediaMTX: 2025/10/17 19:37:54 INF [WebRTC] listener opened on :8889 (HTTP), :8189 (ICE/UDP)
+2025-10-17 19:37:54,995 - core.stream_manager - INFO - MediaMTX: 2025/10/17 19:37:54 INF [SRT] listener opened on :8890 (UDP)
+2025-10-17 19:37:54,995 - core.stream_manager - INFO - MediaMTX: 2025/10/17 19:37:54 INF [API] listener opened on :9997
+2025-10-17 19:37:57,944 - core.stream_manager - INFO - ✅ MediaMTX успешно запущен
+2025-10-17 19:37:57,945 - web.app - INFO - 🌐 Запуск веб-сервера на 0.0.0.0:5000
+2025-10-17 19:37:57,945 - web.app - INFO - ✅ Веб-интерфейс запущен
+2025-10-17 19:37:57,945 - __main__ - INFO - 🌐 Веб-интерфейс доступен по адресу: http://localhost:5000
+2025-10-17 19:37:57,946 - __main__ - INFO - 📹 RTSP поток будет доступен по адресу: rtsp://ваш-ip:8554/live/stream
+2025-10-17 19:37:57,946 - __main__ - INFO - ⏹️  Для остановки нажмите Ctrl+C
+2025-10-17 19:37:57,946 - __main__ - INFO - 
+2025-10-17 19:37:57,953 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.0.4:5000
+2025-10-17 19:37:57,953 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-10-17 19:38:01,296 - core.camera_finder - INFO - 🔍 Поиск и тестирование камер...
+2025-10-17 19:38:01,297 - core.camera_finder - INFO - 🔍 Поиск доступных камер...
+2025-10-17 19:38:01,736 - core.camera_finder - INFO - ✅ Метод 1: найдено 1 камер
+2025-10-17 19:38:02,034 - core.camera_finder - INFO - ✅ Метод 2: найдено 1 камер
+2025-10-17 19:38:02,034 - core.camera_finder - INFO - 📹 Найдено потенциальных камер: 2
+2025-10-17 19:38:02,034 - core.camera_finder - INFO -    - (video)
+2025-10-17 19:38:02,034 - core.camera_finder - INFO -    - ov9734_azurewave_camera
+2025-10-17 19:38:02,035 - core.camera_finder - INFO - 🔍 Тестируем камеру: (video)
+2025-10-17 19:38:02,035 - core.camera_finder - INFO - 🔄 Попытка 1 для камеры (video)
+2025-10-17 19:38:02,082 - core.camera_finder - INFO - 🔄 Попытка 2 для камеры (video)
+2025-10-17 19:38:02,128 - core.camera_finder - INFO - 🔄 Попытка 3 для камеры (video)
+2025-10-17 19:38:02,175 - core.camera_finder - INFO - ❌ (video) - нерабочая: Ошибка ввода-вывода (проверьте доступ к камере)
+2025-10-17 19:38:02,176 - core.camera_finder - INFO - 🔍 Тестируем камеру: ov9734_azurewave_camera
+2025-10-17 19:38:02,176 - core.camera_finder - INFO - 🔄 Попытка 1 для камеры ov9734_azurewave_camera
+2025-10-17 19:38:06,239 - core.camera_finder - INFO - ✅ Камера 'ov9734_azurewave_camera' - РАБОТАЕТ (попытка 1)
+2025-10-17 19:38:06,240 - core.camera_finder - INFO - ✅ ov9734_azurewave_camera - рабочая
+2025-10-17 19:38:06,240 - core.camera_finder - INFO - 🎯 Рабочие камеры: 1 из 2
+2025-10-17 19:38:06,240 - core.camera_finder - INFO -    ✅ ov9734_azurewave_camera
+2025-10-17 19:38:06,241 - config.settings - INFO - 📡 Локальный IP: 192.168.0.4
+2025-10-17 19:38:06,843 - config.settings - INFO - 🌐 Внешний IP: 46.147.70.29
+2025-10-17 19:38:06,845 - config.settings - INFO - ✅ FFmpeg найден: C:\Users\Honor\Downloads\Аханабдуле\ffmpeg.exe
+2025-10-17 19:38:06,846 - config.settings - INFO - ✅ MediaMTX найден: C:\Users\Honor\Downloads\Аханабдуле\mediamtx.exe
+2025-10-17 19:38:06,855 - werkzeug - INFO - 127.0.0.1 - - [17/Oct/2025 19:38:06] "GET / HTTP/1.1" 200 -
+2025-10-17 19:38:06,937 - werkzeug - INFO - 127.0.0.1 - - [17/Oct/2025 19:38:06] "[36mGET /static/css/main.css HTTP/1.1[0m" 304 -
+2025-10-17 19:38:06,941 - werkzeug - INFO - 127.0.0.1 - - [17/Oct/2025 19:38:06] "[36mGET /static/css/layout.css HTTP/1.1[0m" 304 -
+2025-10-17 19:38:07,204 - werkzeug - INFO - 127.0.0.1 - - [17/Oct/2025 19:38:07] "[36mGET /static/css/components.css HTTP/1.1[0m" 304 -
+2025-10-17 19:38:07,207 - werkzeug - INFO - 127.0.0.1 - - [17/Oct/2025 19:38:07] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-10-17 19:38:07,207 - werkzeug - INFO - 127.0.0.1 - - [17/Oct/2025 19:38:07] "[36mGET /static/css/themes.css HTTP/1.1[0m" 304 -
+2025-10-17 19:38:07,209 - werkzeug - INFO - 127.0.0.1 - - [17/Oct/2025 19:38:07] "[36mGET /static/js/terminal.js HTTP/1.1[0m" 304 -
+2025-10-17 19:38:07,251 - werkzeug - INFO - 127.0.0.1 - - [17/Oct/2025 19:38:07] "GET /static/js/api.js HTTP/1.1" 200 -
+2025-10-17 19:38:07,645 - config.settings - INFO - 📡 Локальный IP: 192.168.0.4
+2025-10-17 19:38:07,646 - werkzeug - INFO - 127.0.0.1 - - [17/Oct/2025 19:38:07] "GET /api/status HTTP/1.1" 200 -
+2025-10-17 19:38:07,910 - werkzeug - INFO - 127.0.0.1 - - [17/Oct/2025 19:38:07] "GET /api/network HTTP/1.1" 200 -
+2025-10-17 19:38:07,973 - werkzeug - INFO - 127.0.0.1 - - [17/Oct/2025 19:38:07] "GET /api/network/port-check HTTP/1.1" 200 -
+2025-10-17 19:38:07,975 - core.stream_manager - INFO - MediaMTX: 2025/10/17 19:38:07 INF [RTSP] [conn 127.0.0.1:49816] opened
+2025-10-17 19:38:07,975 - core.stream_manager - INFO - MediaMTX: 2025/10/17 19:38:07 INF [RTSP] [conn 127.0.0.1:49816] closed: EOF
+2025-10-17 19:38:17,357 - config.settings - INFO - 📡 Локальный IP: 192.168.0.4
+2025-10-17 19:38:17,358 - werkzeug - INFO - 127.0.0.1 - - [17/Oct/2025 19:38:17] "GET /api/status HTTP/1.1" 200 -
+2025-10-17 19:38:27,667 - config.settings - INFO - 📡 Локальный IP: 192.168.0.4
+2025-10-17 19:38:27,668 - werkzeug - INFO - 127.0.0.1 - - [17/Oct/2025 19:38:27] "GET /api/status HTTP/1.1" 200 -
+2025-10-17 19:38:37,351 - config.settings - INFO - 📡 Локальный IP: 192.168.0.4
+2025-10-17 19:38:37,351 - werkzeug - INFO - 127.0.0.1 - - [17/Oct/2025 19:38:37] "GET /api/status HTTP/1.1" 200 -
+2025-10-17 19:38:47,656 - config.settings - INFO - 📡 Локальный IP: 192.168.0.4
+2025-10-17 19:38:47,657 - werkzeug - INFO - 127.0.0.1 - - [17/Oct/2025 19:38:47] "GET /api/status HTTP/1.1" 200 -
+2025-10-17 19:38:57,352 - config.settings - INFO - 📡 Локальный IP: 192.168.0.4
+2025-10-17 19:38:57,353 - werkzeug - INFO - 127.0.0.1 - - [17/Oct/2025 19:38:57] "GET /api/status HTTP/1.1" 200 -
+2025-10-17 19:39:07,655 - config.settings - INFO - 📡 Локальный IP: 192.168.0.4
+2025-10-17 19:39:07,655 - werkzeug - INFO - 127.0.0.1 - - [17/Oct/2025 19:39:07] "GET /api/status HTTP/1.1" 200 -
+2025-10-17 19:39:17,336 - config.settings - INFO - 📡 Локальный IP: 192.168.0.4
+2025-10-17 19:39:17,336 - werkzeug - INFO - 127.0.0.1 - - [17/Oct/2025 19:39:17] "GET /api/status HTTP/1.1" 200 -
+2025-10-17 19:39:27,653 - config.settings - INFO - 📡 Локальный IP: 192.168.0.4
+2025-10-17 19:39:27,653 - werkzeug - INFO - 127.0.0.1 - - [17/Oct/2025 19:39:27] "GET /api/status HTTP/1.1" 200 -
+2025-10-17 19:39:37,350 - config.settings - INFO - 📡 Локальный IP: 192.168.0.4
+2025-10-17 19:39:37,351 - werkzeug - INFO - 127.0.0.1 - - [17/Oct/2025 19:39:37] "GET /api/status HTTP/1.1" 200 -
+2025-10-17 19:39:47,647 - config.settings - INFO - 📡 Локальный IP: 192.168.0.4
+2025-10-17 19:39:47,647 - werkzeug - INFO - 127.0.0.1 - - [17/Oct/2025 19:39:47] "GET /api/status HTTP/1.1" 200 -
+2025-10-17 19:39:52,933 - core.camera_finder - INFO - 🔍 Тестируем камеру: ov9734_azurewave_camera
+2025-10-17 19:39:52,933 - core.camera_finder - INFO - 🔄 Попытка 1 для камеры ov9734_azurewave_camera
+2025-10-17 19:39:57,133 - core.camera_finder - INFO - ✅ Камера 'ov9734_azurewave_camera' - РАБОТАЕТ (попытка 1)
+2025-10-17 19:39:57,133 - config.settings - INFO - ✅ FFmpeg найден: C:\Users\Honor\Downloads\Аханабдуле\ffmpeg.exe
+2025-10-17 19:39:57,133 - config.settings - INFO - 📡 Локальный IP: 192.168.0.4
+2025-10-17 19:39:57,133 - core.stream_manager - INFO - 🎬 Попытка 1 запуска стрима с камеры: ov9734_azurewave_camera
+2025-10-17 19:39:57,133 - core.stream_manager - INFO - 🔧 Команда: C:\Users\Honor\Downloads\Аханабдуле\ffmpeg.exe -f dshow -i video=ov9734_azurewave_camera -c:v libx264 -preset ultrafast -tune zerolatency -g 15 -keyint_min 15 -crf 25 -profile:v baseline -level 3.1 -pix_fmt yuv420p -f rtsp -rtsp_transport tcp rtsp://localhost:8554/live/stream
+2025-10-17 19:39:57,155 - core.stream_manager - ERROR - FFmpeg ERROR: Copyright (c) 2000-2025 the FFmpeg developers
+2025-10-17 19:39:57,155 - core.stream_manager - ERROR - FFmpeg ERROR: built with gcc 15.2.0 (Rev8, Built by MSYS2 project)
+2025-10-17 19:39:57,155 - core.stream_manager - ERROR - FFmpeg ERROR: configuration: --enable-gpl --enable-version3 --enable-static --disable-w32threads --disable-autodetect --enable-fontconfig --enable-iconv --enable-gnutls --enable-lcms2 --enable-libxml2 --enable-gmp --enable-bzlib --enable-lzma --enable-libsnappy --enable-zlib --enable-librist --enable-libsrt --enable-libssh --enable-libzmq --enable-avisynth --enable-libbluray --enable-libcaca --enable-libdvdnav --enable-libdvdread --enable-sdl2 --enable-libaribb24 --enable-libaribcaption --enable-libdav1d --enable-libdavs2 --enable-libopenjpeg --enable-libquirc --enable-libuavs3d --enable-libxevd --enable-libzvbi --enable-liboapv --enable-libqrencode --enable-librav1e --enable-libsvtav1 --enable-libvvenc --enable-libwebp --enable-libx264 --enable-libx265 --enable-libxavs2 --enable-libxeve --enable-libxvid --enable-libaom --enable-libjxl --enable-libvpx --enable-mediafoundation --enable-libass --enable-frei0r --enable-libfreetype --enable-libfribidi --enable-libharfbuzz --enable-liblensfun --enable-libvidstab --enable-libvmaf --enable-libzimg --enable-amf --enable-cuda-llvm --enable-cuvid --enable-dxva2 --enable-d3d11va --enable-d3d12va --enable-ffnvcodec --enable-libvpl --enable-nvdec --enable-nvenc --enable-vaapi --enable-libshaderc --enable-vulkan --enable-libplacebo --enable-opencl --enable-libcdio --enable-openal --enable-libgme --enable-libmodplug --enable-libopenmpt --enable-libopencore-amrwb --enable-libmp3lame --enable-libshine --enable-libtheora --enable-libtwolame --enable-libvo-amrwbenc --enable-libcodec2 --enable-libilbc --enable-libgsm --enable-liblc3 --enable-libopencore-amrnb --enable-libopus --enable-libspeex --enable-libvorbis --enable-ladspa --enable-libbs2b --enable-libflite --enable-libmysofa --enable-librubberband --enable-libsoxr --enable-chromaprint --enable-whisper
+2025-10-17 19:39:57,155 - core.stream_manager - ERROR - FFmpeg ERROR: libavutil      60.  8.100 / 60.  8.100
+2025-10-17 19:39:57,155 - core.stream_manager - ERROR - FFmpeg ERROR: libavcodec     62. 11.100 / 62. 11.100
+2025-10-17 19:39:57,155 - core.stream_manager - ERROR - FFmpeg ERROR: libavformat    62.  3.100 / 62.  3.100
+2025-10-17 19:39:57,155 - core.stream_manager - ERROR - FFmpeg ERROR: libavdevice    62.  1.100 / 62.  1.100
+2025-10-17 19:39:57,155 - core.stream_manager - ERROR - FFmpeg ERROR: libavfilter    11.  4.100 / 11.  4.100
+2025-10-17 19:39:57,155 - core.stream_manager - ERROR - FFmpeg ERROR: libswscale      9.  1.100 /  9.  1.100
+2025-10-17 19:39:57,155 - core.stream_manager - ERROR - FFmpeg ERROR: libswresample   6.  1.100 /  6.  1.100
+2025-10-17 19:39:57,658 - config.settings - INFO - 📡 Локальный IP: 192.168.0.4
+2025-10-17 19:39:57,659 - werkzeug - INFO - 127.0.0.1 - - [17/Oct/2025 19:39:57] "GET /api/status HTTP/1.1" 200 -
+2025-10-17 19:39:57,669 - core.stream_manager - INFO - FFmpeg: ffmpeg version 8.0-full_build-www.gyan.devInput #0, dshow, from 'video=ov9734_azurewave_camera':
+2025-10-17 19:39:57,670 - core.stream_manager - INFO - FFmpeg: Stream #0:0 -> #0:0 (mjpeg (native) -> h264 (libx264))
+2025-10-17 19:39:57,670 - core.stream_manager - ERROR - FFmpeg ERROR: Stream mapping:
+2025-10-17 19:39:57,671 - core.stream_manager - INFO - FFmpeg: Press [q] to stop, [?] for help
+2025-10-17 19:39:57,680 - core.stream_manager - INFO - FFmpeg: deprecated pixel format used, make sure you did set range correctly
+2025-10-17 19:39:57,685 - core.stream_manager - ERROR - FFmpeg ERROR: [swscaler @ 000002b3fb626600] [libx264 @ 000002b3fe81bb80] using cpu capabilities: MMX2 SSE2Fast SSSE3 SSE4.2 AVX FMA3 BMI2 AVX2
+2025-10-17 19:39:57,686 - core.stream_manager - ERROR - FFmpeg ERROR: profile Constrained Baseline, level 3.1, 4:2:0, 8-bit
+2025-10-17 19:39:57,687 - core.stream_manager - ERROR - FFmpeg ERROR: [libx264 @ 000002b3fe81bb80] 264 - core 165 r3222 b35605a - H.264/MPEG-4 AVC codec - Copyleft 2003-2025 - http://www.videolan.org/x264.html - options: cabac=0 ref=1 deblock=0:0:0 analyse=0:0 me=dia subme=0 psy=1 psy_rd=1.00:0.00 mixed_ref=0 me_range=16 chroma_me=1 trellis=0 8x8dct=0 cqm=0 deadzone=21,11 fast_pskip=1 chroma_qp_offset=0 threads=6 lookahead_threads=6 sliced_threads=1 slices=6 nr=0 decimate=1 interlaced=0 bluray_compat=0 constrained_intra=0 bframes=0 weightp=0 keyint=15 keyint_min=8 scenecut=0 intra_refresh=0 rc=crf mbtree=0 crf=25.0 qcomp=0.60 qpmin=0 qpmax=69 qpstep=4 ip_ratio=1.40 aq=0
+2025-10-17 19:39:57,691 - core.stream_manager - INFO - MediaMTX: 2025/10/17 19:39:57 INF [RTSP] [conn [::1]:49842] opened
+2025-10-17 19:39:57,692 - core.stream_manager - INFO - MediaMTX: 2025/10/17 19:39:57 INF [RTSP] [session a1a59508] created by [::1]:49842
+2025-10-17 19:39:57,693 - core.stream_manager - ERROR - FFmpeg ERROR: method ANNOUNCE failed: 401 Unauthorized
+2025-10-17 19:39:57,693 - core.stream_manager - INFO - MediaMTX: 2025/10/17 19:39:57 INF [RTSP] [conn [::1]:49842] closed: EOF
+2025-10-17 19:39:57,693 - core.stream_manager - ERROR - FFmpeg ERROR: [out#0/rtsp @ 000002b3fb60c140] Could not write header (incorrect codec parameters ?): Server returned 401 Unauthorized (authorization failed)
+2025-10-17 19:39:57,693 - core.stream_manager - INFO - MediaMTX: 2025/10/17 19:39:57 INF [RTSP] [session a1a59508] destroyed: not in use
+2025-10-17 19:39:57,693 - core.stream_manager - ERROR - FFmpeg ERROR: [vf#0:0 @ 000002b3fb6101c0] Error sending frames to consumers: Server returned 401 Unauthorized (authorization failed)
+2025-10-17 19:39:57,694 - core.stream_manager - INFO - FFmpeg: [libx264 @ 000002b3fe81bb80][rtsp @ 000002b3fb5fadc0] [vf#0:0 @ 000002b3fb6101c0] Task finished with error code: -825242872 (Server returned 401 Unauthorized (authorization failed))
+2025-10-17 19:39:57,694 - core.stream_manager - INFO - FFmpeg: [vf#0:0 @ 000002b3fb6101c0] Terminating thread with return code -825242872 (Server returned 401 Unauthorized (authorization failed))
+2025-10-17 19:39:57,785 - core.stream_manager - INFO - FFmpeg: Nothing was written into output file, because at least one of its streams received no packets.
+2025-10-17 19:39:58,288 - core.stream_manager - ERROR - FFmpeg ERROR: [out#0/rtsp @ 000002b3fb60c140] Conversion failed!
+2025-10-17 19:40:00,142 - core.stream_manager - ERROR - ❌ Попытка 1 не удалась: FFmpeg завершился с ошибкой
+2025-10-17 19:40:00,143 - core.stream_manager - INFO - 🎬 Попытка 2 запуска стрима с камеры: ov9734_azurewave_camera
+2025-10-17 19:40:00,144 - core.stream_manager - INFO - 🔧 Команда: C:\Users\Honor\Downloads\Аханабдуле\ffmpeg.exe -f dshow -i video=ov9734_azurewave_camera -c:v libx264 -preset ultrafast -tune zerolatency -g 15 -keyint_min 15 -crf 25 -profile:v baseline -level 3.1 -pix_fmt yuv420p -f rtsp -rtsp_transport tcp rtsp://:@192.168.0.4:8554/live/stream
+2025-10-17 19:40:00,175 - core.stream_manager - INFO - FFmpeg: ffmpeg version 8.0-full_build-www.gyan.dev Copyright (c) 2000-2025 the FFmpeg developers
+2025-10-17 19:40:00,175 - core.stream_manager - INFO - FFmpeg: built with gcc 15.2.0 (Rev8, Built by MSYS2 project)
+2025-10-17 19:40:00,176 - core.stream_manager - INFO - FFmpeg: configuration: --enable-gpl --enable-version3 --enable-static --disable-w32threads --disable-autodetect --enable-fontconfig --enable-iconv --enable-gnutls --enable-lcms2 --enable-libxml2 --enable-gmp --enable-bzlib --enable-lzma --enable-libsnappy --enable-zlib --enable-librist --enable-libsrt --enable-libssh --enable-libzmq --enable-avisynth --enable-libbluray --enable-libcaca --enable-libdvdnav --enable-libdvdread --enable-sdl2 --enable-libaribb24 --enable-libaribcaption --enable-libdav1d --enable-libdavs2 --enable-libopenjpeg --enable-libquirc --enable-libuavs3d --enable-libxevd --enable-libzvbi --enable-liboapv --enable-libqrencode --enable-librav1e --enable-libsvtav1 --enable-libvvenc --enable-libwebp --enable-libx264 --enable-libx265 --enable-libxavs2 --enable-libxeve --enable-libxvid --enable-libaom --enable-libjxl --enable-libvpx --enable-mediafoundation --enable-libass --enable-frei0r --enable-libfreetype --enable-libfribidi --enable-libharfbuzz --enable-liblensfun --enable-libvidstab --enable-libvmaf --enable-libzimg --enable-amf --enable-cuda-llvm --enable-cuvid --enable-dxva2 --enable-d3d11va --enable-d3d12va --enable-ffnvcodec --enable-libvpl --enable-nvdec --enable-nvenc --enable-vaapi --enable-libshaderc --enable-vulkan --enable-libplacebo --enable-opencl --enable-libcdio --enable-openal --enable-libgme --enable-libmodplug --enable-libopenmpt --enable-libopencore-amrwb --enable-libmp3lame --enable-libshine --enable-libtheora --enable-libtwolame --enable-libvo-amrwbenc --enable-libcodec2 --enable-libilbc --enable-libgsm --enable-liblc3 --enable-libopencore-amrnb --enable-libopus --enable-libspeex --enable-libvorbis --enable-ladspa --enable-libbs2b --enable-libflite --enable-libmysofa --enable-librubberband --enable-libsoxr --enable-chromaprint --enable-whisper
+2025-10-17 19:40:00,176 - core.stream_manager - INFO - FFmpeg: libavutil      60.  8.100 / 60.  8.100
+2025-10-17 19:40:00,176 - core.stream_manager - INFO - FFmpeg: libavcodec     62. 11.100 / 62. 11.100
+2025-10-17 19:40:00,176 - core.stream_manager - INFO - FFmpeg: libavformat    62.  3.100 / 62.  3.100
+2025-10-17 19:40:00,177 - core.stream_manager - INFO - FFmpeg: libavdevice    62.  1.100 / 62.  1.100
+2025-10-17 19:40:00,177 - core.stream_manager - INFO - FFmpeg: libavfilter    11.  4.100 / 11.  4.100
+2025-10-17 19:40:00,177 - core.stream_manager - INFO - FFmpeg: libswscale      9.  1.100 /  9.  1.100
+2025-10-17 19:40:00,177 - core.stream_manager - INFO - FFmpeg: libswresample   6.  1.100 /  6.  1.100
+2025-10-17 19:40:00,682 - core.stream_manager - ERROR - FFmpeg ERROR: Input #0, dshow, from 'video=ov9734_azurewave_camera':
+2025-10-17 19:40:00,682 - core.stream_manager - ERROR - FFmpeg ERROR: Duration: N/A, start: 158366.173744, bitrate: N/A
+2025-10-17 19:40:00,683 - core.stream_manager - INFO - FFmpeg: Stream mapping:
+2025-10-17 19:40:00,683 - core.stream_manager - ERROR - FFmpeg ERROR: Stream #0:0 -> #0:0 (mjpeg (native) -> h264 (libx264))
+2025-10-17 19:40:00,683 - core.stream_manager - INFO - FFmpeg: Press [q] to stop, [?] for help
+2025-10-17 19:40:00,691 - core.stream_manager - INFO - FFmpeg: deprecated pixel format used, make sure you did set range correctly
+2025-10-17 19:40:00,696 - core.stream_manager - ERROR - FFmpeg ERROR: [swscaler @ 000001a2909368c0] [libx264 @ 000001a290920380] using cpu capabilities: MMX2 SSE2Fast SSSE3 SSE4.2 AVX FMA3 BMI2 AVX2
+2025-10-17 19:40:00,698 - core.stream_manager - ERROR - FFmpeg ERROR: profile Constrained Baseline, level 3.1, 4:2:0, 8-bit
+2025-10-17 19:40:00,698 - core.stream_manager - ERROR - FFmpeg ERROR: [libx264 @ 000001a290920380] 264 - core 165 r3222 b35605a - H.264/MPEG-4 AVC codec - Copyleft 2003-2025 - http://www.videolan.org/x264.html - options: cabac=0 ref=1 deblock=0:0:0 analyse=0:0 me=dia subme=0 psy=1 psy_rd=1.00:0.00 mixed_ref=0 me_range=16 chroma_me=1 trellis=0 8x8dct=0 cqm=0 deadzone=21,11 fast_pskip=1 chroma_qp_offset=0 threads=6 lookahead_threads=6 sliced_threads=1 slices=6 nr=0 decimate=1 interlaced=0 bluray_compat=0 constrained_intra=0 bframes=0 weightp=0 keyint=15 keyint_min=8 scenecut=0 intra_refresh=0 rc=crf mbtree=0 crf=25.0 qcomp=0.60 qpmin=0 qpmax=69 qpstep=4 ip_ratio=1.40 aq=0
+2025-10-17 19:40:00,701 - core.stream_manager - INFO - MediaMTX: 2025/10/17 19:40:00 INF [RTSP] [conn 192.168.0.4:49843] opened
+2025-10-17 19:40:00,701 - core.stream_manager - INFO - MediaMTX: 2025/10/17 19:40:00 INF [RTSP] [session 85c1046c] created by 192.168.0.4:49843
+2025-10-17 19:40:00,702 - core.stream_manager - INFO - MediaMTX: 2025/10/17 19:40:00 INF [RTSP] [session 85c1046c] is publishing to path 'live/stream', 1 track (H264)
+2025-10-17 19:40:00,702 - core.stream_manager - INFO - FFmpeg: [libx264 @ 000001a290920380]Output #0, rtsp, to 'rtsp://:@192.168.0.4:8554/live/stream':
+2025-10-17 19:40:00,703 - core.stream_manager - ERROR - FFmpeg ERROR: Metadata:
+2025-10-17 19:40:00,703 - core.stream_manager - INFO - FFmpeg: encoder         : Lavc62.11.100 libx264
+2025-10-17 19:40:00,703 - core.stream_manager - ERROR - FFmpeg ERROR: Side data:
+2025-10-17 19:40:00,703 - core.stream_manager - INFO - FFmpeg: cpb: bitrate max/min/avg: 0/0/0 buffer size: 0 vbv_delay: N/A
+2025-10-17 19:40:03,152 - core.stream_manager - INFO - ✅ Стрим успешно запущен (попытка 2)
+2025-10-17 19:40:03,153 - config.settings - INFO - 📡 Локальный IP: 192.168.0.4
+2025-10-17 19:40:03,153 - werkzeug - INFO - 127.0.0.1 - - [17/Oct/2025 19:40:03] "POST /api/stream/start HTTP/1.1" 200 -
+2025-10-17 19:40:07,647 - config.settings - INFO - 📡 Локальный IP: 192.168.0.4
+2025-10-17 19:40:07,648 - werkzeug - INFO - 127.0.0.1 - - [17/Oct/2025 19:40:07] "GET /api/status HTTP/1.1" 200 -
+2025-10-17 19:40:07,911 - config.settings - INFO - 📡 Локальный IP: 192.168.0.4
+2025-10-17 19:40:07,911 - werkzeug - INFO - 127.0.0.1 - - [17/Oct/2025 19:40:07] "GET /api/status HTTP/1.1" 200 -
+2025-10-17 19:40:17,349 - config.settings - INFO - 📡 Локальный IP: 192.168.0.4
+2025-10-17 19:40:17,350 - werkzeug - INFO - 127.0.0.1 - - [17/Oct/2025 19:40:17] "GET /api/status HTTP/1.1" 200 -
+2025-10-17 19:40:27,652 - config.settings - INFO - 📡 Локальный IP: 192.168.0.4
+2025-10-17 19:40:27,653 - werkzeug - INFO - 127.0.0.1 - - [17/Oct/2025 19:40:27] "GET /api/status HTTP/1.1" 200 -
+2025-10-17 19:40:37,342 - config.settings - INFO - 📡 Локальный IP: 192.168.0.4
+2025-10-17 19:40:37,342 - werkzeug - INFO - 127.0.0.1 - - [17/Oct/2025 19:40:37] "GET /api/status HTTP/1.1" 200 -
+2025-10-17 19:40:47,663 - config.settings - INFO - 📡 Локальный IP: 192.168.0.4
+2025-10-17 19:40:47,664 - werkzeug - INFO - 127.0.0.1 - - [17/Oct/2025 19:40:47] "GET /api/status HTTP/1.1" 200 -
+2025-10-17 19:40:57,347 - config.settings - INFO - 📡 Локальный IP: 192.168.0.4
+2025-10-17 19:40:57,348 - werkzeug - INFO - 127.0.0.1 - - [17/Oct/2025 19:40:57] "GET /api/status HTTP/1.1" 200 -
+2025-10-17 19:40:57,394 - core.stream_manager - ERROR - FFmpeg ERROR: [vf#0:0 @ 000001a290926fc0] frame= 1666 fps= 30 q=24.0 size=N/A time=00:00:55.69 bitrate=N/A dup=1008 drop=0 speed=   1x elapsed=0:00:55.67
+2025-10-17 19:41:07,652 - config.settings - INFO - 📡 Локальный IP: 192.168.0.4
+2025-10-17 19:41:07,653 - werkzeug - INFO - 127.0.0.1 - - [17/Oct/2025 19:41:07] "GET /api/status HTTP/1.1" 200 -
+2025-10-17 19:41:17,770 - config.settings - INFO - 📡 Локальный IP: 192.168.0.4
+2025-10-17 19:41:17,771 - werkzeug - INFO - 127.0.0.1 - - [17/Oct/2025 19:41:17] "GET /api/status HTTP/1.1" 200 -
+2025-10-17 19:41:28,073 - config.settings - INFO - 📡 Локальный IP: 192.168.0.4
+2025-10-17 19:41:28,073 - werkzeug - INFO - 127.0.0.1 - - [17/Oct/2025 19:41:28] "GET /api/status HTTP/1.1" 200 -
+2025-10-17 19:41:37,761 - config.settings - INFO - 📡 Локальный IP: 192.168.0.4
+2025-10-17 19:41:37,761 - werkzeug - INFO - 127.0.0.1 - - [17/Oct/2025 19:41:37] "GET /api/status HTTP/1.1" 200 -
+2025-10-17 19:41:48,078 - config.settings - INFO - 📡 Локальный IP: 192.168.0.4
+2025-10-17 19:41:48,079 - werkzeug - INFO - 127.0.0.1 - - [17/Oct/2025 19:41:48] "GET /api/status HTTP/1.1" 200 -
+2025-10-17 19:41:57,760 - config.settings - INFO - 📡 Локальный IP: 192.168.0.4
+2025-10-17 19:41:57,760 - werkzeug - INFO - 127.0.0.1 - - [17/Oct/2025 19:41:57] "GET /api/status HTTP/1.1" 200 -
+2025-10-17 19:42:34,080 - config.settings - INFO - 📡 Локальный IP: 192.168.0.4
+2025-10-17 19:42:34,080 - werkzeug - INFO - 127.0.0.1 - - [17/Oct/2025 19:42:34] "GET /api/status HTTP/1.1" 200 -
+2025-10-17 19:43:33,765 - config.settings - INFO - 📡 Локальный IP: 192.168.0.4
+2025-10-17 19:43:33,766 - werkzeug - INFO - 127.0.0.1 - - [17/Oct/2025 19:43:33] "GET /api/status HTTP/1.1" 200 -
+2025-10-17 19:44:34,072 - config.settings - INFO - 📡 Локальный IP: 192.168.0.4
+2025-10-17 19:44:34,074 - werkzeug - INFO - 127.0.0.1 - - [17/Oct/2025 19:44:34] "GET /api/status HTTP/1.1" 200 -
+2025-10-17 19:45:09,713 - __main__ - INFO - 📋 Получен сигнал прерывания от пользователя
+2025-10-17 19:45:09,713 - core.stream_manager - INFO - MediaMTX: 2025/10/17 19:45:09 INF shutting down gracefully
+2025-10-17 19:45:09,713 - __main__ - INFO - ✅ Приложение завершило работу успешно
+2025-10-17 19:45:09,713 - core.stream_manager - INFO - MediaMTX: 2025/10/17 19:45:09 INF [API] listener is closing
+2025-10-17 19:45:14,959 - config.settings - INFO - ✅ FFmpeg найден: C:\Users\Honor\Downloads\Аханабдуле\ffmpeg.exe
+2025-10-17 19:45:15,508 - core.network_manager - INFO - 🌐 Внешний IP: 46.147.70.29
+2025-10-17 19:45:15,515 - __main__ - INFO - 🔧 Настройка окружения...
+2025-10-17 19:45:15,516 - utils.system_checker - INFO - ✅ Python 3.12.3
+2025-10-17 19:45:15,516 - utils.system_checker - INFO - ✅ FFmpeg найден: C:\Users\Honor\Downloads\Аханабдуле\ffmpeg.exe
+2025-10-17 19:45:15,516 - utils.system_checker - INFO - ✅ MediaMTX найден: C:\Users\Honor\Downloads\Аханабдуле\mediamtx.exe
+2025-10-17 19:45:15,516 - utils.system_checker - INFO - ✅ Библиотека flask доступна
+2025-10-17 19:45:15,516 - utils.system_checker - INFO - ✅ Библиотека requests доступна
+2025-10-17 19:45:15,517 - utils.system_checker - INFO - ✅ python: Доступен
+2025-10-17 19:45:15,517 - utils.system_checker - INFO - ✅ ffmpeg: Доступен
+2025-10-17 19:45:15,517 - utils.system_checker - INFO - ✅ mediamtx: Доступен
+2025-10-17 19:45:15,517 - utils.system_checker - INFO - ✅ flask: Доступен
+2025-10-17 19:45:15,517 - utils.system_checker - INFO - ✅ requests: Доступен
+2025-10-17 19:45:15,517 - __main__ - INFO - 🛡️ Настройка доступа через брандмауэр Windows...
+2025-10-17 19:45:15,519 - __main__ - INFO - 🛡️ Добавляем приложение в разрешенные программы брандмауэра...
+2025-10-17 19:45:15,519 - core.firewall_prompt - INFO - 📁 Путь к приложению: C:\Users\Honor\Downloads\Аханабдуле\.venv\Scripts\python.exe
+2025-10-17 19:45:15,585 - core.firewall_prompt - INFO - ℹ️ Правило для приложения уже существует в брандмауэре
+2025-10-17 19:45:15,586 - __main__ - INFO - ✅ Приложение добавлено в разрешенные программы брандмауэра
+2025-10-17 19:45:15,586 - __main__ - INFO - 📋 Если появится запрос от Защитника Windows, нажмите 'Разрешить доступ'
+2025-10-17 19:45:15,586 - __main__ - INFO - 🔧 Настраиваем правила для портов...
+2025-10-17 19:45:15,586 - __main__ - INFO - ℹ️ Для автоматической настройки правил портов запустите программу от имени администратора
+2025-10-17 19:45:15,587 - __main__ - INFO - 📋 Вы можете настроить брандмауэр вручную через веб-интерфейс
+2025-10-17 19:45:17,588 - utils.system_checker - INFO - ✅ Python 3.12.3
+2025-10-17 19:45:17,588 - utils.system_checker - INFO - ✅ FFmpeg найден: C:\Users\Honor\Downloads\Аханабдуле\ffmpeg.exe
+2025-10-17 19:45:17,588 - utils.system_checker - INFO - ✅ MediaMTX найден: C:\Users\Honor\Downloads\Аханабдуле\mediamtx.exe
+2025-10-17 19:45:17,588 - __main__ - INFO - 🚀 Запуск сервисов...
+2025-10-17 19:45:19,656 - config.settings - INFO - ✅ MediaMTX найден: C:\Users\Honor\Downloads\Аханабдуле\mediamtx.exe
+2025-10-17 19:45:19,659 - core.stream_manager - INFO - 🗑️ Удален старый конфигурационный файл
+2025-10-17 19:45:19,662 - core.stream_manager - INFO - ✅ Конфигурационный файл MediaMTX создан
+2025-10-17 19:45:19,663 - core.stream_manager - INFO - 🔄 Запуск MediaMTX...
+2025-10-17 19:45:19,663 - core.stream_manager - INFO - 📁 Путь к MediaMTX: C:\Users\Honor\Downloads\Аханабдуле\mediamtx.exe
+2025-10-17 19:45:19,721 - core.stream_manager - INFO - MediaMTX: 2025/10/17 19:45:19 INF MediaMTX v1.9.2
+2025-10-17 19:45:19,722 - core.stream_manager - INFO - MediaMTX: 2025/10/17 19:45:19 INF configuration loaded from C:\Users\Honor\Downloads\РђС…Р°РЅР°Р±РґСѓР»Рµ\mediamtx.yml
+2025-10-17 19:45:19,722 - core.stream_manager - INFO - MediaMTX: 2025/10/17 19:45:19 INF [RTSP] listener opened on :8554 (TCP), :8000 (UDP/RTP), :8001 (UDP/RTCP)
+2025-10-17 19:45:19,723 - core.stream_manager - INFO - MediaMTX: 2025/10/17 19:45:19 INF [RTMP] listener opened on :1935
+2025-10-17 19:45:19,723 - core.stream_manager - INFO - MediaMTX: 2025/10/17 19:45:19 INF [HLS] listener opened on :8888
+2025-10-17 19:45:19,723 - core.stream_manager - INFO - MediaMTX: 2025/10/17 19:45:19 INF [WebRTC] listener opened on :8889 (HTTP), :8189 (ICE/UDP)
+2025-10-17 19:45:19,723 - core.stream_manager - INFO - MediaMTX: 2025/10/17 19:45:19 INF [SRT] listener opened on :8890 (UDP)
+2025-10-17 19:45:19,724 - core.stream_manager - INFO - MediaMTX: 2025/10/17 19:45:19 INF [API] listener opened on :9997
+2025-10-17 19:45:22,670 - core.stream_manager - INFO - ✅ MediaMTX успешно запущен
+2025-10-17 19:45:22,672 - web.app - INFO - 🌐 Запуск веб-сервера на 0.0.0.0:5000
+2025-10-17 19:45:22,672 - web.app - INFO - ✅ Веб-интерфейс запущен
+2025-10-17 19:45:22,672 - __main__ - INFO - 🌐 Веб-интерфейс доступен по адресу: http://localhost:5000
+2025-10-17 19:45:22,673 - __main__ - INFO - 📹 RTSP поток будет доступен по адресу: rtsp://ваш-ip:8554/live/stream
+2025-10-17 19:45:22,673 - __main__ - INFO - ⏹️  Для остановки нажмите Ctrl+C
+2025-10-17 19:45:22,673 - __main__ - INFO - 
+2025-10-17 19:45:22,682 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.0.4:5000
+2025-10-17 19:45:22,682 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-10-17 19:45:25,860 - core.camera_finder - INFO - 🔍 Поиск и тестирование камер...
+2025-10-17 19:45:25,861 - core.camera_finder - INFO - 🔍 Поиск доступных камер...
+2025-10-17 19:45:26,235 - core.camera_finder - INFO - ✅ Метод 1: найдено 1 камер
+2025-10-17 19:45:26,543 - core.camera_finder - INFO - ✅ Метод 2: найдено 1 камер
+2025-10-17 19:45:26,543 - core.camera_finder - INFO - 📹 Найдено потенциальных камер: 2
+2025-10-17 19:45:26,544 - core.camera_finder - INFO -    - (video)
+2025-10-17 19:45:26,544 - core.camera_finder - INFO -    - ov9734_azurewave_camera
+2025-10-17 19:45:26,544 - core.camera_finder - INFO - 🔍 Тестируем камеру: (video)
+2025-10-17 19:45:26,544 - core.camera_finder - INFO - 🔄 Попытка 1 для камеры (video)
+2025-10-17 19:45:26,594 - core.camera_finder - INFO - 🔄 Попытка 2 для камеры (video)
+2025-10-17 19:45:26,639 - core.camera_finder - INFO - 🔄 Попытка 3 для камеры (video)
+2025-10-17 19:45:26,685 - core.camera_finder - INFO - ❌ (video) - нерабочая: Ошибка ввода-вывода (проверьте доступ к камере)
+2025-10-17 19:45:26,685 - core.camera_finder - INFO - 🔍 Тестируем камеру: ov9734_azurewave_camera
+2025-10-17 19:45:26,685 - core.camera_finder - INFO - 🔄 Попытка 1 для камеры ov9734_azurewave_camera
+2025-10-17 19:45:30,760 - core.camera_finder - INFO - ✅ Камера 'ov9734_azurewave_camera' - РАБОТАЕТ (попытка 1)
+2025-10-17 19:45:30,761 - core.camera_finder - INFO - ✅ ov9734_azurewave_camera - рабочая
+2025-10-17 19:45:30,761 - core.camera_finder - INFO - 🎯 Рабочие камеры: 1 из 2
+2025-10-17 19:45:30,761 - core.camera_finder - INFO -    ✅ ov9734_azurewave_camera
+2025-10-17 19:45:30,762 - config.settings - INFO - 📡 Локальный IP: 192.168.0.4
+2025-10-17 19:45:31,299 - config.settings - INFO - 🌐 Внешний IP: 46.147.70.29
+2025-10-17 19:45:31,301 - config.settings - INFO - ✅ FFmpeg найден: C:\Users\Honor\Downloads\Аханабдуле\ffmpeg.exe
+2025-10-17 19:45:31,301 - config.settings - INFO - ✅ MediaMTX найден: C:\Users\Honor\Downloads\Аханабдуле\mediamtx.exe
+2025-10-17 19:45:31,312 - werkzeug - INFO - 127.0.0.1 - - [17/Oct/2025 19:45:31] "GET / HTTP/1.1" 200 -
+2025-10-17 19:45:31,399 - werkzeug - INFO - 127.0.0.1 - - [17/Oct/2025 19:45:31] "[36mGET /static/css/main.css HTTP/1.1[0m" 304 -
+2025-10-17 19:45:31,403 - werkzeug - INFO - 127.0.0.1 - - [17/Oct/2025 19:45:31] "[36mGET /static/css/layout.css HTTP/1.1[0m" 304 -
+2025-10-17 19:45:31,651 - werkzeug - INFO - 127.0.0.1 - - [17/Oct/2025 19:45:31] "[36mGET /static/css/themes.css HTTP/1.1[0m" 304 -
+2025-10-17 19:45:31,652 - werkzeug - INFO - 127.0.0.1 - - [17/Oct/2025 19:45:31] "[36mGET /static/css/components.css HTTP/1.1[0m" 304 -
+2025-10-17 19:45:31,654 - werkzeug - INFO - 127.0.0.1 - - [17/Oct/2025 19:45:31] "GET /static/js/main.js HTTP/1.1" 200 -
+2025-10-17 19:45:31,654 - werkzeug - INFO - 127.0.0.1 - - [17/Oct/2025 19:45:31] "[36mGET /static/js/terminal.js HTTP/1.1[0m" 304 -
+2025-10-17 19:45:31,714 - werkzeug - INFO - 127.0.0.1 - - [17/Oct/2025 19:45:31] "GET /static/js/api.js HTTP/1.1" 200 -
+2025-10-17 19:45:32,091 - config.settings - INFO - 📡 Локальный IP: 192.168.0.4
+2025-10-17 19:45:32,091 - werkzeug - INFO - 127.0.0.1 - - [17/Oct/2025 19:45:32] "GET /api/status HTTP/1.1" 200 -
+2025-10-17 19:45:32,358 - werkzeug - INFO - 127.0.0.1 - - [17/Oct/2025 19:45:32] "GET /api/network HTTP/1.1" 200 -
+2025-10-17 19:45:32,407 - werkzeug - INFO - 127.0.0.1 - - [17/Oct/2025 19:45:32] "GET /api/network/port-check HTTP/1.1" 200 -
+2025-10-17 19:45:32,407 - core.stream_manager - INFO - MediaMTX: 2025/10/17 19:45:32 INF [RTSP] [conn 127.0.0.1:49924] opened
+2025-10-17 19:45:32,407 - core.stream_manager - INFO - MediaMTX: 2025/10/17 19:45:32 INF [RTSP] [conn 127.0.0.1:49924] closed: EOF
+2025-10-17 19:45:41,791 - config.settings - INFO - 📡 Локальный IP: 192.168.0.4
+2025-10-17 19:45:41,792 - werkzeug - INFO - 127.0.0.1 - - [17/Oct/2025 19:45:41] "GET /api/status HTTP/1.1" 200 -
+2025-10-17 19:45:51,004 - core.camera_finder - INFO - 🔍 Тестируем камеру: ov9734_azurewave_camera
+2025-10-17 19:45:51,004 - core.camera_finder - INFO - 🔄 Попытка 1 для камеры ov9734_azurewave_camera
+2025-10-17 19:45:51,789 - config.settings - INFO - 📡 Локальный IP: 192.168.0.4
+2025-10-17 19:45:51,789 - werkzeug - INFO - 127.0.0.1 - - [17/Oct/2025 19:45:51] "GET /api/status HTTP/1.1" 200 -
+2025-10-17 19:45:55,158 - core.camera_finder - INFO - ✅ Камера 'ov9734_azurewave_camera' - РАБОТАЕТ (попытка 1)
+2025-10-17 19:45:55,159 - config.settings - INFO - ✅ FFmpeg найден: C:\Users\Honor\Downloads\Аханабдуле\ffmpeg.exe
+2025-10-17 19:45:55,159 - config.settings - INFO - 📡 Локальный IP: 192.168.0.4
+2025-10-17 19:45:55,160 - core.stream_manager - INFO - 🎬 Попытка 1 запуска стрима с камеры: ov9734_azurewave_camera
+2025-10-17 19:45:55,160 - core.stream_manager - INFO - 🔧 Команда: C:\Users\Honor\Downloads\Аханабдуле\ffmpeg.exe -f dshow -i video=ov9734_azurewave_camera -c:v libx264 -preset ultrafast -tune zerolatency -g 15 -keyint_min 15 -crf 25 -profile:v baseline -level 3.1 -pix_fmt yuv420p -f rtsp -rtsp_transport tcp rtsp://localhost:8554/live/stream
+2025-10-17 19:45:55,187 - core.stream_manager - INFO - FFmpeg: ffmpeg version 8.0-full_build-www.gyan.dev Copyright (c) 2000-2025 the FFmpeg developers
+2025-10-17 19:45:55,188 - core.stream_manager - INFO - FFmpeg: built with gcc 15.2.0 (Rev8, Built by MSYS2 project)
+2025-10-17 19:45:55,188 - core.stream_manager - INFO - FFmpeg: configuration: --enable-gpl --enable-version3 --enable-static --disable-w32threads --disable-autodetect --enable-fontconfig --enable-iconv --enable-gnutls --enable-lcms2 --enable-libxml2 --enable-gmp --enable-bzlib --enable-lzma --enable-libsnappy --enable-zlib --enable-librist --enable-libsrt --enable-libssh --enable-libzmq --enable-avisynth --enable-libbluray --enable-libcaca --enable-libdvdnav --enable-libdvdread --enable-sdl2 --enable-libaribb24 --enable-libaribcaption --enable-libdav1d --enable-libdavs2 --enable-libopenjpeg --enable-libquirc --enable-libuavs3d --enable-libxevd --enable-libzvbi --enable-liboapv --enable-libqrencode --enable-librav1e --enable-libsvtav1 --enable-libvvenc --enable-libwebp --enable-libx264 --enable-libx265 --enable-libxavs2 --enable-libxeve --enable-libxvid --enable-libaom --enable-libjxl --enable-libvpx --enable-mediafoundation --enable-libass --enable-frei0r --enable-libfreetype --enable-libfribidi --enable-libharfbuzz --enable-liblensfun --enable-libvidstab --enable-libvmaf --enable-libzimg --enable-amf --enable-cuda-llvm --enable-cuvid --enable-dxva2 --enable-d3d11va --enable-d3d12va --enable-ffnvcodec --enable-libvpl --enable-nvdec --enable-nvenc --enable-vaapi --enable-libshaderc --enable-vulkan --enable-libplacebo --enable-opencl --enable-libcdio --enable-openal --enable-libgme --enable-libmodplug --enable-libopenmpt --enable-libopencore-amrwb --enable-libmp3lame --enable-libshine --enable-libtheora --enable-libtwolame --enable-libvo-amrwbenc --enable-libcodec2 --enable-libilbc --enable-libgsm --enable-liblc3 --enable-libopencore-amrnb --enable-libopus --enable-libspeex --enable-libvorbis --enable-ladspa --enable-libbs2b --enable-libflite --enable-libmysofa --enable-librubberband --enable-libsoxr --enable-chromaprint --enable-whisper
+2025-10-17 19:45:55,189 - core.stream_manager - INFO - FFmpeg: libavutil      60.  8.100 / 60.  8.100
+2025-10-17 19:45:55,189 - core.stream_manager - INFO - FFmpeg: libavcodec     62. 11.100 / 62. 11.100
+2025-10-17 19:45:55,190 - core.stream_manager - INFO - FFmpeg: libavformat    62.  3.100 / 62.  3.100
+2025-10-17 19:45:55,193 - core.stream_manager - INFO - FFmpeg: libavdevice    62.  1.100 / 62.  1.100
+2025-10-17 19:45:55,194 - core.stream_manager - INFO - FFmpeg: libavfilter    11.  4.100 / 11.  4.100
+2025-10-17 19:45:55,194 - core.stream_manager - INFO - FFmpeg: libswscale      9.  1.100 /  9.  1.100
+2025-10-17 19:45:55,194 - core.stream_manager - INFO - FFmpeg: libswresample   6.  1.100 /  6.  1.100
+2025-10-17 19:45:55,699 - core.stream_manager - ERROR - FFmpeg ERROR: Input #0, dshow, from 'video=ov9734_azurewave_camera':
+2025-10-17 19:45:55,700 - core.stream_manager - ERROR - FFmpeg ERROR: Duration: N/A, start: 158721.205637, bitrate: N/A
+2025-10-17 19:45:55,700 - core.stream_manager - INFO - FFmpeg: Stream mapping:
+2025-10-17 19:45:55,700 - core.stream_manager - ERROR - FFmpeg ERROR: Stream #0:0 -> #0:0 (mjpeg (native) -> h264 (libx264))
+2025-10-17 19:45:55,700 - core.stream_manager - INFO - FFmpeg: Press [q] to stop, [?] for help
+2025-10-17 19:45:55,707 - core.stream_manager - INFO - FFmpeg: deprecated pixel format used, make sure you did set range correctly
+2025-10-17 19:45:55,713 - core.stream_manager - INFO - FFmpeg: using cpu capabilities: MMX2 SSE2Fast SSSE3 SSE4.2 AVX FMA3 BMI2 AVX2
+2025-10-17 19:45:55,714 - core.stream_manager - INFO - FFmpeg: profile Constrained Baseline, level 3.1, 4:2:0, 8-bit
+2025-10-17 19:45:55,715 - core.stream_manager - INFO - FFmpeg: [libx264 @ 0000020cbb2c0680] 264 - core 165 r3222 b35605a - H.264/MPEG-4 AVC codec - Copyleft 2003-2025 - http://www.videolan.org/x264.html - options: cabac=0 ref=1 deblock=0:0:0 analyse=0:0 me=dia subme=0 psy=1 psy_rd=1.00:0.00 mixed_ref=0 me_range=16 chroma_me=1 trellis=0 8x8dct=0 cqm=0 deadzone=21,11 fast_pskip=1 chroma_qp_offset=0 threads=6 lookahead_threads=6 sliced_threads=1 slices=6 nr=0 decimate=1 interlaced=0 bluray_compat=0 constrained_intra=0 bframes=0 weightp=0 keyint=15 keyint_min=8 scenecut=0 intra_refresh=0 rc=crf mbtree=0 crf=25.0 qcomp=0.60 qpmin=0 qpmax=69 qpstep=4 ip_ratio=1.40 aq=0
+2025-10-17 19:45:55,720 - core.stream_manager - INFO - MediaMTX: 2025/10/17 19:45:55 INF [RTSP] [conn [::1]:49931] opened
+2025-10-17 19:45:55,720 - core.stream_manager - INFO - MediaMTX: 2025/10/17 19:45:55 INF [RTSP] [session dd457c89] created by [::1]:49931
+2025-10-17 19:45:55,721 - core.stream_manager - INFO - FFmpeg: method ANNOUNCE failed: 401 Unauthorized
+2025-10-17 19:45:55,721 - core.stream_manager - ERROR - FFmpeg ERROR: [swscaler @ 0000020cbb2d68c0] [libx264 @ 0000020cbb2c0680][libx264 @ 0000020cbb2c0680][rtsp @ 0000020cbb2bb6c0] [out#0/rtsp @ 0000020cbb2bcc40] Could not write header (incorrect codec parameters ?): Server returned 401 Unauthorized (authorization failed)
+2025-10-17 19:45:55,721 - core.stream_manager - INFO - MediaMTX: 2025/10/17 19:45:55 INF [RTSP] [conn [::1]:49931] closed: EOF
+2025-10-17 19:45:55,721 - core.stream_manager - INFO - FFmpeg: [vf#0:0 @ 0000020cbb2c6540] Error sending frames to consumers: Server returned 401 Unauthorized (authorization failed)
+2025-10-17 19:45:55,721 - core.stream_manager - INFO - MediaMTX: 2025/10/17 19:45:55 INF [RTSP] [session dd457c89] destroyed: not in use
+2025-10-17 19:45:55,722 - core.stream_manager - INFO - FFmpeg: Task finished with error code: -825242872 (Server returned 401 Unauthorized (authorization failed))
+2025-10-17 19:45:55,722 - core.stream_manager - INFO - FFmpeg: [vf#0:0 @ 0000020cbb2c6540] Terminating thread with return code -825242872 (Server returned 401 Unauthorized (authorization failed))
+2025-10-17 19:45:55,802 - core.stream_manager - INFO - FFmpeg: Nothing was written into output file, because at least one of its streams received no packets.
+2025-10-17 19:45:56,302 - core.stream_manager - ERROR - FFmpeg ERROR: [vf#0:0 @ 0000020cbb2c6540] [out#0/rtsp @ 0000020cbb2bcc40] Conversion failed!
+2025-10-17 19:45:58,165 - core.stream_manager - ERROR - ❌ Попытка 1 не удалась: FFmpeg завершился с ошибкой
+2025-10-17 19:45:58,166 - core.stream_manager - INFO - 🎬 Попытка 2 запуска стрима с камеры: ov9734_azurewave_camera
+2025-10-17 19:45:58,167 - core.stream_manager - INFO - 🔧 Команда: C:\Users\Honor\Downloads\Аханабдуле\ffmpeg.exe -f dshow -i video=ov9734_azurewave_camera -c:v libx264 -preset ultrafast -tune zerolatency -g 15 -keyint_min 15 -crf 25 -profile:v baseline -level 3.1 -pix_fmt yuv420p -f rtsp -rtsp_transport tcp rtsp://:@192.168.0.4:8554/live/stream
+2025-10-17 19:45:58,198 - core.stream_manager - ERROR - FFmpeg ERROR: Copyright (c) 2000-2025 the FFmpeg developers
+2025-10-17 19:45:58,199 - core.stream_manager - ERROR - FFmpeg ERROR: built with gcc 15.2.0 (Rev8, Built by MSYS2 project)
+2025-10-17 19:45:58,199 - core.stream_manager - ERROR - FFmpeg ERROR: configuration: --enable-gpl --enable-version3 --enable-static --disable-w32threads --disable-autodetect --enable-fontconfig --enable-iconv --enable-gnutls --enable-lcms2 --enable-libxml2 --enable-gmp --enable-bzlib --enable-lzma --enable-libsnappy --enable-zlib --enable-librist --enable-libsrt --enable-libssh --enable-libzmq --enable-avisynth --enable-libbluray --enable-libcaca --enable-libdvdnav --enable-libdvdread --enable-sdl2 --enable-libaribb24 --enable-libaribcaption --enable-libdav1d --enable-libdavs2 --enable-libopenjpeg --enable-libquirc --enable-libuavs3d --enable-libxevd --enable-libzvbi --enable-liboapv --enable-libqrencode --enable-librav1e --enable-libsvtav1 --enable-libvvenc --enable-libwebp --enable-libx264 --enable-libx265 --enable-libxavs2 --enable-libxeve --enable-libxvid --enable-libaom --enable-libjxl --enable-libvpx --enable-mediafoundation --enable-libass --enable-frei0r --enable-libfreetype --enable-libfribidi --enable-libharfbuzz --enable-liblensfun --enable-libvidstab --enable-libvmaf --enable-libzimg --enable-amf --enable-cuda-llvm --enable-cuvid --enable-dxva2 --enable-d3d11va --enable-d3d12va --enable-ffnvcodec --enable-libvpl --enable-nvdec --enable-nvenc --enable-vaapi --enable-libshaderc --enable-vulkan --enable-libplacebo --enable-opencl --enable-libcdio --enable-openal --enable-libgme --enable-libmodplug --enable-libopenmpt --enable-libopencore-amrwb --enable-libmp3lame --enable-libshine --enable-libtheora --enable-libtwolame --enable-libvo-amrwbenc --enable-libcodec2 --enable-libilbc --enable-libgsm --enable-liblc3 --enable-libopencore-amrnb --enable-libopus --enable-libspeex --enable-libvorbis --enable-ladspa --enable-libbs2b --enable-libflite --enable-libmysofa --enable-librubberband --enable-libsoxr --enable-chromaprint --enable-whisper
+2025-10-17 19:45:58,199 - core.stream_manager - ERROR - FFmpeg ERROR: libavutil      60.  8.100 / 60.  8.100
+2025-10-17 19:45:58,200 - core.stream_manager - ERROR - FFmpeg ERROR: libavcodec     62. 11.100 / 62. 11.100
+2025-10-17 19:45:58,200 - core.stream_manager - ERROR - FFmpeg ERROR: libavformat    62.  3.100 / 62.  3.100
+2025-10-17 19:45:58,201 - core.stream_manager - ERROR - FFmpeg ERROR: libavdevice    62.  1.100 / 62.  1.100
+2025-10-17 19:45:58,201 - core.stream_manager - ERROR - FFmpeg ERROR: libavfilter    11.  4.100 / 11.  4.100
+2025-10-17 19:45:58,201 - core.stream_manager - ERROR - FFmpeg ERROR: libswscale      9.  1.100 /  9.  1.100
+2025-10-17 19:45:58,201 - core.stream_manager - ERROR - FFmpeg ERROR: libswresample   6.  1.100 /  6.  1.100
+2025-10-17 19:45:58,709 - core.stream_manager - INFO - FFmpeg: ffmpeg version 8.0-full_build-www.gyan.devInput #0, dshow, from 'video=ov9734_azurewave_camera':
+2025-10-17 19:45:58,709 - core.stream_manager - ERROR - FFmpeg ERROR: : Video: mjpeg (Baseline) (MJPG / 0x47504A4D), yuvj422p(pc, bt470bg/unknown/unknown), 1280x720, 30 fps, 30 tbr, 10000k tbn, start 158724.201933
+2025-10-17 19:45:58,710 - core.stream_manager - INFO - FFmpeg: Stream mapping:
+2025-10-17 19:45:58,710 - core.stream_manager - ERROR - FFmpeg ERROR: Stream #0:0 -> #0:0 (mjpeg (native) -> h264 (libx264))
+2025-10-17 19:45:58,710 - core.stream_manager - INFO - FFmpeg: Press [q] to stop, [?] for help
+2025-10-17 19:45:58,717 - core.stream_manager - ERROR - FFmpeg ERROR: [swscaler @ 000001b5fe506780] deprecated pixel format used, make sure you did set range correctly
+2025-10-17 19:45:58,722 - core.stream_manager - INFO - FFmpeg: [libx264 @ 000001b5fe4eff40] using cpu capabilities: MMX2 SSE2Fast SSSE3 SSE4.2 AVX FMA3 BMI2 AVX2
+2025-10-17 19:45:58,724 - core.stream_manager - INFO - FFmpeg: profile Constrained Baseline, level 3.1, 4:2:0, 8-bit
+2025-10-17 19:45:58,724 - core.stream_manager - INFO - FFmpeg: [libx264 @ 000001b5fe4eff40] 264 - core 165 r3222 b35605a - H.264/MPEG-4 AVC codec - Copyleft 2003-2025 - http://www.videolan.org/x264.html - options: cabac=0 ref=1 deblock=0:0:0 analyse=0:0 me=dia subme=0 psy=1 psy_rd=1.00:0.00 mixed_ref=0 me_range=16 chroma_me=1 trellis=0 8x8dct=0 cqm=0 deadzone=21,11 fast_pskip=1 chroma_qp_offset=0 threads=6 lookahead_threads=6 sliced_threads=1 slices=6 nr=0 decimate=1 interlaced=0 bluray_compat=0 constrained_intra=0 bframes=0 weightp=0 keyint=15 keyint_min=8 scenecut=0 intra_refresh=0 rc=crf mbtree=0 crf=25.0 qcomp=0.60 qpmin=0 qpmax=69 qpstep=4 ip_ratio=1.40 aq=0
+2025-10-17 19:45:58,726 - core.stream_manager - INFO - MediaMTX: 2025/10/17 19:45:58 INF [RTSP] [conn 192.168.0.4:49932] opened
+2025-10-17 19:45:58,738 - core.stream_manager - INFO - MediaMTX: 2025/10/17 19:45:58 INF [RTSP] [session 5bf84fb5] created by 192.168.0.4:49932
+2025-10-17 19:45:58,740 - core.stream_manager - INFO - MediaMTX: 2025/10/17 19:45:58 INF [RTSP] [session 5bf84fb5] is publishing to path 'live/stream', 1 track (H264)
+2025-10-17 19:45:58,740 - core.stream_manager - INFO - FFmpeg: Metadata:
+2025-10-17 19:45:58,740 - core.stream_manager - INFO - FFmpeg: encoder         : Lavf62.3.100
+2025-10-17 19:45:58,740 - core.stream_manager - INFO - FFmpeg: Stream #0:0: Video: h264, yuv420p(pc, bt470bg/unknown/unknown, progressive), 1280x720, q=2-31, 30 fps, 90k tbn
+2025-10-17 19:45:58,740 - core.stream_manager - INFO - FFmpeg: Metadata:
+2025-10-17 19:45:58,740 - core.stream_manager - INFO - FFmpeg: encoder         : Lavc62.11.100 libx264
+2025-10-17 19:45:58,740 - core.stream_manager - INFO - FFmpeg: Side data:
+2025-10-17 19:45:58,740 - core.stream_manager - INFO - FFmpeg: cpb: bitrate max/min/avg: 0/0/0 buffer size: 0 vbv_delay: N/A
+2025-10-17 19:46:00,254 - core.stream_manager - ERROR - FFmpeg ERROR: [libx264 @ 000001b5fe4eff40]Output #0, rtsp, to 'rtsp://:@192.168.0.4:8554/live/stream':frame=   13 fps=0.0 q=24.0 size=N/A time=00:00:00.43 bitrate=N/A dup=8 drop=0 speed=0.845x elapsed=0:00:00.51
+2025-10-17 19:46:01,174 - core.stream_manager - INFO - ✅ Стрим успешно запущен (попытка 2)
+2025-10-17 19:46:01,174 - config.settings - INFO - 📡 Локальный IP: 192.168.0.4
+2025-10-17 19:46:01,175 - werkzeug - INFO - 127.0.0.1 - - [17/Oct/2025 19:46:01] "POST /api/stream/start HTTP/1.1" 200 -
+2025-10-17 19:46:02,104 - config.settings - INFO - 📡 Локальный IP: 192.168.0.4
+2025-10-17 19:46:02,105 - werkzeug - INFO - 127.0.0.1 - - [17/Oct/2025 19:46:02] "GET /api/status HTTP/1.1" 200 -
+2025-10-17 19:46:05,591 - config.settings - INFO - 📡 Локальный IP: 192.168.0.4
+2025-10-17 19:46:05,592 - werkzeug - INFO - 127.0.0.1 - - [17/Oct/2025 19:46:05] "GET /api/status HTTP/1.1" 200 -
+2025-10-17 19:46:12,105 - config.settings - INFO - 📡 Локальный IP: 192.168.0.4
+2025-10-17 19:46:12,105 - werkzeug - INFO - 127.0.0.1 - - [17/Oct/2025 19:46:12] "GET /api/status HTTP/1.1" 200 -
+2025-10-17 19:46:21,789 - config.settings - INFO - 📡 Локальный IP: 192.168.0.4
+2025-10-17 19:46:21,790 - werkzeug - INFO - 127.0.0.1 - - [17/Oct/2025 19:46:21] "GET /api/status HTTP/1.1" 200 -
+2025-10-17 19:46:32,093 - config.settings - INFO - 📡 Локальный IP: 192.168.0.4
+2025-10-17 19:46:32,094 - werkzeug - INFO - 127.0.0.1 - - [17/Oct/2025 19:46:32] "GET /api/status HTTP/1.1" 200 -
+2025-10-17 19:46:41,791 - config.settings - INFO - 📡 Локальный IP: 192.168.0.4
+2025-10-17 19:46:41,792 - werkzeug - INFO - 127.0.0.1 - - [17/Oct/2025 19:46:41] "GET /api/status HTTP/1.1" 200 -
+2025-10-17 19:46:46,280 - werkzeug - INFO - 127.0.0.1 - - [17/Oct/2025 19:46:46] "GET /api/network HTTP/1.1" 200 -
+2025-10-17 19:46:50,785 - core.stream_manager - INFO - FFmpeg: [vf#0:0 @ 000001b5fe4f6c80] frame= 1546 fps= 30 q=23.0 size=N/A time=00:00:51.53 bitrate=N/A dup=1004 drop=0 speed=0.999x elapsed=0:00:51.55
+2025-10-17 19:46:51,799 - config.settings - INFO - 📡 Локальный IP: 192.168.0.4
+2025-10-17 19:46:51,799 - werkzeug - INFO - 127.0.0.1 - - [17/Oct/2025 19:46:51] "GET /api/status HTTP/1.1" 200 -
+2025-10-17 19:47:02,105 - config.settings - INFO - 📡 Локальный IP: 192.168.0.4
+2025-10-17 19:47:02,105 - werkzeug - INFO - 127.0.0.1 - - [17/Oct/2025 19:47:02] "GET /api/status HTTP/1.1" 200 -
+2025-10-17 19:47:11,799 - config.settings - INFO - 📡 Локальный IP: 192.168.0.4
+2025-10-17 19:47:11,799 - werkzeug - INFO - 127.0.0.1 - - [17/Oct/2025 19:47:11] "GET /api/status HTTP/1.1" 200 -
+2025-10-17 19:47:22,103 - config.settings - INFO - 📡 Локальный IP: 192.168.0.4
+2025-10-17 19:47:22,103 - werkzeug - INFO - 127.0.0.1 - - [17/Oct/2025 19:47:22] "GET /api/status HTTP/1.1" 200 -
+2025-10-17 19:47:31,790 - config.settings - INFO - 📡 Локальный IP: 192.168.0.4
+2025-10-17 19:47:31,791 - werkzeug - INFO - 127.0.0.1 - - [17/Oct/2025 19:47:31] "GET /api/status HTTP/1.1" 200 -
+2025-10-17 19:47:42,114 - config.settings - INFO - 📡 Локальный IP: 192.168.0.4
+2025-10-17 19:47:42,115 - werkzeug - INFO - 127.0.0.1 - - [17/Oct/2025 19:47:42] "GET /api/status HTTP/1.1" 200 -
+2025-10-17 19:47:51,783 - config.settings - INFO - 📡 Локальный IP: 192.168.0.4
+2025-10-17 19:47:51,784 - werkzeug - INFO - 127.0.0.1 - - [17/Oct/2025 19:47:51] "GET /api/status HTTP/1.1" 200 -
+2025-10-17 19:48:02,103 - config.settings - INFO - 📡 Локальный IP: 192.168.0.4
+2025-10-17 19:48:02,104 - werkzeug - INFO - 127.0.0.1 - - [17/Oct/2025 19:48:02] "GET /api/status HTTP/1.1" 200 -
+2025-10-17 19:48:07,838 - config.settings - INFO - ✅ FFmpeg найден: C:\Users\Honor\Downloads\Аханабдуле\ffmpeg.exe
+2025-10-17 19:48:08,520 - core.network_manager - INFO - 🌐 Внешний IP: 46.147.70.29
+2025-10-17 19:48:08,532 - __main__ - INFO - 🔧 Настройка окружения...
+2025-10-17 19:48:08,533 - utils.system_checker - INFO - ✅ Python 3.13.7
+2025-10-17 19:48:08,533 - utils.system_checker - INFO - ✅ FFmpeg найден: C:\Users\Honor\Downloads\Аханабдуле\ffmpeg.exe
+2025-10-17 19:48:08,534 - utils.system_checker - INFO - ✅ MediaMTX найден: C:\Users\Honor\Downloads\Аханабдуле\mediamtx.exe
+2025-10-17 19:48:08,534 - utils.system_checker - INFO - ✅ Библиотека flask доступна
+2025-10-17 19:48:08,534 - utils.system_checker - INFO - ✅ Библиотека requests доступна
+2025-10-17 19:48:08,535 - utils.system_checker - INFO - ✅ python: Доступен
+2025-10-17 19:48:08,535 - utils.system_checker - INFO - ✅ ffmpeg: Доступен
+2025-10-17 19:48:08,535 - utils.system_checker - INFO - ✅ mediamtx: Доступен
+2025-10-17 19:48:08,536 - utils.system_checker - INFO - ✅ flask: Доступен
+2025-10-17 19:48:08,536 - utils.system_checker - INFO - ✅ requests: Доступен
+2025-10-17 19:48:08,536 - __main__ - INFO - 🛡️ Настройка доступа через брандмауэр Windows...
+2025-10-17 19:48:08,544 - __main__ - INFO - 🛡️ Добавляем приложение в разрешенные программы брандмауэра...
+2025-10-17 19:48:08,545 - core.firewall_prompt - INFO - 📁 Путь к приложению: C:\Users\Honor\AppData\Local\Programs\Python\Python313\python.exe
+2025-10-17 19:48:08,624 - core.firewall_prompt - INFO - ℹ️ Правило для приложения уже существует в брандмауэре
+2025-10-17 19:48:08,624 - __main__ - INFO - ✅ Приложение добавлено в разрешенные программы брандмауэра
+2025-10-17 19:48:08,625 - __main__ - INFO - 📋 Если появится запрос от Защитника Windows, нажмите 'Разрешить доступ'
+2025-10-17 19:48:08,625 - __main__ - INFO - 🔧 Настраиваем правила для портов...
+2025-10-17 19:48:08,626 - __main__ - INFO - ℹ️ Для автоматической настройки правил портов запустите программу от имени администратора
+2025-10-17 19:48:08,626 - __main__ - INFO - 📋 Вы можете настроить брандмауэр вручную через веб-интерфейс
+2025-10-17 19:48:10,628 - utils.system_checker - INFO - ✅ Python 3.13.7
+2025-10-17 19:48:10,629 - utils.system_checker - INFO - ✅ FFmpeg найден: C:\Users\Honor\Downloads\Аханабдуле\ffmpeg.exe
+2025-10-17 19:48:10,629 - utils.system_checker - INFO - ✅ MediaMTX найден: C:\Users\Honor\Downloads\Аханабдуле\mediamtx.exe
+2025-10-17 19:48:10,630 - __main__ - INFO - 🚀 Запуск сервисов...
+2025-10-17 19:48:10,670 - core.stream_manager - INFO - 🔄 Завершаем процесс 1228 на порту 8000
+2025-10-17 19:48:10,769 - core.stream_manager - INFO - FFmpeg: Last message repeated 1 times
+2025-10-17 19:48:10,769 - core.stream_manager - INFO - FFmpeg: [out#0/rtsp @ 000001b5fe4ed780] Error muxing a packet
+2025-10-17 19:48:10,770 - core.stream_manager - INFO - FFmpeg: [out#0/rtsp @ 000001b5fe4ed780] Task finished with error code: -32 (Broken pipe)
+2025-10-17 19:48:10,770 - core.stream_manager - INFO - FFmpeg: [out#0/rtsp @ 000001b5fe4ed780] Terminating thread with return code -32 (Broken pipe)
+2025-10-17 19:48:10,868 - core.stream_manager - INFO - FFmpeg: video:90140KiB audio:0KiB subtitle:0KiB other streams:0KiB global headers:0KiB muxing overhead: unknown
+2025-10-17 19:48:10,868 - core.stream_manager - ERROR - FFmpeg ERROR: [vost#0:0/libx264 @ 000001b5fe4efa80] [out#0/rtsp @ 000001b5fe4ed780] [libx264 @ 000001b5fe4eff40] frame I:265   Avg QP:21.58  size: 80111
+2025-10-17 19:48:10,869 - core.stream_manager - INFO - FFmpeg: [libx264 @ 000001b5fe4eff40] i8c dc,h,v,p: 49% 26% 15%  9%
+2025-10-17 19:48:10,869 - core.stream_manager - ERROR - FFmpeg ERROR: [libx264 @ 000001b5fe4eff40] kb/s:5591.35
+2025-10-17 19:48:11,355 - core.stream_manager - INFO - FFmpeg: Conversion failed!
+2025-10-17 19:48:11,750 - core.stream_manager - INFO - 🔄 Завершаем процесс 1228 на порту 8000
+2025-10-17 19:48:11,786 - config.settings - INFO - 📡 Локальный IP: 192.168.0.4
+2025-10-17 19:48:11,787 - werkzeug - INFO - 127.0.0.1 - - [17/Oct/2025 19:48:11] "GET /api/status HTTP/1.1" 200 -
+2025-10-17 19:48:14,853 - config.settings - INFO - ✅ MediaMTX найден: C:\Users\Honor\Downloads\Аханабдуле\mediamtx.exe
+2025-10-17 19:48:14,855 - core.stream_manager - INFO - 🗑️ Удален старый конфигурационный файл
+2025-10-17 19:48:14,859 - core.stream_manager - INFO - ✅ Конфигурационный файл MediaMTX создан
+2025-10-17 19:48:14,860 - core.stream_manager - INFO - 🔄 Запуск MediaMTX...
+2025-10-17 19:48:14,861 - core.stream_manager - INFO - 📁 Путь к MediaMTX: C:\Users\Honor\Downloads\Аханабдуле\mediamtx.exe
+2025-10-17 19:48:14,916 - core.stream_manager - INFO - MediaMTX: 2025/10/17 19:48:14 INF MediaMTX v1.9.2
+2025-10-17 19:48:14,917 - core.stream_manager - INFO - MediaMTX: 2025/10/17 19:48:14 INF configuration loaded from C:\Users\Honor\Downloads\РђС…Р°РЅР°Р±РґСѓР»Рµ\mediamtx.yml
+2025-10-17 19:48:14,918 - core.stream_manager - INFO - MediaMTX: 2025/10/17 19:48:14 INF [RTSP] listener opened on :8554 (TCP), :8000 (UDP/RTP), :8001 (UDP/RTCP)
+2025-10-17 19:48:14,919 - core.stream_manager - INFO - MediaMTX: 2025/10/17 19:48:14 INF [RTMP] listener opened on :1935
+2025-10-17 19:48:14,919 - core.stream_manager - INFO - MediaMTX: 2025/10/17 19:48:14 INF [HLS] listener opened on :8888
+2025-10-17 19:48:14,919 - core.stream_manager - INFO - MediaMTX: 2025/10/17 19:48:14 INF [WebRTC] listener opened on :8889 (HTTP), :8189 (ICE/UDP)
+2025-10-17 19:48:14,920 - core.stream_manager - INFO - MediaMTX: 2025/10/17 19:48:14 INF [SRT] listener opened on :8890 (UDP)
+2025-10-17 19:48:14,920 - core.stream_manager - INFO - MediaMTX: 2025/10/17 19:48:14 INF [API] listener opened on :9997
+2025-10-17 19:48:17,871 - core.stream_manager - INFO - ✅ MediaMTX успешно запущен
+2025-10-17 19:48:17,873 - web.app - INFO - 🌐 Запуск веб-сервера на 0.0.0.0:5000
+2025-10-17 19:48:17,873 - web.app - INFO - ✅ Веб-интерфейс запущен
+2025-10-17 19:48:17,873 - __main__ - INFO - 🌐 Веб-интерфейс доступен по адресу: http://localhost:5000
+2025-10-17 19:48:17,873 - __main__ - INFO - 📹 RTSP поток будет доступен по адресу: rtsp://ваш-ip:8554/live/stream
+2025-10-17 19:48:17,874 - __main__ - INFO - ⏹️  Для остановки нажмите Ctrl+C
+2025-10-17 19:48:17,874 - __main__ - INFO - 
+2025-10-17 19:48:17,913 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.0.4:5000
+2025-10-17 19:48:17,913 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-10-17 19:48:22,100 - config.settings - INFO - 📡 Локальный IP: 192.168.0.4
+2025-10-17 19:48:22,100 - werkzeug - INFO - 127.0.0.1 - - [17/Oct/2025 19:48:22] "GET /api/status HTTP/1.1" 200 -
+2025-10-17 19:48:31,787 - config.settings - INFO - 📡 Локальный IP: 192.168.0.4
+2025-10-17 19:48:31,787 - werkzeug - INFO - 127.0.0.1 - - [17/Oct/2025 19:48:31] "GET /api/status HTTP/1.1" 200 -
+2025-10-17 19:48:42,112 - config.settings - INFO - 📡 Локальный IP: 192.168.0.4
+2025-10-17 19:48:42,113 - werkzeug - INFO - 127.0.0.1 - - [17/Oct/2025 19:48:42] "GET /api/status HTTP/1.1" 200 -
+2025-10-17 19:48:51,796 - config.settings - INFO - 📡 Локальный IP: 192.168.0.4
+2025-10-17 19:48:51,797 - werkzeug - INFO - 127.0.0.1 - - [17/Oct/2025 19:48:51] "GET /api/status HTTP/1.1" 200 -
+2025-10-17 19:49:02,093 - config.settings - INFO - 📡 Локальный IP: 192.168.0.4
+2025-10-17 19:49:02,093 - werkzeug - INFO - 127.0.0.1 - - [17/Oct/2025 19:49:02] "GET /api/status HTTP/1.1" 200 -
+2025-10-17 19:49:11,798 - config.settings - INFO - 📡 Локальный IP: 192.168.0.4
+2025-10-17 19:49:11,799 - werkzeug - INFO - 127.0.0.1 - - [17/Oct/2025 19:49:11] "GET /api/status HTTP/1.1" 200 -
+2025-10-17 19:49:22,111 - config.settings - INFO - 📡 Локальный IP: 192.168.0.4
+2025-10-17 19:49:22,112 - werkzeug - INFO - 127.0.0.1 - - [17/Oct/2025 19:49:22] "GET /api/status HTTP/1.1" 200 -
+2025-10-17 19:49:31,795 - config.settings - INFO - 📡 Локальный IP: 192.168.0.4
+2025-10-17 19:49:31,796 - werkzeug - INFO - 127.0.0.1 - - [17/Oct/2025 19:49:31] "GET /api/status HTTP/1.1" 200 -
+2025-10-17 19:49:42,095 - config.settings - INFO - 📡 Локальный IP: 192.168.0.4
+2025-10-17 19:49:42,095 - werkzeug - INFO - 127.0.0.1 - - [17/Oct/2025 19:49:42] "GET /api/status HTTP/1.1" 200 -
+2025-10-17 19:49:44,952 - werkzeug - INFO - 127.0.0.1 - - [17/Oct/2025 19:49:44] "GET /api/network HTTP/1.1" 200 -
+2025-10-17 19:49:52,100 - config.settings - INFO - 📡 Локальный IP: 192.168.0.4
+2025-10-17 19:49:52,100 - werkzeug - INFO - 127.0.0.1 - - [17/Oct/2025 19:49:52] "GET /api/status HTTP/1.1" 200 -
+2025-10-17 19:50:01,797 - config.settings - INFO - 📡 Локальный IP: 192.168.0.4
+2025-10-17 19:50:01,797 - werkzeug - INFO - 127.0.0.1 - - [17/Oct/2025 19:50:01] "GET /api/status HTTP/1.1" 200 -
+2025-10-17 19:50:10,365 - __main__ - INFO - 📋 Получен сигнал прерывания от пользователя
+2025-10-17 19:50:10,366 - __main__ - INFO - ✅ Приложение завершило работу успешно
+2025-10-17 19:50:13,609 - config.settings - INFO - ✅ FFmpeg найден: C:\Users\Honor\Downloads\Аханабдуле\ffmpeg.exe
+2025-10-17 19:50:14,179 - core.network_manager - INFO - 🌐 Внешний IP: 46.147.70.29
+2025-10-17 19:50:14,185 - __main__ - INFO - 🔧 Настройка окружения...
+2025-10-17 19:50:14,186 - utils.system_checker - INFO - ✅ Python 3.12.3
+2025-10-17 19:50:14,186 - utils.system_checker - INFO - ✅ FFmpeg найден: C:\Users\Honor\Downloads\Аханабдуле\ffmpeg.exe
+2025-10-17 19:50:14,187 - utils.system_checker - INFO - ✅ MediaMTX найден: C:\Users\Honor\Downloads\Аханабдуле\mediamtx.exe
+2025-10-17 19:50:14,187 - utils.system_checker - INFO - ✅ Библиотека flask доступна
+2025-10-17 19:50:14,187 - utils.system_checker - INFO - ✅ Библиотека requests доступна
+2025-10-17 19:50:14,187 - utils.system_checker - INFO - ✅ python: Доступен
+2025-10-17 19:50:14,187 - utils.system_checker - INFO - ✅ ffmpeg: Доступен
+2025-10-17 19:50:14,188 - utils.system_checker - INFO - ✅ mediamtx: Доступен
+2025-10-17 19:50:14,188 - utils.system_checker - INFO - ✅ flask: Доступен
+2025-10-17 19:50:14,188 - utils.system_checker - INFO - ✅ requests: Доступен
+2025-10-17 19:50:14,188 - __main__ - INFO - 🛡️ Настройка доступа через брандмауэр Windows...
+2025-10-17 19:50:14,190 - __main__ - INFO - 🛡️ Добавляем приложение в разрешенные программы брандмауэра...
+2025-10-17 19:50:14,190 - core.firewall_prompt - INFO - 📁 Путь к приложению: C:\Users\Honor\Downloads\Аханабдуле\.venv\Scripts\python.exe
+2025-10-17 19:50:14,249 - core.firewall_prompt - INFO - ℹ️ Правило для приложения уже существует в брандмауэре
+2025-10-17 19:50:14,249 - __main__ - INFO - ✅ Приложение добавлено в разрешенные программы брандмауэра
+2025-10-17 19:50:14,249 - __main__ - INFO - 📋 Если появится запрос от Защитника Windows, нажмите 'Разрешить доступ'
+2025-10-17 19:50:14,249 - __main__ - INFO - 🔧 Настраиваем правила для портов...
+2025-10-17 19:50:14,249 - __main__ - INFO - ℹ️ Для автоматической настройки правил портов запустите программу от имени администратора
+2025-10-17 19:50:14,249 - __main__ - INFO - 📋 Вы можете настроить брандмауэр вручную через веб-интерфейс
+2025-10-17 19:50:16,259 - utils.system_checker - INFO - ✅ Python 3.12.3
+2025-10-17 19:50:16,260 - utils.system_checker - INFO - ✅ FFmpeg найден: C:\Users\Honor\Downloads\Аханабдуле\ffmpeg.exe
+2025-10-17 19:50:16,260 - utils.system_checker - INFO - ✅ MediaMTX найден: C:\Users\Honor\Downloads\Аханабдуле\mediamtx.exe
+2025-10-17 19:50:16,260 - __main__ - INFO - 🚀 Запуск сервисов...
+2025-10-17 19:50:18,318 - config.settings - INFO - ✅ MediaMTX найден: C:\Users\Honor\Downloads\Аханабдуле\mediamtx.exe
+2025-10-17 19:50:18,318 - core.stream_manager - INFO - 🗑️ Удален старый конфигурационный файл
+2025-10-17 19:50:18,318 - core.stream_manager - INFO - ✅ Конфигурационный файл MediaMTX создан
+2025-10-17 19:50:18,318 - core.stream_manager - INFO - 🔄 Запуск MediaMTX...
+2025-10-17 19:50:18,318 - core.stream_manager - INFO - 📁 Путь к MediaMTX: C:\Users\Honor\Downloads\Аханабдуле\mediamtx.exe
+2025-10-17 19:50:18,374 - core.stream_manager - INFO - MediaMTX: 2025/10/17 19:50:18 INF MediaMTX v1.9.2
+2025-10-17 19:50:18,374 - core.stream_manager - INFO - MediaMTX: 2025/10/17 19:50:18 INF configuration loaded from C:\Users\Honor\Downloads\РђС…Р°РЅР°Р±РґСѓР»Рµ\mediamtx.yml
+2025-10-17 19:50:18,374 - core.stream_manager - INFO - MediaMTX: 2025/10/17 19:50:18 INF [RTSP] listener opened on :8554 (TCP), :8000 (UDP/RTP), :8001 (UDP/RTCP)
+2025-10-17 19:50:18,374 - core.stream_manager - INFO - MediaMTX: 2025/10/17 19:50:18 INF [RTMP] listener opened on :1935
+2025-10-17 19:50:18,374 - core.stream_manager - INFO - MediaMTX: 2025/10/17 19:50:18 INF [HLS] listener opened on :8888
+2025-10-17 19:50:18,374 - core.stream_manager - INFO - MediaMTX: 2025/10/17 19:50:18 INF [WebRTC] listener opened on :8889 (HTTP), :8189 (ICE/UDP)
+2025-10-17 19:50:18,379 - core.stream_manager - INFO - MediaMTX: 2025/10/17 19:50:18 INF [SRT] listener opened on :8890 (UDP)
+2025-10-17 19:50:18,379 - core.stream_manager - INFO - MediaMTX: 2025/10/17 19:50:18 INF [API] listener opened on :9997
+2025-10-17 19:50:21,333 - core.stream_manager - INFO - ✅ MediaMTX успешно запущен
+2025-10-17 19:50:21,334 - web.app - INFO - 🌐 Запуск веб-сервера на 0.0.0.0:5000
+2025-10-17 19:50:21,334 - web.app - INFO - ✅ Веб-интерфейс запущен
+2025-10-17 19:50:21,334 - __main__ - INFO - 🌐 Веб-интерфейс доступен по адресу: http://localhost:5000
+2025-10-17 19:50:21,335 - __main__ - INFO - 📹 RTSP поток будет доступен по адресу: rtsp://ваш-ip:8554/live/stream
+2025-10-17 19:50:21,336 - __main__ - INFO - ⏹️  Для остановки нажмите Ctrl+C
+2025-10-17 19:50:21,336 - __main__ - INFO - 
+2025-10-17 19:50:21,345 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.0.4:5000
+2025-10-17 19:50:21,346 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-10-17 19:50:28,651 - core.stream_manager - INFO - MediaMTX: 2025/10/17 19:50:28 INF [RTSP] [conn 192.168.0.110:36234] opened
+2025-10-17 19:50:28,672 - core.stream_manager - INFO - MediaMTX: 2025/10/17 19:50:28 INF [RTSP] [conn 192.168.0.110:36234] closed: no one is publishing to path 'live/stream'
+2025-10-17 19:52:29,336 - core.camera_finder - INFO - 🔍 Поиск и тестирование камер...
+2025-10-17 19:52:29,336 - core.camera_finder - INFO - 🔍 Поиск доступных камер...
+2025-10-17 19:52:29,800 - core.camera_finder - INFO - ✅ Метод 1: найдено 1 камер
+2025-10-17 19:52:30,093 - core.camera_finder - INFO - ✅ Метод 2: найдено 1 камер
+2025-10-17 19:52:30,093 - core.camera_finder - INFO - 📹 Найдено потенциальных камер: 2
+2025-10-17 19:52:30,094 - core.camera_finder - INFO -    - (video)
+2025-10-17 19:52:30,094 - core.camera_finder - INFO -    - ov9734_azurewave_camera
+2025-10-17 19:52:30,094 - core.camera_finder - INFO - 🔍 Тестируем камеру: (video)
+2025-10-17 19:52:30,094 - core.camera_finder - INFO - 🔄 Попытка 1 для камеры (video)
+2025-10-17 19:52:30,140 - core.camera_finder - INFO - 🔄 Попытка 2 для камеры (video)
+2025-10-17 19:52:30,186 - core.camera_finder - INFO - 🔄 Попытка 3 для камеры (video)
+2025-10-17 19:52:30,234 - core.camera_finder - INFO - ❌ (video) - нерабочая: Ошибка ввода-вывода (проверьте доступ к камере)
+2025-10-17 19:52:30,234 - core.camera_finder - INFO - 🔍 Тестируем камеру: ov9734_azurewave_camera
+2025-10-17 19:52:30,234 - core.camera_finder - INFO - 🔄 Попытка 1 для камеры ov9734_azurewave_camera
+2025-10-17 19:52:34,315 - core.camera_finder - INFO - ✅ Камера 'ov9734_azurewave_camera' - РАБОТАЕТ (попытка 1)
+2025-10-17 19:52:34,316 - core.camera_finder - INFO - ✅ ov9734_azurewave_camera - рабочая
+2025-10-17 19:52:34,316 - core.camera_finder - INFO - 🎯 Рабочие камеры: 1 из 2
+2025-10-17 19:52:34,316 - core.camera_finder - INFO -    ✅ ov9734_azurewave_camera
+2025-10-17 19:52:34,317 - config.settings - INFO - 📡 Локальный IP: 192.168.0.4
+2025-10-17 19:52:34,983 - config.settings - INFO - 🌐 Внешний IP: 46.147.70.29
+2025-10-17 19:52:34,985 - config.settings - INFO - ✅ FFmpeg найден: C:\Users\Honor\Downloads\Аханабдуле\ffmpeg.exe
+2025-10-17 19:52:34,986 - config.settings - INFO - ✅ MediaMTX найден: C:\Users\Honor\Downloads\Аханабдуле\mediamtx.exe
+2025-10-17 19:52:34,995 - werkzeug - INFO - 127.0.0.1 - - [17/Oct/2025 19:52:34] "GET / HTTP/1.1" 200 -
+2025-10-17 19:52:35,076 - werkzeug - INFO - 127.0.0.1 - - [17/Oct/2025 19:52:35] "[36mGET /static/css/main.css HTTP/1.1[0m" 304 -
+2025-10-17 19:52:35,082 - werkzeug - INFO - 127.0.0.1 - - [17/Oct/2025 19:52:35] "[36mGET /static/css/layout.css HTTP/1.1[0m" 304 -
+2025-10-17 19:52:35,339 - werkzeug - INFO - 127.0.0.1 - - [17/Oct/2025 19:52:35] "[36mGET /static/css/themes.css HTTP/1.1[0m" 304 -
+2025-10-17 19:52:35,340 - werkzeug - INFO - 127.0.0.1 - - [17/Oct/2025 19:52:35] "[36mGET /static/css/components.css HTTP/1.1[0m" 304 -
+2025-10-17 19:52:35,340 - werkzeug - INFO - 127.0.0.1 - - [17/Oct/2025 19:52:35] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-10-17 19:52:35,343 - werkzeug - INFO - 127.0.0.1 - - [17/Oct/2025 19:52:35] "[36mGET /static/js/terminal.js HTTP/1.1[0m" 304 -
+2025-10-17 19:52:35,393 - werkzeug - INFO - 127.0.0.1 - - [17/Oct/2025 19:52:35] "[36mGET /static/js/api.js HTTP/1.1[0m" 304 -
+2025-10-17 19:52:35,787 - config.settings - INFO - 📡 Локальный IP: 192.168.0.4
+2025-10-17 19:52:35,787 - werkzeug - INFO - 127.0.0.1 - - [17/Oct/2025 19:52:35] "GET /api/status HTTP/1.1" 200 -
+2025-10-17 19:52:36,037 - werkzeug - INFO - 127.0.0.1 - - [17/Oct/2025 19:52:36] "GET /api/network HTTP/1.1" 200 -
+2025-10-17 19:52:36,107 - werkzeug - INFO - 127.0.0.1 - - [17/Oct/2025 19:52:36] "GET /api/network/port-check HTTP/1.1" 200 -
+2025-10-17 19:52:36,107 - core.stream_manager - INFO - MediaMTX: 2025/10/17 19:52:36 INF [RTSP] [conn 127.0.0.1:50094] opened
+2025-10-17 19:52:36,108 - core.stream_manager - INFO - MediaMTX: 2025/10/17 19:52:36 INF [RTSP] [conn 127.0.0.1:50094] closed: EOF
+2025-10-17 19:52:45,473 - config.settings - INFO - 📡 Локальный IP: 192.168.0.4
+2025-10-17 19:52:45,473 - werkzeug - INFO - 127.0.0.1 - - [17/Oct/2025 19:52:45] "GET /api/status HTTP/1.1" 200 -
+2025-10-17 19:52:55,784 - config.settings - INFO - 📡 Локальный IP: 192.168.0.4
+2025-10-17 19:52:55,785 - werkzeug - INFO - 127.0.0.1 - - [17/Oct/2025 19:52:55] "GET /api/status HTTP/1.1" 200 -
+2025-10-17 19:52:56,821 - core.camera_finder - INFO - 🔍 Тестируем камеру: ov9734_azurewave_camera
+2025-10-17 19:52:56,822 - core.camera_finder - INFO - 🔄 Попытка 1 для камеры ov9734_azurewave_camera
+2025-10-17 19:53:00,963 - core.camera_finder - INFO - ✅ Камера 'ov9734_azurewave_camera' - РАБОТАЕТ (попытка 1)
+2025-10-17 19:53:00,963 - config.settings - INFO - ✅ FFmpeg найден: C:\Users\Honor\Downloads\Аханабдуле\ffmpeg.exe
+2025-10-17 19:53:00,964 - config.settings - INFO - 📡 Локальный IP: 192.168.0.4
+2025-10-17 19:53:00,964 - core.stream_manager - INFO - 🎬 Попытка 1 запуска стрима с камеры: ov9734_azurewave_camera
+2025-10-17 19:53:00,964 - core.stream_manager - INFO - 🔧 Команда: C:\Users\Honor\Downloads\Аханабдуле\ffmpeg.exe -f dshow -i video=ov9734_azurewave_camera -c:v libx264 -preset ultrafast -tune zerolatency -g 15 -keyint_min 15 -crf 25 -profile:v baseline -level 3.1 -pix_fmt yuv420p -f rtsp -rtsp_transport tcp rtsp://localhost:8554/live/stream
+2025-10-17 19:53:00,992 - core.stream_manager - INFO - FFmpeg: ffmpeg version 8.0-full_build-www.gyan.dev Copyright (c) 2000-2025 the FFmpeg developers
+2025-10-17 19:53:00,993 - core.stream_manager - INFO - FFmpeg: built with gcc 15.2.0 (Rev8, Built by MSYS2 project)
+2025-10-17 19:53:00,993 - core.stream_manager - INFO - FFmpeg: configuration: --enable-gpl --enable-version3 --enable-static --disable-w32threads --disable-autodetect --enable-fontconfig --enable-iconv --enable-gnutls --enable-lcms2 --enable-libxml2 --enable-gmp --enable-bzlib --enable-lzma --enable-libsnappy --enable-zlib --enable-librist --enable-libsrt --enable-libssh --enable-libzmq --enable-avisynth --enable-libbluray --enable-libcaca --enable-libdvdnav --enable-libdvdread --enable-sdl2 --enable-libaribb24 --enable-libaribcaption --enable-libdav1d --enable-libdavs2 --enable-libopenjpeg --enable-libquirc --enable-libuavs3d --enable-libxevd --enable-libzvbi --enable-liboapv --enable-libqrencode --enable-librav1e --enable-libsvtav1 --enable-libvvenc --enable-libwebp --enable-libx264 --enable-libx265 --enable-libxavs2 --enable-libxeve --enable-libxvid --enable-libaom --enable-libjxl --enable-libvpx --enable-mediafoundation --enable-libass --enable-frei0r --enable-libfreetype --enable-libfribidi --enable-libharfbuzz --enable-liblensfun --enable-libvidstab --enable-libvmaf --enable-libzimg --enable-amf --enable-cuda-llvm --enable-cuvid --enable-dxva2 --enable-d3d11va --enable-d3d12va --enable-ffnvcodec --enable-libvpl --enable-nvdec --enable-nvenc --enable-vaapi --enable-libshaderc --enable-vulkan --enable-libplacebo --enable-opencl --enable-libcdio --enable-openal --enable-libgme --enable-libmodplug --enable-libopenmpt --enable-libopencore-amrwb --enable-libmp3lame --enable-libshine --enable-libtheora --enable-libtwolame --enable-libvo-amrwbenc --enable-libcodec2 --enable-libilbc --enable-libgsm --enable-liblc3 --enable-libopencore-amrnb --enable-libopus --enable-libspeex --enable-libvorbis --enable-ladspa --enable-libbs2b --enable-libflite --enable-libmysofa --enable-librubberband --enable-libsoxr --enable-chromaprint --enable-whisper
+2025-10-17 19:53:00,993 - core.stream_manager - INFO - FFmpeg: libavutil      60.  8.100 / 60.  8.100
+2025-10-17 19:53:00,994 - core.stream_manager - INFO - FFmpeg: libavcodec     62. 11.100 / 62. 11.100
+2025-10-17 19:53:00,994 - core.stream_manager - INFO - FFmpeg: libavformat    62.  3.100 / 62.  3.100
+2025-10-17 19:53:00,994 - core.stream_manager - INFO - FFmpeg: libavdevice    62.  1.100 / 62.  1.100
+2025-10-17 19:53:00,994 - core.stream_manager - INFO - FFmpeg: libavfilter    11.  4.100 / 11.  4.100
+2025-10-17 19:53:00,995 - core.stream_manager - INFO - FFmpeg: libswscale      9.  1.100 /  9.  1.100
+2025-10-17 19:53:00,995 - core.stream_manager - INFO - FFmpeg: libswresample   6.  1.100 /  6.  1.100
+2025-10-17 19:53:01,491 - core.stream_manager - INFO - FFmpeg: Duration: N/A, start: 159146.984448, bitrate: N/A
+2025-10-17 19:53:01,491 - core.stream_manager - INFO - FFmpeg: Stream #0:0: Video: mjpeg (Baseline) (MJPG / 0x47504A4D), yuvj422p(pc, bt470bg/unknown/unknown), 1280x720, 30 fps, 30 tbr, 10000k tbn, start 159146.984448
+2025-10-17 19:53:01,491 - core.stream_manager - ERROR - FFmpeg ERROR: Input #0, dshow, from 'video=ov9734_azurewave_camera':Stream mapping:
+2025-10-17 19:53:01,491 - core.stream_manager - INFO - FFmpeg: Stream #0:0 -> #0:0 (mjpeg (native) -> h264 (libx264))
+2025-10-17 19:53:01,492 - core.stream_manager - ERROR - FFmpeg ERROR: Press [q] to stop, [?] for help
+2025-10-17 19:53:01,499 - core.stream_manager - INFO - FFmpeg: [swscaler @ 0000022544e26780] deprecated pixel format used, make sure you did set range correctly
+2025-10-17 19:53:01,504 - core.stream_manager - ERROR - FFmpeg ERROR: [libx264 @ 0000022544e105c0] using cpu capabilities: MMX2 SSE2Fast SSSE3 SSE4.2 AVX FMA3 BMI2 AVX2
+2025-10-17 19:53:01,506 - core.stream_manager - ERROR - FFmpeg ERROR: profile Constrained Baseline, level 3.1, 4:2:0, 8-bit
+2025-10-17 19:53:01,506 - core.stream_manager - ERROR - FFmpeg ERROR: [libx264 @ 0000022544e105c0] 264 - core 165 r3222 b35605a - H.264/MPEG-4 AVC codec - Copyleft 2003-2025 - http://www.videolan.org/x264.html - options: cabac=0 ref=1 deblock=0:0:0 analyse=0:0 me=dia subme=0 psy=1 psy_rd=1.00:0.00 mixed_ref=0 me_range=16 chroma_me=1 trellis=0 8x8dct=0 cqm=0 deadzone=21,11 fast_pskip=1 chroma_qp_offset=0 threads=6 lookahead_threads=6 sliced_threads=1 slices=6 nr=0 decimate=1 interlaced=0 bluray_compat=0 constrained_intra=0 bframes=0 weightp=0 keyint=15 keyint_min=8 scenecut=0 intra_refresh=0 rc=crf mbtree=0 crf=25.0 qcomp=0.60 qpmin=0 qpmax=69 qpstep=4 ip_ratio=1.40 aq=0
+2025-10-17 19:53:01,510 - core.stream_manager - INFO - MediaMTX: 2025/10/17 19:53:01 INF [RTSP] [conn [::1]:50100] opened
+2025-10-17 19:53:01,511 - core.stream_manager - INFO - MediaMTX: 2025/10/17 19:53:01 INF [RTSP] [session c1640088] created by [::1]:50100
+2025-10-17 19:53:01,512 - core.stream_manager - ERROR - FFmpeg ERROR: method ANNOUNCE failed: 401 Unauthorized
+2025-10-17 19:53:01,512 - core.stream_manager - INFO - MediaMTX: 2025/10/17 19:53:01 INF [RTSP] [conn [::1]:50100] closed: EOF
+2025-10-17 19:53:01,512 - core.stream_manager - ERROR - FFmpeg ERROR: [out#0/rtsp @ 0000022544e0cac0] Could not write header (incorrect codec parameters ?): Server returned 401 Unauthorized (authorization failed)
+2025-10-17 19:53:01,512 - core.stream_manager - INFO - MediaMTX: 2025/10/17 19:53:01 INF [RTSP] [session c1640088] destroyed: not in use
+2025-10-17 19:53:01,512 - core.stream_manager - ERROR - FFmpeg ERROR: [vf#0:0 @ 0000022544e16540] Error sending frames to consumers: Server returned 401 Unauthorized (authorization failed)
+2025-10-17 19:53:01,512 - core.stream_manager - ERROR - FFmpeg ERROR: Task finished with error code: -825242872 (Server returned 401 Unauthorized (authorization failed))
+2025-10-17 19:53:01,513 - core.stream_manager - ERROR - FFmpeg ERROR: [vf#0:0 @ 0000022544e16540] Terminating thread with return code -825242872 (Server returned 401 Unauthorized (authorization failed))
+2025-10-17 19:53:01,607 - core.stream_manager - ERROR - FFmpeg ERROR: Nothing was written into output file, because at least one of its streams received no packets.
+2025-10-17 19:53:02,106 - core.stream_manager - INFO - FFmpeg: [libx264 @ 0000022544e105c0][rtsp @ 0000022544dfaec0] [vf#0:0 @ 0000022544e16540] [out#0/rtsp @ 0000022544e0cac0] Conversion failed!
+2025-10-17 19:53:03,970 - core.stream_manager - ERROR - ❌ Попытка 1 не удалась: FFmpeg завершился с ошибкой
+2025-10-17 19:53:03,970 - core.stream_manager - INFO - 🎬 Попытка 2 запуска стрима с камеры: ov9734_azurewave_camera
+2025-10-17 19:53:03,970 - core.stream_manager - INFO - 🔧 Команда: C:\Users\Honor\Downloads\Аханабдуле\ffmpeg.exe -f dshow -i video=ov9734_azurewave_camera -c:v libx264 -preset ultrafast -tune zerolatency -g 15 -keyint_min 15 -crf 25 -profile:v baseline -level 3.1 -pix_fmt yuv420p -f rtsp -rtsp_transport tcp rtsp://:@192.168.0.4:8554/live/stream
+2025-10-17 19:53:04,006 - core.stream_manager - INFO - FFmpeg: ffmpeg version 8.0-full_build-www.gyan.dev Copyright (c) 2000-2025 the FFmpeg developers
+2025-10-17 19:53:04,007 - core.stream_manager - INFO - FFmpeg: built with gcc 15.2.0 (Rev8, Built by MSYS2 project)
+2025-10-17 19:53:04,007 - core.stream_manager - INFO - FFmpeg: configuration: --enable-gpl --enable-version3 --enable-static --disable-w32threads --disable-autodetect --enable-fontconfig --enable-iconv --enable-gnutls --enable-lcms2 --enable-libxml2 --enable-gmp --enable-bzlib --enable-lzma --enable-libsnappy --enable-zlib --enable-librist --enable-libsrt --enable-libssh --enable-libzmq --enable-avisynth --enable-libbluray --enable-libcaca --enable-libdvdnav --enable-libdvdread --enable-sdl2 --enable-libaribb24 --enable-libaribcaption --enable-libdav1d --enable-libdavs2 --enable-libopenjpeg --enable-libquirc --enable-libuavs3d --enable-libxevd --enable-libzvbi --enable-liboapv --enable-libqrencode --enable-librav1e --enable-libsvtav1 --enable-libvvenc --enable-libwebp --enable-libx264 --enable-libx265 --enable-libxavs2 --enable-libxeve --enable-libxvid --enable-libaom --enable-libjxl --enable-libvpx --enable-mediafoundation --enable-libass --enable-frei0r --enable-libfreetype --enable-libfribidi --enable-libharfbuzz --enable-liblensfun --enable-libvidstab --enable-libvmaf --enable-libzimg --enable-amf --enable-cuda-llvm --enable-cuvid --enable-dxva2 --enable-d3d11va --enable-d3d12va --enable-ffnvcodec --enable-libvpl --enable-nvdec --enable-nvenc --enable-vaapi --enable-libshaderc --enable-vulkan --enable-libplacebo --enable-opencl --enable-libcdio --enable-openal --enable-libgme --enable-libmodplug --enable-libopenmpt --enable-libopencore-amrwb --enable-libmp3lame --enable-libshine --enable-libtheora --enable-libtwolame --enable-libvo-amrwbenc --enable-libcodec2 --enable-libilbc --enable-libgsm --enable-liblc3 --enable-libopencore-amrnb --enable-libopus --enable-libspeex --enable-libvorbis --enable-ladspa --enable-libbs2b --enable-libflite --enable-libmysofa --enable-librubberband --enable-libsoxr --enable-chromaprint --enable-whisper
+2025-10-17 19:53:04,008 - core.stream_manager - INFO - FFmpeg: libavutil      60.  8.100 / 60.  8.100
+2025-10-17 19:53:04,009 - core.stream_manager - INFO - FFmpeg: libavcodec     62. 11.100 / 62. 11.100
+2025-10-17 19:53:04,009 - core.stream_manager - INFO - FFmpeg: libavformat    62.  3.100 / 62.  3.100
+2025-10-17 19:53:04,009 - core.stream_manager - INFO - FFmpeg: libavdevice    62.  1.100 / 62.  1.100
+2025-10-17 19:53:04,010 - core.stream_manager - INFO - FFmpeg: libavfilter    11.  4.100 / 11.  4.100
+2025-10-17 19:53:04,010 - core.stream_manager - INFO - FFmpeg: libswscale      9.  1.100 /  9.  1.100
+2025-10-17 19:53:04,010 - core.stream_manager - INFO - FFmpeg: libswresample   6.  1.100 /  6.  1.100
+2025-10-17 19:53:04,518 - core.stream_manager - INFO - FFmpeg: Duration: N/A, start: 159150.022801, bitrate: N/A
+2025-10-17 19:53:04,519 - core.stream_manager - INFO - FFmpeg: Stream #0:0: Video: mjpeg (Baseline) (MJPG / 0x47504A4D), yuvj422p(pc, bt470bg/unknown/unknown), 1280x720, 30 fps, 30 tbr, 10000k tbn, start 159150.022801
+2025-10-17 19:53:04,519 - core.stream_manager - ERROR - FFmpeg ERROR: Input #0, dshow, from 'video=ov9734_azurewave_camera':Stream mapping:
+2025-10-17 19:53:04,520 - core.stream_manager - ERROR - FFmpeg ERROR: Press [q] to stop, [?] for help
+2025-10-17 19:53:04,520 - core.stream_manager - INFO - FFmpeg: Stream #0:0 -> #0:0 (mjpeg (native) -> h264 (libx264))
+2025-10-17 19:53:04,528 - core.stream_manager - INFO - FFmpeg: deprecated pixel format used, make sure you did set range correctly
+2025-10-17 19:53:04,533 - core.stream_manager - INFO - FFmpeg: using cpu capabilities: MMX2 SSE2Fast SSSE3 SSE4.2 AVX FMA3 BMI2 AVX2
+2025-10-17 19:53:04,535 - core.stream_manager - INFO - FFmpeg: profile Constrained Baseline, level 3.1, 4:2:0, 8-bit
+2025-10-17 19:53:04,535 - core.stream_manager - INFO - FFmpeg: [libx264 @ 000001dbade80080] 264 - core 165 r3222 b35605a - H.264/MPEG-4 AVC codec - Copyleft 2003-2025 - http://www.videolan.org/x264.html - options: cabac=0 ref=1 deblock=0:0:0 analyse=0:0 me=dia subme=0 psy=1 psy_rd=1.00:0.00 mixed_ref=0 me_range=16 chroma_me=1 trellis=0 8x8dct=0 cqm=0 deadzone=21,11 fast_pskip=1 chroma_qp_offset=0 threads=6 lookahead_threads=6 sliced_threads=1 slices=6 nr=0 decimate=1 interlaced=0 bluray_compat=0 constrained_intra=0 bframes=0 weightp=0 keyint=15 keyint_min=8 scenecut=0 intra_refresh=0 rc=crf mbtree=0 crf=25.0 qcomp=0.60 qpmin=0 qpmax=69 qpstep=4 ip_ratio=1.40 aq=0
+2025-10-17 19:53:04,537 - core.stream_manager - INFO - MediaMTX: 2025/10/17 19:53:04 INF [RTSP] [conn 192.168.0.4:50101] opened
+2025-10-17 19:53:04,538 - core.stream_manager - INFO - MediaMTX: 2025/10/17 19:53:04 INF [RTSP] [session 57fbed52] created by 192.168.0.4:50101
+2025-10-17 19:53:04,539 - core.stream_manager - INFO - MediaMTX: 2025/10/17 19:53:04 INF [RTSP] [session 57fbed52] is publishing to path 'live/stream', 1 track (H264)
+2025-10-17 19:53:04,539 - core.stream_manager - INFO - FFmpeg: Metadata:
+2025-10-17 19:53:04,539 - core.stream_manager - INFO - FFmpeg: encoder         : Lavf62.3.100
+2025-10-17 19:53:04,539 - core.stream_manager - INFO - FFmpeg: Stream #0:0: Video: h264, yuv420p(pc, bt470bg/unknown/unknown, progressive), 1280x720, q=2-31, 30 fps, 90k tbn
+2025-10-17 19:53:04,539 - core.stream_manager - INFO - FFmpeg: Metadata:
+2025-10-17 19:53:04,539 - core.stream_manager - INFO - FFmpeg: encoder         : Lavc62.11.100 libx264
+2025-10-17 19:53:04,539 - core.stream_manager - INFO - FFmpeg: Side data:
+2025-10-17 19:53:04,540 - core.stream_manager - INFO - FFmpeg: cpb: bitrate max/min/avg: 0/0/0 buffer size: 0 vbv_delay: N/A
+2025-10-17 19:53:05,550 - core.stream_manager - ERROR - FFmpeg ERROR: [swscaler @ 000001dbade96b40] [libx264 @ 000001dbade80080][libx264 @ 000001dbade80080]Output #0, rtsp, to 'rtsp://:@192.168.0.4:8554/live/stream':frame=   13 fps=0.0 q=24.0 size=N/A time=00:00:00.43 bitrate=N/A dup=8 drop=0 speed=0.84x elapsed=0:00:00.51
+2025-10-17 19:53:05,783 - config.settings - INFO - 📡 Локальный IP: 192.168.0.4
+2025-10-17 19:53:05,784 - werkzeug - INFO - 127.0.0.1 - - [17/Oct/2025 19:53:05] "GET /api/status HTTP/1.1" 200 -
+2025-10-17 19:53:06,982 - core.stream_manager - INFO - ✅ Стрим успешно запущен (попытка 2)
+2025-10-17 19:53:06,983 - config.settings - INFO - 📡 Локальный IP: 192.168.0.4
+2025-10-17 19:53:06,984 - werkzeug - INFO - 127.0.0.1 - - [17/Oct/2025 19:53:06] "POST /api/stream/start HTTP/1.1" 200 -
+2025-10-17 19:53:11,585 - werkzeug - INFO - 127.0.0.1 - - [17/Oct/2025 19:53:11] "GET /api/network HTTP/1.1" 200 -
+2025-10-17 19:53:12,019 - config.settings - INFO - 📡 Локальный IP: 192.168.0.4
+2025-10-17 19:53:12,020 - werkzeug - INFO - 127.0.0.1 - - [17/Oct/2025 19:53:12] "GET /api/status HTTP/1.1" 200 -
+2025-10-17 19:53:15,778 - config.settings - INFO - 📡 Локальный IP: 192.168.0.4
+2025-10-17 19:53:15,779 - werkzeug - INFO - 127.0.0.1 - - [17/Oct/2025 19:53:15] "GET /api/status HTTP/1.1" 200 -
+2025-10-17 19:53:22,272 - core.stream_manager - INFO - MediaMTX: 2025/10/17 19:53:22 INF [RTSP] [conn 192.168.0.110:36300] opened
+2025-10-17 19:53:22,544 - core.stream_manager - INFO - MediaMTX: 2025/10/17 19:53:22 INF [RTSP] [session d19e1d88] created by 192.168.0.110:36300
+2025-10-17 19:53:22,633 - core.stream_manager - INFO - MediaMTX: 2025/10/17 19:53:22 INF [RTSP] [session d19e1d88] is reading from path 'live/stream', with UDP, 1 track (H264)
+2025-10-17 19:53:25,473 - config.settings - INFO - 📡 Локальный IP: 192.168.0.4
+2025-10-17 19:53:25,474 - werkzeug - INFO - 127.0.0.1 - - [17/Oct/2025 19:53:25] "GET /api/status HTTP/1.1" 200 -
+2025-10-17 19:53:35,796 - config.settings - INFO - 📡 Локальный IP: 192.168.0.4
+2025-10-17 19:53:35,796 - werkzeug - INFO - 127.0.0.1 - - [17/Oct/2025 19:53:35] "GET /api/status HTTP/1.1" 200 -
+2025-10-17 19:53:45,480 - config.settings - INFO - 📡 Локальный IP: 192.168.0.4
+2025-10-17 19:53:45,481 - werkzeug - INFO - 127.0.0.1 - - [17/Oct/2025 19:53:45] "GET /api/status HTTP/1.1" 200 -
+2025-10-17 19:53:55,792 - config.settings - INFO - 📡 Локальный IP: 192.168.0.4
+2025-10-17 19:53:55,793 - werkzeug - INFO - 127.0.0.1 - - [17/Oct/2025 19:53:55] "GET /api/status HTTP/1.1" 200 -
+2025-10-17 19:53:59,692 - core.stream_manager - ERROR - FFmpeg ERROR: [vf#0:0 @ 000001dbade87040] frame= 1624 fps= 30 q=27.0 size=N/A time=00:00:54.13 bitrate=N/A dup=1005 drop=0 speed=   1x elapsed=0:00:54.14
+2025-10-17 19:54:05,483 - config.settings - INFO - 📡 Локальный IP: 192.168.0.4
+2025-10-17 19:54:05,483 - werkzeug - INFO - 127.0.0.1 - - [17/Oct/2025 19:54:05] "GET /api/status HTTP/1.1" 200 -
+2025-10-17 19:54:15,781 - config.settings - INFO - 📡 Локальный IP: 192.168.0.4
+2025-10-17 19:54:15,782 - werkzeug - INFO - 127.0.0.1 - - [17/Oct/2025 19:54:15] "GET /api/status HTTP/1.1" 200 -
+2025-10-17 19:54:25,481 - config.settings - INFO - 📡 Локальный IP: 192.168.0.4
+2025-10-17 19:54:25,481 - werkzeug - INFO - 127.0.0.1 - - [17/Oct/2025 19:54:25] "GET /api/status HTTP/1.1" 200 -

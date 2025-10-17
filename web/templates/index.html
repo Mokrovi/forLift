@@ -118,6 +118,34 @@
                             </button>
                         </div>
                     </div>
+
+                    <!-- Статус Android системы -->
+                    <div class="info-group">
+    <h4 class="info-group-title">📱 Отправка на Android</h4>
+    <div class="form-group">
+        <label for="androidIp" class="form-label">IP адрес Android устройства:</label>
+        <div class="d-flex align-center" style="gap: 12px">
+            <input type="text" id="androidIp" class="form-input" placeholder="192.168.1.100"
+                   pattern="^([0-9]{1,3}\.){3}[0-9]{1,3}$">
+            <button type="button" onclick="sendToAndroid()" class="btn btn-primary btn-sm">
+                📤 Отправить
+            </button>
+        </div>
+        <div class="form-hint">Укажите IP адрес устройства в локальной сети</div>
+    </div>
+
+    <div class="status-item">
+        <span class="status-label">Статус отправки:</span>
+        <span class="status-value" id="androidStatus">
+            <!-- Здесь будет отображаться статус -->
+        </span>
+    </div>
+
+    <div class="response-section" id="androidResponse" style="display: none;">
+        <h5 class="response-title">Ответ от устройства:</h5>
+        <div class="response-content" id="androidResponseContent"></div>
+    </div>
+</div>
                 </div>
             </div>
         </div>
