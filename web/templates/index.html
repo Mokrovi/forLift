@@ -20,135 +20,158 @@
     <div class="main-layout">
         <!-- Левая колонка -->
         <div class="left-column">
-            <div class="panel">
-                <div class="panel-header">
-                    <h1 class="panel-title">🎥 RTSP Stream System</h1>
-                    <div class="panel-subtitle">Профессиональная система видеотрансляции</div>
+    <div class="panel">
+        <div class="panel-header">
+            <h1 class="panel-title">🎥 RTSP Stream System</h1>
+            <div class="panel-subtitle">Профессиональная система видеотрансляции</div>
+        </div>
+
+        <div class="panel-content">
+            <!-- Системная информация -->
+            <div class="collapse-section">
+                <div class="collapse-header" onclick="toggleSystemInfo()">
+                    <span class="collapse-icon">▶</span>
+                    <span class="collapse-title">Системная информация</span>
+                    <span class="collapse-status" id="systemStatus">Скрыто</span>
                 </div>
-
-                <div class="panel-content">
-                    <!-- Системная информация -->
-                    <div class="collapse-section">
-                        <div class="collapse-header" onclick="toggleSystemInfo()">
-                            <span class="collapse-icon">▶</span>
-                            <span class="collapse-title">Системная информация</span>
-                            <span class="collapse-status" id="systemStatus">Скрыто</span>
+                <div class="collapse-content" id="systemInfo">
+                    <div class="grid grid-2">
+                        <div class="info-item">
+                            <span class="info-label">IP компьютера:</span>
+                            <span class="info-value">{{ local_ip }}</span>
                         </div>
-                        <div class="collapse-content" id="systemInfo">
-                            <div class="grid grid-2">
-                                <div class="info-item">
-                                    <span class="info-label">IP компьютера:</span>
-                                    <span class="info-value">{{ local_ip }}</span>
-                                </div>
-                                <div class="info-item">
-                                    <span class="info-label">FFmpeg:</span>
-                                    <span class="info-value status-{% if ffmpeg_path.exists() %}online{% else %}offline{% endif %}">
-                                        {{ '✅ Доступен' if ffmpeg_path.exists() else '❌ Не найден' }}
-                                    </span>
-                                </div>
-                                <div class="info-item">
-                                    <span class="info-label">MediaMTX:</span>
-                                    <span class="info-value status-{% if mediamtx_path.exists() %}online{% else %}offline{% endif %}">
-                                        {{ '✅ Доступен' if mediamtx_path.exists() else '❌ Не найден' }}
-                                    </span>
-                                </div>
-                                <div class="info-item">
-                                    <span class="info-label">Камеры:</span>
-                                    <span class="info-value">{{ cameras|length }} обнаружено</span>
-                                </div>
-                            </div>
+                        <div class="info-item">
+                            <span class="info-label">FFmpeg:</span>
+                            <span class="info-value status-{% if ffmpeg_path.exists() %}online{% else %}offline{% endif %}">
+                                {{ '✅ Доступен' if ffmpeg_path.exists() else '❌ Не найден' }}
+                            </span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">MediaMTX:</span>
+                            <span class="info-value status-{% if mediamtx_path.exists() %}online{% else %}offline{% endif %}">
+                                {{ '✅ Доступен' if mediamtx_path.exists() else '❌ Не найден' }}
+                            </span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">Камеры:</span>
+                            <span class="info-value">{{ cameras|length }} обнаружено</span>
                         </div>
                     </div>
+                </div>
+            </div>
 
-                    <!-- Панель управления -->
-                    <div class="panel-section">
-                        <form id="streamForm" class="app-form">
-                            <div class="form-group">
-                                <label for="camera_name" class="form-label">Выбор камеры</label>
-                                <div class="d-flex align-center" style="gap: 12px">
-                                    <select id="camera_name" name="camera_name" required class="form-select">
-                                        {% for camera in cameras %}
-                                        <option value="{{ camera }}" {% if loop.first %}selected{% endif %}>
-                                            {{ camera }}
-                                        </option>
-                                        {% endfor %}
-                                    </select>
-                                    <button type="button" onclick="refreshCameras()" class="btn btn-secondary btn-sm">
-                                        🔄 Обновить
-                                    </button>
-                                </div>
-                            </div>
-
-                            <div class="grid grid-2">
-                                <button type="button" onclick="startStream()" class="btn btn-primary">
-                                    🎬 Запустить стрим
-                                </button>
-                                <button type="button" onclick="stopStream()" class="btn btn-danger">
-                                    ⏹️ Остановить
-                                </button>
-                            </div>
-                        </form>
-                    </div>
-
-                    <!-- Результаты -->
-                    <div id="result" class="panel-section"></div>
-
-                    <!-- Статус системы -->
-                    <div class="panel-section">
-                        <div class="card">
-                            <div class="card-header">
-                                <h3 class="card-title">Статус системы</h3>
-                            </div>
-                            <div class="grid grid-2">
-                                <div class="status-item">
-                                    <span class="status-label">MediaMTX:</span>
-                                    <span class="status-value" id="mediamtxStatus">
-                                        <span class="loading-dots">Проверка</span>
-                                    </span>
-                                </div>
-                                <div class="status-item">
-                                    <span class="status-label">FFmpeg:</span>
-                                    <span class="status-value" id="ffmpegStatus">
-                                        <span class="loading-dots">Проверка</span>
-                                    </span>
-                                </div>
-                            </div>
-                            <button type="button" onclick="checkStatus()" class="btn btn-secondary w-100 mt-2">
-                                🔄 Обновить статус
+            <!-- Панель управления -->
+            <div class="panel-section">
+                <form id="streamForm" class="app-form">
+                    <div class="form-group">
+                        <label for="camera_name" class="form-label">Выбор камеры</label>
+                        <div class="d-flex align-center" style="gap: 12px">
+                            <select id="camera_name" name="camera_name" required class="form-select">
+                                {% for camera in cameras %}
+                                <option value="{{ camera }}" {% if loop.first %}selected{% endif %}>
+                                    {{ camera }}
+                                </option>
+                                {% endfor %}
+                            </select>
+                            <button type="button" onclick="refreshCameras()" class="btn btn-secondary btn-sm">
+                                🔄 Обновить
                             </button>
                         </div>
                     </div>
 
-                    <!-- Статус Android системы -->
-                    <div class="info-group">
-    <h4 class="info-group-title">📱 Отправка на Android</h4>
-    <div class="form-group">
-        <label for="androidIp" class="form-label">IP адрес Android устройства:</label>
-        <div class="d-flex align-center" style="gap: 12px">
-            <input type="text" id="androidIp" class="form-input" placeholder="192.168.1.100"
-                   pattern="^([0-9]{1,3}\.){3}[0-9]{1,3}$">
-            <button type="button" onclick="sendToAndroid()" class="btn btn-primary btn-sm">
-                📤 Отправить
-            </button>
-        </div>
-        <div class="form-hint">Укажите IP адрес устройства в локальной сети</div>
-    </div>
+                    <div class="grid grid-2">
+                        <button type="button" onclick="startStream()" class="btn btn-primary">
+                            🎬 Запустить стрим
+                        </button>
+                        <button type="button" onclick="stopStream()" class="btn btn-danger">
+                            ⏹️ Остановить
+                        </button>
+                    </div>
+                </form>
+            </div>
 
-    <div class="status-item">
-        <span class="status-label">Статус отправки:</span>
-        <span class="status-value" id="androidStatus">
-            <!-- Здесь будет отображаться статус -->
-        </span>
-    </div>
+            <!-- Результаты -->
+            <div id="result" class="panel-section"></div>
 
-    <div class="response-section" id="androidResponse" style="display: none;">
-        <h5 class="response-title">Ответ от устройства:</h5>
-        <div class="response-content" id="androidResponseContent"></div>
-    </div>
-</div>
+            <!-- Статус системы -->
+            <div class="panel-section">
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="card-title">Статус системы</h3>
+                    </div>
+                    <div class="grid grid-2">
+                        <div class="status-item">
+                            <span class="status-label">MediaMTX:</span>
+                            <span class="status-value" id="mediamtxStatus">
+                                <span class="loading-dots">Проверка</span>
+                            </span>
+                        </div>
+                        <div class="status-item">
+                            <span class="status-label">FFmpeg:</span>
+                            <span class="status-value" id="ffmpegStatus">
+                                <span class="loading-dots">Проверка</span>
+                            </span>
+                        </div>
+                    </div>
+                    <button type="button" onclick="checkStatus()" class="btn btn-secondary w-100 mt-2">
+                        🔄 Обновить статус
+                    </button>
+                </div>
+            </div>
+
+            <!-- Android управление -->
+            <div class="panel-section">
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="card-title">📱 Управление Android</h3>
+                    </div>
+
+                    <!-- Общее поле для ввода IP Android -->
+                    <div class="form-group">
+                        <label for="androidIp" class="form-label">IP адрес Android устройства:</label>
+                        <input type="text" id="androidIp" class="form-input" placeholder="192.168.1.100"
+                               pattern="^([0-9]{1,3}\.){3}[0-9]{1,3}$">
+                        <div class="form-hint">Укажите IP адрес устройства в локальной сети</div>
+                    </div>
+
+                    <!-- Кнопки отправки и загрузки -->
+                    <div class="grid grid-2">
+                        <button type="button" onclick="sendToAndroid()" class="btn btn-primary">
+                            📤 Отправить RTSP
+                        </button>
+                        <button type="button" onclick="loadAndroidVideos()" class="btn btn-secondary">
+                            📥 Загрузить видео
+                        </button>
+                    </div>
+
+                    <!-- Список видеофайлов -->
+                    <div class="form-group">
+                        <label for="androidVideoSelect" class="form-label">Выберите видео на Android:</label>
+                        <select id="androidVideoSelect" class="form-select" disabled>
+                            <option value="">Сначала загрузите список видео</option>
+                        </select>
+                    </div>
+
+                    <!-- Управление громкостью -->
+                    <div class="form-group">
+                        <label class="form-label">Громкость: <span id="androidVolumeValue">100%</span></label>
+                        <input type="range" id="androidVolumeSlider" min="0" max="100" value="100" class="form-range">
+                    </div>
+
+                    <!-- Кнопки управления видео -->
+                    <div class="grid grid-2">
+                        <button type="button" onclick="playAndroidVideo()" class="btn btn-success" disabled>
+                            ▶️ Воспроизвести
+                        </button>
+                        <button type="button" onclick="stopAndroidVideo()" class="btn btn-danger" disabled>
+                            ⏹️ Остановить
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>
+    </div>
+</div>
 
         <!-- Правая колонка -->
         <div class="right-column">

@@ -170,6 +170,57 @@ function copyExternalUrl() {
     }
 }
 
+function checkAndroidConnection() {
+    if (window.app && window.app.api) {
+        window.app.api.checkAndroidConnection();
+    }
+}
+
+function loadAndroidVideos() {
+    console.log('🎯 ГЛОБАЛЬНАЯ ФУНКЦИЯ loadAndroidVideos ВЫЗВАНА!');
+
+    if (window.app && window.app.api) {
+        console.log('🎯 APIManager найден, вызываем loadAndroidVideos...');
+        window.app.api.loadAndroidVideos();
+    } else {
+        console.error('💥 ОШИБКА: window.app или window.app.api не определены!');
+        console.log('window.app:', window.app);
+        console.log('window.app.api:', window.app?.api);
+    }
+}
+
+function playAndroidVideo() {
+    if (window.app && window.app.api) {
+        window.app.api.playAndroidVideo();
+    }
+}
+
+function stopAndroidVideo() {
+    if (window.app && window.app.api) {
+        window.app.api.stopAndroidVideo();
+    }
+}
+
+function updateAndroidVolume() {
+    const slider = document.getElementById('androidVolumeSlider');
+    const valueElement = document.getElementById('androidVolumeValue');
+
+    if (slider && valueElement) {
+        const volume = parseInt(slider.value) / 100;
+        valueElement.textContent = slider.value + '%';
+
+        if (window.app && window.app.api) {
+            window.app.api.setAndroidVolume(volume);
+        }
+    }
+}
+
+function hideAndroidResponse() {
+    if (window.app && window.app.api) {
+        window.app.api.hideAndroidResponse();
+    }
+}
+
 async function sendToAndroid() {
     const ipInput = document.getElementById('androidIp');
     if (!ipInput) {

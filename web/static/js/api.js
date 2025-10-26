@@ -1,26 +1,10 @@
-// Взаимодействие с API сервера
 class APIManager {
     constructor() {
         this.baseURL = '';
-    }
-
-    hideAndroidResponse() {
-        const responseElement = document.getElementById('androidResponse');
-        if (responseElement) {
-            responseElement.style.display = 'none';
-        }
-    }
-
-    isValidIP(ip) {
-        const ipRegex = /^([0-9]{1,3}\.){3}[0-9]{1,3}$/;
-        if (!ipRegex.test(ip)) return false;
-
-        // Проверяем что каждый октет в диапазоне 0-255
-        const parts = ip.split('.');
-        return parts.every(part => {
-            const num = parseInt(part, 10);
-            return num >= 0 && num <= 255;
-        });
+        this.currentAndroidVolume = 1.0;
+        this.androidIp = '';
+        this.localIp = '';
+        this.externalIp = '';
     }
 
     async request(endpoint, options = {}) {
@@ -38,15 +22,15 @@ class APIManager {
 
             return await response.json();
         } catch (error) {
-            console.error(`❌ API ошибка (${endpoint}):`, error);
-            this.showMessage('❌ Ошибка соединения с сервером', true);
+            console.error(`API ошибка (${endpoint}):`, error);
+            this.showMessage('Ошибка соединения с сервером', true);
             throw error;
         }
     }
 
     async refreshCameras() {
         try {
-            this.showMessage('🔄 Сканирование камер...');
+            this.showMessage('Сканирование камер...');
             if (window.app && window.app.terminal) {
                 await window.app.terminal.typeMessage("Сканирование камер...", 50);
             }
@@ -65,13 +49,13 @@ class APIManager {
                 });
             }
 
-            this.showMessage(`✅ Обнаружено: ${cameras.length} камер`);
+            this.showMessage(`Обнаружено: ${cameras.length} камер`);
             if (window.app && window.app.terminal) {
                 await window.app.terminal.typeMessage(`Камер обнаружено: ${cameras.length}`, 50);
             }
 
         } catch (error) {
-            this.showMessage('❌ Ошибка сканирования камер', true);
+            this.showMessage('Ошибка сканирования камер', true);
             if (window.app && window.app.terminal) {
                 await window.app.terminal.typeMessage("Ошибка сканирования камер", 50);
             }
@@ -81,21 +65,20 @@ class APIManager {
     async startStream() {
         const cameraSelect = document.getElementById('camera_name');
         if (!cameraSelect) {
-            this.showMessage('❌ Элемент выбора камеры не найден', true);
+            this.showMessage('Элемент выбора камеры не найден', true);
             return;
         }
 
         const cameraName = cameraSelect.value;
         if (!cameraName) {
-            this.showMessage('❌ Не выбрана камера', true);
+            this.showMessage('Не выбрана камера', true);
             return;
         }
 
-        this.showMessage('🚀 Запуск стрима...');
+        this.showMessage('Запуск стрима...');
         this.showLoadingStatus();
 
         try {
-            // Анимация процесса в терминале
             if (window.app && window.app.terminal) {
                 await this.startProcessAnimation();
             }
@@ -115,11 +98,10 @@ class APIManager {
                 }
             }
 
-            // Обновляем статус через 3 секунды
             setTimeout(() => this.checkStatus(), 3000);
 
         } catch (error) {
-            this.showMessage('❌ Критическая ошибка: ' + error.message, true);
+            this.showMessage('Критическая ошибка: ' + error.message, true);
             if (window.app && window.app.terminal) {
                 await window.app.terminal.typeMessage("Ошибка запуска трансляции", 50);
             }
@@ -127,7 +109,7 @@ class APIManager {
     }
 
     async stopStream() {
-        this.showMessage('🔄 Остановка стрима...');
+        this.showMessage('Остановка стрима...');
         if (window.app && window.app.terminal) {
             await window.app.terminal.typeMessage("Остановка трансляции...", 50);
         }
@@ -145,7 +127,66 @@ class APIManager {
             setTimeout(() => this.checkStatus(), 1000);
 
         } catch (error) {
-            this.showMessage('❌ Ошибка остановки: ' + error.message, true);
+            this.showMessage('Ошибка остановки: ' + error.message, true);
+        }
+    }
+
+    async loadNetworkInfo() {
+        try {
+            const network = await this.request('/api/network');
+
+            this.localIp = network.local_ip;
+            this.externalIp = network.external_ip;
+
+            const externalIpElement = document.getElementById('externalIp');
+            if (externalIpElement) {
+                externalIpElement.textContent = network.external_ip;
+            }
+
+            const externalUrlElement = document.getElementById('externalUrl');
+            if (externalUrlElement) {
+                externalUrlElement.innerHTML = `<code>rtsp://${network.external_ip}:8554/live/stream</code>`;
+            }
+
+            await this.checkPortAccess();
+
+        } catch (error) {
+            console.error('Ошибка загрузки сетевой информации:', error);
+            const externalIpElement = document.getElementById('externalIp');
+            if (externalIpElement) {
+                externalIpElement.textContent = 'Ошибка';
+            }
+            const externalUrlElement = document.getElementById('externalUrl');
+            if (externalUrlElement) {
+                externalUrlElement.innerHTML = '<code>Ошибка загрузки</code>';
+            }
+        }
+    }
+
+    async checkPortAccess() {
+        try {
+            const portStatusElement = document.getElementById('portStatus');
+            if (portStatusElement) {
+                portStatusElement.innerHTML = '<span class="loading-dots">Проверка</span>';
+            }
+
+            const result = await this.request('/api/network/port-check');
+
+            if (portStatusElement) {
+                if (result.port_open) {
+                    portStatusElement.innerHTML = '<span class="status-online">Открыт</span>';
+                    this.showMessage('Порт 8554 открыт локально');
+                } else {
+                    portStatusElement.innerHTML = '<span class="status-offline">Закрыт</span>';
+                    this.showMessage('Порт 8554 не открыт', true);
+                }
+            }
+
+        } catch (error) {
+            const portStatusElement = document.getElementById('portStatus');
+            if (portStatusElement) {
+                portStatusElement.innerHTML = '<span class="status-offline">Ошибка</span>';
+            }
         }
     }
 
@@ -157,134 +198,316 @@ class APIManager {
             const ffmpegStatus = document.getElementById('ffmpegStatus');
 
             if (mediamtxStatus) {
-                mediamtxStatus.textContent = status.mediamtx_running ? '✅ Онлайн' : '❌ Оффлайн';
+                mediamtxStatus.textContent = status.mediamtx_running ? 'Онлайн' : 'Оффлайн';
                 mediamtxStatus.className = status.mediamtx_running ? 'status-online' : 'status-offline';
             }
 
             if (ffmpegStatus) {
-                ffmpegStatus.textContent = status.ffmpeg_running ? '✅ Трансляция' : '❌ Остановлен';
+                ffmpegStatus.textContent = status.ffmpeg_running ? 'Трансляция' : 'Остановлен';
                 ffmpegStatus.className = status.ffmpeg_running ? 'status-online' : 'status-offline';
             }
 
         } catch (error) {
             const mediamtxStatus = document.getElementById('mediamtxStatus');
             const ffmpegStatus = document.getElementById('ffmpegStatus');
-
-            if (mediamtxStatus) mediamtxStatus.textContent = '❌ Ошибка';
-            if (ffmpegStatus) ffmpegStatus.textContent = '❌ Ошибка';
+            if (mediamtxStatus) mediamtxStatus.textContent = 'Ошибка';
+            if (ffmpegStatus) ffmpegStatus.textContent = 'Ошибка';
         }
     }
 
-    async loadNetworkInfo() {
-    try {
-        const network = await this.request('/api/network');
+    async loadAndroidVideos() {
+        console.log('Загрузка видео - начало');
 
-        // Сохраняем IP адреса для использования в Android запросах
-        this.localIp = network.local_ip;
-        this.externalIp = network.external_ip;
-
-        // Обновляем внешний IP
-        const externalIpElement = document.getElementById('externalIp');
-        if (externalIpElement) {
-            externalIpElement.textContent = network.external_ip;
+        const androidIp = this.validateAndroidIp();
+        if (!androidIp) {
+            return;
         }
 
-        // Обновляем внешний URL
-        const externalUrlElement = document.getElementById('externalUrl');
-        if (externalUrlElement) {
-            externalUrlElement.innerHTML = `<code>rtsp://${network.external_ip}:8554/live/stream</code>`;
-        }
+        console.log('IP Android получен:', androidIp);
 
-        // Обновляем статус порта
-        await this.checkPortAccess();
-
-    } catch (error) {
-        console.error('❌ Ошибка загрузки сетевой информации:', error);
-
-        const externalIpElement = document.getElementById('externalIp');
-        if (externalIpElement) {
-            externalIpElement.textContent = 'Ошибка';
-        }
-
-        const externalUrlElement = document.getElementById('externalUrl');
-        if (externalUrlElement) {
-            externalUrlElement.innerHTML = '<code>Ошибка загрузки</code>';
-        }
-    }
-}
-
-    async checkPortAccess() {
-    try {
-        const portStatusElement = document.getElementById('portStatus');
-        if (portStatusElement) {
-            portStatusElement.innerHTML = '<span class="loading-dots">Проверка</span>';
-        }
-
-        const result = await this.request('/api/network/port-check');
-
-        if (portStatusElement) {
-            if (result.port_open) {
-                portStatusElement.innerHTML = '<span class="status-online">✅ Открыт</span>';
-                this.showMessage('✅ Порт 8554 открыт локально');
-            } else {
-                portStatusElement.innerHTML = '<span class="status-offline">❌ Закрыт</span>';
-                this.showMessage('❌ Порт 8554 не открыт', true);
-            }
-        }
-
-    } catch (error) {
-        const portStatusElement = document.getElementById('portStatus');
-        if (portStatusElement) {
-            portStatusElement.innerHTML = '<span class="status-offline">❌ Ошибка</span>';
-        }
-    }
-}
-
-    async configureFirewall() {
         try {
-            this.showMessage('🔧 Настройка брандмауэра...');
+            this.showMessage('Загрузка списка видео с Android...');
 
-            const result = await this.request('/api/firewall/configure', {
-                method: 'POST'
+            if (window.app && window.app.terminal) {
+                await window.app.terminal.typeMessage(`Загрузка видео с Android ${androidIp}...`, 50);
+            }
+
+            const videosResponse = await this.request('/api/android/videos/list', {
+                method: 'POST',
+                body: JSON.stringify({
+                    android_ip: androidIp
+                })
             });
 
-            if (result.success) {
-                this.showMessage('✅ ' + result.message);
-                if (result.admin_required) {
-                    this.showMessage('💡 Запустите программу от имени администратора');
+            console.log('Ответ от сервера:', videosResponse);
+
+            if (!videosResponse.success) {
+                const errorMsg = videosResponse.message || 'Не удалось загрузить список видео';
+                this.showMessage(errorMsg, true);
+                if (window.app && window.app.terminal) {
+                    await window.app.terminal.typeMessage(errorMsg, 50);
                 }
-            } else {
-                this.showMessage('❌ ' + result.message, true);
+                this.enableAndroidControls(false);
+                return [];
+            }
+
+            const videos = videosResponse.videos || [];
+
+            const select = document.getElementById('androidVideoSelect');
+            if (select) {
+                select.innerHTML = '';
+                if (videos.length > 0) {
+                    videos.forEach(video => {
+                        const option = document.createElement('option');
+                        option.value = video;
+                        option.textContent = video;
+                        select.appendChild(option);
+                    });
+                    select.disabled = false;
+
+                    this.enableAndroidControls(true);
+
+                    const successMsg = `Загружено ${videos.length} видеофайлов`;
+                    this.showMessage(successMsg);
+                    if (window.app && window.app.terminal) {
+                        await window.app.terminal.typeMessage(successMsg, 50);
+                    }
+                } else {
+                    const option = document.createElement('option');
+                    option.value = '';
+                    option.textContent = 'Нет видеофайлов';
+                    select.appendChild(option);
+                    select.disabled = false;
+
+                    const errorMsg = 'На Android нет видеофайлов';
+                    this.showMessage(errorMsg, true);
+                    if (window.app && window.app.terminal) {
+                        await window.app.terminal.typeMessage(errorMsg, 50);
+                    }
+                }
+            }
+
+            return videos;
+
+        } catch (error) {
+            console.error('Ошибка загрузки видео:', error);
+            const errorMsg = 'Ошибка загрузки видео: ' + error.message;
+            this.showMessage(errorMsg, true);
+            if (window.app && window.app.terminal) {
+                await window.app.terminal.typeMessage(errorMsg, 50);
+            }
+            this.enableAndroidControls(false);
+            return [];
+        }
+    }
+
+    async playAndroidVideo() {
+        const androidIp = this.validateAndroidIp();
+        if (!androidIp) {
+            return;
+        }
+
+        const videoSelect = document.getElementById('androidVideoSelect');
+        if (!videoSelect || videoSelect.disabled) {
+            this.showMessage('Сначала загрузите список видео', true);
+            return;
+        }
+
+        const videoName = videoSelect.value;
+        if (!videoName) {
+            this.showMessage('Не выбрано видео', true);
+            return;
+        }
+
+        try {
+            this.showMessage('Отправка команды воспроизведения...');
+
+            if (window.app && window.app.terminal) {
+                await window.app.terminal.typeMessage(`Отправка команды воспроизведения: ${videoName}`, 50);
+            }
+
+            const result = await this.request('/api/android/video/play', {
+                method: 'POST',
+                body: JSON.stringify({
+                    android_ip: androidIp,
+                    video_name: videoName
+                })
+            });
+
+            this.showMessage(result.message);
+
+            if (window.app && window.app.terminal) {
+                await window.app.terminal.typeMessage(result.message, 50);
+                if (result.android_response) {
+                    await window.app.terminal.typeMessage(`Ответ: ${result.android_response}`, 50);
+                }
             }
 
         } catch (error) {
-            this.showMessage('❌ Ошибка настройки брандмауэра', true);
+            const errorMsg = 'Ошибка отправки команды: ' + error.message;
+            this.showMessage(errorMsg, true);
+            if (window.app && window.app.terminal) {
+                await window.app.terminal.typeMessage(errorMsg, 50);
+            }
         }
     }
 
-    copyLocalUrl() {
-    const urlElement = document.getElementById('localUrl');
-    if (urlElement) {
-        const url = urlElement.textContent;
-        navigator.clipboard.writeText(url).then(() => {
-            this.showMessage('✅ Локальный URL скопирован');
+    async stopAndroidVideo() {
+        const androidIp = this.validateAndroidIp();
+        if (!androidIp) {
+            return;
+        }
+
+        try {
+            this.showMessage('Отправка команды остановки...');
+
+            if (window.app && window.app.terminal) {
+                await window.app.terminal.typeMessage("Отправка команды остановки видео", 50);
+            }
+
+            const result = await this.request('/api/android/video/stop', {
+                method: 'POST',
+                body: JSON.stringify({
+                    android_ip: androidIp
+                })
+            });
+
+            this.showMessage(result.message);
+
+            if (window.app && window.app.terminal) {
+                await window.app.terminal.typeMessage(result.message, 50);
+                if (result.android_response) {
+                    await window.app.terminal.typeMessage(`Ответ: ${result.android_response}`, 50);
+                }
+            }
+
+        } catch (error) {
+            const errorMsg = 'Ошибка отправки команды остановки: ' + error.message;
+            this.showMessage(errorMsg, true);
+            if (window.app && window.app.terminal) {
+                await window.app.terminal.typeMessage(errorMsg, 50);
+            }
+        }
+    }
+
+    async setAndroidVolume(volume) {
+        const androidIp = this.validateAndroidIp();
+        if (!androidIp) {
+            return;
+        }
+
+        try {
+            await this.request('/api/android/video/volume', {
+                method: 'POST',
+                body: JSON.stringify({
+                    android_ip: androidIp,
+                    volume: volume
+                })
+            });
+        } catch (error) {
+            console.error('Ошибка установки громкости:', error);
+        }
+    }
+
+    async checkAndroidConnection() {
+        const androidIp = this.validateAndroidIp();
+        if (!androidIp) {
+            return;
+        }
+
+        try {
+            this.showMessage('Проверка подключения к Android...');
+
+            const result = await this.request('/api/android/video/status', {
+                method: 'POST',
+                body: JSON.stringify({
+                    android_ip: androidIp
+                })
+            });
+
+            const statusElement = document.getElementById('androidStatus');
+            if (statusElement) {
+                if (result.online) {
+                    statusElement.innerHTML = '<span class="status-online">Подключено</span>';
+                    this.showMessage('Android устройство доступно');
+                } else {
+                    statusElement.innerHTML = '<span class="status-offline">Не доступно</span>';
+                    this.showMessage('Android устройство не доступно', true);
+                }
+            }
+
+            return result;
+
+        } catch (error) {
+            const statusElement = document.getElementById('androidStatus');
+            if (statusElement) {
+                statusElement.innerHTML = '<span class="status-offline">Ошибка проверки</span>';
+            }
+            this.showMessage('Ошибка проверки подключения: ' + error.message, true);
+            return { online: false };
+        }
+    }
+
+    validateAndroidIp() {
+        const androidIp = this.getAndroidIp();
+        if (!androidIp) {
+            this.showMessage('Введите корректный IP адрес Android устройства', true);
+            return null;
+        }
+        return androidIp;
+    }
+
+    getAndroidIp() {
+        const input = document.getElementById('androidIp');
+        console.log('Поле androidIp:', input);
+        console.log('Значение поля:', input?.value);
+
+        if (input && this.isValidIP(input.value.trim())) {
+            this.androidIp = input.value.trim();
+            return input.value.trim();
+        }
+        return '';
+    }
+
+    isValidIP(ip) {
+        const ipRegex = /^([0-9]{1,3}\.){3}[0-9]{1,3}$/;
+        if (!ipRegex.test(ip)) return false;
+
+        const parts = ip.split('.');
+        return parts.every(part => {
+            const num = parseInt(part, 10);
+            return num >= 0 && num <= 255;
         });
     }
-}
 
-    copyExternalUrl() {
-    const urlElement = document.getElementById('externalUrl');
-    if (urlElement) {
-        const url = urlElement.textContent;
-        if (url && !url.includes('Определение') && !url.includes('Ошибка')) {
-            navigator.clipboard.writeText(url).then(() => {
-                this.showMessage('✅ Внешний URL скопирован');
-            });
-        } else {
-            this.showMessage('❌ Нет доступного URL для копирования', true);
+    enableAndroidControls(enable) {
+        const videoSelect = document.getElementById('androidVideoSelect');
+        const playBtn = document.querySelector('button[onclick="playAndroidVideo()"]');
+        const stopBtn = document.querySelector('button[onclick="stopAndroidVideo()"]');
+
+        if (videoSelect) videoSelect.disabled = !enable;
+        if (playBtn) playBtn.disabled = !enable;
+        if (stopBtn) stopBtn.disabled = !enable;
+    }
+
+    showMessage(message, isError = false) {
+        const resultDiv = document.getElementById('result');
+        if (resultDiv) {
+            resultDiv.innerHTML = `<div class="alert ${isError ? 'alert-error' : 'alert-success'}">${message}</div>`;
         }
     }
-}
+
+    showLoadingStatus() {
+        const mediamtxStatus = document.getElementById('mediamtxStatus');
+        const ffmpegStatus = document.getElementById('ffmpegStatus');
+
+        if (mediamtxStatus) {
+            mediamtxStatus.innerHTML = '<span class="loading-dots">Запуск</span>';
+        }
+        if (ffmpegStatus) {
+            ffmpegStatus.innerHTML = '<span class="loading-dots">Запуск</span>';
+        }
+    }
 
     async startProcessAnimation() {
         if (!window.app || !window.app.terminal) return;
@@ -306,22 +529,45 @@ class APIManager {
         }
     }
 
-    showMessage(message, isError = false) {
-        const resultDiv = document.getElementById('result');
-        if (resultDiv) {
-            resultDiv.innerHTML = `<div class="alert ${isError ? 'alert-error' : 'alert-success'}">${message}</div>`;
+    copyLocalUrl() {
+        const urlElement = document.getElementById('localUrl');
+        if (urlElement) {
+            const url = urlElement.textContent;
+            navigator.clipboard.writeText(url).then(() => {
+                this.showMessage('Локальный URL скопирован');
+            });
         }
     }
 
-    showLoadingStatus() {
-        const mediamtxStatus = document.getElementById('mediamtxStatus');
-        const ffmpegStatus = document.getElementById('ffmpegStatus');
-
-        if (mediamtxStatus) {
-            mediamtxStatus.innerHTML = '<span class="loading-dots">Запуск</span>';
+    copyExternalUrl() {
+        const urlElement = document.getElementById('externalUrl');
+        if (urlElement) {
+            const url = urlElement.textContent;
+            if (url && !url.includes('Определение') && !url.includes('Ошибка')) {
+                navigator.clipboard.writeText(url).then(() => {
+                    this.showMessage('Внешний URL скопирован');
+                });
+            } else {
+                this.showMessage('Нет доступного URL для копирования', true);
+            }
         }
-        if (ffmpegStatus) {
-            ffmpegStatus.innerHTML = '<span class="loading-dots">Запуск</span>';
+    }
+
+    async configureFirewall() {
+        try {
+            this.showMessage('Настройка брандмауэра...');
+            const result = await this.request('/api/firewall/configure', { method: 'POST' });
+
+            if (result.success) {
+                this.showMessage(result.message);
+                if (result.admin_required) {
+                    this.showMessage('Запустите программу от имени администратора');
+                }
+            } else {
+                this.showMessage(result.message, true);
+            }
+        } catch (error) {
+            this.showMessage('Ошибка настройки брандмауэра', true);
         }
     }
 }
