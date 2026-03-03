@@ -8442,3 +8442,35 @@
 2026-03-03 19:41:10,187 - core.stream_manager - INFO - MediaMTX: 2026/03/03 19:41:10 INF [RTSP] [conn 192.168.0.110:35954] opened
 2026-03-03 19:41:10,251 - core.stream_manager - INFO - MediaMTX: 2026/03/03 19:41:10 INF [RTSP] [session 633a1490] created by 192.168.0.110:35954
 2026-03-03 19:41:10,361 - core.stream_manager - INFO - MediaMTX: 2026/03/03 19:41:10 INF [RTSP] [session 633a1490] is reading from path 'live/stream', with UDP, 1 track (H264)
+2026-03-03 19:41:19,495 - config.settings - INFO - ✅ FFmpeg найден: C:\AndStudio\forLift\ffmpeg.exe
+2026-03-03 19:41:20,412 - core.network_manager - INFO - 🌐 Внешний IP: 95.78.88.143
+2026-03-03 19:41:20,423 - __main__ - INFO - 🔧 Настройка окружения...
+2026-03-03 19:41:20,424 - utils.system_checker - INFO - ✅ Python 3.14.3
+2026-03-03 19:41:20,424 - utils.system_checker - INFO - ✅ FFmpeg найден: C:\AndStudio\forLift\ffmpeg.exe
+2026-03-03 19:41:20,424 - utils.system_checker - INFO - ✅ MediaMTX найден: C:\AndStudio\forLift\mediamtx.exe
+2026-03-03 19:41:20,424 - utils.system_checker - INFO - ✅ Библиотека flask доступна
+2026-03-03 19:41:20,424 - utils.system_checker - INFO - ✅ Библиотека requests доступна
+2026-03-03 19:41:20,424 - utils.system_checker - INFO - ✅ python: Доступен
+2026-03-03 19:41:20,424 - utils.system_checker - INFO - ✅ ffmpeg: Доступен
+2026-03-03 19:41:20,425 - utils.system_checker - INFO - ✅ mediamtx: Доступен
+2026-03-03 19:41:20,425 - utils.system_checker - INFO - ✅ flask: Доступен
+2026-03-03 19:41:20,425 - utils.system_checker - INFO - ✅ requests: Доступен
+2026-03-03 19:41:20,425 - __main__ - INFO - 🛡️ Настройка доступа через брандмауэр Windows...
+2026-03-03 19:41:20,425 - __main__ - INFO - 🛡️ Добавляем приложение в разрешенные программы брандмауэра...
+2026-03-03 19:41:20,425 - core.firewall_prompt - INFO - 📁 Путь к приложению: C:\Python314\python.exe
+2026-03-03 19:41:20,496 - core.firewall_prompt - INFO - 🛡️ Пытаемся добавить приложение в брандмауэр...
+2026-03-03 19:41:20,496 - core.firewall_prompt - INFO - 💡 Может появиться запрос от Защитника Windows
+2026-03-03 19:41:20,554 - core.firewall_prompt - WARNING - ⚠️ Не удалось добавить в брандмауэр: 
+2026-03-03 19:41:20,554 - core.firewall_prompt - INFO - 💡 Это нормально, если у вас нет прав администратора
+2026-03-03 19:41:20,554 - __main__ - WARNING - ⚠️ Не удалось добавить приложение в разрешенные программы
+2026-03-03 19:41:20,554 - __main__ - INFO - 💡 Это нормально, если приложение уже было добавлено ранее
+2026-03-03 19:41:20,555 - __main__ - INFO - 🔧 Настраиваем правила для портов...
+2026-03-03 19:41:20,555 - __main__ - INFO - ℹ️ Для автоматической настройки правил портов запустите программу от имени администратора
+2026-03-03 19:41:20,555 - __main__ - INFO - 📋 Вы можете настроить брандмауэр вручную через веб-интерфейс
+2026-03-03 19:41:22,555 - utils.system_checker - INFO - ✅ Python 3.14.3
+2026-03-03 19:41:22,555 - utils.system_checker - INFO - ✅ FFmpeg найден: C:\AndStudio\forLift\ffmpeg.exe
+2026-03-03 19:41:22,556 - utils.system_checker - INFO - ✅ MediaMTX найден: C:\AndStudio\forLift\mediamtx.exe
+2026-03-03 19:41:22,556 - __main__ - INFO - 🚀 Запуск сервисов...
+2026-03-03 19:41:22,594 - core.stream_manager - INFO - 🔄 Завершаем процесс 13476 на порту 8000
+2026-03-03 19:41:23,666 - core.stream_manager - INFO - 🔄 Завершаем процесс 13476 на порту 8000
+2026-03-03 19:41:24,790 - core.stream_manager - INFO - 🔄 Завершаем процесс 0 на порту 8554

@@ -514,40 +514,43 @@ async function muteCartoon(mute) {
     }
 }
 
-async function toggleMicrophone(mute) {
-    const micStatus = document.getElementById('micVolumeValue');
-    
-    if (micStatus) {
-        micStatus.textContent = mute ? '0%' : '100%';
-    }
-    
-    const slider = document.getElementById('micVolume');
-    if (slider) {
-        slider.value = mute ? 0 : 100;
-    }
-    
-    // Просто обновляем UI - громкость применится при следующем запуске стрима
-    console.log('Микрофон:', mute ? 'выключен' : 'включен');
-    console.log('💡 Громкость применится при следующем запуске стрима');
-}
-
 async function updateMicVolume(value) {
+    if (!selectedAndroidIp) return;
+    
+    let targetIp = selectedAndroidIp;
+    if (!targetIp.includes(':')) {
+        targetIp = targetIp + ':8080';
+    }
+    
     const display = document.getElementById('micVolumeValue');
     if (display) display.textContent = `${value}%`;
-    
-    // Просто обновляем UI - громкость применится при следующем запуске стрима
-    console.log('Громкость микрофона:', value + '%');
-    console.log('💡 Применится при следующем запуске стрима');
+
+    try {
+        await window.app.api.setMicVolume(targetIp, value / 100);
+    } catch (error) {
+        console.error('Ошибка установки громкости:', error);
+    }
 }
 
 async function muteMic(mute) {
-    const display = document.getElementById('micVolumeValue');
-    const slider = document.getElementById('micVolume');
+    if (!selectedAndroidIp) return;
     
-    if (display) display.textContent = mute ? '0%' : '100%';
-    if (slider) slider.value = mute ? 0 : 100;
+    let targetIp = selectedAndroidIp;
+    if (!targetIp.includes(':')) {
+        targetIp = targetIp + ':8080';
+    }
     
-    toggleMicrophone(mute);
+    try {
+        const volume = mute ? 0 : 100;
+        await window.app.api.setMicVolume(targetIp, volume / 100);
+        const display = document.getElementById('micVolumeValue');
+        const slider = document.getElementById('micVolume');
+        
+        if (display) display.textContent = `${volume}%`;
+        if (slider) slider.value = volume;
+    } catch (error) {
+        console.error('Ошибка:', error);
+    }
 }
 
 async function setDisplayMode(mode) {
