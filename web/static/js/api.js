@@ -2,6 +2,7 @@
 class APIManager {
     constructor() {
         this.baseURL = '';
+        this.cachedIps = [];
     }
 
     async request(endpoint, options = {}) {
@@ -340,9 +341,12 @@ class APIManager {
     }
 
     // === Android IP Management ===
+
     async getAndroidIps() {
         try {
-            return await this.request('/api/android/ips');
+            const result = await this.request('/api/android/ips');
+            this.cachedIps = result.android_ips || [];
+            return result;
         } catch (error) {
             console.error('Ошибка получения Android IP:', error);
             return { android_ips: [] };
@@ -382,52 +386,53 @@ class APIManager {
     }
 
     // === Управление мультиком ===
-    async getAndroidVideos() {
+    async getAndroidVideos(ip) {
         try {
-            return await this.request('/api/android/videos');
+            return await this.request('/api/android/videos?ip=' + encodeURIComponent(ip));
         } catch (error) {
             console.error('Ошибка получения видео:', error);
             return { success: false, message: error.message };
         }
     }
 
-    async playAnimation(videoName) {
+    async playAnimation(ip, videoName) {
         try {
             return await this.request('/api/android/play', {
                 method: 'POST',
-                body: JSON.stringify({ video_name: videoName })
+                body: JSON.stringify({ ip: ip, video_name: videoName })
             });
         } catch (error) {
             throw error;
         }
     }
 
-    async stopAnimation() {
+    async stopAnimation(ip) {
         try {
             return await this.request('/api/android/stop', {
-                method: 'POST'
+                method: 'POST',
+                body: JSON.stringify({ ip: ip })
             });
         } catch (error) {
             throw error;
         }
     }
 
-    async setCartoonVolume(volume) {
+    async setCartoonVolume(ip, volume) {
         try {
             return await this.request('/api/android/volume', {
                 method: 'POST',
-                body: JSON.stringify({ volume: volume })
+                body: JSON.stringify({ ip: ip, volume: volume })
             });
         } catch (error) {
             throw error;
         }
     }
 
-    async setDisplayMode(mode) {
+    async setDisplayMode(ip, mode) {
         try {
             return await this.request('/api/android/display-mode', {
                 method: 'POST',
-                body: JSON.stringify({ mode: mode })
+                body: JSON.stringify({ ip: ip, mode: mode })
             });
         } catch (error) {
             throw error;

@@ -4,12 +4,215 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>RTSP Stream - Управление стримингом</title>
-
-    <!-- Подключаем стили -->
     <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/layout.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/components.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/themes.css') }}">
+    <style>
+        /* Tooltip */
+        .tooltip-container {
+            position: relative;
+            display: inline-flex;
+            align-items: center;
+            cursor: help;
+        }
+        .tooltip-icon {
+            width: 18px;
+            height: 18px;
+            background: rgba(0, 255, 255, 0.2);
+            border: 1px solid rgba(0, 255, 255, 0.5);
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            color: #0ff;
+            margin-left: 6px;
+        }
+        .tooltip-text {
+            visibility: hidden;
+            position: absolute;
+            bottom: 125%;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(0, 0, 0, 0.95);
+            border: 1px solid #0ff;
+            border-radius: 6px;
+            padding: 10px 14px;
+            z-index: 1000;
+            width: 260px;
+            font-size: 12px;
+            line-height: 1.4;
+            box-shadow: 0 4px 20px rgba(0, 255, 255, 0.3);
+            opacity: 0;
+            transition: opacity 0.3s, visibility 0.3s;
+        }
+        .tooltip-text::after {
+            content: '';
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            margin-left: -6px;
+            border-width: 6px;
+            border-style: solid;
+            border-color: #0ff transparent transparent transparent;
+        }
+        .tooltip-container:hover .tooltip-text {
+            visibility: visible;
+            opacity: 1;
+        }
+        
+        /* Accordion */
+        .accordion-item {
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            margin-bottom: 10px;
+            overflow: hidden;
+        }
+        .accordion-header {
+            padding: 12px 14px;
+            background: rgba(255, 255, 255, 0.03);
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: background 0.2s;
+        }
+        .accordion-header:hover {
+            background: rgba(255, 255, 255, 0.06);
+        }
+        .accordion-title {
+            font-size: 14px;
+            font-weight: 500;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .accordion-icon {
+            transition: transform 0.3s;
+            color: #0ff;
+            font-size: 12px;
+        }
+        .accordion-item.open .accordion-icon {
+            transform: rotate(90deg);
+        }
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+            padding: 0 14px;
+            background: rgba(0, 0, 0, 0.2);
+        }
+        .accordion-item.open .accordion-content {
+            max-height: 800px;
+            padding: 12px 14px;
+        }
+        
+        /* Volume slider */
+        .volume-slider {
+            -webkit-appearance: none;
+            width: 100%;
+            height: 5px;
+            border-radius: 3px;
+            background: rgba(255, 255, 255, 0.1);
+            outline: none;
+        }
+        .volume-slider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #0ff, #0066ff);
+            cursor: pointer;
+            box-shadow: 0 2px 8px rgba(0, 255, 255, 0.4);
+        }
+        
+        /* Mode buttons */
+        .mode-btn {
+            padding: 8px 12px;
+            border: 1px solid rgba(0, 255, 255, 0.3);
+            background: rgba(0, 255, 255, 0.05);
+            color: #0ff;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-size: 12px;
+        }
+        .mode-btn:hover {
+            background: rgba(0, 255, 255, 0.15);
+            border-color: #0ff;
+        }
+        .mode-btn.active {
+            background: linear-gradient(135deg, #0ff, #0066ff);
+            color: #000;
+            border-color: transparent;
+            font-weight: 600;
+        }
+        
+        /* Video list */
+        .video-list {
+            max-height: 150px;
+            overflow-y: auto;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 6px;
+            background: rgba(0, 0, 0, 0.2);
+            margin-bottom: 10px;
+        }
+        .video-item {
+            padding: 8px 12px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            cursor: pointer;
+            transition: background 0.2s;
+            font-size: 13px;
+        }
+        .video-item:hover {
+            background: rgba(0, 255, 255, 0.1);
+        }
+        .video-item.selected {
+            background: rgba(0, 255, 255, 0.2);
+            border-left: 3px solid #0ff;
+        }
+        .video-item:last-child {
+            border-bottom: none;
+        }
+        
+        /* IP list */
+        .ip-list {
+            max-height: 120px;
+            overflow-y: auto;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 6px;
+            background: rgba(0, 0, 0, 0.2);
+            margin-top: 8px;
+        }
+        .ip-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 6px 10px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            font-family: monospace;
+            font-size: 12px;
+            color: #0ff;
+        }
+        .ip-item:last-child {
+            border-bottom: none;
+        }
+        .ip-remove {
+            background: rgba(255, 50, 50, 0.3);
+            border: none;
+            color: #ff3232;
+            width: 20px;
+            height: 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+        .ip-remove:hover {
+            background: rgba(255, 50, 50, 0.5);
+        }
+    </style>
 </head>
 <body class="cyber-theme">
     <div class="theme-switcher">
@@ -28,13 +231,12 @@
 
                 <div class="panel-content">
                     <!-- Системная информация -->
-                    <div class="collapse-section">
-                        <div class="collapse-header" onclick="toggleSystemInfo()">
-                            <span class="collapse-icon">▶</span>
-                            <span class="collapse-title">Системная информация</span>
-                            <span class="collapse-status" id="systemStatus">Скрыто</span>
+                    <div class="accordion-item open" id="acc-system">
+                        <div class="accordion-header" onclick="toggleAccordion('system')">
+                            <span class="accordion-title">⚙️ Системная информация</span>
+                            <span class="accordion-icon">▶</span>
                         </div>
-                        <div class="collapse-content" id="systemInfo">
+                        <div class="accordion-content">
                             <div class="grid grid-2">
                                 <div class="info-item">
                                     <span class="info-label">IP компьютера:</span>
@@ -60,13 +262,13 @@
                         </div>
                     </div>
 
-                    <!-- Панель управления -->
+                    <!-- Управление стримом -->
                     <div class="panel-section">
                         <form id="streamForm" class="app-form">
                             <div class="form-group">
-                                <label for="camera_name" class="form-label">Выбор камеры</label>
-                                <div class="d-flex align-center" style="gap: 12px">
-                                    <select id="camera_name" name="camera_name" required class="form-select">
+                                <label for="camera_name" class="form-label">📹 Выбор камеры</label>
+                                <div class="d-flex align-center" style="gap: 10px">
+                                    <select id="camera_name" name="camera_name" required class="form-select" style="flex:1">
                                         {% for camera in cameras %}
                                         <option value="{{ camera }}" {% if loop.first %}selected{% endif %}>
                                             {{ camera }}
@@ -74,49 +276,42 @@
                                         {% endfor %}
                                     </select>
                                     <button type="button" onclick="refreshCameras()" class="btn btn-secondary btn-sm">
-                                        🔄 Обновить
+                                        🔄
                                     </button>
                                 </div>
                             </div>
 
                             <div class="form-group">
-                                <label for="microphone_name" class="form-label">Выбор микрофона</label>
-                                <div class="d-flex align-center" style="gap: 12px">
-                                    <select id="microphone_name" name="microphone_name" class="form-select">
-                                        <option value="">🔇 Без звука (только видео)</option>
-                                        {% for mic in [] %}
-                                        <!-- Микрофоны загружаются через JS -->
-                                        {% endfor %}
+                                <label for="microphone_name" class="form-label">🎤 Выбор микрофона</label>
+                                <div class="d-flex align-center" style="gap: 10px">
+                                    <select id="microphone_name" name="microphone_name" class="form-select" style="flex:1">
+                                        <option value="">🔇 Без звука</option>
+                                        {% for mic in [] %}{% endfor %}
                                     </select>
                                     <button type="button" onclick="refreshMicrophones()" class="btn btn-secondary btn-sm">
-                                        🔄 Обновить
+                                        🔄
                                     </button>
                                 </div>
-                                <small style="color: #888; font-size: 0.85em; margin-top: 4px; display: block;">
-                                    💡 Если не выбран, будет использоваться микрофон камеры по умолчанию
-                                </small>
                             </div>
 
                             <div class="grid grid-2">
                                 <button type="button" onclick="startStream()" class="btn btn-primary">
-                                    🎬 Запустить стрим
+                                    🎬 Запуск
                                 </button>
                                 <button type="button" onclick="stopStream()" class="btn btn-danger">
-                                    ⏹️ Остановить
+                                    ⏹️ Стоп
                                 </button>
                             </div>
                         </form>
                     </div>
 
-                    <!-- Результаты -->
-                    <div id="result" class="panel-section"></div>
-
                     <!-- Статус системы -->
-                    <div class="panel-section">
-                        <div class="card">
-                            <div class="card-header">
-                                <h3 class="card-title">Статус системы</h3>
-                            </div>
+                    <div class="accordion-item open" id="acc-status">
+                        <div class="accordion-header" onclick="toggleAccordion('status')">
+                            <span class="accordion-title">📊 Статус системы</span>
+                            <span class="accordion-icon">▶</span>
+                        </div>
+                        <div class="accordion-content">
                             <div class="grid grid-2">
                                 <div class="status-item">
                                     <span class="status-label">MediaMTX:</span>
@@ -131,11 +326,76 @@
                                     </span>
                                 </div>
                             </div>
-                            <button type="button" onclick="checkStatus()" class="btn btn-secondary w-100 mt-2">
-                                🔄 Обновить статус
+                            <button type="button" onclick="checkStatus()" class="btn btn-secondary btn-sm w-100" style="margin-top:10px">
+                                🔄 Обновить
                             </button>
                         </div>
                     </div>
+
+                    <!-- Сетевой доступ -->
+                    <div class="accordion-item" id="acc-network">
+                        <div class="accordion-header" onclick="toggleAccordion('network')">
+                            <span class="accordion-title">
+                                🌐 Сетевой доступ
+                                <div class="tooltip-container">
+                                    <span class="tooltip-icon">?</span>
+                                    <span class="tooltip-text">
+                                        Информация о сетевых адресах для подключения к стриму.<br><br>
+                                        <b>Локальный IP</b> — адрес в вашей сети<br>
+                                        <b>Внешний IP</b> — адрес в интернете<br><br>
+                                        Для подключения извне настройте проброс порта 8554 на роутере.
+                                    </span>
+                                </div>
+                            </span>
+                            <span class="accordion-icon">▶</span>
+                        </div>
+                        <div class="accordion-content">
+                            <div class="info-item" style="margin-bottom:8px">
+                                <span class="info-label">Локальный IP:</span>
+                                <span class="info-value" id="localIp">{{ local_ip }}</span>
+                            </div>
+                            <div class="info-item" style="margin-bottom:12px">
+                                <span class="info-label">Внешний IP:</span>
+                                <span class="info-value" id="externalIp">
+                                    <span class="loading-dots">Определение</span>
+                                </span>
+                            </div>
+                            
+                            <div style="margin-bottom:10px">
+                                <div style="font-size:12px;color:#888;margin-bottom:4px">Локальная сеть:</div>
+                                <div style="display:flex;gap:6px;align-items:center">
+                                    <code id="localUrl" style="flex:1;font-size:11px;background:rgba(0,0,0,0.3);padding:6px;border-radius:4px;display:block;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">rtsp://{{ local_ip }}:8554/live/stream</code>
+                                    <button class="btn-copy" onclick="copyLocalUrl()" title="Копировать">📋</button>
+                                </div>
+                            </div>
+                            
+                            <div style="margin-bottom:10px">
+                                <div style="font-size:12px;color:#888;margin-bottom:4px">Интернет:</div>
+                                <div style="display:flex;gap:6px;align-items:center">
+                                    <code id="externalUrl" style="flex:1;font-size:11px;background:rgba(0,0,0,0.3);padding:6px;border-radius:4px;display:block;overflow:hidden;text-overflow:ellipsis;white-space:nowrap"><span class="loading-dots">Определение</span></code>
+                                    <button class="btn-copy" onclick="copyExternalUrl()" title="Копировать">📋</button>
+                                </div>
+                            </div>
+                            
+                            <div style="margin-bottom:10px">
+                                <span style="font-size:12px;color:#888">Порт 8554:</span>
+                                <span class="status-value" id="portStatus" style="margin-left:8px">
+                                    <span class="loading-dots">Проверка</span>
+                                </span>
+                            </div>
+                            
+                            <div style="display:flex;gap:8px;flex-wrap:wrap">
+                                <button type="button" onclick="checkPortAccess()" class="btn btn-secondary btn-sm" style="flex:1;min-width:120px">
+                                    🔄 Проверка
+                                </button>
+                                <button type="button" onclick="configureFirewall()" class="btn btn-primary btn-sm" style="flex:1;min-width:120px">
+                                    🛡️ Брандмауэр
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="result" class="panel-section" style="margin-top:10px"></div>
                 </div>
             </div>
         </div>
@@ -153,226 +413,150 @@
                             <div class="control-dot green"></div>
                         </div>
                     </div>
-                    <div class="terminal-content" id="terminalContent">
-                        <!-- Терминал будет заполняться JavaScript -->
-                    </div>
+                    <div class="terminal-content" id="terminalContent"></div>
                 </div>
             </div>
 
-            <!-- Сетевой доступ -->
+            <!-- Android + Мультик (объединённый блок) -->
             <div class="bottom-right">
                 <div class="panel">
                     <div class="panel-header">
-                        <h3>🌐 Сетевой доступ</h3>
-                        <div class="panel-subtitle">Локальная сеть и интернет</div>
+                        <h3>📱 Android</h3>
+                        <div class="panel-subtitle">Управление устройством и воспроизведением</div>
                     </div>
 
                     <div class="panel-content">
-                        <!-- СЕТЕВАЯ ИНФОРМАЦИЯ -->
-                        <div class="network-info">
-                            <div class="info-group">
-                                <h4 class="info-group-title">📡 Сетевые адреса</h4>
-                                <div class="info-item">
-                                    <span class="info-label">Локальный IP:</span>
-                                    <span class="info-value" id="localIp">{{ local_ip }}</span>
-                                </div>
-                                <div class="info-item">
-                                    <span class="info-label">Внешний IP:</span>
-                                    <span class="info-value" id="externalIp">
-                                        <span class="loading-dots">Определение</span>
-                                    </span>
-                                </div>
-                            </div>
-
-                            <div class="info-group">
-                                <h4 class="info-group-title">🔗 RTSP URL</h4>
-                                <div class="url-item">
-                                    <span class="url-label">Локальная сеть:</span>
-                                    <div class="url-value">
-                                        <code id="localUrl">rtsp://{{ local_ip }}:8554/live/stream</code>
-                                        <button class="btn-copy" onclick="copyLocalUrl()" title="Копировать">
-                                            📋
-                                        </button>
+                        
+                        <!-- IP адреса -->
+                        <div class="accordion-item open" id="acc-android-ip">
+                            <div class="accordion-header" onclick="toggleAccordion('android-ip')">
+                                <span class="accordion-title">
+                                    🔗 IP адреса устройств
+                                    <div class="tooltip-container">
+                                        <span class="tooltip-icon">?</span>
+                                        <span class="tooltip-text">
+                                            Добавьте IP Android устройства для подключения к стриму.<br><br>
+                                            Формат: <code>192.168.1.100</code> или <code>192.168.1.100:8080</code><br><br>
+                                            1. Добавьте IP<br>
+                                            2. Выберите устройство кликом<br>
+                                            3. Нажмите "📡 Подключить" для отправки стрима
+                                        </span>
                                     </div>
+                                </span>
+                                <span class="accordion-icon">▶</span>
+                            </div>
+                            <div class="accordion-content">
+                                <div style="display:flex;gap:6px;margin-bottom:8px">
+                                    <input type="text" id="androidIpInput" placeholder="192.168.1.100:8080" class="form-input" style="flex:1">
+                                    <button type="button" onclick="addAndroidIp()" class="btn btn-primary btn-sm">➕</button>
+                                    <button type="button" onclick="testAndroidConnection()" class="btn btn-secondary btn-sm">🧪</button>
                                 </div>
-                                <div class="url-item">
-                                    <span class="url-label">Интернет:</span>
-                                    <div class="url-value">
-                                        <code id="externalUrl">
-                                            <span class="loading-dots">Определение</span>
-                                        </code>
-                                        <button class="btn-copy" onclick="copyExternalUrl()" title="Копировать">
-                                            📋
-                                        </button>
-                                    </div>
+                                <div class="ip-list" id="androidIpList">
+                                    <div class="ip-item" style="color:#666;justify-content:center">Список пуст</div>
                                 </div>
-                            </div>
-
-                            <div class="info-group">
-                                <h4 class="info-group-title">🔧 Состояние порта</h4>
-                                <div class="status-item">
-                                    <span class="status-label">Порт 8554:</span>
-                                    <span class="status-value" id="portStatus">
-                                        <span class="loading-dots">Проверка</span>
-                                    </span>
-                                </div>
-                            </div>
-
-                            <div class="action-buttons">
-                                <button type="button" onclick="checkPortAccess()" class="btn btn-secondary btn-sm">
-                                    🔄 Проверить доступность
+                                <button type="button" onclick="sendStreamSignal()" class="btn btn-primary btn-sm w-100" style="margin-top:10px">
+                                    📡 Подключить к стриму
                                 </button>
-                                <button type="button" onclick="configureFirewall()" class="btn btn-primary btn-sm">
-                                    🛡️ Настроить брандмауэр
+                                <button type="button" onclick="testStreamConnection()" class="btn btn-secondary btn-sm w-100" style="margin-top:6px">
+                                    🧪 Тест связи
                                 </button>
-                            </div>
-
-                            <div class="help-section">
-                                <h4 class="help-title">💡 Рекомендации</h4>
-                                <div class="help-content" id="networkHelp">
-                                    <p>Для внешнего доступа настройте проброс порта 8554 в роутере</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Настройка Android -->
-            <div class="bottom-right">
-                <div class="panel">
-                    <div class="panel-header">
-                        <h3>📱 Android устройства</h3>
-                        <div class="panel-subtitle">Отправка уведомления о стриме</div>
-                    </div>
-
-                    <div class="panel-content">
-                        <div class="info-group">
-                            <h4 class="info-group-title">📋 IP адреса для уведомления</h4>
-                            <div class="d-flex" style="gap: 8px; margin-bottom: 12px">
-                                <input type="text" id="androidIpInput" placeholder="192.168.1.100 или 45.67.89.123:8080"
-                                       class="form-input" style="flex: 1">
-                                <button type="button" onclick="addAndroidIp()" class="btn btn-primary btn-sm">
-                                    ➕ Добавить
-                                </button>
-                                <button type="button" onclick="testAndroidConnection()" class="btn btn-secondary btn-sm">
-                                    🧪 Тест
-                                </button>
-                            </div>
-                            <div id="androidIpList" style="max-height: 200px; overflow-y: auto">
-                                <p style="color: #888; font-size: 0.9em">Список пуст</p>
                             </div>
                         </div>
 
-                        <div class="help-section">
-                            <h4 class="help-title">💡 Как использовать</h4>
-                            <div class="help-content">
-                                <p>1. Запустите приложение на Android</p>
-                                <p>2. Введите IP Android устройства</p>
-                                <p>3. Нажмите "Добавить"</p>
-                                <p>4. При запуске стрима Android автоматически откроет поток</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Управление мультиком -->
-            <div class="bottom-right">
-                <div class="panel">
-                    <div class="panel-header">
-                        <h3>🎬 Управление мультиком</h3>
-                        <div class="panel-subtitle">Воспроизведение видео на Android</div>
-                    </div>
-
-                    <div class="panel-content">
                         <!-- Выбор видео -->
-                        <div class="info-group">
-                            <h4 class="info-group-title">📹 Видео файлы</h4>
-                            <div class="d-flex" style="gap: 8px; margin-bottom: 12px">
-                                <button type="button" onclick="loadAndroidVideos()" class="btn btn-primary btn-sm">
+                        <div class="accordion-item" id="acc-video">
+                            <div class="accordion-header" onclick="toggleAccordion('video')">
+                                <span class="accordion-title">
+                                    🎬 Видео файлы
+                                    <div class="tooltip-container">
+                                        <span class="tooltip-icon">?</span>
+                                        <span class="tooltip-text">
+                                            Загрузите список видео файлов с Android устройства и выберите для воспроизведения.<br><br>
+                                            Поддерживаемые форматы: mp4, avi, mkv, mov, webm
+                                        </span>
+                                    </div>
+                                </span>
+                                <span class="accordion-icon">▶</span>
+                            </div>
+                            <div class="accordion-content">
+                                <button type="button" onclick="loadAndroidVideos()" class="btn btn-primary btn-sm w-100" style="margin-bottom:10px">
                                     🔄 Загрузить список
                                 </button>
-                            </div>
-                            <select id="videoSelect" class="form-select" style="margin-bottom: 12px">
-                                <option value="">-- Выберите видео --</option>
-                            </select>
-                            <div class="grid grid-2">
-                                <button type="button" onclick="playVideo()" class="btn btn-primary btn-sm">
-                                    ▶️ Запустить
-                                </button>
-                                <button type="button" onclick="stopVideo()" class="btn btn-danger btn-sm">
-                                    ⏹️ Остановить
-                                </button>
+                                <div class="video-list" id="videoList">
+                                    <div class="video-item" style="color:#666;text-align:center">Нажмите "Загрузить список"</div>
+                                </div>
+                                <div class="grid grid-2">
+                                    <button type="button" onclick="playSelectedVideo()" class="btn btn-primary btn-sm">▶️ Запустить</button>
+                                    <button type="button" onclick="stopVideo()" class="btn btn-danger btn-sm">⏹️ Стоп</button>
+                                </div>
                             </div>
                         </div>
 
-                        <!-- Громкость мультика -->
-                        <div class="info-group">
-                            <h4 class="info-group-title">🔊 Громкость мультика</h4>
-                            <input type="range" id="cartoonVolume" min="0" max="100" value="100"
-                                   class="form-range" style="width: 100%"
-                                   oninput="updateCartoonVolume(this.value)">
-                            <div class="d-flex justify-between" style="margin-top: 8px">
-                                <span id="cartoonVolumeValue">100%</span>
-                                <button type="button" onclick="muteCartoon(true)" class="btn btn-secondary btn-sm">
-                                    🔇 Мут
-                                </button>
-                                <button type="button" onclick="muteCartoon(false)" class="btn btn-secondary btn-sm">
-                                    🔊 Вкл
-                                </button>
+                        <!-- Громкость -->
+                        <div class="accordion-item" id="acc-volume">
+                            <div class="accordion-header" onclick="toggleAccordion('volume')">
+                                <span class="accordion-title">🔊 Громкость</span>
+                                <span class="accordion-icon">▶</span>
+                            </div>
+                            <div class="accordion-content">
+                                <div style="margin-bottom:12px">
+                                    <div style="display:flex;justify-content:space-between;margin-bottom:6px">
+                                        <span style="font-size:13px;color:#0ff">🎬 Мультик:</span>
+                                        <span id="cartoonVolumeValue" style="font-size:13px;color:#0ff;font-weight:600">100%</span>
+                                    </div>
+                                    <input type="range" id="cartoonVolume" min="0" max="100" value="100" class="volume-slider" oninput="updateCartoonVolume(this.value)">
+                                    <div style="display:flex;gap:6px;margin-top:6px;justify-content:flex-end">
+                                        <button type="button" onclick="muteCartoon(true)" class="btn btn-secondary btn-sm">🔇</button>
+                                        <button type="button" onclick="muteCartoon(false)" class="btn btn-secondary btn-sm">🔊</button>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div style="display:flex;justify-content:space-between;margin-bottom:6px">
+                                        <span style="font-size:13px;color:#0ff">📷 Вебкамера:</span>
+                                        <span id="webcamVolumeValue" style="font-size:13px;color:#0ff;font-weight:600">100%</span>
+                                    </div>
+                                    <input type="range" id="webcamVolume" min="0" max="100" value="100" class="volume-slider" oninput="updateWebcamVolume(this.value)">
+                                    <div style="display:flex;gap:6px;margin-top:6px;justify-content:flex-end">
+                                        <button type="button" onclick="muteWebcam(true)" class="btn btn-secondary btn-sm">🔇</button>
+                                        <button type="button" onclick="muteWebcam(false)" class="btn btn-secondary btn-sm">🔊</button>
+                                    </div>
+                                </div>
                             </div>
                         </div>
 
-                        <!-- Режимы отображения -->
-                        <div class="info-group">
-                            <h4 class="info-group-title">📺 Режим отображения</h4>
-                            <div class="grid grid-3" style="margin-top: 8px">
-                                <button type="button" onclick="setDisplayMode('only_webcam')" class="btn btn-secondary btn-sm">
-                                    📷 Только вебка
-                                </button>
-                                <button type="button" onclick="setDisplayMode('only_cartoon')" class="btn btn-secondary btn-sm">
-                                    🎬 Только мультик
-                                </button>
-                                <button type="button" onclick="setDisplayMode('both')" class="btn btn-primary btn-sm">
-                                    📺 Оба
-                                </button>
+                        <!-- Режим отображения -->
+                        <div class="accordion-item" id="acc-display">
+                            <div class="accordion-header" onclick="toggleAccordion('display')">
+                                <span class="accordion-title">
+                                    📺 Экран
+                                    <div class="tooltip-container">
+                                        <span class="tooltip-icon">?</span>
+                                        <span class="tooltip-text">
+                                            Выберите режим отображения на Android устройстве:<br><br>
+                                            <b>📷 Вебка</b> — только камера<br>
+                                            <b>🎬 Мультик</b> — только видео<br>
+                                            <b>📺 Оба</b> — разделённый экран
+                                        </span>
+                                    </div>
+                                </span>
+                                <span class="accordion-icon">▶</span>
+                            </div>
+                            <div class="accordion-content">
+                                <div class="grid grid-3">
+                                    <button type="button" onclick="setDisplayMode('only_webcam')" class="mode-btn" id="mode-webcam">📷 Вебка</button>
+                                    <button type="button" onclick="setDisplayMode('only_cartoon')" class="mode-btn" id="mode-cartoon">🎬 Мультик</button>
+                                    <button type="button" onclick="setDisplayMode('both')" class="mode-btn active" id="mode-both">📺 Оба</button>
+                                </div>
+                                <div style="margin-top:10px;padding-top:10px;border-top:1px solid rgba(255,255,255,0.1)">
+                                    <div style="font-size:12px;color:#888;margin-bottom:6px">👁️ Видимость вебкамеры:</div>
+                                    <div class="grid grid-2">
+                                        <button type="button" onclick="toggleWebcamVisibility(true)" class="btn btn-secondary btn-sm">Показать</button>
+                                        <button type="button" onclick="toggleWebcamVisibility(false)" class="btn btn-secondary btn-sm">Скрыть</button>
+                                    </div>
+                                </div>
                             </div>
                         </div>
 
-                        <!-- Громкость и видимость вебкамеры -->
-                        <div class="info-group">
-                            <h4 class="info-group-title">📷 Вебкамера</h4>
-                            <input type="range" id="webcamVolume" min="0" max="100" value="100"
-                                   class="form-range" style="width: 100%"
-                                   oninput="updateWebcamVolume(this.value)">
-                            <div class="d-flex justify-between" style="margin-top: 8px">
-                                <span id="webcamVolumeValue">100%</span>
-                                <button type="button" onclick="muteWebcam(true)" class="btn btn-secondary btn-sm">
-                                    🔇 Мут
-                                </button>
-                                <button type="button" onclick="muteWebcam(false)" class="btn btn-secondary btn-sm">
-                                    🔊 Вкл
-                                </button>
-                            </div>
-                            <div class="grid grid-2" style="margin-top: 12px">
-                                <button type="button" onclick="toggleWebcamVisibility(true)" class="btn btn-secondary btn-sm">
-                                    👁️ Показать
-                                </button>
-                                <button type="button" onclick="toggleWebcamVisibility(false)" class="btn btn-secondary btn-sm">
-                                    🙈 Скрыть
-                                </button>
-                            </div>
-                        </div>
-
-                        <div class="help-section">
-                            <h4 class="help-title">💡 Управление</h4>
-                            <div class="help-content">
-                                <p>1. Загрузите список видео с Android</p>
-                                <p>2. Выберите видео и запустите</p>
-                                <p>3. Настройте громкость и режим отображения</p>
-                            </div>
-                        </div>
                     </div>
                 </div>
             </div>
@@ -380,8 +564,8 @@
     </div>
 
     <!-- Подключаем JavaScript -->
-    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
-    <script src="{{ url_for('static', filename='js/terminal.js') }}"></script>
-    <script src="{{ url_for('static', filename='js/api.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/main.js') }}?v=4"></script>
+    <script src="{{ url_for('static', filename='js/terminal.js') }}?v=4"></script>
+    <script src="{{ url_for('static', filename='js/api.js') }}?v=4"></script>
 </body>
 </html>

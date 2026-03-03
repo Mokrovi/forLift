@@ -156,9 +156,11 @@ function copyExternalUrl() {
 }
 
 // === Android IP Management ===
+let selectedAndroidIp = null;
+
 async function loadAndroidIps() {
     if (!window.app || !window.app.api) return;
-    
+
     try {
         const result = await window.app.api.getAndroidIps();
         renderAndroidIpList(result.android_ips || []);
@@ -170,35 +172,41 @@ async function loadAndroidIps() {
 function renderAndroidIpList(ips) {
     const listElement = document.getElementById('androidIpList');
     if (!listElement) return;
-    
+
     if (ips.length === 0) {
-        listElement.innerHTML = '<p style="color: #888; font-size: 0.9em">Список пуст</p>';
+        listElement.innerHTML = '<div class="ip-item" style="color:#666;justify-content:center">Список пуст</div>';
         return;
     }
-    
+
     listElement.innerHTML = ips.map(ip => `
-        <div style="display: flex; justify-content: space-between; align-items: center; padding: 8px; background: rgba(255,255,255,0.05); margin-bottom: 4px; border-radius: 4px;">
-            <span style="font-family: monospace; color: #0ff">${ip}</span>
-            <button onclick="removeAndroidIp('${ip}')" style="background: #dc3545; border: none; color: white; padding: 4px 8px; border-radius: 4px; cursor: pointer;">✕</button>
+        <div class="ip-item" style="background:${selectedAndroidIp === ip ? 'rgba(0,255,255,0.15)' : 'transparent'};border-left:${selectedAndroidIp === ip ? '3px solid #0ff' : '3px solid transparent'}">
+            <span style="flex:1;cursor:pointer" onclick="selectAndroidIp('${ip}')">${ip}${selectedAndroidIp === ip ? ' ✓' : ''}</span>
+            <button class="ip-remove" onclick="removeAndroidIp('${ip}')">✕</button>
         </div>
     `).join('');
+}
+
+function selectAndroidIp(ip) {
+    selectedAndroidIp = ip;
+    renderAndroidIpList((window.app.api.cachedIps || []));
+    console.log('Выбрано устройство:', ip);
 }
 
 async function addAndroidIp() {
     const input = document.getElementById('androidIpInput');
     const ip = input.value.trim();
-    
+
     if (!ip) {
         alert('❌ Введите IP адрес');
         return;
     }
-    
+
     try {
         const result = await window.app.api.addAndroidIp(ip);
         if (result.success) {
             input.value = '';
+            window.app.api.cachedIps = result.android_ips;
             renderAndroidIpList(result.android_ips);
-            alert(result.message);
         } else {
             alert(result.message);
         }
@@ -211,6 +219,10 @@ async function removeAndroidIp(ip) {
     try {
         const result = await window.app.api.removeAndroidIp(ip);
         if (result.success) {
+            if (selectedAndroidIp === ip) {
+                selectedAndroidIp = null;
+            }
+            window.app.api.cachedIps = result.android_ips;
             renderAndroidIpList(result.android_ips);
         }
     } catch (error) {
@@ -219,19 +231,93 @@ async function removeAndroidIp(ip) {
 }
 
 async function testAndroidConnection() {
-    const input = document.getElementById('androidIpInput');
-    const ip = input.value.trim();
-    
+    const ip = selectedAndroidIp || document.getElementById('androidIpInput').value.trim();
+
     if (!ip) {
-        alert('❌ Введите IP адрес для теста');
+        alert('❌ Введите IP адрес или выберите устройство из списка');
         return;
     }
-    
+
     try {
         const result = await window.app.api.testAndroidConnection(ip);
+        if (result.success && !selectedAndroidIp) {
+            selectAndroidIp(ip);
+        }
         alert(result.message);
     } catch (error) {
         alert('❌ Ошибка: ' + error.message);
+    }
+}
+
+async function sendStreamSignal() {
+    if (!selectedAndroidIp) {
+        alert('❌ Сначала выберите устройство из списка');
+        return;
+    }
+
+    const localIp = document.getElementById('localIp');
+    const localUrl = localIp ? localIp.textContent : '';
+    
+    if (!localUrl) {
+        alert('❌ Не получен локальный IP');
+        return;
+    }
+
+    // Добавляем порт 8080 если не указан
+    let targetIp = selectedAndroidIp;
+    if (!targetIp.includes(':')) {
+        targetIp = targetIp + ':8080';
+    }
+
+    const streamUrl = `rtsp://${localUrl}:8554/live/stream`;
+    
+    try {
+        // Отправляем JSON с правильным Content-Type
+        const response = await fetch(`http://${targetIp}/stream`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                local_url: streamUrl,
+                external_url: null
+            })
+        });
+        
+        const text = await response.text();
+        console.log('Response:', response.status, text);
+        
+        if (response.ok || response.status === 200) {
+            alert(`✅ Сигнал отправлен на ${targetIp}\nСтрим должен открыться на устройстве`);
+        } else {
+            alert(`⚠️ Ответ устройства: ${response.status}\n${text}`);
+        }
+    } catch (error) {
+        alert('❌ Ошибка: ' + error.message);
+    }
+}
+
+async function testStreamConnection() {
+    if (!selectedAndroidIp) {
+        alert('❌ Сначала выберите устройство из списка');
+        return;
+    }
+
+    // Добавляем порт 8080 если не указан
+    let targetIp = selectedAndroidIp;
+    if (!targetIp.includes(':')) {
+        targetIp = targetIp + ':8080';
+    }
+
+    try {
+        const response = await fetch(`http://${targetIp}/`, {
+            method: 'GET',
+            mode: 'no-cors'
+        });
+        
+        alert(`✅ Устройство ${targetIp} доступно\n\nЕсли стрим не открывается - проверь что Android приложение запущено`);
+    } catch (error) {
+        alert('❌ Устройство недоступно: ' + error.message);
     }
 }
 
@@ -246,114 +332,170 @@ document.addEventListener('DOMContentLoaded', function() {
 
 // === Управление мультиком на Android ===
 
-async function loadAndroidVideos() {
-    if (!window.app || !window.app.api) return;
+// Аккордеон
+function toggleAccordion(id) {
+    const item = document.getElementById('acc-' + id);
+    if (item) {
+        item.classList.toggle('open');
+    }
+}
 
-    const select = document.getElementById('videoSelect');
-    if (!select) return;
+async function loadAndroidVideos() {
+    if (!selectedAndroidIp) {
+        alert('❌ Сначала выберите устройство из списка');
+        return;
+    }
+    
+    let targetIp = selectedAndroidIp;
+    if (!targetIp.includes(':')) {
+        targetIp = targetIp + ':8080';
+    }
+    
+    const videoList = document.getElementById('videoList');
+    if (!videoList) return;
 
     try {
-        select.innerHTML = '<option>Загрузка...</option>';
-        const result = await window.app.api.getAndroidVideos();
+        videoList.innerHTML = '<div class="video-item">Загрузка...</div>';
+        const result = await window.app.api.getAndroidVideos(targetIp);
         
-        if (result.success && result.videos) {
-            select.innerHTML = '<option value="">-- Выберите видео --</option>';
+        if (result.success && result.videos && result.videos.length > 0) {
+            videoList.innerHTML = '';
             result.videos.forEach(video => {
-                const option = document.createElement('option');
-                option.value = video.name;
-                option.textContent = video.name;
-                select.appendChild(option);
+                const item = document.createElement('div');
+                item.className = 'video-item';
+                item.textContent = video.name;
+                item.onclick = () => selectVideo(item, video.name);
+                videoList.appendChild(item);
             });
-            
-            if (window.app && window.app.terminal) {
-                window.app.terminal.log(`📹 Загружено ${result.videos.length} видео файлов`);
-            }
         } else {
-            select.innerHTML = '<option value="">-- Ошибка загрузки --</option>';
-            if (window.app && window.app.terminal) {
-                window.app.terminal.log('❌ Ошибка загрузки видео: ' + result.message);
-            }
+            videoList.innerHTML = '<div class="video-item">❌ ' + (result.message || 'Список пуст') + '</div>';
         }
     } catch (error) {
-        select.innerHTML = '<option value="">-- Ошибка --</option>';
+        videoList.innerHTML = '<div class="video-item">❌ Ошибка загрузки</div>';
         console.error('Ошибка загрузки видео:', error);
     }
 }
 
-async function playVideo() {
-    const select = document.getElementById('videoSelect');
-    if (!select) return;
+let selectedVideoName = null;
 
-    const videoName = select.value;
-    if (!videoName) {
+function selectVideo(element, videoName) {
+    // Снимаем выделение со всех
+    document.querySelectorAll('.video-item').forEach(item => {
+        item.classList.remove('selected');
+    });
+    // Выделяем текущий
+    element.classList.add('selected');
+    selectedVideoName = videoName;
+}
+
+async function playSelectedVideo() {
+    if (!selectedVideoName) {
+        alert('❌ Выберите видео из списка');
+        return;
+    }
+    await playVideo();
+}
+
+async function playVideo() {
+    if (!selectedAndroidIp) {
+        alert('❌ Сначала выберите устройство');
+        return;
+    }
+    if (!selectedVideoName) {
         alert('❌ Выберите видео из списка');
         return;
     }
 
+    let targetIp = selectedAndroidIp;
+    if (!targetIp.includes(':')) {
+        targetIp = targetIp + ':8080';
+    }
+
     try {
-        const result = await window.app.api.playAnimation(videoName);
-        if (window.app && window.app.terminal) {
-            window.app.terminal.log(result.message);
-        }
-        alert(result.message);
+        const result = await window.app.api.playAnimation(targetIp, selectedVideoName);
+        console.log(result.message);
     } catch (error) {
         alert('❌ Ошибка: ' + error.message);
     }
 }
 
 async function stopVideo() {
+    if (!selectedAndroidIp) {
+        alert('❌ Сначала выберите устройство');
+        return;
+    }
+    
+    let targetIp = selectedAndroidIp;
+    if (!targetIp.includes(':')) {
+        targetIp = targetIp + ':8080';
+    }
+    
     try {
-        const result = await window.app.api.stopAnimation();
-        if (window.app && window.app.terminal) {
-            window.app.terminal.log(result.message);
-        }
-        alert(result.message);
+        const result = await window.app.api.stopAnimation(targetIp);
+        console.log(result.message);
     } catch (error) {
         alert('❌ Ошибка: ' + error.message);
     }
 }
 
 async function updateCartoonVolume(value) {
-    const display = document.getElementById('cartoonVolumeValue');
-    if (display) {
-        display.textContent = `${value}%`;
+    if (!selectedAndroidIp) return;
+    
+    let targetIp = selectedAndroidIp;
+    if (!targetIp.includes(':')) {
+        targetIp = targetIp + ':8080';
     }
 
+    const display = document.getElementById('cartoonVolumeValue');
+    if (display) display.textContent = `${value}%`;
+
     try {
-        const result = await window.app.api.setCartoonVolume(value / 100);
-        if (window.app && window.app.terminal && value > 0) {
-            window.app.terminal.log(result.message);
-        }
+        await window.app.api.setCartoonVolume(targetIp, value / 100);
     } catch (error) {
         console.error('Ошибка установки громкости:', error);
     }
 }
 
 async function muteCartoon(mute) {
+    if (!selectedAndroidIp) return;
+    
+    let targetIp = selectedAndroidIp;
+    if (!targetIp.includes(':')) {
+        targetIp = targetIp + ':8080';
+    }
+
     try {
         const volume = mute ? 0 : 100;
-        const result = await window.app.api.setCartoonVolume(volume / 100);
+        await window.app.api.setCartoonVolume(targetIp, volume / 100);
         const display = document.getElementById('cartoonVolumeValue');
         const slider = document.getElementById('cartoonVolume');
         
         if (display) display.textContent = `${volume}%`;
         if (slider) slider.value = volume;
-        
-        if (window.app && window.app.terminal) {
-            window.app.terminal.log(mute ? '🔇 Мультик выключен' : '🔊 Мультик включен');
-        }
     } catch (error) {
         console.error('Ошибка:', error);
     }
 }
 
 async function setDisplayMode(mode) {
+    if (!selectedAndroidIp) {
+        alert('❌ Сначала выберите устройство');
+        return;
+    }
+
+    let targetIp = selectedAndroidIp;
+    if (!targetIp.includes(':')) {
+        targetIp = targetIp + ':8080';
+    }
+
     try {
-        const result = await window.app.api.setDisplayMode(mode);
-        if (window.app && window.app.terminal) {
-            window.app.terminal.log(result.message);
-        }
-        alert(result.message);
+        const result = await window.app.api.setDisplayMode(targetIp, mode);
+
+        document.querySelectorAll('.mode-btn').forEach(btn => btn.classList.remove('active'));
+        const activeBtn = document.getElementById('mode-' + mode);
+        if (activeBtn) activeBtn.classList.add('active');
+
+        console.log(result.message);
     } catch (error) {
         alert('❌ Ошибка: ' + error.message);
     }
@@ -361,15 +503,10 @@ async function setDisplayMode(mode) {
 
 async function updateWebcamVolume(value) {
     const display = document.getElementById('webcamVolumeValue');
-    if (display) {
-        display.textContent = `${value}%`;
-    }
+    if (display) display.textContent = `${value}%`;
 
     try {
-        const result = await window.app.api.setWebcamVolume(value / 100);
-        if (window.app && window.app.terminal && value > 0) {
-            window.app.terminal.log(result.message);
-        }
+        await window.app.api.setWebcamVolume(value / 100);
     } catch (error) {
         console.error('Ошибка установки громкости:', error);
     }
@@ -377,16 +514,12 @@ async function updateWebcamVolume(value) {
 
 async function muteWebcam(mute) {
     try {
-        const result = await window.app.api.muteWebcam(mute);
+        await window.app.api.muteWebcam(mute);
         const display = document.getElementById('webcamVolumeValue');
         const slider = document.getElementById('webcamVolume');
         
         if (display) display.textContent = mute ? '0%' : '100%';
         if (slider) slider.value = mute ? 0 : 100;
-        
-        if (window.app && window.app.terminal) {
-            window.app.terminal.log(mute ? '🔇 Вебкамера выключена' : '🔊 Вебкамера включена');
-        }
     } catch (error) {
         console.error('Ошибка:', error);
     }
@@ -395,10 +528,7 @@ async function muteWebcam(mute) {
 async function toggleWebcamVisibility(visible) {
     try {
         const result = await window.app.api.setWebcamVisibility(visible);
-        if (window.app && window.app.terminal) {
-            window.app.terminal.log(result.message);
-        }
-        alert(result.message);
+        console.log(result.message);
     } catch (error) {
         alert('❌ Ошибка: ' + error.message);
     }

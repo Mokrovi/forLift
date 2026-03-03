@@ -331,6 +331,51 @@ class WebApp:
             except Exception as e:
                 return jsonify({"success": False, "message": f"❌ Ошибка: {e}"})
 
+        @self.app.route('/api/android/signal', methods=['POST'])
+        def send_android_signal():
+            """API для отправки сигнала на Android устройство о стриме"""
+            data = request.get_json() or {}
+            ip = data.get('ip', '')
+            local_url = data.get('local_url', '')
+            external_url = data.get('external_url', '')
+
+            logger.info(f"📡 Отправка сигнала на {ip}: local={local_url}, external={external_url}")
+
+            if not ip:
+                return jsonify({"success": False, "message": "❌ Не указан IP"})
+
+            if not local_url:
+                return jsonify({"success": False, "message": "❌ Не указан URL стрима"})
+
+            try:
+                import requests
+                payload = {
+                    "local_url": local_url,
+                    "external_url": external_url
+                }
+                logger.info(f"📤 POST http://{ip}/stream with {payload}")
+                response = requests.post(f"http://{ip}/stream", json=payload, timeout=5)
+                logger.info(f"📥 Response from {ip}: {response.status_code} - {response.text[:100]}")
+                if response.status_code == 200:
+                    return jsonify({
+                        "success": True,
+                        "message": f"✅ Сигнал отправлен на {ip}"
+                    })
+                else:
+                    return jsonify({
+                        "success": False,
+                        "message": f"⚠️ Ответ сервера: {response.status_code}"
+                    })
+            except requests.exceptions.Timeout:
+                logger.error(f"⏱️ Timeout при отправке на {ip}")
+                return jsonify({"success": False, "message": "❌ Таймаут - устройство не отвечает"})
+            except requests.exceptions.ConnectionError:
+                logger.error(f"❌ ConnectionError при отправке на {ip}")
+                return jsonify({"success": False, "message": "❌ Устройство недоступно"})
+            except Exception as e:
+                logger.error(f"❌ Ошибка: {e}")
+                return jsonify({"success": False, "message": f"❌ Ошибка: {e}"})
+
         # ===== API для управления мультиками на Android =====
 
         @self.app.route('/api/android/videos', methods=['GET'])

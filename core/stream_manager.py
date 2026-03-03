@@ -263,8 +263,7 @@ paths:
                     local_url = f"rtsp://{self.config.get_local_ip()}:8554/live/stream"
                     external_url = f"rtsp://{self.config.get_external_ip()}:8554/live/stream"
 
-                    # Отправляем сигнал на Android устройство
-                    self._send_signal_to_android(local_url, external_url)
+                    # НЕ отправляем сигнал автоматически - пользователь нажмёт кнопку сам
 
                     return {
                         "success": True,
