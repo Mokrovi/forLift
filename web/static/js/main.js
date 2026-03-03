@@ -309,15 +309,16 @@ async function disconnectAndroid() {
     }
     
     try {
-        // Отправляем сигнал закрыть стрим
-        const response = await fetch(`http://${targetIp}/close-stream`, {
+        // Отправляем сигнал закрыть стрим и свернуться
+        const response = await fetch(`http://${targetIp}/close-and-minimize`, {
             method: 'POST'
         });
         
         if (response.ok) {
             alert(`✅ Устройство ${targetIp} отключено\nТрансляция остановлена`);
         } else {
-            alert(`⚠️ Устройство не ответило: ${response.status}`);
+            const text = await response.text();
+            alert(`⚠️ Устройство не ответило: ${response.status}\n${text}`);
         }
     } catch (error) {
         alert('❌ Ошибка отключения: ' + error.message);

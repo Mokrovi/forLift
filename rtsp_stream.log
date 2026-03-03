@@ -7889,3 +7889,100 @@
 2026-03-03 19:29:00,946 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2026 19:29:00] "GET /api/status HTTP/1.1" 200 -
 2026-03-03 19:29:10,641 - config.settings - INFO - 📡 Локальный IP: 192.168.0.148
 2026-03-03 19:29:10,642 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2026 19:29:10] "GET /api/status HTTP/1.1" 200 -
+2026-03-03 19:29:18,271 - config.settings - INFO - ✅ FFmpeg найден: C:\AndStudio\forLift\ffmpeg.exe
+2026-03-03 19:29:18,976 - core.network_manager - INFO - 🌐 Внешний IP: 95.78.88.143
+2026-03-03 19:29:19,001 - __main__ - INFO - 🔧 Настройка окружения...
+2026-03-03 19:29:19,002 - utils.system_checker - INFO - ✅ Python 3.14.3
+2026-03-03 19:29:19,002 - utils.system_checker - INFO - ✅ FFmpeg найден: C:\AndStudio\forLift\ffmpeg.exe
+2026-03-03 19:29:19,002 - utils.system_checker - INFO - ✅ MediaMTX найден: C:\AndStudio\forLift\mediamtx.exe
+2026-03-03 19:29:19,002 - utils.system_checker - INFO - ✅ Библиотека flask доступна
+2026-03-03 19:29:19,003 - utils.system_checker - INFO - ✅ Библиотека requests доступна
+2026-03-03 19:29:19,003 - utils.system_checker - INFO - ✅ python: Доступен
+2026-03-03 19:29:19,003 - utils.system_checker - INFO - ✅ ffmpeg: Доступен
+2026-03-03 19:29:19,003 - utils.system_checker - INFO - ✅ mediamtx: Доступен
+2026-03-03 19:29:19,003 - utils.system_checker - INFO - ✅ flask: Доступен
+2026-03-03 19:29:19,003 - utils.system_checker - INFO - ✅ requests: Доступен
+2026-03-03 19:29:19,003 - __main__ - INFO - 🛡️ Настройка доступа через брандмауэр Windows...
+2026-03-03 19:29:19,003 - __main__ - INFO - 🛡️ Добавляем приложение в разрешенные программы брандмауэра...
+2026-03-03 19:29:19,003 - core.firewall_prompt - INFO - 📁 Путь к приложению: C:\Python314\python.exe
+2026-03-03 19:29:19,079 - core.firewall_prompt - INFO - 🛡️ Пытаемся добавить приложение в брандмауэр...
+2026-03-03 19:29:19,080 - core.firewall_prompt - INFO - 💡 Может появиться запрос от Защитника Windows
+2026-03-03 19:29:19,137 - core.firewall_prompt - WARNING - ⚠️ Не удалось добавить в брандмауэр: 
+2026-03-03 19:29:19,137 - core.firewall_prompt - INFO - 💡 Это нормально, если у вас нет прав администратора
+2026-03-03 19:29:19,137 - __main__ - WARNING - ⚠️ Не удалось добавить приложение в разрешенные программы
+2026-03-03 19:29:19,137 - __main__ - INFO - 💡 Это нормально, если приложение уже было добавлено ранее
+2026-03-03 19:29:19,137 - __main__ - INFO - 🔧 Настраиваем правила для портов...
+2026-03-03 19:29:19,137 - __main__ - INFO - ℹ️ Для автоматической настройки правил портов запустите программу от имени администратора
+2026-03-03 19:29:19,137 - __main__ - INFO - 📋 Вы можете настроить брандмауэр вручную через веб-интерфейс
+2026-03-03 19:29:21,138 - utils.system_checker - INFO - ✅ Python 3.14.3
+2026-03-03 19:29:21,138 - utils.system_checker - INFO - ✅ FFmpeg найден: C:\AndStudio\forLift\ffmpeg.exe
+2026-03-03 19:29:21,138 - utils.system_checker - INFO - ✅ MediaMTX найден: C:\AndStudio\forLift\mediamtx.exe
+2026-03-03 19:29:21,138 - __main__ - INFO - 🚀 Запуск сервисов...
+2026-03-03 19:29:21,168 - core.stream_manager - INFO - 🔄 Завершаем процесс 15860 на порту 8000
+2026-03-03 19:29:22,236 - core.stream_manager - INFO - 🔄 Завершаем процесс 15860 на порту 8000
+2026-03-03 19:29:25,329 - config.settings - INFO - ✅ MediaMTX найден: C:\AndStudio\forLift\mediamtx.exe
+2026-03-03 19:29:25,330 - core.stream_manager - INFO - 🗑️ Удален старый конфигурационный файл
+2026-03-03 19:29:25,331 - core.stream_manager - INFO - ✅ Конфигурационный файл MediaMTX создан
+2026-03-03 19:29:25,331 - core.stream_manager - INFO - 🔄 Запуск MediaMTX...
+2026-03-03 19:29:25,332 - core.stream_manager - INFO - 📁 Путь к MediaMTX: C:\AndStudio\forLift\mediamtx.exe
+2026-03-03 19:29:25,390 - core.stream_manager - INFO - MediaMTX: 2026/03/03 19:29:25 INF MediaMTX v1.9.2
+2026-03-03 19:29:25,390 - core.stream_manager - INFO - MediaMTX: 2026/03/03 19:29:25 INF configuration loaded from C:\AndStudio\forLift\mediamtx.yml
+2026-03-03 19:29:25,391 - core.stream_manager - INFO - MediaMTX: 2026/03/03 19:29:25 INF [RTSP] listener opened on :8554 (TCP), :8000 (UDP/RTP), :8001 (UDP/RTCP)
+2026-03-03 19:29:25,391 - core.stream_manager - INFO - MediaMTX: 2026/03/03 19:29:25 INF [RTMP] listener opened on :1935
+2026-03-03 19:29:25,392 - core.stream_manager - INFO - MediaMTX: 2026/03/03 19:29:25 INF [WebRTC] listener opened on :8889 (HTTP), :8189 (ICE/UDP)
+2026-03-03 19:29:25,392 - core.stream_manager - INFO - MediaMTX: 2026/03/03 19:29:25 INF [SRT] listener opened on :8890 (UDP)
+2026-03-03 19:29:25,392 - core.stream_manager - INFO - MediaMTX: 2026/03/03 19:29:25 INF [API] listener opened on :9997
+2026-03-03 19:29:28,337 - core.stream_manager - INFO - ✅ MediaMTX успешно запущен
+2026-03-03 19:29:28,337 - web.app - INFO - 🌐 Запуск веб-сервера на 0.0.0.0:5000
+2026-03-03 19:29:28,337 - web.app - INFO - ✅ Веб-интерфейс запущен
+2026-03-03 19:29:28,337 - __main__ - INFO - 🌐 Веб-интерфейс доступен по адресу: http://localhost:5000
+2026-03-03 19:29:28,338 - __main__ - INFO - 📹 RTSP поток будет доступен по адресу: rtsp://ваш-ip:8554/live/stream
+2026-03-03 19:29:28,338 - __main__ - INFO - ⏹️  Для остановки нажмите Ctrl+C
+2026-03-03 19:29:28,338 - __main__ - INFO - 
+2026-03-03 19:29:28,350 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.0.148:5000
+2026-03-03 19:29:28,350 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2026-03-03 19:29:28,593 - core.camera_finder - INFO - 🔍 Поиск и тестирование камер...
+2026-03-03 19:29:28,593 - core.camera_finder - INFO - 🔍 Поиск доступных камер...
+2026-03-03 19:29:28,696 - core.camera_finder - INFO - ✅ Метод 1: найдено 1 камер
+2026-03-03 19:29:28,776 - core.camera_finder - INFO - ✅ Метод 2: найдено 1 камер
+2026-03-03 19:29:28,776 - core.camera_finder - INFO - 📹 Найдено потенциальных камер: 2
+2026-03-03 19:29:28,776 - core.camera_finder - INFO -    - A4tech FHD 1080P PC Camera
+2026-03-03 19:29:28,776 - core.camera_finder - INFO -    - (video)
+2026-03-03 19:29:28,776 - core.camera_finder - INFO - 🔍 Тестируем камеру: A4tech FHD 1080P PC Camera
+2026-03-03 19:29:28,776 - core.camera_finder - INFO - 🔄 Попытка 1 для камеры A4tech FHD 1080P PC Camera
+2026-03-03 19:29:30,639 - config.settings - INFO - 📡 Локальный IP: 192.168.0.148
+2026-03-03 19:29:30,640 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2026 19:29:30] "GET /api/status HTTP/1.1" 200 -
+2026-03-03 19:29:33,436 - core.camera_finder - INFO - ✅ Камера 'A4tech FHD 1080P PC Camera' - РАБОТАЕТ (попытка 1)
+2026-03-03 19:29:33,436 - core.camera_finder - INFO - ✅ A4tech FHD 1080P PC Camera - рабочая
+2026-03-03 19:29:33,436 - core.camera_finder - INFO - 🔍 Тестируем камеру: (video)
+2026-03-03 19:29:33,436 - core.camera_finder - INFO - 🔄 Попытка 1 для камеры (video)
+2026-03-03 19:29:33,477 - core.camera_finder - INFO - 🔄 Попытка 2 для камеры (video)
+2026-03-03 19:29:33,515 - core.camera_finder - INFO - 🔄 Попытка 3 для камеры (video)
+2026-03-03 19:29:33,554 - core.camera_finder - INFO - ❌ (video) - нерабочая: Ошибка ввода-вывода (проверьте доступ к камере)
+2026-03-03 19:29:33,555 - core.camera_finder - INFO - 🎯 Рабочие камеры: 1 из 2
+2026-03-03 19:29:33,555 - core.camera_finder - INFO -    ✅ A4tech FHD 1080P PC Camera
+2026-03-03 19:29:33,555 - config.settings - INFO - 📡 Локальный IP: 192.168.0.148
+2026-03-03 19:29:34,230 - config.settings - INFO - 🌐 Внешний IP: 95.78.88.143
+2026-03-03 19:29:34,231 - config.settings - INFO - ✅ FFmpeg найден: C:\AndStudio\forLift\ffmpeg.exe
+2026-03-03 19:29:34,231 - config.settings - INFO - ✅ MediaMTX найден: C:\AndStudio\forLift\mediamtx.exe
+2026-03-03 19:29:34,247 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2026 19:29:34] "GET / HTTP/1.1" 200 -
+2026-03-03 19:29:34,324 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2026 19:29:34] "[36mGET /static/css/main.css HTTP/1.1[0m" 304 -
+2026-03-03 19:29:34,586 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2026 19:29:34] "[36mGET /static/css/layout.css HTTP/1.1[0m" 304 -
+2026-03-03 19:29:34,588 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2026 19:29:34] "[36mGET /static/css/themes.css HTTP/1.1[0m" 304 -
+2026-03-03 19:29:34,589 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2026 19:29:34] "[36mGET /static/css/components.css HTTP/1.1[0m" 304 -
+2026-03-03 19:29:34,592 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2026 19:29:34] "GET /static/js/main.js?v=4 HTTP/1.1" 200 -
+2026-03-03 19:29:34,599 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2026 19:29:34] "[36mGET /static/js/terminal.js?v=4 HTTP/1.1[0m" 304 -
+2026-03-03 19:29:34,629 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2026 19:29:34] "GET /static/js/api.js?v=4 HTTP/1.1" 200 -
+2026-03-03 19:29:35,021 - config.settings - INFO - 📡 Локальный IP: 192.168.0.148
+2026-03-03 19:29:35,024 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2026 19:29:35] "GET /api/android/ips HTTP/1.1" 200 -
+2026-03-03 19:29:35,027 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2026 19:29:35] "GET /api/status HTTP/1.1" 200 -
+2026-03-03 19:29:35,027 - config.settings - INFO - ✅ FFmpeg найден: C:\AndStudio\forLift\ffmpeg.exe
+2026-03-03 19:29:35,134 - core.camera_finder - INFO - 🎤 Найдено 2 микрофонов
+2026-03-03 19:29:35,134 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2026 19:29:35] "GET /api/microphones HTTP/1.1" 200 -
+2026-03-03 19:29:35,285 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2026 19:29:35] "GET /api/network HTTP/1.1" 200 -
+2026-03-03 19:29:35,348 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2026 19:29:35] "GET /api/network/port-check HTTP/1.1" 200 -
+2026-03-03 19:29:35,349 - core.stream_manager - INFO - MediaMTX: 2026/03/03 19:29:35 INF [RTSP] [conn 127.0.0.1:60127] opened
+2026-03-03 19:29:35,349 - core.stream_manager - INFO - MediaMTX: 2026/03/03 19:29:35 INF [RTSP] [conn 127.0.0.1:60127] closed: EOF
