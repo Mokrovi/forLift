@@ -8474,3 +8474,27 @@
 2026-03-03 19:41:22,594 - core.stream_manager - INFO - 🔄 Завершаем процесс 13476 на порту 8000
 2026-03-03 19:41:23,666 - core.stream_manager - INFO - 🔄 Завершаем процесс 13476 на порту 8000
 2026-03-03 19:41:24,790 - core.stream_manager - INFO - 🔄 Завершаем процесс 0 на порту 8554
+2026-03-03 19:41:27,856 - config.settings - INFO - ✅ MediaMTX найден: C:\AndStudio\forLift\mediamtx.exe
+2026-03-03 19:41:27,857 - core.stream_manager - INFO - 🗑️ Удален старый конфигурационный файл
+2026-03-03 19:41:27,859 - core.stream_manager - INFO - ✅ Конфигурационный файл MediaMTX создан
+2026-03-03 19:41:27,859 - core.stream_manager - INFO - 🔄 Запуск MediaMTX...
+2026-03-03 19:41:27,859 - core.stream_manager - INFO - 📁 Путь к MediaMTX: C:\AndStudio\forLift\mediamtx.exe
+2026-03-03 19:41:27,918 - core.stream_manager - INFO - MediaMTX: 2026/03/03 19:41:27 INF MediaMTX v1.9.2
+2026-03-03 19:41:27,918 - core.stream_manager - INFO - MediaMTX: 2026/03/03 19:41:27 INF configuration loaded from C:\AndStudio\forLift\mediamtx.yml
+2026-03-03 19:41:27,919 - core.stream_manager - INFO - MediaMTX: 2026/03/03 19:41:27 INF [RTSP] listener opened on :8554 (TCP), :8000 (UDP/RTP), :8001 (UDP/RTCP)
+2026-03-03 19:41:27,919 - core.stream_manager - INFO - MediaMTX: 2026/03/03 19:41:27 INF [RTMP] listener opened on :1935
+2026-03-03 19:41:27,919 - core.stream_manager - INFO - MediaMTX: 2026/03/03 19:41:27 INF [WebRTC] listener opened on :8889 (HTTP), :8189 (ICE/UDP)
+2026-03-03 19:41:27,919 - core.stream_manager - INFO - MediaMTX: 2026/03/03 19:41:27 INF [SRT] listener opened on :8890 (UDP)
+2026-03-03 19:41:27,919 - core.stream_manager - INFO - MediaMTX: 2026/03/03 19:41:27 INF [API] listener opened on :9997
+2026-03-03 19:41:30,866 - core.stream_manager - INFO - ✅ MediaMTX успешно запущен
+2026-03-03 19:41:30,866 - web.app - INFO - 🌐 Запуск веб-сервера на 0.0.0.0:5000
+2026-03-03 19:41:30,866 - web.app - INFO - ✅ Веб-интерфейс запущен
+2026-03-03 19:41:30,867 - __main__ - INFO - 🌐 Веб-интерфейс доступен по адресу: http://localhost:5000
+2026-03-03 19:41:30,867 - __main__ - INFO - 📹 RTSP поток будет доступен по адресу: rtsp://ваш-ip:8554/live/stream
+2026-03-03 19:41:30,867 - __main__ - INFO - ⏹️  Для остановки нажмите Ctrl+C
+2026-03-03 19:41:30,867 - __main__ - INFO - 
+2026-03-03 19:41:30,879 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.0.148:5000
+2026-03-03 19:41:30,879 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
