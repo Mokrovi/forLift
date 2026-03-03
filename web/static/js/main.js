@@ -526,42 +526,18 @@ async function toggleMicrophone(mute) {
         slider.value = mute ? 0 : 100;
     }
     
-    // Перезапускаем стрим с новыми настройками
-    if (mute) {
-        updateMicVolume(0);
-    } else {
-        updateMicVolume(100);
-    }
+    // Просто обновляем UI - громкость применится при следующем запуске стрима
+    console.log('Микрофон:', mute ? 'выключен' : 'включен');
+    console.log('💡 Громкость применится при следующем запуске стрима');
 }
 
 async function updateMicVolume(value) {
     const display = document.getElementById('micVolumeValue');
     if (display) display.textContent = `${value}%`;
     
-    // Если стрим запущен - перезапускаем FFmpeg с новыми настройками
-    const ffmpegStatus = document.getElementById('ffmpegStatus');
-    if (ffmpegStatus && ffmpegStatus.textContent.includes('Трансляция')) {
-        // Останавливаем и запускаем заново с новой громкостью
-        console.log('Перезапуск стрима с громкостью микрофона:', value);
-        
-        // Сохраняем текущую камеру
-        const cameraSelect = document.getElementById('camera_name');
-        const currentCamera = cameraSelect ? cameraSelect.value : null;
-        
-        if (currentCamera) {
-            // Останавливаем стрим
-            await window.app.api.stopStream();
-            
-            // Ждём немного
-            await new Promise(resolve => setTimeout(resolve, 500));
-            
-            // Запускаем с новой громкостью (0 = без звука)
-            const micName = value > 0 ? '' : null; // Если громкость 0 - без микрофона
-            
-            const result = await window.app.api.startStreamWithMic(currentCamera, micName, value / 100);
-            console.log('Стрим перезапущен:', result);
-        }
-    }
+    // Просто обновляем UI - громкость применится при следующем запуске стрима
+    console.log('Громкость микрофона:', value + '%');
+    console.log('💡 Применится при следующем запуске стрима');
 }
 
 async function muteMic(mute) {
@@ -571,7 +547,7 @@ async function muteMic(mute) {
     if (display) display.textContent = mute ? '0%' : '100%';
     if (slider) slider.value = mute ? 0 : 100;
     
-    await updateMicVolume(mute ? 0 : 100);
+    toggleMicrophone(mute);
 }
 
 async function setDisplayMode(mode) {
