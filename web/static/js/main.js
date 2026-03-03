@@ -502,19 +502,34 @@ async function setDisplayMode(mode) {
 }
 
 async function updateWebcamVolume(value) {
+    if (!selectedAndroidIp) return;
+    
+    let targetIp = selectedAndroidIp;
+    if (!targetIp.includes(':')) {
+        targetIp = targetIp + ':8080';
+    }
+    
     const display = document.getElementById('webcamVolumeValue');
     if (display) display.textContent = `${value}%`;
 
     try {
-        await window.app.api.setWebcamVolume(value / 100);
+        await window.app.api.setWebcamVolume(targetIp, value / 100);
     } catch (error) {
         console.error('Ошибка установки громкости:', error);
     }
 }
 
 async function muteWebcam(mute) {
+    if (!selectedAndroidIp) return;
+    
+    let targetIp = selectedAndroidIp;
+    if (!targetIp.includes(':')) {
+        targetIp = targetIp + ':8080';
+    }
+    
     try {
-        await window.app.api.muteWebcam(mute);
+        const volume = mute ? 0 : 100;
+        await window.app.api.setWebcamVolume(targetIp, volume / 100);
         const display = document.getElementById('webcamVolumeValue');
         const slider = document.getElementById('webcamVolume');
         

@@ -428,6 +428,17 @@ class APIManager {
         }
     }
 
+    async setWebcamVolume(ip, volume) {
+        try {
+            return await this.request('/api/android/webcam-volume', {
+                method: 'POST',
+                body: JSON.stringify({ ip: ip, volume: volume })
+            });
+        } catch (error) {
+            throw error;
+        }
+    }
+
     async setDisplayMode(ip, mode) {
         try {
             return await this.request('/api/android/display-mode', {

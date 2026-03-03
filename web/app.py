@@ -523,6 +523,44 @@ class WebApp:
             except Exception as e:
                 return jsonify({"success": False, "message": f"❌ Ошибка: {e}"})
 
+        @self.app.route('/api/android/webcam-volume', methods=['POST'])
+        def set_webcam_volume():
+            """API для управления громкостью вебкамеры на Android"""
+            data = request.get_json() or {}
+            ip = data.get('ip', '')
+            volume = data.get('volume', 1.0)
+
+            if not ip:
+                if self.android_ips:
+                    ip = self.android_ips[0]
+                else:
+                    return jsonify({"success": False, "message": "❌ Не указан IP Android устройства"})
+
+            try:
+                import requests
+                response = requests.post(
+                    f"http://{ip}/webcam-volume",
+                    json={"volume": volume},
+                    timeout=5
+                )
+                if response.status_code == 200:
+                    return jsonify({
+                        "success": True,
+                        "message": f"🔊 Громкость вебкамеры: {int(volume * 100)}%",
+                        "ip": ip
+                    })
+                else:
+                    return jsonify({
+                        "success": False,
+                        "message": f"⚠️ Ответ сервера: {response.status_code}"
+                    })
+            except requests.exceptions.Timeout:
+                return jsonify({"success": False, "message": "❌ Таймаут - устройство не отвечает"})
+            except requests.exceptions.ConnectionError:
+                return jsonify({"success": False, "message": "❌ Устройство недоступно"})
+            except Exception as e:
+                return jsonify({"success": False, "message": f"❌ Ошибка: {e}"})
+
         @self.app.route('/api/android/display-mode', methods=['POST'])
         def set_display_mode():
             """API для управления режимом отображения на Android"""
