@@ -297,6 +297,24 @@ async function sendStreamSignal() {
     }
 }
 
+async function disconnectAndroid() {
+    if (!selectedAndroidIp) {
+        alert('❌ Нет выбранного устройства');
+        return;
+    }
+    
+    const ip = selectedAndroidIp;
+    selectedAndroidIp = null;
+    
+    // Обновляем список
+    if (window.app && window.app.api) {
+        window.app.api.cachedIps = window.app.api.cachedIps.filter(i => i !== ip);
+    }
+    renderAndroidIpList(window.app.api.cachedIps || []);
+    
+    alert(`✅ Устройство ${ip} отключено`);
+}
+
 async function testStreamConnection() {
     if (!selectedAndroidIp) {
         alert('❌ Сначала выберите устройство из списка');
@@ -477,6 +495,28 @@ async function muteCartoon(mute) {
     }
 }
 
+async function toggleMicrophone(mute) {
+    const micSelect = document.getElementById('microphone_name');
+    const micStatus = document.getElementById('micStatusValue');
+    
+    if (micSelect) {
+        if (mute) {
+            // Запоминаем текущий микрофон и выключаем
+            micSelect.setAttribute('data-prev-value', micSelect.value);
+            micSelect.value = '';
+            if (micStatus) micStatus.textContent = 'Выкл';
+        } else {
+            // Восстанавливаем предыдущий микрофон
+            const prevValue = micSelect.getAttribute('data-prev-value') || '';
+            micSelect.value = prevValue;
+            if (micStatus) micStatus.textContent = 'Вкл';
+        }
+    }
+    
+    // Если стрим уже запущен - перезапускаем с новыми настройками
+    console.log('Микрофон:', mute ? 'выключен' : 'включен');
+}
+
 async function setDisplayMode(mode) {
     if (!selectedAndroidIp) {
         alert('❌ Сначала выберите устройство');
@@ -501,48 +541,19 @@ async function setDisplayMode(mode) {
     }
 }
 
-async function updateWebcamVolume(value) {
-    if (!selectedAndroidIp) return;
-    
-    let targetIp = selectedAndroidIp;
-    if (!targetIp.includes(':')) {
-        targetIp = targetIp + ':8080';
-    }
-    
-    const display = document.getElementById('webcamVolumeValue');
-    if (display) display.textContent = `${value}%`;
-
-    try {
-        await window.app.api.setWebcamVolume(targetIp, value / 100);
-    } catch (error) {
-        console.error('Ошибка установки громкости:', error);
-    }
-}
-
-async function muteWebcam(mute) {
-    if (!selectedAndroidIp) return;
-    
-    let targetIp = selectedAndroidIp;
-    if (!targetIp.includes(':')) {
-        targetIp = targetIp + ':8080';
-    }
-    
-    try {
-        const volume = mute ? 0 : 100;
-        await window.app.api.setWebcamVolume(targetIp, volume / 100);
-        const display = document.getElementById('webcamVolumeValue');
-        const slider = document.getElementById('webcamVolume');
-        
-        if (display) display.textContent = mute ? '0%' : '100%';
-        if (slider) slider.value = mute ? 0 : 100;
-    } catch (error) {
-        console.error('Ошибка:', error);
-    }
-}
-
 async function toggleWebcamVisibility(visible) {
+    if (!selectedAndroidIp) {
+        alert('❌ Сначала выберите устройство');
+        return;
+    }
+    
+    let targetIp = selectedAndroidIp;
+    if (!targetIp.includes(':')) {
+        targetIp = targetIp + ':8080';
+    }
+
     try {
-        const result = await window.app.api.setWebcamVisibility(visible);
+        const result = await window.app.api.setWebcamVisibility(targetIp, visible);
         console.log(result.message);
     } catch (error) {
         alert('❌ Ошибка: ' + error.message);

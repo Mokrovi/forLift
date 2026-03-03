@@ -457,6 +457,9 @@
                                 <button type="button" onclick="sendStreamSignal()" class="btn btn-primary btn-sm w-100" style="margin-top:10px">
                                     📡 Подключить к стриму
                                 </button>
+                                <button type="button" onclick="disconnectAndroid()" class="btn btn-danger btn-sm w-100" style="margin-top:6px">
+                                    ❌ Отключить устройство
+                                </button>
                                 <button type="button" onclick="testStreamConnection()" class="btn btn-secondary btn-sm w-100" style="margin-top:6px">
                                     🧪 Тест связи
                                 </button>
@@ -495,7 +498,7 @@
                         <!-- Громкость -->
                         <div class="accordion-item" id="acc-volume">
                             <div class="accordion-header" onclick="toggleAccordion('volume')">
-                                <span class="accordion-title">🔊 Громкость</span>
+                                <span class="accordion-title">🔊 Звук</span>
                                 <span class="accordion-icon">▶</span>
                             </div>
                             <div class="accordion-content">
@@ -512,13 +515,12 @@
                                 </div>
                                 <div>
                                     <div style="display:flex;justify-content:space-between;margin-bottom:6px">
-                                        <span style="font-size:13px;color:#0ff">📷 Вебкамера:</span>
-                                        <span id="webcamVolumeValue" style="font-size:13px;color:#0ff;font-weight:600">100%</span>
+                                        <span style="font-size:13px;color:#0ff">🎤 Микрофон:</span>
+                                        <span id="micStatusValue" style="font-size:13px;color:#0ff;font-weight:600">Вкл</span>
                                     </div>
-                                    <input type="range" id="webcamVolume" min="0" max="100" value="100" class="volume-slider" oninput="updateWebcamVolume(this.value)">
-                                    <div style="display:flex;gap:6px;margin-top:6px;justify-content:flex-end">
-                                        <button type="button" onclick="muteWebcam(true)" class="btn btn-secondary btn-sm">🔇</button>
-                                        <button type="button" onclick="muteWebcam(false)" class="btn btn-secondary btn-sm">🔊</button>
+                                    <div style="display:flex;gap:6px;justify-content:flex-end">
+                                        <button type="button" onclick="toggleMicrophone(true)" class="btn btn-danger btn-sm" style="flex:1">🔇 Выкл</button>
+                                        <button type="button" onclick="toggleMicrophone(false)" class="btn btn-success btn-sm" style="flex:1">🔊 Вкл</button>
                                     </div>
                                 </div>
                             </div>

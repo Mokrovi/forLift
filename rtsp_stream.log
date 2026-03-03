@@ -5927,3 +5927,696 @@
 2026-03-03 17:24:39,336 - core.network_manager - INFO - 🌐 Внешний IP: 95.78.88.143
 2026-03-03 17:25:29,829 - config.settings - INFO - ✅ FFmpeg найден: C:\AndStudio\forLift\ffmpeg.exe
 2026-03-03 17:25:30,465 - core.network_manager - INFO - 🌐 Внешний IP: 95.78.88.143
+2026-03-03 17:25:49,828 - config.settings - INFO - ✅ FFmpeg найден: C:\AndStudio\forLift\ffmpeg.exe
+2026-03-03 17:25:50,500 - core.network_manager - INFO - 🌐 Внешний IP: 95.78.88.143
+2026-03-03 17:25:50,511 - __main__ - INFO - 🔧 Настройка окружения...
+2026-03-03 17:25:50,512 - utils.system_checker - INFO - ✅ Python 3.14.3
+2026-03-03 17:25:50,512 - utils.system_checker - INFO - ✅ FFmpeg найден: C:\AndStudio\forLift\ffmpeg.exe
+2026-03-03 17:25:50,513 - utils.system_checker - INFO - ✅ MediaMTX найден: C:\AndStudio\forLift\mediamtx.exe
+2026-03-03 17:25:50,513 - utils.system_checker - INFO - ✅ Библиотека flask доступна
+2026-03-03 17:25:50,513 - utils.system_checker - INFO - ✅ Библиотека requests доступна
+2026-03-03 17:25:50,513 - utils.system_checker - INFO - ✅ python: Доступен
+2026-03-03 17:25:50,513 - utils.system_checker - INFO - ✅ ffmpeg: Доступен
+2026-03-03 17:25:50,513 - utils.system_checker - INFO - ✅ mediamtx: Доступен
+2026-03-03 17:25:50,513 - utils.system_checker - INFO - ✅ flask: Доступен
+2026-03-03 17:25:50,513 - utils.system_checker - INFO - ✅ requests: Доступен
+2026-03-03 17:25:50,513 - __main__ - INFO - 🛡️ Настройка доступа через брандмауэр Windows...
+2026-03-03 17:25:50,513 - __main__ - INFO - 🛡️ Добавляем приложение в разрешенные программы брандмауэра...
+2026-03-03 17:25:50,513 - core.firewall_prompt - INFO - 📁 Путь к приложению: C:\Python314\python.exe
+2026-03-03 17:25:50,591 - core.firewall_prompt - INFO - 🛡️ Пытаемся добавить приложение в брандмауэр...
+2026-03-03 17:25:50,591 - core.firewall_prompt - INFO - 💡 Может появиться запрос от Защитника Windows
+2026-03-03 17:25:50,654 - core.firewall_prompt - WARNING - ⚠️ Не удалось добавить в брандмауэр: 
+2026-03-03 17:25:50,654 - core.firewall_prompt - INFO - 💡 Это нормально, если у вас нет прав администратора
+2026-03-03 17:25:50,654 - __main__ - WARNING - ⚠️ Не удалось добавить приложение в разрешенные программы
+2026-03-03 17:25:50,654 - __main__ - INFO - 💡 Это нормально, если приложение уже было добавлено ранее
+2026-03-03 17:25:50,654 - __main__ - INFO - 🔧 Настраиваем правила для портов...
+2026-03-03 17:25:50,654 - __main__ - INFO - ℹ️ Для автоматической настройки правил портов запустите программу от имени администратора
+2026-03-03 17:25:50,654 - __main__ - INFO - 📋 Вы можете настроить брандмауэр вручную через веб-интерфейс
+2026-03-03 17:25:52,655 - utils.system_checker - INFO - ✅ Python 3.14.3
+2026-03-03 17:25:52,655 - utils.system_checker - INFO - ✅ FFmpeg найден: C:\AndStudio\forLift\ffmpeg.exe
+2026-03-03 17:25:52,655 - utils.system_checker - INFO - ✅ MediaMTX найден: C:\AndStudio\forLift\mediamtx.exe
+2026-03-03 17:25:52,655 - __main__ - INFO - 🚀 Запуск сервисов...
+2026-03-03 17:25:52,688 - core.stream_manager - INFO - 🔄 Завершаем процесс 9512 на порту 8000
+2026-03-03 17:25:53,757 - core.stream_manager - INFO - 🔄 Завершаем процесс 9512 на порту 8000
+2026-03-03 17:25:56,852 - config.settings - INFO - ✅ MediaMTX найден: C:\AndStudio\forLift\mediamtx.exe
+2026-03-03 17:25:56,852 - core.stream_manager - INFO - 🗑️ Удален старый конфигурационный файл
+2026-03-03 17:25:56,853 - core.stream_manager - INFO - ✅ Конфигурационный файл MediaMTX создан
+2026-03-03 17:25:56,853 - core.stream_manager - INFO - 🔄 Запуск MediaMTX...
+2026-03-03 17:25:56,853 - core.stream_manager - INFO - 📁 Путь к MediaMTX: C:\AndStudio\forLift\mediamtx.exe
+2026-03-03 17:25:56,910 - core.stream_manager - INFO - MediaMTX: 2026/03/03 17:25:56 INF MediaMTX v1.9.2
+2026-03-03 17:25:56,910 - core.stream_manager - INFO - MediaMTX: 2026/03/03 17:25:56 INF configuration loaded from C:\AndStudio\forLift\mediamtx.yml
+2026-03-03 17:25:56,911 - core.stream_manager - INFO - MediaMTX: 2026/03/03 17:25:56 INF [RTSP] listener opened on :8554 (TCP), :8000 (UDP/RTP), :8001 (UDP/RTCP)
+2026-03-03 17:25:56,911 - core.stream_manager - INFO - MediaMTX: 2026/03/03 17:25:56 INF [RTMP] listener opened on :1935
+2026-03-03 17:25:56,911 - core.stream_manager - INFO - MediaMTX: 2026/03/03 17:25:56 INF [WebRTC] listener opened on :8889 (HTTP), :8189 (ICE/UDP)
+2026-03-03 17:25:56,912 - core.stream_manager - INFO - MediaMTX: 2026/03/03 17:25:56 INF [SRT] listener opened on :8890 (UDP)
+2026-03-03 17:25:56,912 - core.stream_manager - INFO - MediaMTX: 2026/03/03 17:25:56 INF [API] listener opened on :9997
+2026-03-03 17:25:59,857 - core.stream_manager - INFO - ✅ MediaMTX успешно запущен
+2026-03-03 17:25:59,858 - web.app - INFO - 🌐 Запуск веб-сервера на 0.0.0.0:5000
+2026-03-03 17:25:59,858 - web.app - INFO - ✅ Веб-интерфейс запущен
+2026-03-03 17:25:59,859 - __main__ - INFO - 🌐 Веб-интерфейс доступен по адресу: http://localhost:5000
+2026-03-03 17:25:59,859 - __main__ - INFO - 📹 RTSP поток будет доступен по адресу: rtsp://ваш-ip:8554/live/stream
+2026-03-03 17:25:59,859 - __main__ - INFO - ⏹️  Для остановки нажмите Ctrl+C
+2026-03-03 17:25:59,859 - __main__ - INFO - 
+2026-03-03 17:25:59,886 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.0.148:5000
+2026-03-03 17:25:59,886 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2026-03-03 17:26:00,121 - core.camera_finder - INFO - 🔍 Поиск и тестирование камер...
+2026-03-03 17:26:00,121 - core.camera_finder - INFO - 🔍 Поиск доступных камер...
+2026-03-03 17:26:00,215 - core.camera_finder - INFO - ✅ Метод 1: найдено 1 камер
+2026-03-03 17:26:00,290 - core.camera_finder - INFO - ✅ Метод 2: найдено 1 камер
+2026-03-03 17:26:00,290 - core.camera_finder - INFO - 📹 Найдено потенциальных камер: 2
+2026-03-03 17:26:00,290 - core.camera_finder - INFO -    - (video)
+2026-03-03 17:26:00,290 - core.camera_finder - INFO -    - A4tech FHD 1080P PC Camera
+2026-03-03 17:26:00,290 - core.camera_finder - INFO - 🔍 Тестируем камеру: (video)
+2026-03-03 17:26:00,290 - core.camera_finder - INFO - 🔄 Попытка 1 для камеры (video)
+2026-03-03 17:26:00,329 - core.camera_finder - INFO - 🔄 Попытка 2 для камеры (video)
+2026-03-03 17:26:00,367 - core.camera_finder - INFO - 🔄 Попытка 3 для камеры (video)
+2026-03-03 17:26:00,406 - core.camera_finder - INFO - ❌ (video) - нерабочая: Ошибка ввода-вывода (проверьте доступ к камере)
+2026-03-03 17:26:00,406 - core.camera_finder - INFO - 🔍 Тестируем камеру: A4tech FHD 1080P PC Camera
+2026-03-03 17:26:00,406 - core.camera_finder - INFO - 🔄 Попытка 1 для камеры A4tech FHD 1080P PC Camera
+2026-03-03 17:26:05,525 - core.camera_finder - INFO - 🔄 Попытка 2 для камеры A4tech FHD 1080P PC Camera
+2026-03-03 17:26:09,339 - core.camera_finder - INFO - ✅ Камера 'A4tech FHD 1080P PC Camera' - РАБОТАЕТ (попытка 2)
+2026-03-03 17:26:09,339 - core.camera_finder - INFO - ✅ A4tech FHD 1080P PC Camera - рабочая
+2026-03-03 17:26:09,339 - core.camera_finder - INFO - 🎯 Рабочие камеры: 1 из 2
+2026-03-03 17:26:09,339 - core.camera_finder - INFO -    ✅ A4tech FHD 1080P PC Camera
+2026-03-03 17:26:09,339 - config.settings - INFO - 📡 Локальный IP: 192.168.0.148
+2026-03-03 17:26:09,970 - config.settings - INFO - 🌐 Внешний IP: 95.78.88.143
+2026-03-03 17:26:09,972 - config.settings - INFO - ✅ FFmpeg найден: C:\AndStudio\forLift\ffmpeg.exe
+2026-03-03 17:26:09,972 - config.settings - INFO - ✅ MediaMTX найден: C:\AndStudio\forLift\mediamtx.exe
+2026-03-03 17:26:09,985 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2026 17:26:09] "GET / HTTP/1.1" 200 -
+2026-03-03 17:26:10,098 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2026 17:26:10] "[36mGET /static/css/main.css HTTP/1.1[0m" 304 -
+2026-03-03 17:26:10,099 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2026 17:26:10] "[36mGET /static/css/layout.css HTTP/1.1[0m" 304 -
+2026-03-03 17:26:10,334 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2026 17:26:10] "[36mGET /static/js/terminal.js?v=4 HTTP/1.1[0m" 304 -
+2026-03-03 17:26:10,334 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2026 17:26:10] "[36mGET /static/css/themes.css HTTP/1.1[0m" 304 -
+2026-03-03 17:26:10,335 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2026 17:26:10] "GET /static/js/main.js?v=4 HTTP/1.1" 200 -
+2026-03-03 17:26:10,335 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2026 17:26:10] "[36mGET /static/css/components.css HTTP/1.1[0m" 304 -
+2026-03-03 17:26:10,410 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2026 17:26:10] "GET /static/js/api.js?v=4 HTTP/1.1" 200 -
+2026-03-03 17:26:10,769 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2026 17:26:10] "GET /api/android/ips HTTP/1.1" 200 -
+2026-03-03 17:26:10,769 - config.settings - INFO - 📡 Локальный IP: 192.168.0.148
+2026-03-03 17:26:10,771 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2026 17:26:10] "GET /api/status HTTP/1.1" 200 -
+2026-03-03 17:26:10,771 - config.settings - INFO - ✅ FFmpeg найден: C:\AndStudio\forLift\ffmpeg.exe
+2026-03-03 17:26:10,868 - core.camera_finder - INFO - 🎤 Найдено 2 микрофонов
+2026-03-03 17:26:10,868 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2026 17:26:10] "GET /api/microphones HTTP/1.1" 200 -
+2026-03-03 17:26:11,032 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2026 17:26:11] "GET /api/network HTTP/1.1" 200 -
+2026-03-03 17:26:11,093 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2026 17:26:11] "GET /api/network/port-check HTTP/1.1" 200 -
+2026-03-03 17:26:11,094 - core.stream_manager - INFO - MediaMTX: 2026/03/03 17:26:11 INF [RTSP] [conn 127.0.0.1:57092] opened
+2026-03-03 17:26:11,094 - core.stream_manager - INFO - MediaMTX: 2026/03/03 17:26:11 INF [RTSP] [conn 127.0.0.1:57092] closed: EOF
+2026-03-03 17:26:20,470 - config.settings - INFO - 📡 Локальный IP: 192.168.0.148
+2026-03-03 17:26:20,470 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2026 17:26:20] "GET /api/status HTTP/1.1" 200 -
+2026-03-03 17:26:30,947 - config.settings - INFO - 📡 Локальный IP: 192.168.0.148
+2026-03-03 17:26:30,947 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2026 17:26:30] "GET /api/status HTTP/1.1" 200 -
+2026-03-03 17:26:40,461 - config.settings - INFO - 📡 Локальный IP: 192.168.0.148
+2026-03-03 17:26:40,461 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2026 17:26:40] "GET /api/status HTTP/1.1" 200 -
+2026-03-03 17:26:50,766 - config.settings - INFO - 📡 Локальный IP: 192.168.0.148
+2026-03-03 17:26:50,766 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2026 17:26:50] "GET /api/status HTTP/1.1" 200 -
+2026-03-03 17:27:00,456 - config.settings - INFO - 📡 Локальный IP: 192.168.0.148
+2026-03-03 17:27:00,457 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2026 17:27:00] "GET /api/status HTTP/1.1" 200 -
+2026-03-03 17:27:09,966 - core.camera_finder - INFO - 🔍 Тестируем камеру: A4tech FHD 1080P PC Camera
+2026-03-03 17:27:09,967 - core.camera_finder - INFO - 🔄 Попытка 1 для камеры A4tech FHD 1080P PC Camera
+2026-03-03 17:27:10,455 - config.settings - INFO - 📡 Локальный IP: 192.168.0.148
+2026-03-03 17:27:10,456 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2026 17:27:10] "GET /api/status HTTP/1.1" 200 -
+2026-03-03 17:27:15,051 - core.camera_finder - INFO - 🔄 Попытка 2 для камеры A4tech FHD 1080P PC Camera
+2026-03-03 17:27:18,811 - core.camera_finder - INFO - ✅ Камера 'A4tech FHD 1080P PC Camera' - РАБОТАЕТ (попытка 2)
+2026-03-03 17:27:18,811 - config.settings - INFO - ✅ FFmpeg найден: C:\AndStudio\forLift\ffmpeg.exe
+2026-03-03 17:27:18,811 - core.stream_manager - INFO - 🎬 Попытка 1 запуска стрима с камеры: A4tech FHD 1080P PC Camera
+2026-03-03 17:27:18,811 - core.stream_manager - INFO - 🔧 Команда: C:\AndStudio\forLift\ffmpeg.exe -f dshow -rtbufsize 32M -i video=A4tech FHD 1080P PC Camera:audio=Microphone (A4tech FHD 1080P PC Camera) -c:v libx264 -preset ultrafast -tune zerolatency -g 15 -keyint_min 15 -sc_threshold 0 -crf 25 -profile:v baseline -level 3.1 -pix_fmt yuv420p -vf scale=-1:720 -bf 0 -c:a aac -b:a 64k -ar 44100 -ac 1 -f rtsp -rtsp_transport udp -fflags +nobuffer -flags +low_delay -muxdelay 0 -muxpreload 0 rtsp://:@127.0.0.1:8554/live/stream
+2026-03-03 17:27:18,829 - core.stream_manager - INFO - FFmpeg: ffmpeg version 8.0.1-essentials_build-www.gyan.dev Copyright (c) 2000-2025 the FFmpeg developers
+2026-03-03 17:27:18,829 - core.stream_manager - ERROR - FFmpeg ERROR: libswresample   6.  1.100 /  6.  1.100
+2026-03-03 17:27:20,524 - core.stream_manager - INFO - FFmpeg: [aist#0:1/pcm_s16le @ 000002689ed92ec0] Guessed Channel Layout: stereo
+2026-03-03 17:27:20,524 - core.stream_manager - ERROR - FFmpeg ERROR: Stream #0:1: Audio: pcm_s16le, 44100 Hz, stereo, s16, 1411 kb/s, start 153301.966000
+2026-03-03 17:27:20,524 - core.stream_manager - INFO - FFmpeg: Stream mapping:
+2026-03-03 17:27:20,525 - core.stream_manager - ERROR - FFmpeg ERROR: Stream #0:0 -> #0:0 (mjpeg (native) -> h264 (libx264))
+2026-03-03 17:27:20,525 - core.stream_manager - ERROR - FFmpeg ERROR: Stream #0:1 -> #0:1 (pcm_s16le (native) -> aac (native))
+2026-03-03 17:27:20,525 - core.stream_manager - INFO - FFmpeg: Press [q] to stop, [?] for help
+2026-03-03 17:27:20,535 - core.stream_manager - ERROR - FFmpeg ERROR: [swscaler @ 000002689ee21d00] deprecated pixel format used, make sure you did set range correctly
+2026-03-03 17:27:20,547 - core.stream_manager - INFO - FFmpeg: [libx264 @ 000002689ed94c40] using cpu capabilities: MMX2 SSE2Fast SSSE3 SSE4.2 AVX FMA3 BMI2 AVX2
+2026-03-03 17:27:20,548 - core.stream_manager - ERROR - FFmpeg ERROR: [libx264 @ 000002689ed94c40] profile Constrained Baseline, level 3.1, 4:2:0, 8-bit
+2026-03-03 17:27:20,548 - core.stream_manager - ERROR - FFmpeg ERROR: [libx264 @ 000002689ed94c40] 264 - core 165 r3223 0480cb0 - H.264/MPEG-4 AVC codec - Copyleft 2003-2025 - http://www.videolan.org/x264.html - options: cabac=0 ref=1 deblock=0:0:0 analyse=0:0 me=dia subme=0 psy=1 psy_rd=1.00:0.00 mixed_ref=0 me_range=16 chroma_me=1 trellis=0 8x8dct=0 cqm=0 deadzone=21,11 fast_pskip=1 chroma_qp_offset=0 threads=6 lookahead_threads=6 sliced_threads=1 slices=6 nr=0 decimate=1 interlaced=0 bluray_compat=0 constrained_intra=0 bframes=0 weightp=0 keyint=15 keyint_min=8 scenecut=0 intra_refresh=0 rc=crf mbtree=0 crf=25.0 qcomp=0.60 qpmin=0 qpmax=69 qpstep=4 ip_ratio=1.40 aq=0
+2026-03-03 17:27:20,550 - core.stream_manager - INFO - MediaMTX: 2026/03/03 17:27:20 INF [RTSP] [conn 127.0.0.1:57135] opened
+2026-03-03 17:27:20,551 - core.stream_manager - INFO - MediaMTX: 2026/03/03 17:27:20 INF [RTSP] [session 3dd4e508] created by 127.0.0.1:57135
+2026-03-03 17:27:20,553 - core.stream_manager - INFO - MediaMTX: 2026/03/03 17:27:20 INF [RTSP] [session 3dd4e508] is publishing to path 'live/stream', 2 tracks (H264, MPEG-4 Audio)
+2026-03-03 17:27:20,553 - core.stream_manager - INFO - FFmpeg: Output #0, rtsp, to 'rtsp://:@127.0.0.1:8554/live/stream':
+2026-03-03 17:27:20,553 - core.stream_manager - INFO - FFmpeg: Metadata:
+2026-03-03 17:27:20,553 - core.stream_manager - ERROR - FFmpeg ERROR: Stream #0:0: Video: h264, yuv420p(pc, bt470bg/bt709/unknown, progressive), 1280x720, q=2-31, 30 fps, 90k tbn
+2026-03-03 17:27:20,553 - core.stream_manager - INFO - FFmpeg: Metadata:
+2026-03-03 17:27:20,553 - core.stream_manager - ERROR - FFmpeg ERROR: encoder         : Lavc62.11.100 libx264
+2026-03-03 17:27:20,554 - core.stream_manager - INFO - FFmpeg: Side data:
+2026-03-03 17:27:20,554 - core.stream_manager - ERROR - FFmpeg ERROR: cpb: bitrate max/min/avg: 0/0/0 buffer size: 0 vbv_delay: N/A
+2026-03-03 17:27:20,554 - core.stream_manager - INFO - FFmpeg: Stream #0:1: Audio: aac (LC), 44100 Hz, mono, fltp, 64 kb/s
+2026-03-03 17:27:20,554 - core.stream_manager - ERROR - FFmpeg ERROR: Metadata:
+2026-03-03 17:27:20,554 - core.stream_manager - INFO - FFmpeg: encoder         : Lavc62.11.100 aac
+2026-03-03 17:27:20,767 - config.settings - INFO - 📡 Локальный IP: 192.168.0.148
+2026-03-03 17:27:20,768 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2026 17:27:20] "GET /api/status HTTP/1.1" 200 -
+2026-03-03 17:27:21,816 - core.stream_manager - INFO - ✅ Стрим успешно запущен (попытка 1)
+2026-03-03 17:27:21,816 - config.settings - INFO - 📡 Локальный IP: 192.168.0.148
+2026-03-03 17:27:22,430 - config.settings - INFO - 🌐 Внешний IP: 95.78.88.143
+2026-03-03 17:27:22,432 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2026 17:27:22] "POST /api/stream/start HTTP/1.1" 200 -
+2026-03-03 17:27:27,161 - config.settings - INFO - 📡 Локальный IP: 192.168.0.148
+2026-03-03 17:27:27,161 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2026 17:27:27] "GET /api/status HTTP/1.1" 200 -
+2026-03-03 17:27:30,460 - config.settings - INFO - 📡 Локальный IP: 192.168.0.148
+2026-03-03 17:27:30,461 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2026 17:27:30] "GET /api/status HTTP/1.1" 200 -
+2026-03-03 17:27:40,769 - config.settings - INFO - 📡 Локальный IP: 192.168.0.148
+2026-03-03 17:27:40,769 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2026 17:27:40] "GET /api/status HTTP/1.1" 200 -
+2026-03-03 17:27:43,657 - web.app - INFO - 📱 Добавлен IP для Android: 192.168.0.110
+2026-03-03 17:27:43,657 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2026 17:27:43] "POST /api/android/ips HTTP/1.1" 200 -
+2026-03-03 17:27:47,727 - core.stream_manager - INFO - MediaMTX: 2026/03/03 17:27:47 INF [RTSP] [conn 192.168.0.110:59886] opened
+2026-03-03 17:27:47,914 - core.stream_manager - INFO - MediaMTX: 2026/03/03 17:27:47 INF [RTSP] [session 237348dc] created by 192.168.0.110:59886
+2026-03-03 17:27:48,366 - core.stream_manager - INFO - MediaMTX: 2026/03/03 17:27:48 INF [RTSP] [session 237348dc] is reading from path 'live/stream', with UDP, 2 tracks (H264, MPEG-4 Audio)
+2026-03-03 17:27:50,770 - config.settings - INFO - 📡 Локальный IP: 192.168.0.148
+2026-03-03 17:27:50,770 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2026 17:27:50] "GET /api/status HTTP/1.1" 200 -
+2026-03-03 17:28:00,458 - config.settings - INFO - 📡 Локальный IP: 192.168.0.148
+2026-03-03 17:28:00,458 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2026 17:28:00] "GET /api/status HTTP/1.1" 200 -
+2026-03-03 17:28:10,771 - config.settings - INFO - 📡 Локальный IP: 192.168.0.148
+2026-03-03 17:28:10,772 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2026 17:28:10] "GET /api/status HTTP/1.1" 200 -
+2026-03-03 17:28:20,458 - config.settings - INFO - 📡 Локальный IP: 192.168.0.148
+2026-03-03 17:28:20,458 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2026 17:28:20] "GET /api/status HTTP/1.1" 200 -
+2026-03-03 17:28:30,765 - config.settings - INFO - 📡 Локальный IP: 192.168.0.148
+2026-03-03 17:28:30,765 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2026 17:28:30] "GET /api/status HTTP/1.1" 200 -
+2026-03-03 17:28:40,464 - config.settings - INFO - 📡 Локальный IP: 192.168.0.148
+2026-03-03 17:28:40,464 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2026 17:28:40] "GET /api/status HTTP/1.1" 200 -
+2026-03-03 17:28:50,765 - config.settings - INFO - 📡 Локальный IP: 192.168.0.148
+2026-03-03 17:28:50,765 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2026 17:28:50] "GET /api/status HTTP/1.1" 200 -
+2026-03-03 17:28:58,041 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2026 17:28:58] "POST /api/webcam/volume HTTP/1.1" 200 -
+2026-03-03 17:28:59,999 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2026 17:28:59] "POST /api/webcam/volume HTTP/1.1" 200 -
+2026-03-03 17:29:00,469 - config.settings - INFO - 📡 Локальный IP: 192.168.0.148
+2026-03-03 17:29:00,469 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2026 17:29:00] "GET /api/status HTTP/1.1" 200 -
+2026-03-03 17:29:10,769 - config.settings - INFO - 📡 Локальный IP: 192.168.0.148
+2026-03-03 17:29:10,769 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2026 17:29:10] "GET /api/status HTTP/1.1" 200 -
+2026-03-03 17:29:16,882 - core.stream_manager - INFO - MediaMTX: 2026/03/03 17:29:16 INF [RTSP] [conn 127.0.0.1:57135] closed: read tcp 127.0.0.1:8554->127.0.0.1:57135: wsarecv: An existing connection was forcibly closed by the remote host.
+2026-03-03 17:29:16,889 - core.stream_manager - INFO - ⏹️ Стрим остановлен
+2026-03-03 17:29:16,889 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2026 17:29:16] "POST /api/stream/stop HTTP/1.1" 200 -
+2026-03-03 17:29:19,363 - config.settings - INFO - 📡 Локальный IP: 192.168.0.148
+2026-03-03 17:29:19,364 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2026 17:29:19] "GET /api/status HTTP/1.1" 200 -
+2026-03-03 17:29:20,463 - config.settings - INFO - 📡 Локальный IP: 192.168.0.148
+2026-03-03 17:29:20,464 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2026 17:29:20] "GET /api/status HTTP/1.1" 200 -
+2026-03-03 17:29:26,580 - core.stream_manager - INFO - MediaMTX: 2026/03/03 17:29:26 INF [RTSP] [session 3dd4e508] destroyed: session timed out
+2026-03-03 17:29:26,580 - core.stream_manager - INFO - MediaMTX: 2026/03/03 17:29:26 INF [RTSP] [conn 192.168.0.110:59886] closed: terminated
+2026-03-03 17:29:26,581 - core.stream_manager - INFO - MediaMTX: 2026/03/03 17:29:26 INF [RTSP] [session 237348dc] destroyed: terminated
+2026-03-03 17:29:30,770 - config.settings - INFO - 📡 Локальный IP: 192.168.0.148
+2026-03-03 17:29:30,771 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2026 17:29:30] "GET /api/status HTTP/1.1" 200 -
+2026-03-03 17:29:40,469 - config.settings - INFO - 📡 Локальный IP: 192.168.0.148
+2026-03-03 17:29:40,470 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2026 17:29:40] "GET /api/status HTTP/1.1" 200 -
+2026-03-03 17:29:50,769 - config.settings - INFO - 📡 Локальный IP: 192.168.0.148
+2026-03-03 17:29:50,770 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2026 17:29:50] "GET /api/status HTTP/1.1" 200 -
+2026-03-03 17:30:00,474 - config.settings - INFO - 📡 Локальный IP: 192.168.0.148
+2026-03-03 17:30:00,475 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2026 17:30:00] "GET /api/status HTTP/1.1" 200 -
+2026-03-03 17:30:10,767 - config.settings - INFO - 📡 Локальный IP: 192.168.0.148
+2026-03-03 17:30:10,767 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2026 17:30:10] "GET /api/status HTTP/1.1" 200 -
+2026-03-03 17:30:20,468 - config.settings - INFO - 📡 Локальный IP: 192.168.0.148
+2026-03-03 17:30:20,468 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2026 17:30:20] "GET /api/status HTTP/1.1" 200 -
+2026-03-03 17:30:30,774 - config.settings - INFO - 📡 Локальный IP: 192.168.0.148
+2026-03-03 17:30:30,774 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2026 17:30:30] "GET /api/status HTTP/1.1" 200 -
+2026-03-03 17:30:40,469 - config.settings - INFO - 📡 Локальный IP: 192.168.0.148
+2026-03-03 17:30:40,470 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2026 17:30:40] "GET /api/status HTTP/1.1" 200 -
+2026-03-03 17:30:50,767 - config.settings - INFO - 📡 Локальный IP: 192.168.0.148
+2026-03-03 17:30:50,767 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2026 17:30:50] "GET /api/status HTTP/1.1" 200 -
+2026-03-03 17:31:00,466 - config.settings - INFO - 📡 Локальный IP: 192.168.0.148
+2026-03-03 17:31:00,467 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2026 17:31:00] "GET /api/status HTTP/1.1" 200 -
+2026-03-03 17:31:10,767 - config.settings - INFO - 📡 Локальный IP: 192.168.0.148
+2026-03-03 17:31:10,767 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2026 17:31:10] "GET /api/status HTTP/1.1" 200 -
+2026-03-03 17:31:20,469 - config.settings - INFO - 📡 Локальный IP: 192.168.0.148
+2026-03-03 17:31:20,470 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2026 17:31:20] "GET /api/status HTTP/1.1" 200 -
+2026-03-03 17:31:30,777 - config.settings - INFO - 📡 Локальный IP: 192.168.0.148
+2026-03-03 17:31:30,778 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2026 17:31:30] "GET /api/status HTTP/1.1" 200 -
+2026-03-03 17:31:40,460 - config.settings - INFO - 📡 Локальный IP: 192.168.0.148
+2026-03-03 17:31:40,461 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2026 17:31:40] "GET /api/status HTTP/1.1" 200 -
+2026-03-03 17:31:50,809 - config.settings - INFO - 📡 Локальный IP: 192.168.0.148
+2026-03-03 17:31:50,809 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2026 17:31:50] "GET /api/status HTTP/1.1" 200 -
+2026-03-03 17:32:00,471 - config.settings - INFO - 📡 Локальный IP: 192.168.0.148
+2026-03-03 17:32:00,472 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2026 17:32:00] "GET /api/status HTTP/1.1" 200 -
+2026-03-03 17:32:10,782 - config.settings - INFO - 📡 Локальный IP: 192.168.0.148
+2026-03-03 17:32:10,783 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2026 17:32:10] "GET /api/status HTTP/1.1" 200 -
+2026-03-03 17:32:20,466 - config.settings - INFO - 📡 Локальный IP: 192.168.0.148
+2026-03-03 17:32:20,467 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2026 17:32:20] "GET /api/status HTTP/1.1" 200 -
+2026-03-03 17:32:30,773 - config.settings - INFO - 📡 Локальный IP: 192.168.0.148
+2026-03-03 17:32:30,773 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2026 17:32:30] "GET /api/status HTTP/1.1" 200 -
+2026-03-03 17:32:40,455 - config.settings - INFO - 📡 Локальный IP: 192.168.0.148
+2026-03-03 17:32:40,455 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2026 17:32:40] "GET /api/status HTTP/1.1" 200 -
+2026-03-03 17:32:50,766 - config.settings - INFO - 📡 Локальный IP: 192.168.0.148
+2026-03-03 17:32:50,767 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2026 17:32:50] "GET /api/status HTTP/1.1" 200 -
+2026-03-03 17:33:00,468 - config.settings - INFO - 📡 Локальный IP: 192.168.0.148
+2026-03-03 17:33:00,469 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2026 17:33:00] "GET /api/status HTTP/1.1" 200 -
+2026-03-03 17:33:10,778 - config.settings - INFO - 📡 Локальный IP: 192.168.0.148
+2026-03-03 17:33:10,778 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2026 17:33:10] "GET /api/status HTTP/1.1" 200 -
+2026-03-03 17:33:20,467 - config.settings - INFO - 📡 Локальный IP: 192.168.0.148
+2026-03-03 17:33:20,468 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2026 17:33:20] "GET /api/status HTTP/1.1" 200 -
+2026-03-03 18:04:14,553 - config.settings - INFO - ✅ FFmpeg найден: C:\AndStudio\forLift\ffmpeg.exe
+2026-03-03 18:04:15,224 - core.network_manager - INFO - 🌐 Внешний IP: 95.78.88.143
+2026-03-03 18:04:15,253 - __main__ - INFO - 🔧 Настройка окружения...
+2026-03-03 18:04:15,254 - utils.system_checker - INFO - ✅ Python 3.14.3
+2026-03-03 18:04:15,255 - utils.system_checker - INFO - ✅ FFmpeg найден: C:\AndStudio\forLift\ffmpeg.exe
+2026-03-03 18:04:15,255 - utils.system_checker - INFO - ✅ MediaMTX найден: C:\AndStudio\forLift\mediamtx.exe
+2026-03-03 18:04:15,255 - utils.system_checker - INFO - ✅ Библиотека flask доступна
+2026-03-03 18:04:15,255 - utils.system_checker - INFO - ✅ Библиотека requests доступна
+2026-03-03 18:04:15,255 - utils.system_checker - INFO - ✅ python: Доступен
+2026-03-03 18:04:15,255 - utils.system_checker - INFO - ✅ ffmpeg: Доступен
+2026-03-03 18:04:15,255 - utils.system_checker - INFO - ✅ mediamtx: Доступен
+2026-03-03 18:04:15,255 - utils.system_checker - INFO - ✅ flask: Доступен
+2026-03-03 18:04:15,255 - utils.system_checker - INFO - ✅ requests: Доступен
+2026-03-03 18:04:15,255 - __main__ - INFO - 🛡️ Настройка доступа через брандмауэр Windows...
+2026-03-03 18:04:15,255 - __main__ - INFO - 🛡️ Добавляем приложение в разрешенные программы брандмауэра...
+2026-03-03 18:04:15,256 - core.firewall_prompt - INFO - 📁 Путь к приложению: C:\Python314\python.exe
+2026-03-03 18:04:15,334 - core.firewall_prompt - INFO - 🛡️ Пытаемся добавить приложение в брандмауэр...
+2026-03-03 18:04:15,334 - core.firewall_prompt - INFO - 💡 Может появиться запрос от Защитника Windows
+2026-03-03 18:04:15,392 - core.firewall_prompt - WARNING - ⚠️ Не удалось добавить в брандмауэр: 
+2026-03-03 18:04:15,392 - core.firewall_prompt - INFO - 💡 Это нормально, если у вас нет прав администратора
+2026-03-03 18:04:15,392 - __main__ - WARNING - ⚠️ Не удалось добавить приложение в разрешенные программы
+2026-03-03 18:04:15,393 - __main__ - INFO - 💡 Это нормально, если приложение уже было добавлено ранее
+2026-03-03 18:04:15,393 - __main__ - INFO - 🔧 Настраиваем правила для портов...
+2026-03-03 18:04:15,393 - __main__ - INFO - ℹ️ Для автоматической настройки правил портов запустите программу от имени администратора
+2026-03-03 18:04:15,393 - __main__ - INFO - 📋 Вы можете настроить брандмауэр вручную через веб-интерфейс
+2026-03-03 18:04:17,393 - utils.system_checker - INFO - ✅ Python 3.14.3
+2026-03-03 18:04:17,393 - utils.system_checker - INFO - ✅ FFmpeg найден: C:\AndStudio\forLift\ffmpeg.exe
+2026-03-03 18:04:17,393 - utils.system_checker - INFO - ✅ MediaMTX найден: C:\AndStudio\forLift\mediamtx.exe
+2026-03-03 18:04:17,393 - __main__ - INFO - 🚀 Запуск сервисов...
+2026-03-03 18:04:17,431 - core.stream_manager - INFO - 🔄 Завершаем процесс 12360 на порту 8000
+2026-03-03 18:04:18,499 - core.stream_manager - INFO - 🔄 Завершаем процесс 12360 на порту 8000
+2026-03-03 18:04:21,616 - config.settings - INFO - ✅ MediaMTX найден: C:\AndStudio\forLift\mediamtx.exe
+2026-03-03 18:04:21,617 - core.stream_manager - INFO - 🗑️ Удален старый конфигурационный файл
+2026-03-03 18:04:21,619 - core.stream_manager - INFO - ✅ Конфигурационный файл MediaMTX создан
+2026-03-03 18:04:21,619 - core.stream_manager - INFO - 🔄 Запуск MediaMTX...
+2026-03-03 18:04:21,619 - core.stream_manager - INFO - 📁 Путь к MediaMTX: C:\AndStudio\forLift\mediamtx.exe
+2026-03-03 18:04:21,684 - core.stream_manager - INFO - MediaMTX: 2026/03/03 18:04:21 INF MediaMTX v1.9.2
+2026-03-03 18:04:21,684 - core.stream_manager - INFO - MediaMTX: 2026/03/03 18:04:21 INF configuration loaded from C:\AndStudio\forLift\mediamtx.yml
+2026-03-03 18:04:21,685 - core.stream_manager - INFO - MediaMTX: 2026/03/03 18:04:21 INF [RTSP] listener opened on :8554 (TCP), :8000 (UDP/RTP), :8001 (UDP/RTCP)
+2026-03-03 18:04:21,685 - core.stream_manager - INFO - MediaMTX: 2026/03/03 18:04:21 INF [RTMP] listener opened on :1935
+2026-03-03 18:04:21,685 - core.stream_manager - INFO - MediaMTX: 2026/03/03 18:04:21 INF [WebRTC] listener opened on :8889 (HTTP), :8189 (ICE/UDP)
+2026-03-03 18:04:21,685 - core.stream_manager - INFO - MediaMTX: 2026/03/03 18:04:21 INF [SRT] listener opened on :8890 (UDP)
+2026-03-03 18:04:21,685 - core.stream_manager - INFO - MediaMTX: 2026/03/03 18:04:21 INF [API] listener opened on :9997
+2026-03-03 18:04:24,626 - core.stream_manager - INFO - ✅ MediaMTX успешно запущен
+2026-03-03 18:04:24,626 - web.app - INFO - 🌐 Запуск веб-сервера на 0.0.0.0:5000
+2026-03-03 18:04:24,626 - web.app - INFO - ✅ Веб-интерфейс запущен
+2026-03-03 18:04:24,626 - __main__ - INFO - 🌐 Веб-интерфейс доступен по адресу: http://localhost:5000
+2026-03-03 18:04:24,627 - __main__ - INFO - 📹 RTSP поток будет доступен по адресу: rtsp://ваш-ip:8554/live/stream
+2026-03-03 18:04:24,627 - __main__ - INFO - ⏹️  Для остановки нажмите Ctrl+C
+2026-03-03 18:04:24,627 - __main__ - INFO - 
+2026-03-03 18:04:24,639 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.0.148:5000
+2026-03-03 18:04:24,639 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2026-03-03 18:04:25,362 - core.camera_finder - INFO - 🔍 Поиск и тестирование камер...
+2026-03-03 18:04:25,362 - core.camera_finder - INFO - 🔍 Поиск доступных камер...
+2026-03-03 18:04:25,462 - core.camera_finder - INFO - ✅ Метод 1: найдено 1 камер
+2026-03-03 18:04:25,538 - core.camera_finder - INFO - ✅ Метод 2: найдено 1 камер
+2026-03-03 18:04:25,538 - core.camera_finder - INFO - 📹 Найдено потенциальных камер: 2
+2026-03-03 18:04:25,539 - core.camera_finder - INFO -    - (video)
+2026-03-03 18:04:25,539 - core.camera_finder - INFO -    - A4tech FHD 1080P PC Camera
+2026-03-03 18:04:25,539 - core.camera_finder - INFO - 🔍 Тестируем камеру: (video)
+2026-03-03 18:04:25,539 - core.camera_finder - INFO - 🔄 Попытка 1 для камеры (video)
+2026-03-03 18:04:25,577 - core.camera_finder - INFO - 🔄 Попытка 2 для камеры (video)
+2026-03-03 18:04:25,614 - core.camera_finder - INFO - 🔄 Попытка 3 для камеры (video)
+2026-03-03 18:04:25,652 - core.camera_finder - INFO - ❌ (video) - нерабочая: Ошибка ввода-вывода (проверьте доступ к камере)
+2026-03-03 18:04:25,652 - core.camera_finder - INFO - 🔍 Тестируем камеру: A4tech FHD 1080P PC Camera
+2026-03-03 18:04:25,652 - core.camera_finder - INFO - 🔄 Попытка 1 для камеры A4tech FHD 1080P PC Camera
+2026-03-03 18:04:30,967 - core.camera_finder - INFO - 🔄 Попытка 2 для камеры A4tech FHD 1080P PC Camera
+2026-03-03 18:04:34,400 - core.camera_finder - INFO - ✅ Камера 'A4tech FHD 1080P PC Camera' - РАБОТАЕТ (попытка 2)
+2026-03-03 18:04:34,400 - core.camera_finder - INFO - ✅ A4tech FHD 1080P PC Camera - рабочая
+2026-03-03 18:04:34,400 - core.camera_finder - INFO - 🎯 Рабочие камеры: 1 из 2
+2026-03-03 18:04:34,401 - core.camera_finder - INFO -    ✅ A4tech FHD 1080P PC Camera
+2026-03-03 18:04:34,401 - config.settings - INFO - 📡 Локальный IP: 192.168.0.148
+2026-03-03 18:04:35,147 - config.settings - INFO - 🌐 Внешний IP: 95.78.88.143
+2026-03-03 18:04:35,151 - config.settings - INFO - ✅ FFmpeg найден: C:\AndStudio\forLift\ffmpeg.exe
+2026-03-03 18:04:35,151 - config.settings - INFO - ✅ MediaMTX найден: C:\AndStudio\forLift\mediamtx.exe
+2026-03-03 18:04:35,181 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2026 18:04:35] "GET / HTTP/1.1" 200 -
+2026-03-03 18:04:35,289 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2026 18:04:35] "[36mGET /static/css/layout.css HTTP/1.1[0m" 304 -
+2026-03-03 18:04:35,290 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2026 18:04:35] "[36mGET /static/css/main.css HTTP/1.1[0m" 304 -
+2026-03-03 18:04:35,527 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2026 18:04:35] "[36mGET /static/css/themes.css HTTP/1.1[0m" 304 -
+2026-03-03 18:04:35,528 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2026 18:04:35] "[36mGET /static/css/components.css HTTP/1.1[0m" 304 -
+2026-03-03 18:04:35,529 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2026 18:04:35] "[36mGET /static/js/main.js?v=4 HTTP/1.1[0m" 304 -
+2026-03-03 18:04:35,532 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2026 18:04:35] "[36mGET /static/js/terminal.js?v=4 HTTP/1.1[0m" 304 -
+2026-03-03 18:04:35,608 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2026 18:04:35] "[36mGET /static/js/api.js?v=4 HTTP/1.1[0m" 304 -
+2026-03-03 18:04:35,961 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2026 18:04:35] "GET /api/android/ips HTTP/1.1" 200 -
+2026-03-03 18:04:35,964 - config.settings - INFO - 📡 Локальный IP: 192.168.0.148
+2026-03-03 18:04:35,967 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2026 18:04:35] "GET /api/status HTTP/1.1" 200 -
+2026-03-03 18:04:35,968 - config.settings - INFO - ✅ FFmpeg найден: C:\AndStudio\forLift\ffmpeg.exe
+2026-03-03 18:04:36,086 - core.camera_finder - INFO - 🎤 Найдено 2 микрофонов
+2026-03-03 18:04:36,086 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2026 18:04:36] "GET /api/microphones HTTP/1.1" 200 -
+2026-03-03 18:04:36,221 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2026 18:04:36] "GET /api/network HTTP/1.1" 200 -
+2026-03-03 18:04:36,300 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2026 18:04:36] "GET /api/network/port-check HTTP/1.1" 200 -
+2026-03-03 18:04:36,301 - core.stream_manager - INFO - MediaMTX: 2026/03/03 18:04:36 INF [RTSP] [conn 127.0.0.1:57780] opened
+2026-03-03 18:04:36,301 - core.stream_manager - INFO - MediaMTX: 2026/03/03 18:04:36 INF [RTSP] [conn 127.0.0.1:57780] closed: EOF
+2026-03-03 18:04:45,652 - config.settings - INFO - 📡 Локальный IP: 192.168.0.148
+2026-03-03 18:04:45,652 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2026 18:04:45] "GET /api/status HTTP/1.1" 200 -
+2026-03-03 18:04:54,323 - web.app - INFO - 📱 Добавлен IP для Android: 192.168.0.110
+2026-03-03 18:04:54,323 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2026 18:04:54] "POST /api/android/ips HTTP/1.1" 200 -
+2026-03-03 18:04:55,648 - config.settings - INFO - 📡 Локальный IP: 192.168.0.148
+2026-03-03 18:04:55,649 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2026 18:04:55] "GET /api/status HTTP/1.1" 200 -
+2026-03-03 18:05:05,966 - config.settings - INFO - 📡 Локальный IP: 192.168.0.148
+2026-03-03 18:05:05,966 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2026 18:05:05] "GET /api/status HTTP/1.1" 200 -
+2026-03-03 18:05:11,111 - core.camera_finder - INFO - 🔍 Тестируем камеру: A4tech FHD 1080P PC Camera
+2026-03-03 18:05:11,112 - core.camera_finder - INFO - 🔄 Попытка 1 для камеры A4tech FHD 1080P PC Camera
+2026-03-03 18:05:15,734 - core.camera_finder - INFO - ✅ Камера 'A4tech FHD 1080P PC Camera' - РАБОТАЕТ (попытка 1)
+2026-03-03 18:05:15,734 - config.settings - INFO - ✅ FFmpeg найден: C:\AndStudio\forLift\ffmpeg.exe
+2026-03-03 18:05:15,734 - core.stream_manager - INFO - 🎬 Попытка 1 запуска стрима с камеры: A4tech FHD 1080P PC Camera
+2026-03-03 18:05:15,734 - core.stream_manager - INFO - 🔧 Команда: C:\AndStudio\forLift\ffmpeg.exe -f dshow -rtbufsize 32M -i video=A4tech FHD 1080P PC Camera:audio=Микрофон (Realtek High Definition Audio) -c:v libx264 -preset ultrafast -tune zerolatency -g 15 -keyint_min 15 -sc_threshold 0 -crf 25 -profile:v baseline -level 3.1 -pix_fmt yuv420p -vf scale=-1:720 -bf 0 -c:a aac -b:a 64k -ar 44100 -ac 1 -f rtsp -rtsp_transport udp -fflags +nobuffer -flags +low_delay -muxdelay 0 -muxpreload 0 rtsp://:@127.0.0.1:8554/live/stream
+2026-03-03 18:05:15,752 - core.stream_manager - INFO - FFmpeg: ffmpeg version 8.0.1-essentials_build-www.gyan.dev Copyright (c) 2000-2025 the FFmpeg developers
+2026-03-03 18:05:15,752 - core.stream_manager - INFO - FFmpeg: built with gcc 15.2.0 (Rev8, Built by MSYS2 project)
+2026-03-03 18:05:15,753 - core.stream_manager - INFO - FFmpeg: configuration: --enable-gpl --enable-version3 --enable-static --disable-w32threads --disable-autodetect --enable-fontconfig --enable-iconv --enable-gnutls --enable-libxml2 --enable-gmp --enable-bzlib --enable-lzma --enable-zlib --enable-libsrt --enable-libssh --enable-libzmq --enable-avisynth --enable-sdl2 --enable-libwebp --enable-libx264 --enable-libx265 --enable-libxvid --enable-libaom --enable-libopenjpeg --enable-libvpx --enable-mediafoundation --enable-libass --enable-libfreetype --enable-libfribidi --enable-libharfbuzz --enable-libvidstab --enable-libvmaf --enable-libzimg --enable-amf --enable-cuda-llvm --enable-cuvid --enable-dxva2 --enable-d3d11va --enable-d3d12va --enable-ffnvcodec --enable-libvpl --enable-nvdec --enable-nvenc --enable-vaapi --enable-openal --enable-libgme --enable-libopenmpt --enable-libopencore-amrwb --enable-libmp3lame --enable-libtheora --enable-libvo-amrwbenc --enable-libgsm --enable-libopencore-amrnb --enable-libopus --enable-libspeex --enable-libvorbis --enable-librubberband
+2026-03-03 18:05:15,753 - core.stream_manager - INFO - FFmpeg: libavutil      60.  8.100 / 60.  8.100
+2026-03-03 18:05:15,753 - core.stream_manager - INFO - FFmpeg: libavcodec     62. 11.100 / 62. 11.100
+2026-03-03 18:05:15,753 - core.stream_manager - INFO - FFmpeg: libavformat    62.  3.100 / 62.  3.100
+2026-03-03 18:05:15,753 - core.stream_manager - INFO - FFmpeg: libavdevice    62.  1.100 / 62.  1.100
+2026-03-03 18:05:15,753 - core.stream_manager - INFO - FFmpeg: libavfilter    11.  4.100 / 11.  4.100
+2026-03-03 18:05:15,753 - core.stream_manager - INFO - FFmpeg: libswscale      9.  1.100 /  9.  1.100
+2026-03-03 18:05:15,753 - core.stream_manager - INFO - FFmpeg: libswresample   6.  1.100 /  6.  1.100
+2026-03-03 18:05:15,972 - config.settings - INFO - 📡 Локальный IP: 192.168.0.148
+2026-03-03 18:05:15,972 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2026 18:05:15] "GET /api/status HTTP/1.1" 200 -
+2026-03-03 18:05:17,484 - core.stream_manager - ERROR - FFmpeg ERROR: [aist#0:1/pcm_s16le @ 0000027822e8eac0] Guessed Channel Layout: stereo
+2026-03-03 18:05:17,484 - core.stream_manager - INFO - FFmpeg: Stream #0:1: Audio: pcm_s16le, 44100 Hz, stereo, s16, 1411 kb/s, start 155578.945000
+2026-03-03 18:05:17,485 - core.stream_manager - ERROR - FFmpeg ERROR: Stream mapping:
+2026-03-03 18:05:17,485 - core.stream_manager - INFO - FFmpeg: Stream #0:0 -> #0:0 (mjpeg (native) -> h264 (libx264))
+2026-03-03 18:05:17,485 - core.stream_manager - ERROR - FFmpeg ERROR: Press [q] to stop, [?] for help
+2026-03-03 18:05:17,496 - core.stream_manager - INFO - FFmpeg: [swscaler @ 0000027822e21fc0] deprecated pixel format used, make sure you did set range correctly
+2026-03-03 18:05:17,508 - core.stream_manager - ERROR - FFmpeg ERROR: [libx264 @ 000002781b01b0c0] using cpu capabilities: MMX2 SSE2Fast SSSE3 SSE4.2 AVX FMA3 BMI2 AVX2
+2026-03-03 18:05:17,509 - core.stream_manager - INFO - FFmpeg: [libx264 @ 000002781b01b0c0] profile Constrained Baseline, level 3.1, 4:2:0, 8-bit
+2026-03-03 18:05:17,510 - core.stream_manager - INFO - FFmpeg: [libx264 @ 000002781b01b0c0] 264 - core 165 r3223 0480cb0 - H.264/MPEG-4 AVC codec - Copyleft 2003-2025 - http://www.videolan.org/x264.html - options: cabac=0 ref=1 deblock=0:0:0 analyse=0:0 me=dia subme=0 psy=1 psy_rd=1.00:0.00 mixed_ref=0 me_range=16 chroma_me=1 trellis=0 8x8dct=0 cqm=0 deadzone=21,11 fast_pskip=1 chroma_qp_offset=0 threads=6 lookahead_threads=6 sliced_threads=1 slices=6 nr=0 decimate=1 interlaced=0 bluray_compat=0 constrained_intra=0 bframes=0 weightp=0 keyint=15 keyint_min=8 scenecut=0 intra_refresh=0 rc=crf mbtree=0 crf=25.0 qcomp=0.60 qpmin=0 qpmax=69 qpstep=4 ip_ratio=1.40 aq=0
+2026-03-03 18:05:17,511 - core.stream_manager - INFO - MediaMTX: 2026/03/03 18:05:17 INF [RTSP] [conn 127.0.0.1:57803] opened
+2026-03-03 18:05:17,511 - core.stream_manager - INFO - MediaMTX: 2026/03/03 18:05:17 INF [RTSP] [session cdb3e296] created by 127.0.0.1:57803
+2026-03-03 18:05:17,513 - core.stream_manager - INFO - MediaMTX: 2026/03/03 18:05:17 INF [RTSP] [session cdb3e296] is publishing to path 'live/stream', 2 tracks (H264, MPEG-4 Audio)
+2026-03-03 18:05:17,514 - core.stream_manager - ERROR - FFmpeg ERROR: Output #0, rtsp, to 'rtsp://:@127.0.0.1:8554/live/stream':
+2026-03-03 18:05:17,514 - core.stream_manager - ERROR - FFmpeg ERROR: Metadata:
+2026-03-03 18:05:17,514 - core.stream_manager - ERROR - FFmpeg ERROR: encoder         : Lavf62.3.100
+2026-03-03 18:05:17,514 - core.stream_manager - INFO - FFmpeg: Stream #0:0: Video: h264, yuv420p(pc, bt470bg/bt709/unknown, progressive), 1280x720, q=2-31, 30 fps, 90k tbn
+2026-03-03 18:05:17,514 - core.stream_manager - INFO - FFmpeg: Metadata:
+2026-03-03 18:05:17,514 - core.stream_manager - INFO - FFmpeg: encoder         : Lavc62.11.100 libx264
+2026-03-03 18:05:17,514 - core.stream_manager - INFO - FFmpeg: Side data:
+2026-03-03 18:05:17,514 - core.stream_manager - INFO - FFmpeg: cpb: bitrate max/min/avg: 0/0/0 buffer size: 0 vbv_delay: N/A
+2026-03-03 18:05:17,514 - core.stream_manager - INFO - FFmpeg: Stream #0:1: Audio: aac (LC), 44100 Hz, mono, fltp, 64 kb/s
+2026-03-03 18:05:17,514 - core.stream_manager - INFO - FFmpeg: Metadata:
+2026-03-03 18:05:17,514 - core.stream_manager - INFO - FFmpeg: encoder         : Lavc62.11.100 aac
+2026-03-03 18:05:18,738 - core.stream_manager - INFO - ✅ Стрим успешно запущен (попытка 1)
+2026-03-03 18:05:18,739 - config.settings - INFO - 📡 Локальный IP: 192.168.0.148
+2026-03-03 18:05:19,368 - config.settings - INFO - 🌐 Внешний IP: 95.78.88.143
+2026-03-03 18:05:19,370 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2026 18:05:19] "POST /api/stream/start HTTP/1.1" 200 -
+2026-03-03 18:05:24,092 - config.settings - INFO - 📡 Локальный IP: 192.168.0.148
+2026-03-03 18:05:24,092 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2026 18:05:24] "GET /api/status HTTP/1.1" 200 -
+2026-03-03 18:05:25,656 - config.settings - INFO - 📡 Локальный IP: 192.168.0.148
+2026-03-03 18:05:25,656 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2026 18:05:25] "GET /api/status HTTP/1.1" 200 -
+2026-03-03 18:05:35,425 - core.stream_manager - INFO - MediaMTX: 2026/03/03 18:05:35 INF [RTSP] [conn 192.168.0.110:32786] opened
+2026-03-03 18:05:35,665 - core.stream_manager - INFO - MediaMTX: 2026/03/03 18:05:35 INF [RTSP] [session a9adaecb] created by 192.168.0.110:32786
+2026-03-03 18:05:35,823 - core.stream_manager - INFO - MediaMTX: 2026/03/03 18:05:35 INF [RTSP] [session a9adaecb] is reading from path 'live/stream', with UDP, 2 tracks (H264, MPEG-4 Audio)
+2026-03-03 18:05:35,963 - config.settings - INFO - 📡 Локальный IP: 192.168.0.148
+2026-03-03 18:05:35,963 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2026 18:05:35] "GET /api/status HTTP/1.1" 200 -
+2026-03-03 18:05:36,359 - core.stream_manager - INFO - MediaMTX: 2026/03/03 18:05:36 WAR [RTSP] [session a9adaecb] write queue is full
+2026-03-03 18:05:37,389 - core.stream_manager - INFO - MediaMTX: 2026/03/03 18:05:37 WAR [RTSP] [session a9adaecb] write queue is full
+2026-03-03 18:05:42,362 - core.stream_manager - INFO - MediaMTX: 2026/03/03 18:05:42 WAR [RTSP] [session a9adaecb] write queue is full
+2026-03-03 18:05:45,654 - config.settings - INFO - 📡 Локальный IP: 192.168.0.148
+2026-03-03 18:05:45,654 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2026 18:05:45] "GET /api/status HTTP/1.1" 200 -
+2026-03-03 18:05:54,879 - core.stream_manager - INFO - MediaMTX: 2026/03/03 18:05:54 WAR [RTSP] [session a9adaecb] write queue is full
+2026-03-03 18:05:55,956 - config.settings - INFO - 📡 Локальный IP: 192.168.0.148
+2026-03-03 18:05:55,956 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2026 18:05:55] "GET /api/status HTTP/1.1" 200 -
+2026-03-03 18:05:56,359 - core.stream_manager - INFO - MediaMTX: 2026/03/03 18:05:56 WAR [RTSP] [session a9adaecb] write queue is full
+2026-03-03 18:05:57,361 - core.stream_manager - INFO - MediaMTX: 2026/03/03 18:05:57 WAR [RTSP] [session a9adaecb] write queue is full
+2026-03-03 18:05:58,379 - core.stream_manager - INFO - MediaMTX: 2026/03/03 18:05:58 WAR [RTSP] [session a9adaecb] write queue is full
+2026-03-03 18:05:59,383 - core.stream_manager - INFO - MediaMTX: 2026/03/03 18:05:59 WAR [RTSP] [session a9adaecb] write queue is full
+2026-03-03 18:06:00,981 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2026 18:06:00] "POST /api/webcam/volume HTTP/1.1" 200 -
+2026-03-03 18:06:01,365 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2026 18:06:01] "POST /api/webcam/volume HTTP/1.1" 200 -
+2026-03-03 18:06:01,411 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2026 18:06:01] "POST /api/webcam/volume HTTP/1.1" 200 -
+2026-03-03 18:06:01,442 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2026 18:06:01] "POST /api/webcam/volume HTTP/1.1" 200 -
+2026-03-03 18:06:01,488 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2026 18:06:01] "POST /api/webcam/volume HTTP/1.1" 200 -
+2026-03-03 18:06:01,582 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2026 18:06:01] "POST /api/webcam/volume HTTP/1.1" 200 -
+2026-03-03 18:06:01,613 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2026 18:06:01] "POST /api/webcam/volume HTTP/1.1" 200 -
+2026-03-03 18:06:01,678 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2026 18:06:01] "POST /api/webcam/volume HTTP/1.1" 200 -
+2026-03-03 18:06:04,413 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2026 18:06:04] "POST /api/webcam/volume HTTP/1.1" 200 -
+2026-03-03 18:06:05,965 - config.settings - INFO - 📡 Локальный IP: 192.168.0.148
+2026-03-03 18:06:05,965 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2026 18:06:05] "GET /api/status HTTP/1.1" 200 -
+2026-03-03 18:06:08,214 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2026 18:06:08] "POST /api/webcam/volume HTTP/1.1" 200 -
+2026-03-03 18:06:08,578 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2026 18:06:08] "POST /api/webcam/volume HTTP/1.1" 200 -
+2026-03-03 18:06:08,579 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2026 18:06:08] "POST /api/webcam/volume HTTP/1.1" 200 -
+2026-03-03 18:06:08,612 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2026 18:06:08] "POST /api/webcam/volume HTTP/1.1" 200 -
+2026-03-03 18:06:08,617 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2026 18:06:08] "POST /api/webcam/volume HTTP/1.1" 200 -
+2026-03-03 18:06:08,640 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2026 18:06:08] "POST /api/webcam/volume HTTP/1.1" 200 -
+2026-03-03 18:06:08,655 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2026 18:06:08] "POST /api/webcam/volume HTTP/1.1" 200 -
+2026-03-03 18:06:08,888 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2026 18:06:08] "POST /api/webcam/volume HTTP/1.1" 200 -
+2026-03-03 18:06:08,889 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2026 18:06:08] "POST /api/webcam/volume HTTP/1.1" 200 -
+2026-03-03 18:06:08,922 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2026 18:06:08] "POST /api/webcam/volume HTTP/1.1" 200 -
+2026-03-03 18:06:08,928 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2026 18:06:08] "POST /api/webcam/volume HTTP/1.1" 200 -
+2026-03-03 18:06:08,951 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2026 18:06:08] "POST /api/webcam/volume HTTP/1.1" 200 -
+2026-03-03 18:06:08,966 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2026 18:06:08] "POST /api/webcam/volume HTTP/1.1" 200 -
+2026-03-03 18:06:13,439 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2026 18:06:13] "POST /api/webcam/volume HTTP/1.1" 200 -
+2026-03-03 18:06:13,504 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2026 18:06:13] "POST /api/webcam/volume HTTP/1.1" 200 -
+2026-03-03 18:06:13,517 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2026 18:06:13] "POST /api/webcam/volume HTTP/1.1" 200 -
+2026-03-03 18:06:15,657 - config.settings - INFO - 📡 Локальный IP: 192.168.0.148
+2026-03-03 18:06:15,657 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2026 18:06:15] "GET /api/status HTTP/1.1" 200 -
+2026-03-03 18:06:18,463 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2026 18:06:18] "POST /api/webcam/volume HTTP/1.1" 200 -
+2026-03-03 18:06:25,664 - config.settings - INFO - 📡 Локальный IP: 192.168.0.148
+2026-03-03 18:06:25,665 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2026 18:06:25] "GET /api/status HTTP/1.1" 200 -
+2026-03-03 18:06:29,355 - core.stream_manager - INFO - MediaMTX: 2026/03/03 18:06:29 WAR [RTSP] [session a9adaecb] write queue is full
+2026-03-03 18:06:35,970 - config.settings - INFO - 📡 Локальный IP: 192.168.0.148
+2026-03-03 18:06:35,971 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2026 18:06:35] "GET /api/status HTTP/1.1" 200 -
+2026-03-03 18:06:39,363 - core.stream_manager - INFO - MediaMTX: 2026/03/03 18:06:39 WAR [RTSP] [session a9adaecb] write queue is full
+2026-03-03 18:06:41,861 - core.stream_manager - INFO - MediaMTX: 2026/03/03 18:06:41 WAR [RTSP] [session a9adaecb] write queue is full
+2026-03-03 18:06:45,658 - config.settings - INFO - 📡 Локальный IP: 192.168.0.148
+2026-03-03 18:06:45,659 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2026 18:06:45] "GET /api/status HTTP/1.1" 200 -
+2026-03-03 18:06:56,953 - config.settings - INFO - 📡 Локальный IP: 192.168.0.148
+2026-03-03 18:06:56,953 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2026 18:06:56] "GET /api/status HTTP/1.1" 200 -
+2026-03-03 18:06:57,035 - core.stream_manager - ERROR - FFmpeg ERROR: [vf#0:0 @ 000002781afae940]
+2026-03-03 18:07:02,812 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2026 18:07:02] "POST /api/webcam/volume HTTP/1.1" 200 -
+2026-03-03 18:07:03,224 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2026 18:07:03] "POST /api/webcam/volume HTTP/1.1" 200 -
+2026-03-03 18:07:05,655 - config.settings - INFO - 📡 Локальный IP: 192.168.0.148
+2026-03-03 18:07:05,655 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2026 18:07:05] "GET /api/status HTTP/1.1" 200 -
+2026-03-03 18:07:12,872 - core.stream_manager - INFO - MediaMTX: 2026/03/03 18:07:12 WAR [RTSP] [session a9adaecb] write queue is full
+2026-03-03 18:07:15,860 - core.stream_manager - INFO - MediaMTX: 2026/03/03 18:07:15 WAR [RTSP] [session a9adaecb] write queue is full
+2026-03-03 18:07:15,970 - config.settings - INFO - 📡 Локальный IP: 192.168.0.148
+2026-03-03 18:07:15,970 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2026 18:07:15] "GET /api/status HTTP/1.1" 200 -
+2026-03-03 18:07:25,878 - config.settings - INFO - 📡 Локальный IP: 192.168.0.148
+2026-03-03 18:07:25,878 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2026 18:07:25] "GET /api/status HTTP/1.1" 200 -
+2026-03-03 18:07:35,973 - config.settings - INFO - 📡 Локальный IP: 192.168.0.148
+2026-03-03 18:07:35,974 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2026 18:07:35] "GET /api/status HTTP/1.1" 200 -
+2026-03-03 18:07:45,657 - config.settings - INFO - 📡 Локальный IP: 192.168.0.148
+2026-03-03 18:07:45,657 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2026 18:07:45] "GET /api/status HTTP/1.1" 200 -
+2026-03-03 18:07:50,422 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2026 18:07:50] "POST /api/webcam/volume HTTP/1.1" 200 -
+2026-03-03 18:07:55,661 - config.settings - INFO - 📡 Локальный IP: 192.168.0.148
+2026-03-03 18:07:55,661 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2026 18:07:55] "GET /api/status HTTP/1.1" 200 -
+2026-03-03 18:08:03,642 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2026 18:08:03] "POST /api/webcam/volume HTTP/1.1" 200 -
+2026-03-03 18:08:05,661 - config.settings - INFO - 📡 Локальный IP: 192.168.0.148
+2026-03-03 18:08:05,661 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2026 18:08:05] "GET /api/status HTTP/1.1" 200 -
+2026-03-03 18:08:15,960 - config.settings - INFO - 📡 Локальный IP: 192.168.0.148
+2026-03-03 18:08:15,960 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2026 18:08:15] "GET /api/status HTTP/1.1" 200 -
+2026-03-03 18:08:17,375 - core.stream_manager - INFO - MediaMTX: 2026/03/03 18:08:17 WAR [RTSP] [session a9adaecb] write queue is full
+2026-03-03 18:08:20,221 - core.stream_manager - INFO - MediaMTX: 2026/03/03 18:08:20 INF [RTSP] [conn 192.168.0.110:32786] closed: EOF
+2026-03-03 18:08:20,862 - core.stream_manager - INFO - MediaMTX: 2026/03/03 18:08:20 WAR [RTSP] [session a9adaecb] write queue is full
+2026-03-03 18:08:21,862 - core.stream_manager - INFO - MediaMTX: 2026/03/03 18:08:21 WAR [RTSP] [session a9adaecb] write queue is full
+2026-03-03 18:08:26,637 - config.settings - INFO - 📡 Локальный IP: 192.168.0.148
+2026-03-03 18:08:26,637 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2026 18:08:26] "GET /api/status HTTP/1.1" 200 -
+2026-03-03 18:08:28,859 - core.stream_manager - INFO - MediaMTX: 2026/03/03 18:08:28 WAR [RTSP] [session a9adaecb] write queue is full
+2026-03-03 18:08:29,886 - core.stream_manager - INFO - MediaMTX: 2026/03/03 18:08:29 WAR [RTSP] [session a9adaecb] write queue is full
+2026-03-03 18:08:31,858 - core.stream_manager - INFO - MediaMTX: 2026/03/03 18:08:31 WAR [RTSP] [session a9adaecb] write queue is full
+2026-03-03 18:08:33,859 - core.stream_manager - INFO - MediaMTX: 2026/03/03 18:08:33 WAR [RTSP] [session a9adaecb] write queue is full
+2026-03-03 18:08:35,859 - core.stream_manager - INFO - MediaMTX: 2026/03/03 18:08:35 WAR [RTSP] [session a9adaecb] write queue is full
+2026-03-03 18:08:36,953 - config.settings - INFO - 📡 Локальный IP: 192.168.0.148
+2026-03-03 18:08:36,953 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2026 18:08:36] "GET /api/status HTTP/1.1" 200 -
+2026-03-03 18:08:37,354 - core.stream_manager - INFO - MediaMTX: 2026/03/03 18:08:37 WAR [RTSP] [session a9adaecb] write queue is full
+2026-03-03 18:08:38,354 - core.stream_manager - INFO - MediaMTX: 2026/03/03 18:08:38 WAR [RTSP] [session a9adaecb] write queue is full
+2026-03-03 18:08:39,858 - core.stream_manager - INFO - MediaMTX: 2026/03/03 18:08:39 WAR [RTSP] [session a9adaecb] write queue is full
+2026-03-03 18:08:43,359 - core.stream_manager - INFO - MediaMTX: 2026/03/03 18:08:43 WAR [RTSP] [session a9adaecb] write queue is full
+2026-03-03 18:08:46,646 - config.settings - INFO - 📡 Локальный IP: 192.168.0.148
+2026-03-03 18:08:46,646 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2026 18:08:46] "GET /api/status HTTP/1.1" 200 -
+2026-03-03 18:08:46,858 - core.stream_manager - INFO - MediaMTX: 2026/03/03 18:08:46 WAR [RTSP] [session a9adaecb] write queue is full
+2026-03-03 18:08:47,858 - core.stream_manager - INFO - MediaMTX: 2026/03/03 18:08:47 WAR [RTSP] [session a9adaecb] write queue is full
+2026-03-03 18:08:48,862 - core.stream_manager - INFO - MediaMTX: 2026/03/03 18:08:48 WAR [RTSP] [session a9adaecb] write queue is full
+2026-03-03 18:08:53,359 - core.stream_manager - INFO - MediaMTX: 2026/03/03 18:08:53 WAR [RTSP] [session a9adaecb] write queue is full
+2026-03-03 18:08:56,947 - config.settings - INFO - 📡 Локальный IP: 192.168.0.148
+2026-03-03 18:08:56,947 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2026 18:08:56] "GET /api/status HTTP/1.1" 200 -
+2026-03-03 18:09:05,649 - config.settings - INFO - 📡 Локальный IP: 192.168.0.148
+2026-03-03 18:09:05,650 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2026 18:09:05] "GET /api/status HTTP/1.1" 200 -
+2026-03-03 18:09:06,536 - core.stream_manager - INFO - MediaMTX: 2026/03/03 18:09:06 INF [RTSP] [session a9adaecb] destroyed: session timed out
+2026-03-03 18:09:16,950 - config.settings - INFO - 📡 Локальный IP: 192.168.0.148
+2026-03-03 18:09:16,950 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2026 18:09:16] "GET /api/status HTTP/1.1" 200 -
+2026-03-03 18:09:27,863 - core.stream_manager - INFO - MediaMTX: 2026/03/03 18:09:27 WAR [RTSP] [session cdb3e296] 55 RTP packets lost
+2026-03-03 18:09:28,931 - core.stream_manager - INFO - MediaMTX: 2026/03/03 18:09:28 WAR [RTSP] [session cdb3e296] 150 RTP packets lost
+2026-03-03 18:09:29,865 - config.settings - INFO - 📡 Локальный IP: 192.168.0.148
+2026-03-03 18:09:29,866 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2026 18:09:29] "GET /api/status HTTP/1.1" 200 -
+2026-03-03 18:09:30,368 - core.stream_manager - INFO - MediaMTX: 2026/03/03 18:09:30 WAR [RTSP] [session cdb3e296] 10 RTP packets lost
+2026-03-03 18:09:33,721 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2026 18:09:33] "POST /api/webcam/volume HTTP/1.1" 200 -
+2026-03-03 18:09:33,751 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2026 18:09:33] "POST /api/webcam/volume HTTP/1.1" 200 -
+2026-03-03 18:09:33,797 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2026 18:09:33] "POST /api/webcam/volume HTTP/1.1" 200 -
+2026-03-03 18:09:33,828 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2026 18:09:33] "POST /api/webcam/volume HTTP/1.1" 200 -
+2026-03-03 18:09:33,843 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2026 18:09:33] "POST /api/webcam/volume HTTP/1.1" 200 -
+2026-03-03 18:09:33,857 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2026 18:09:33] "POST /api/webcam/volume HTTP/1.1" 200 -
+2026-03-03 18:09:34,031 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2026 18:09:34] "POST /api/webcam/volume HTTP/1.1" 200 -
+2026-03-03 18:09:34,063 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2026 18:09:34] "POST /api/webcam/volume HTTP/1.1" 200 -
+2026-03-03 18:09:34,110 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2026 18:09:34] "POST /api/webcam/volume HTTP/1.1" 200 -
+2026-03-03 18:09:34,142 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2026 18:09:34] "POST /api/webcam/volume HTTP/1.1" 200 -
+2026-03-03 18:09:34,156 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2026 18:09:34] "POST /api/webcam/volume HTTP/1.1" 200 -
+2026-03-03 18:09:34,171 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2026 18:09:34] "POST /api/webcam/volume HTTP/1.1" 200 -
+2026-03-03 18:09:34,342 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2026 18:09:34] "POST /api/webcam/volume HTTP/1.1" 200 -
+2026-03-03 18:09:34,374 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2026 18:09:34] "POST /api/webcam/volume HTTP/1.1" 200 -
+2026-03-03 18:09:34,421 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2026 18:09:34] "POST /api/webcam/volume HTTP/1.1" 200 -
+2026-03-03 18:09:34,453 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2026 18:09:34] "POST /api/webcam/volume HTTP/1.1" 200 -
+2026-03-03 18:09:35,649 - config.settings - INFO - 📡 Локальный IP: 192.168.0.148
+2026-03-03 18:09:35,650 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2026 18:09:35] "GET /api/status HTTP/1.1" 200 -
+2026-03-03 18:09:43,946 - web.app - INFO - 📱 Удален IP для Android: 192.168.0.110
+2026-03-03 18:09:43,946 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2026 18:09:43] "DELETE /api/android/ips/192.168.0.110 HTTP/1.1" 200 -
+2026-03-03 18:09:45,649 - config.settings - INFO - 📡 Локальный IP: 192.168.0.148
+2026-03-03 18:09:45,649 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2026 18:09:45] "GET /api/status HTTP/1.1" 200 -
+2026-03-03 18:09:57,039 - config.settings - INFO - 📡 Локальный IP: 192.168.0.148
+2026-03-03 18:09:57,040 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2026 18:09:57] "GET /api/status HTTP/1.1" 200 -
+2026-03-03 18:10:06,637 - config.settings - INFO - 📡 Локальный IP: 192.168.0.148
+2026-03-03 18:10:06,637 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2026 18:10:06] "GET /api/status HTTP/1.1" 200 -
+2026-03-03 18:10:15,959 - config.settings - INFO - 📡 Локальный IP: 192.168.0.148
+2026-03-03 18:10:15,960 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2026 18:10:15] "GET /api/status HTTP/1.1" 200 -
+2026-03-03 18:10:16,176 - web.app - INFO - 📱 Добавлен IP для Android: 192.168.0.110
+2026-03-03 18:10:16,176 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2026 18:10:16] "POST /api/android/ips HTTP/1.1" 200 -
+2026-03-03 18:10:19,015 - core.stream_manager - INFO - MediaMTX: 2026/03/03 18:10:19 INF [RTSP] [conn 192.168.0.110:33096] opened
+2026-03-03 18:10:19,172 - core.stream_manager - INFO - MediaMTX: 2026/03/03 18:10:19 INF [RTSP] [session 476d46b5] created by 192.168.0.110:33096
+2026-03-03 18:10:19,388 - core.stream_manager - INFO - MediaMTX: 2026/03/03 18:10:19 INF [RTSP] [session 476d46b5] is reading from path 'live/stream', with UDP, 2 tracks (H264, MPEG-4 Audio)
+2026-03-03 18:10:22,350 - core.stream_manager - INFO - MediaMTX: 2026/03/03 18:10:22 WAR [RTSP] [session cdb3e296] 79 RTP packets lost
+2026-03-03 18:10:23,358 - core.stream_manager - INFO - MediaMTX: 2026/03/03 18:10:23 WAR [RTSP] [session cdb3e296] 4 RTP packets lost
+2026-03-03 18:10:25,658 - config.settings - INFO - 📡 Локальный IP: 192.168.0.148
+2026-03-03 18:10:25,658 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2026 18:10:25] "GET /api/status HTTP/1.1" 200 -
+2026-03-03 18:10:29,359 - core.stream_manager - INFO - MediaMTX: 2026/03/03 18:10:29 WAR [RTSP] [session 476d46b5] write queue is full
+2026-03-03 18:10:31,855 - core.stream_manager - INFO - MediaMTX: 2026/03/03 18:10:31 WAR [RTSP] [session 476d46b5] write queue is full
+2026-03-03 18:10:32,465 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2026 18:10:32] "POST /api/webcam/volume HTTP/1.1" 200 -
+2026-03-03 18:10:32,874 - core.stream_manager - INFO - MediaMTX: 2026/03/03 18:10:32 WAR [RTSP] [session 476d46b5] write queue is full
+2026-03-03 18:10:34,356 - core.stream_manager - INFO - MediaMTX: 2026/03/03 18:10:34 WAR [RTSP] [session 476d46b5] write queue is full
+2026-03-03 18:10:35,662 - config.settings - INFO - 📡 Локальный IP: 192.168.0.148
+2026-03-03 18:10:35,663 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2026 18:10:35] "GET /api/status HTTP/1.1" 200 -
+2026-03-03 18:10:40,490 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2026 18:10:40] "POST /api/webcam/volume HTTP/1.1" 200 -
+2026-03-03 18:10:42,862 - core.stream_manager - INFO - MediaMTX: 2026/03/03 18:10:42 WAR [RTSP] [session 476d46b5] write queue is full
+2026-03-03 18:10:45,651 - config.settings - INFO - 📡 Локальный IP: 192.168.0.148
+2026-03-03 18:10:45,652 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2026 18:10:45] "GET /api/status HTTP/1.1" 200 -
+2026-03-03 18:10:55,963 - config.settings - INFO - 📡 Локальный IP: 192.168.0.148
+2026-03-03 18:10:55,964 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2026 18:10:55] "GET /api/status HTTP/1.1" 200 -
+2026-03-03 18:10:58,863 - core.stream_manager - INFO - MediaMTX: 2026/03/03 18:10:58 WAR [RTSP] [session 476d46b5] write queue is full
+2026-03-03 18:10:59,172 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2026 18:10:59] "POST /api/webcam/volume HTTP/1.1" 200 -
+2026-03-03 18:11:00,858 - core.stream_manager - INFO - MediaMTX: 2026/03/03 18:11:00 WAR [RTSP] [session 476d46b5] write queue is full
+2026-03-03 18:11:03,354 - core.stream_manager - INFO - MediaMTX: 2026/03/03 18:11:03 WAR [RTSP] [session 476d46b5] write queue is full
+2026-03-03 18:11:05,963 - config.settings - INFO - 📡 Локальный IP: 192.168.0.148
+2026-03-03 18:11:05,965 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2026 18:11:05] "GET /api/status HTTP/1.1" 200 -
+2026-03-03 18:11:06,364 - core.stream_manager - INFO - MediaMTX: 2026/03/03 18:11:06 WAR [RTSP] [session 476d46b5] write queue is full
+2026-03-03 18:11:08,356 - core.stream_manager - INFO - MediaMTX: 2026/03/03 18:11:08 WAR [RTSP] [session 476d46b5] write queue is full
+2026-03-03 18:11:13,447 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2026 18:11:13] "POST /api/webcam/volume HTTP/1.1" 200 -
+2026-03-03 18:11:15,964 - config.settings - INFO - 📡 Локальный IP: 192.168.0.148
+2026-03-03 18:11:15,964 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2026 18:11:15] "GET /api/status HTTP/1.1" 200 -
+2026-03-03 18:11:24,357 - core.stream_manager - INFO - MediaMTX: 2026/03/03 18:11:24 WAR [RTSP] [session 476d46b5] write queue is full
+2026-03-03 18:11:25,357 - core.stream_manager - INFO - MediaMTX: 2026/03/03 18:11:25 WAR [RTSP] [session 476d46b5] write queue is full
+2026-03-03 18:11:25,653 - config.settings - INFO - 📡 Локальный IP: 192.168.0.148
+2026-03-03 18:11:25,654 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2026 18:11:25] "GET /api/status HTTP/1.1" 200 -
+2026-03-03 18:11:34,863 - core.stream_manager - INFO - MediaMTX: 2026/03/03 18:11:34 WAR [RTSP] [session 476d46b5] write queue is full
+2026-03-03 18:11:35,966 - config.settings - INFO - 📡 Локальный IP: 192.168.0.148
+2026-03-03 18:11:35,967 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2026 18:11:35] "GET /api/status HTTP/1.1" 200 -
+2026-03-03 18:11:45,662 - config.settings - INFO - 📡 Локальный IP: 192.168.0.148
+2026-03-03 18:11:45,662 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2026 18:11:45] "GET /api/status HTTP/1.1" 200 -
+2026-03-03 18:11:56,271 - config.settings - INFO - 📡 Локальный IP: 192.168.0.148
+2026-03-03 18:11:56,272 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2026 18:11:56] "GET /api/status HTTP/1.1" 200 -
+2026-03-03 18:11:57,855 - core.stream_manager - INFO - MediaMTX: 2026/03/03 18:11:57 WAR [RTSP] [session 476d46b5] write queue is full
+2026-03-03 18:12:05,664 - config.settings - INFO - 📡 Локальный IP: 192.168.0.148
+2026-03-03 18:12:05,664 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2026 18:12:05] "GET /api/status HTTP/1.1" 200 -
+2026-03-03 18:12:15,968 - config.settings - INFO - 📡 Локальный IP: 192.168.0.148
+2026-03-03 18:12:15,968 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2026 18:12:15] "GET /api/status HTTP/1.1" 200 -
+2026-03-03 18:12:25,652 - config.settings - INFO - 📡 Локальный IP: 192.168.0.148
+2026-03-03 18:12:25,652 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2026 18:12:25] "GET /api/status HTTP/1.1" 200 -
+2026-03-03 18:12:35,973 - config.settings - INFO - 📡 Локальный IP: 192.168.0.148
+2026-03-03 18:12:35,973 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2026 18:12:35] "GET /api/status HTTP/1.1" 200 -
+2026-03-03 18:12:45,659 - config.settings - INFO - 📡 Локальный IP: 192.168.0.148
+2026-03-03 18:12:45,659 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2026 18:12:45] "GET /api/status HTTP/1.1" 200 -
+2026-03-03 18:12:55,965 - config.settings - INFO - 📡 Локальный IP: 192.168.0.148
+2026-03-03 18:12:55,965 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2026 18:12:55] "GET /api/status HTTP/1.1" 200 -
+2026-03-03 18:12:57,362 - core.stream_manager - INFO - MediaMTX: 2026/03/03 18:12:57 WAR [RTSP] [session 476d46b5] write queue is full
+2026-03-03 18:12:59,353 - core.stream_manager - INFO - MediaMTX: 2026/03/03 18:12:59 WAR [RTSP] [session 476d46b5] write queue is full
+2026-03-03 18:13:02,863 - core.stream_manager - INFO - MediaMTX: 2026/03/03 18:13:02 WAR [RTSP] [session 476d46b5] write queue is full
+2026-03-03 18:13:04,358 - core.stream_manager - INFO - MediaMTX: 2026/03/03 18:13:04 WAR [RTSP] [session 476d46b5] write queue is full
+2026-03-03 18:13:05,650 - config.settings - INFO - 📡 Локальный IP: 192.168.0.148
+2026-03-03 18:13:05,650 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2026 18:13:05] "GET /api/status HTTP/1.1" 200 -
+2026-03-03 18:13:06,420 - core.stream_manager - INFO - MediaMTX: 2026/03/03 18:13:06 INF [RTSP] [conn 127.0.0.1:57803] closed: read tcp 127.0.0.1:8554->127.0.0.1:57803: wsarecv: An existing connection was forcibly closed by the remote host.
+2026-03-03 18:13:06,428 - core.stream_manager - INFO - ⏹️ Стрим остановлен
+2026-03-03 18:13:06,428 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2026 18:13:06] "POST /api/stream/stop HTTP/1.1" 200 -
+2026-03-03 18:13:09,619 - config.settings - INFO - 📡 Локальный IP: 192.168.0.148
+2026-03-03 18:13:09,620 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2026 18:13:09] "GET /api/status HTTP/1.1" 200 -
+2026-03-03 18:13:12,089 - core.stream_manager - INFO - MediaMTX: 2026/03/03 18:13:12 INF [RTSP] [session 476d46b5] destroyed: torn down by 192.168.0.110:33096
+2026-03-03 18:13:12,089 - core.stream_manager - INFO - MediaMTX: 2026/03/03 18:13:12 INF [RTSP] [conn 192.168.0.110:33096] closed: EOF
+2026-03-03 18:13:13,854 - web.app - INFO - 📱 Удален IP для Android: 192.168.0.110
+2026-03-03 18:13:13,855 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2026 18:13:13] "DELETE /api/android/ips/192.168.0.110 HTTP/1.1" 200 -
+2026-03-03 18:13:15,570 - core.stream_manager - INFO - MediaMTX: 2026/03/03 18:13:15 INF [RTSP] [session cdb3e296] destroyed: session timed out
+2026-03-03 18:13:15,652 - config.settings - INFO - 📡 Локальный IP: 192.168.0.148
+2026-03-03 18:13:15,652 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2026 18:13:15] "GET /api/status HTTP/1.1" 200 -
+2026-03-03 18:13:25,963 - config.settings - INFO - 📡 Локальный IP: 192.168.0.148
+2026-03-03 18:13:25,964 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2026 18:13:25] "GET /api/status HTTP/1.1" 200 -
+2026-03-03 18:13:26,228 - web.app - INFO - 📱 Добавлен IP для Android: 192.168.0.110
+2026-03-03 18:13:26,229 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2026 18:13:26] "POST /api/android/ips HTTP/1.1" 200 -
+2026-03-03 18:13:35,656 - config.settings - INFO - 📡 Локальный IP: 192.168.0.148
+2026-03-03 18:13:35,657 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2026 18:13:35] "GET /api/status HTTP/1.1" 200 -
+2026-03-03 18:13:45,971 - config.settings - INFO - 📡 Локальный IP: 192.168.0.148
+2026-03-03 18:13:45,972 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2026 18:13:45] "GET /api/status HTTP/1.1" 200 -
+2026-03-03 18:13:55,659 - config.settings - INFO - 📡 Локальный IP: 192.168.0.148
+2026-03-03 18:13:55,660 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2026 18:13:55] "GET /api/status HTTP/1.1" 200 -
+2026-03-03 18:14:05,964 - config.settings - INFO - 📡 Локальный IP: 192.168.0.148
+2026-03-03 18:14:05,964 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2026 18:14:05] "GET /api/status HTTP/1.1" 200 -
+2026-03-03 18:14:15,665 - config.settings - INFO - 📡 Локальный IP: 192.168.0.148
+2026-03-03 18:14:15,666 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2026 18:14:15] "GET /api/status HTTP/1.1" 200 -
+2026-03-03 18:14:25,962 - config.settings - INFO - 📡 Локальный IP: 192.168.0.148
+2026-03-03 18:14:25,963 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2026 18:14:25] "GET /api/status HTTP/1.1" 200 -
+2026-03-03 18:14:35,652 - config.settings - INFO - 📡 Локальный IP: 192.168.0.148
+2026-03-03 18:14:35,652 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2026 18:14:35] "GET /api/status HTTP/1.1" 200 -
+2026-03-03 18:14:45,968 - config.settings - INFO - 📡 Локальный IP: 192.168.0.148
+2026-03-03 18:14:45,969 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2026 18:14:45] "GET /api/status HTTP/1.1" 200 -
+2026-03-03 18:14:55,655 - config.settings - INFO - 📡 Локальный IP: 192.168.0.148
+2026-03-03 18:14:55,655 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2026 18:14:55] "GET /api/status HTTP/1.1" 200 -
+2026-03-03 18:15:05,969 - config.settings - INFO - 📡 Локальный IP: 192.168.0.148
+2026-03-03 18:15:05,970 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2026 18:15:05] "GET /api/status HTTP/1.1" 200 -
+2026-03-03 18:15:15,650 - config.settings - INFO - 📡 Локальный IP: 192.168.0.148
+2026-03-03 18:15:15,650 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2026 18:15:15] "GET /api/status HTTP/1.1" 200 -
+2026-03-03 18:15:24,232 - core.camera_finder - INFO - 🔍 Тестируем камеру: A4tech FHD 1080P PC Camera
+2026-03-03 18:15:24,233 - core.camera_finder - INFO - 🔄 Попытка 1 для камеры A4tech FHD 1080P PC Camera
+2026-03-03 18:15:25,655 - config.settings - INFO - 📡 Локальный IP: 192.168.0.148
+2026-03-03 18:15:25,655 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2026 18:15:25] "GET /api/status HTTP/1.1" 200 -
+2026-03-03 18:15:28,918 - core.camera_finder - INFO - ✅ Камера 'A4tech FHD 1080P PC Camera' - РАБОТАЕТ (попытка 1)
+2026-03-03 18:15:28,919 - config.settings - INFO - ✅ FFmpeg найден: C:\AndStudio\forLift\ffmpeg.exe
+2026-03-03 18:15:28,919 - core.stream_manager - INFO - 🎬 Попытка 1 запуска стрима с камеры: A4tech FHD 1080P PC Camera
+2026-03-03 18:15:28,919 - core.stream_manager - INFO - 🔧 Команда: C:\AndStudio\forLift\ffmpeg.exe -f dshow -rtbufsize 32M -i video=A4tech FHD 1080P PC Camera:audio=Микрофон (Realtek High Definition Audio) -c:v libx264 -preset ultrafast -tune zerolatency -g 15 -keyint_min 15 -sc_threshold 0 -crf 25 -profile:v baseline -level 3.1 -pix_fmt yuv420p -vf scale=-1:720 -bf 0 -c:a aac -b:a 64k -ar 44100 -ac 1 -f rtsp -rtsp_transport udp -fflags +nobuffer -flags +low_delay -muxdelay 0 -muxpreload 0 rtsp://:@127.0.0.1:8554/live/stream
+2026-03-03 18:15:28,940 - core.stream_manager - ERROR - FFmpeg ERROR: Copyright (c) 2000-2025 the FFmpeg developers
+2026-03-03 18:15:28,940 - core.stream_manager - ERROR - FFmpeg ERROR: built with gcc 15.2.0 (Rev8, Built by MSYS2 project)
+2026-03-03 18:15:28,940 - core.stream_manager - ERROR - FFmpeg ERROR: configuration: --enable-gpl --enable-version3 --enable-static --disable-w32threads --disable-autodetect --enable-fontconfig --enable-iconv --enable-gnutls --enable-libxml2 --enable-gmp --enable-bzlib --enable-lzma --enable-zlib --enable-libsrt --enable-libssh --enable-libzmq --enable-avisynth --enable-sdl2 --enable-libwebp --enable-libx264 --enable-libx265 --enable-libxvid --enable-libaom --enable-libopenjpeg --enable-libvpx --enable-mediafoundation --enable-libass --enable-libfreetype --enable-libfribidi --enable-libharfbuzz --enable-libvidstab --enable-libvmaf --enable-libzimg --enable-amf --enable-cuda-llvm --enable-cuvid --enable-dxva2 --enable-d3d11va --enable-d3d12va --enable-ffnvcodec --enable-libvpl --enable-nvdec --enable-nvenc --enable-vaapi --enable-openal --enable-libgme --enable-libopenmpt --enable-libopencore-amrwb --enable-libmp3lame --enable-libtheora --enable-libvo-amrwbenc --enable-libgsm --enable-libopencore-amrnb --enable-libopus --enable-libspeex --enable-libvorbis --enable-librubberband
+2026-03-03 18:15:28,940 - core.stream_manager - ERROR - FFmpeg ERROR: libavutil      60.  8.100 / 60.  8.100
+2026-03-03 18:15:28,940 - core.stream_manager - ERROR - FFmpeg ERROR: libavcodec     62. 11.100 / 62. 11.100
+2026-03-03 18:15:28,941 - core.stream_manager - ERROR - FFmpeg ERROR: libavformat    62.  3.100 / 62.  3.100
+2026-03-03 18:15:28,941 - core.stream_manager - ERROR - FFmpeg ERROR: libavdevice    62.  1.100 / 62.  1.100
+2026-03-03 18:15:28,941 - core.stream_manager - ERROR - FFmpeg ERROR: libavfilter    11.  4.100 / 11.  4.100
+2026-03-03 18:15:28,941 - core.stream_manager - ERROR - FFmpeg ERROR: libswscale      9.  1.100 /  9.  1.100
+2026-03-03 18:15:28,941 - core.stream_manager - ERROR - FFmpeg ERROR: libswresample   6.  1.100 /  6.  1.100
+2026-03-03 18:15:30,663 - core.stream_manager - ERROR - FFmpeg ERROR: Guessed Channel Layout: stereo
+2026-03-03 18:15:30,663 - core.stream_manager - INFO - FFmpeg: ffmpeg version 8.0.1-essentials_build-www.gyan.dev[aist#0:1/pcm_s16le @ 00000217e6643b00] 0
+2026-03-03 18:15:30,664 - core.stream_manager - ERROR - FFmpeg ERROR: Stream mapping:
+2026-03-03 18:15:30,664 - core.stream_manager - INFO - FFmpeg: Stream #0:0 -> #0:0 (mjpeg (native) -> h264 (libx264))
+2026-03-03 18:15:30,664 - core.stream_manager - INFO - FFmpeg: Press [q] to stop, [?] for help
+2026-03-03 18:15:30,664 - core.stream_manager - ERROR - FFmpeg ERROR: Stream #0:1 -> #0:1 (pcm_s16le (native) -> aac (native))
+2026-03-03 18:15:30,675 - core.stream_manager - INFO - FFmpeg: [swscaler @ 00000217e66d3040] deprecated pixel format used, make sure you did set range correctly
+2026-03-03 18:15:30,687 - core.stream_manager - ERROR - FFmpeg ERROR: [libx264 @ 00000217e66ac900] using cpu capabilities: MMX2 SSE2Fast SSSE3 SSE4.2 AVX FMA3 BMI2 AVX2
+2026-03-03 18:15:30,688 - core.stream_manager - ERROR - FFmpeg ERROR: profile Constrained Baseline, level 3.1, 4:2:0, 8-bit
+2026-03-03 18:15:30,688 - core.stream_manager - INFO - FFmpeg: [libx264 @ 00000217e66ac900][libx264 @ 00000217e66ac900] 264 - core 165 r3223 0480cb0 - H.264/MPEG-4 AVC codec - Copyleft 2003-2025 - http://www.videolan.org/x264.html - options: cabac=0 ref=1 deblock=0:0:0 analyse=0:0 me=dia subme=0 psy=1 psy_rd=1.00:0.00 mixed_ref=0 me_range=16 chroma_me=1 trellis=0 8x8dct=0 cqm=0 deadzone=21,11 fast_pskip=1 chroma_qp_offset=0 threads=6 lookahead_threads=6 sliced_threads=1 slices=6 nr=0 decimate=1 interlaced=0 bluray_compat=0 constrained_intra=0 bframes=0 weightp=0 keyint=15 keyint_min=8 scenecut=0 intra_refresh=0 rc=crf mbtree=0 crf=25.0 qcomp=0.60 qpmin=0 qpmax=69 qpstep=4 ip_ratio=1.40 aq=0
+2026-03-03 18:15:30,689 - core.stream_manager - INFO - MediaMTX: 2026/03/03 18:15:30 INF [RTSP] [conn 127.0.0.1:58194] opened
+2026-03-03 18:15:30,690 - core.stream_manager - INFO - MediaMTX: 2026/03/03 18:15:30 INF [RTSP] [session 54c4cb53] created by 127.0.0.1:58194
+2026-03-03 18:15:30,692 - core.stream_manager - INFO - MediaMTX: 2026/03/03 18:15:30 INF [RTSP] [session 54c4cb53] is publishing to path 'live/stream', 2 tracks (H264, MPEG-4 Audio)
+2026-03-03 18:15:30,692 - core.stream_manager - INFO - FFmpeg: Metadata:
+2026-03-03 18:15:30,692 - core.stream_manager - ERROR - FFmpeg ERROR: Output #0, rtsp, to 'rtsp://:@127.0.0.1:8554/live/stream':  Stream #0:0: Video: h264, yuv420p(pc, bt470bg/bt709/unknown, progressive), 1280x720, q=2-31, 30 fps, 90k tbn
+2026-03-03 18:15:30,693 - core.stream_manager - ERROR - FFmpeg ERROR: encoder         : Lavc62.11.100 libx264
+2026-03-03 18:15:30,693 - core.stream_manager - ERROR - FFmpeg ERROR: Side data:
+2026-03-03 18:15:30,693 - core.stream_manager - ERROR - FFmpeg ERROR: cpb: bitrate max/min/avg: 0/0/0 buffer size: 0 vbv_delay: N/A
+2026-03-03 18:15:30,693 - core.stream_manager - ERROR - FFmpeg ERROR: Stream #0:1: Audio: aac (LC), 44100 Hz, mono, fltp, 64 kb/s
+2026-03-03 18:15:30,693 - core.stream_manager - ERROR - FFmpeg ERROR: Metadata:
+2026-03-03 18:15:30,693 - core.stream_manager - ERROR - FFmpeg ERROR: encoder         : Lavc62.11.100 aac
+2026-03-03 18:15:30,692 - core.stream_manager - INFO - FFmpeg: Metadata:
+2026-03-03 18:15:31,924 - core.stream_manager - INFO - ✅ Стрим успешно запущен (попытка 1)
+2026-03-03 18:15:31,924 - config.settings - INFO - 📡 Локальный IP: 192.168.0.148
+2026-03-03 18:15:32,629 - config.settings - INFO - 🌐 Внешний IP: 95.78.88.143
+2026-03-03 18:15:32,630 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2026 18:15:32] "POST /api/stream/start HTTP/1.1" 200 -
+2026-03-03 18:15:35,959 - config.settings - INFO - 📡 Локальный IP: 192.168.0.148
+2026-03-03 18:15:35,960 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2026 18:15:35] "GET /api/status HTTP/1.1" 200 -
+2026-03-03 18:15:37,051 - config.settings - INFO - 📡 Локальный IP: 192.168.0.148
+2026-03-03 18:15:37,051 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2026 18:15:37] "GET /api/status HTTP/1.1" 200 -
+2026-03-03 18:15:45,967 - config.settings - INFO - 📡 Локальный IP: 192.168.0.148
+2026-03-03 18:15:45,968 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2026 18:15:45] "GET /api/status HTTP/1.1" 200 -
+2026-03-03 18:15:55,655 - config.settings - INFO - 📡 Локальный IP: 192.168.0.148
+2026-03-03 18:15:55,655 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2026 18:15:55] "GET /api/status HTTP/1.1" 200 -
+2026-03-03 18:16:05,955 - config.settings - INFO - 📡 Локальный IP: 192.168.0.148
+2026-03-03 18:16:05,955 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2026 18:16:05] "GET /api/status HTTP/1.1" 200 -
+2026-03-03 18:16:15,654 - config.settings - INFO - 📡 Локальный IP: 192.168.0.148
+2026-03-03 18:16:15,654 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2026 18:16:15] "GET /api/status HTTP/1.1" 200 -
+2026-03-03 18:16:25,969 - config.settings - INFO - 📡 Локальный IP: 192.168.0.148
+2026-03-03 18:16:25,970 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2026 18:16:25] "GET /api/status HTTP/1.1" 200 -
+2026-03-03 18:16:35,650 - config.settings - INFO - 📡 Локальный IP: 192.168.0.148
+2026-03-03 18:16:35,651 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2026 18:16:35] "GET /api/status HTTP/1.1" 200 -
