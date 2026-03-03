@@ -168,6 +168,33 @@ class APIManager {
         }
     }
 
+    async startStreamWithMic(cameraName, microphoneName, volume) {
+        this.showMessage('🚀 Перезапуск стрима...');
+        
+        try {
+            const requestBody = {
+                camera_name: cameraName,
+                microphone_name: microphoneName || '',
+                volume: volume
+            };
+            
+            const result = await this.request('/api/stream/start', {
+                method: 'POST',
+                body: JSON.stringify(requestBody)
+            });
+
+            this.showMessage(result.message);
+
+            setTimeout(() => this.checkStatus(), 3000);
+            
+            return result;
+
+        } catch (error) {
+            this.showMessage('❌ Ошибка: ' + error.message, true);
+            throw error;
+        }
+    }
+
     async checkStatus() {
         try {
             const status = await this.request('/api/status');

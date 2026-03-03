@@ -514,19 +514,63 @@ async function muteCartoon(mute) {
 }
 
 async function toggleMicrophone(mute) {
-    const micStatus = document.getElementById('micStatusValue');
+    const micStatus = document.getElementById('micVolumeValue');
     
     if (micStatus) {
-        micStatus.textContent = mute ? 'Выкл' : 'Вкл';
+        micStatus.textContent = mute ? '0%' : '100%';
     }
     
-    // Если стрим запущен - перезапускаем его с новыми настройками
-    const streamForm = document.getElementById('streamForm');
-    if (streamForm) {
-        // Просто обновляем UI - пользователь должен сам перезапустить стрим
-        console.log('Микрофон:', mute ? 'выключен' : 'включен');
-        console.log('⚠️ Перезапустите стрим чтобы изменения вступили в силу');
+    const slider = document.getElementById('micVolume');
+    if (slider) {
+        slider.value = mute ? 0 : 100;
     }
+    
+    // Перезапускаем стрим с новыми настройками
+    if (mute) {
+        updateMicVolume(0);
+    } else {
+        updateMicVolume(100);
+    }
+}
+
+async function updateMicVolume(value) {
+    const display = document.getElementById('micVolumeValue');
+    if (display) display.textContent = `${value}%`;
+    
+    // Если стрим запущен - перезапускаем FFmpeg с новыми настройками
+    const ffmpegStatus = document.getElementById('ffmpegStatus');
+    if (ffmpegStatus && ffmpegStatus.textContent.includes('Трансляция')) {
+        // Останавливаем и запускаем заново с новой громкостью
+        console.log('Перезапуск стрима с громкостью микрофона:', value);
+        
+        // Сохраняем текущую камеру
+        const cameraSelect = document.getElementById('camera_name');
+        const currentCamera = cameraSelect ? cameraSelect.value : null;
+        
+        if (currentCamera) {
+            // Останавливаем стрим
+            await window.app.api.stopStream();
+            
+            // Ждём немного
+            await new Promise(resolve => setTimeout(resolve, 500));
+            
+            // Запускаем с новой громкостью (0 = без звука)
+            const micName = value > 0 ? '' : null; // Если громкость 0 - без микрофона
+            
+            const result = await window.app.api.startStreamWithMic(currentCamera, micName, value / 100);
+            console.log('Стрим перезапущен:', result);
+        }
+    }
+}
+
+async function muteMic(mute) {
+    const display = document.getElementById('micVolumeValue');
+    const slider = document.getElementById('micVolume');
+    
+    if (display) display.textContent = mute ? '0%' : '100%';
+    if (slider) slider.value = mute ? 0 : 100;
+    
+    await updateMicVolume(mute ? 0 : 100);
 }
 
 async function setDisplayMode(mode) {

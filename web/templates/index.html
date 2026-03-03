@@ -516,11 +516,12 @@
                                 <div>
                                     <div style="display:flex;justify-content:space-between;margin-bottom:6px">
                                         <span style="font-size:13px;color:#0ff">🎤 Микрофон:</span>
-                                        <span id="micStatusValue" style="font-size:13px;color:#0ff;font-weight:600">Вкл</span>
+                                        <span id="micVolumeValue" style="font-size:13px;color:#0ff;font-weight:600">100%</span>
                                     </div>
-                                    <div style="display:flex;gap:6px;justify-content:flex-end">
-                                        <button type="button" onclick="toggleMicrophone(true)" class="btn btn-danger btn-sm" style="flex:1">🔇 Выкл</button>
-                                        <button type="button" onclick="toggleMicrophone(false)" class="btn btn-success btn-sm" style="flex:1">🔊 Вкл</button>
+                                    <input type="range" id="micVolume" min="0" max="100" value="100" class="volume-slider" oninput="updateMicVolume(this.value)">
+                                    <div style="display:flex;gap:6px;margin-top:6px;justify-content:flex-end">
+                                        <button type="button" onclick="muteMic(true)" class="btn btn-secondary btn-sm">🔇</button>
+                                        <button type="button" onclick="muteMic(false)" class="btn btn-secondary btn-sm">🔊</button>
                                     </div>
                                 </div>
                             </div>
