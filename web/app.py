@@ -524,7 +524,7 @@ class WebApp:
                 return jsonify({"success": False, "message": f"❌ Ошибка: {e}"})
 
         @self.app.route('/api/android/webcam-volume', methods=['POST'])
-        def set_webcam_volume():
+        def set_android_webcam_volume():
             """API для управления громкостью вебкамеры на Android"""
             data = request.get_json() or {}
             ip = data.get('ip', '')

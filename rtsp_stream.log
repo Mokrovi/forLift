@@ -5914,3 +5914,16 @@
 2026-03-03 16:32:16,590 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2026 16:32:16] "GET /api/status HTTP/1.1" 200 -
 2026-03-03 16:32:21,400 - core.stream_manager - INFO - MediaMTX: 2026/03/03 16:32:21 INF [RTSP] [conn 192.168.0.110:57176] closed: EOF
 2026-03-03 16:32:56,714 - core.stream_manager - INFO - MediaMTX: 2026/03/03 16:32:56 INF [RTSP] [session 0ebfe293] destroyed: session timed out
+2026-03-03 16:46:04,693 - core.stream_manager - INFO - FFmpeg: [vf#0:0 @ 0000020a7fc1f100]
+2026-03-03 16:54:28,113 - core.stream_manager - INFO - MediaMTX: 2026/03/03 16:54:28 WAR [RTSP] [session 8ff8d877] 144 RTP packets lost
+2026-03-03 17:18:41,804 - core.stream_manager - INFO - MediaMTX: 2026/03/03 17:18:41 WAR [RTSP] [session 8ff8d877] 188 RTP packets lost
+2026-03-03 17:18:43,196 - core.stream_manager - INFO - MediaMTX: 2026/03/03 17:18:43 WAR [RTSP] [session 8ff8d877] 21 RTP packets lost
+2026-03-03 17:18:56,480 - core.stream_manager - INFO - MediaMTX: 2026/03/03 17:18:56 WAR [RTSP] [session 8ff8d877] 166 RTP packets lost
+2026-03-03 17:19:11,036 - core.stream_manager - INFO - MediaMTX: 2026/03/03 17:19:11 WAR [RTSP] [session 8ff8d877] 69 RTP packets lost
+2026-03-03 17:19:41,455 - core.stream_manager - INFO - MediaMTX: 2026/03/03 17:19:41 WAR [RTSP] [session 8ff8d877] 20 RTP packets lost
+2026-03-03 17:20:30,549 - config.settings - INFO - ✅ FFmpeg найден: C:\AndStudio\forLift\ffmpeg.exe
+2026-03-03 17:20:31,246 - core.network_manager - INFO - 🌐 Внешний IP: 95.78.88.143
+2026-03-03 17:24:38,680 - config.settings - INFO - ✅ FFmpeg найден: C:\AndStudio\forLift\ffmpeg.exe
+2026-03-03 17:24:39,336 - core.network_manager - INFO - 🌐 Внешний IP: 95.78.88.143
+2026-03-03 17:25:29,829 - config.settings - INFO - ✅ FFmpeg найден: C:\AndStudio\forLift\ffmpeg.exe
+2026-03-03 17:25:30,465 - core.network_manager - INFO - 🌐 Внешний IP: 95.78.88.143
