@@ -1,27 +1,38 @@
-# MediaMTX Configuration
-    logLevel: info
-    readTimeout: 20s
-    writeTimeout: 20s
+# MediaMTX Configuration - Low Latency Mode
+logLevel: info
+readTimeout: 10s
+writeTimeout: 10s
 
-    # RTSP settings - слушаем на всех интерфейсах
-    rtspAddress: :8554
+# RTSP settings - слушаем на всех интерфейсах
+rtspAddress: :8554
 
-    # RTP settings - для видео данных
-    rtpAddress: :8000
-    rtcpAddress: :8001
+# RTP settings - для видео данных
+rtpAddress: :8000
+rtcpAddress: :8001
 
-    # HTTP API для мониторинга
-    api: yes
-    apiAddress: :9997
+# HTTP API для мониторинга
+api: yes
+apiAddress: :9997
 
-    # Настройки для внешнего доступа
-    paths:
-      live/stream:
-        source: publisher
-        # Разрешаем всем читать поток
-        readUser: ""
-        readPass: ""
-        # Разрешаем всем публиковать  
-        publishUser: ""
-        publishPass: ""
-    
+# HLS settings - отключаем для низкой задержки
+hls: no
+
+# WebRTC settings
+webrtc: yes
+webrtcAddress: :8889
+
+# Буферы - минимальные для низкой задержки
+udpMaxPayloadSize: 1472
+
+# Настройки путей
+paths:
+  live/stream:
+    # Разрешаем всем читать и публиковать поток (без авторизации для локального использования)
+    readUser: ""
+    readPass: ""
+    publishUser: ""
+    publishPass: ""
+    # Настройки для низкой задержки
+    overridePublisher: no
+    record: no
+    sourceOnDemand: no

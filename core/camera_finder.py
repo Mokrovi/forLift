@@ -281,12 +281,57 @@ def find_working_cameras(ffmpeg_path: str = None) -> List[str]:
     return finder.find_working_cameras()
 
 
+def get_available_microphones(ffmpeg_path: str = None) -> List[str]:
+    """Получение списка доступных микрофонов"""
+    if ffmpeg_path is None:
+        if os.path.exists('ffmpeg.exe'):
+            ffmpeg_path = 'ffmpeg.exe'
+        else:
+            return []
+    
+    try:
+        result = subprocess.run([
+            ffmpeg_path,
+            '-list_devices', 'true',
+            '-f', 'dshow',
+            '-i', 'dummy'
+        ], capture_output=True, text=True, timeout=10, encoding='utf-8', errors='ignore')
+        
+        output = result.stderr
+        microphones = []
+        lines = output.split('\n')
+        
+        for line in lines:
+            if 'audio' in line.lower() and '"' in line:
+                start = line.find('"') + 1
+                end = line.find('"', start)
+                if end > start:
+                    mic_name = line[start:end]
+                    if mic_name and not mic_name.startswith('@'):
+                        microphones.append(mic_name)
+        
+        if microphones:
+            logger.info(f"🎤 Найдено {len(microphones)} микрофонов")
+        else:
+            logger.warning("⚠️ Микрофоны не найдены")
+        
+        return microphones
+        
+    except Exception as e:
+        logger.error(f"❌ Ошибка получения списка микрофонов: {e}")
+        return []
+
+
 if __name__ == "__main__":
     # Настройка логирования для теста
     logging.basicConfig(level=logging.INFO)
 
     finder = CameraFinder()
     working_cameras = finder.find_working_cameras()
+    microphones = get_available_microphones()
+    
+    print(f"\n📹 Камеры: {working_cameras}")
+    print(f"🎤 Микрофоны: {microphones}")
 
     if working_cameras:
         print(f"\n🎉 Найдены рабочие камеры:")

@@ -113,6 +113,12 @@ function refreshCameras() {
     }
 }
 
+function refreshMicrophones() {
+    if (window.app && window.app.api) {
+        window.app.api.refreshMicrophones();
+    }
+}
+
 function startStream() {
     if (window.app && window.app.api) {
         window.app.api.startStream();
@@ -149,7 +155,91 @@ function copyExternalUrl() {
     }
 }
 
+// === Android IP Management ===
+async function loadAndroidIps() {
+    if (!window.app || !window.app.api) return;
+    
+    try {
+        const result = await window.app.api.getAndroidIps();
+        renderAndroidIpList(result.android_ips || []);
+    } catch (error) {
+        console.error('Ошибка загрузки Android IP:', error);
+    }
+}
+
+function renderAndroidIpList(ips) {
+    const listElement = document.getElementById('androidIpList');
+    if (!listElement) return;
+    
+    if (ips.length === 0) {
+        listElement.innerHTML = '<p style="color: #888; font-size: 0.9em">Список пуст</p>';
+        return;
+    }
+    
+    listElement.innerHTML = ips.map(ip => `
+        <div style="display: flex; justify-content: space-between; align-items: center; padding: 8px; background: rgba(255,255,255,0.05); margin-bottom: 4px; border-radius: 4px;">
+            <span style="font-family: monospace; color: #0ff">${ip}</span>
+            <button onclick="removeAndroidIp('${ip}')" style="background: #dc3545; border: none; color: white; padding: 4px 8px; border-radius: 4px; cursor: pointer;">✕</button>
+        </div>
+    `).join('');
+}
+
+async function addAndroidIp() {
+    const input = document.getElementById('androidIpInput');
+    const ip = input.value.trim();
+    
+    if (!ip) {
+        alert('❌ Введите IP адрес');
+        return;
+    }
+    
+    try {
+        const result = await window.app.api.addAndroidIp(ip);
+        if (result.success) {
+            input.value = '';
+            renderAndroidIpList(result.android_ips);
+            alert(result.message);
+        } else {
+            alert(result.message);
+        }
+    } catch (error) {
+        alert('❌ Ошибка: ' + error.message);
+    }
+}
+
+async function removeAndroidIp(ip) {
+    try {
+        const result = await window.app.api.removeAndroidIp(ip);
+        if (result.success) {
+            renderAndroidIpList(result.android_ips);
+        }
+    } catch (error) {
+        alert('❌ Ошибка: ' + error.message);
+    }
+}
+
+async function testAndroidConnection() {
+    const input = document.getElementById('androidIpInput');
+    const ip = input.value.trim();
+    
+    if (!ip) {
+        alert('❌ Введите IP адрес для теста');
+        return;
+    }
+    
+    try {
+        const result = await window.app.api.testAndroidConnection(ip);
+        alert(result.message);
+    } catch (error) {
+        alert('❌ Ошибка: ' + error.message);
+    }
+}
+
 // Инициализация при загрузке страницы
 document.addEventListener('DOMContentLoaded', function() {
     window.app = new RTSPStreamApp();
+    // Загружаем список Android IP
+    loadAndroidIps();
+    // Загружаем список микрофонов
+    refreshMicrophones();
 });

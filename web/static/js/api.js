@@ -59,14 +59,44 @@ class APIManager {
         }
     }
 
+    async refreshMicrophones() {
+        try {
+            this.showMessage('🎤 Сканирование микрофонов...');
+            
+            const response = await this.request('/api/microphones');
+            const microphones = response.microphones || [];
+
+            const select = document.getElementById('microphone_name');
+            if (select) {
+                // Сохраняем первый вариант "Без звука"
+                select.innerHTML = '<option value="">🔇 Без звука (только видео)</option>';
+                microphones.forEach(mic => {
+                    const option = document.createElement('option');
+                    option.value = mic;
+                    option.textContent = mic;
+                    select.appendChild(option);
+                });
+            }
+
+            this.showMessage(`✅ Найдено: ${microphones.length} микрофонов`);
+
+        } catch (error) {
+            this.showMessage('❌ Ошибка сканирования микрофонов', true);
+        }
+    }
+
     async startStream() {
         const cameraSelect = document.getElementById('camera_name');
+        const micSelect = document.getElementById('microphone_name');
+        
         if (!cameraSelect) {
             this.showMessage('❌ Элемент выбора камеры не найден', true);
             return;
         }
 
         const cameraName = cameraSelect.value;
+        const microphoneName = micSelect ? micSelect.value : '';
+        
         if (!cameraName) {
             this.showMessage('❌ Не выбрана камера', true);
             return;
@@ -81,9 +111,16 @@ class APIManager {
                 await this.startProcessAnimation();
             }
 
+            const requestBody = {
+                camera_name: cameraName
+            };
+            if (microphoneName) {
+                requestBody.microphone_name = microphoneName;
+            }
+
             const result = await this.request('/api/stream/start', {
                 method: 'POST',
-                body: JSON.stringify({ camera_name: cameraName })
+                body: JSON.stringify(requestBody)
             });
 
             this.showMessage(result.message);
@@ -299,6 +336,48 @@ class APIManager {
         }
         if (ffmpegStatus) {
             ffmpegStatus.innerHTML = '<span class="loading-dots">Запуск</span>';
+        }
+    }
+
+    // === Android IP Management ===
+    async getAndroidIps() {
+        try {
+            return await this.request('/api/android/ips');
+        } catch (error) {
+            console.error('Ошибка получения Android IP:', error);
+            return { android_ips: [] };
+        }
+    }
+
+    async addAndroidIp(ip) {
+        try {
+            return await this.request('/api/android/ips', {
+                method: 'POST',
+                body: JSON.stringify({ ip })
+            });
+        } catch (error) {
+            throw error;
+        }
+    }
+
+    async removeAndroidIp(ip) {
+        try {
+            return await this.request(`/api/android/ips/${encodeURIComponent(ip)}`, {
+                method: 'DELETE'
+            });
+        } catch (error) {
+            throw error;
+        }
+    }
+
+    async testAndroidConnection(ip) {
+        try {
+            return await this.request('/api/android/test', {
+                method: 'POST',
+                body: JSON.stringify({ ip })
+            });
+        } catch (error) {
+            throw error;
         }
     }
 }

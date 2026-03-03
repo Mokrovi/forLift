@@ -3,6 +3,7 @@ import threading
 import time
 import logging
 import socket
+import requests
 from pathlib import Path
 from typing import Optional, Dict
 
@@ -17,6 +18,8 @@ class StreamManager:
         self.mediamtx_process: Optional[subprocess.Popen] = None
         self.ffmpeg_process: Optional[subprocess.Popen] = None
         self.current_camera: Optional[str] = None
+        self.current_microphone: Optional[str] = None  # Выбранный микрофон
+        self.android_ips: list = []  # Список IP для отправки сигнала
 
     def kill_process_on_port(self, port: int):
         """Убить процесс на указанном порту"""
@@ -127,33 +130,45 @@ class StreamManager:
 
     def _create_mediamtx_config(self):
         """Создание конфигурационного файла MediaMTX с внешним доступом"""
-        config_content = """# MediaMTX Configuration
-    logLevel: info
-    readTimeout: 20s
-    writeTimeout: 20s
+        config_content = """# MediaMTX Configuration - Low Latency Mode
+logLevel: info
+readTimeout: 10s
+writeTimeout: 10s
 
-    # RTSP settings - слушаем на всех интерфейсах
-    rtspAddress: :8554
+# RTSP settings - слушаем на всех интерфейсах
+rtspAddress: :8554
 
-    # RTP settings - для видео данных
-    rtpAddress: :8000
-    rtcpAddress: :8001
+# RTP settings - для видео данных
+rtpAddress: :8000
+rtcpAddress: :8001
 
-    # HTTP API для мониторинга
-    api: yes
-    apiAddress: :9997
+# HTTP API для мониторинга
+api: yes
+apiAddress: :9997
 
-    # Настройки для внешнего доступа
-    paths:
-      live/stream:
-        source: publisher
-        # Разрешаем всем читать поток
-        readUser: ""
-        readPass: ""
-        # Разрешаем всем публиковать  
-        publishUser: ""
-        publishPass: ""
-    """
+# HLS settings - отключаем для низкой задержки
+hls: no
+
+# WebRTC settings
+webrtc: yes
+webrtcAddress: :8889
+
+# Буферы - минимальные для низкой задержки
+udpMaxPayloadSize: 1472
+
+# Настройки путей
+paths:
+  live/stream:
+    # Разрешаем всем читать и публиковать поток (без авторизации для локального использования)
+    readUser: ""
+    readPass: ""
+    publishUser: ""
+    publishPass: ""
+    # Настройки для низкой задержки
+    overridePublisher: no
+    record: no
+    sourceOnDemand: no
+"""
         self.config.MEDIAMTX_CONFIG_PATH.write_text(config_content, encoding='utf-8')
         logger.info("✅ Конфигурационный файл MediaMTX создан")
         
@@ -177,7 +192,7 @@ class StreamManager:
             except:
                 break
 
-    def start_stream(self, camera_name: str) -> Dict:
+    def start_stream(self, camera_name: str, microphone_name: str = None) -> Dict:
         """Запуск стрима с указанной камеры"""
         try:
             if not self.mediamtx_process or self.mediamtx_process.poll() is not None:
@@ -190,75 +205,20 @@ class StreamManager:
             # Останавливаем предыдущий стрим
             self.stop_stream()
 
-            # ПРОБУЕМ РАЗНЫЕ КОМАНДЫ ДЛЯ КАМЕРЫ
+            # Если микрофон не указан, пробуем найти автоматически
+            audio_device = microphone_name or self._get_audio_device_for_camera(camera_name)
+            self.current_microphone = audio_device
+
+            # КОМАНДЫ С ОПТИМИЗАЦИЕЙ ЗАДЕРЖКИ И ЗВУКОМ
             commands_to_try = [
-                # Попытка 1: Без указания параметров + авторизация
-                [
-                    str(ffmpeg_path),
-                    '-f', 'dshow',
-                    '-i', f'video={camera_name}',
-                    '-c:v', 'libx264',
-                    '-preset', 'ultrafast',
-                    '-tune', 'zerolatency',
-                    '-g', '15',
-                    '-keyint_min', '15',
-                    '-crf', '25',
-                    '-profile:v', 'baseline',
-                    '-level', '3.1',  # Повышаем уровень для 1280x720
-                    '-pix_fmt', 'yuv420p',
-                    '-f', 'rtsp',
-                    '-rtsp_transport', 'tcp',
-                    f'rtsp://localhost:8554/live/stream'  # Без авторизации
-                ],
-                # Попытка 2: С авторизацией (пустые логин/пароль)
-                [
-                    str(ffmpeg_path),
-                    '-f', 'dshow',
-                    '-i', f'video={camera_name}',
-                    '-c:v', 'libx264',
-                    '-preset', 'ultrafast',
-                    '-tune', 'zerolatency',
-                    '-g', '15',
-                    '-keyint_min', '15',
-                    '-crf', '25',
-                    '-profile:v', 'baseline',
-                    '-level', '3.1',
-                    '-pix_fmt', 'yuv420p',
-                    '-f', 'rtsp',
-                    '-rtsp_transport', 'tcp',
-                    f'rtsp://:@{self.config.get_local_ip()}:8554/live/stream'  # Пустая авторизация
-                ],
-                # Попытка 3: С понижением разрешения
-                [
-                    str(ffmpeg_path),
-                    '-f', 'dshow',
-                    '-video_size', '640x480',  # Понижаем разрешение
-                    '-framerate', '15',
-                    '-i', f'video={camera_name}',
-                    '-c:v', 'libx264',
-                    '-preset', 'ultrafast',
-                    '-tune', 'zerolatency',
-                    '-g', '15',
-                    '-keyint_min', '15',
-                    '-crf', '25',
-                    '-profile:v', 'baseline',
-                    '-level', '3.0',
-                    '-pix_fmt', 'yuv420p',
-                    '-f', 'rtsp',
-                    '-rtsp_transport', 'tcp',
-                    f'rtsp://localhost:8554/live/stream'
-                ],
-                # Попытка 4: Минимальные настройки
-                [
-                    str(ffmpeg_path),
-                    '-f', 'dshow',
-                    '-i', f'video={camera_name}',
-                    '-c:v', 'libx264',
-                    '-preset', 'ultrafast',
-                    '-f', 'rtsp',
-                    '-rtsp_transport', 'tcp',
-                    f'rtsp://localhost:8554/live/stream'
-                ]
+                # Попытка 1: С звуком и минимальной задержкой
+                self._build_ffmpeg_command(camera_name, audio_device, ffmpeg_path, use_audio=True),
+                
+                # Попытка 2: Только видео с минимальной задержкой
+                self._build_ffmpeg_command(camera_name, None, ffmpeg_path, use_audio=False),
+                
+                # Попытка 3: С низким разрешением для скорости
+                self._build_ffmpeg_command_low_res(camera_name, audio_device, ffmpeg_path),
             ]
 
             last_error = ""
@@ -294,13 +254,18 @@ class StreamManager:
                 else:
                     # FFmpeg работает!
                     logger.info(f"✅ Стрим успешно запущен (попытка {i})")
-                    stream_url = f"rtsp://{self.config.get_local_ip()}:8554/live/stream"
+                    local_url = f"rtsp://{self.config.get_local_ip()}:8554/live/stream"
+                    external_url = f"rtsp://{self.config.get_external_ip()}:8554/live/stream"
+
+                    # Отправляем сигнал на Android устройство
+                    self._send_signal_to_android(local_url, external_url)
 
                     return {
                         "success": True,
                         "message": f"Стрим успешно запущен (использована команда {i})",
                         "camera": camera_name,
-                        "stream_url": stream_url
+                        "stream_url": local_url,
+                        "audio_enabled": audio_device is not None
                     }
 
             # Если все попытки не удались
@@ -312,6 +277,151 @@ class StreamManager:
         except Exception as e:
             logger.error(f"❌ Ошибка запуска стрима: {e}")
             return {"success": False, "message": f"Ошибка: {str(e)}"}
+
+    def _build_ffmpeg_command(self, camera_name: str, audio_device: str, ffmpeg_path, use_audio: bool = True) -> list:
+        """Построение команды FFmpeg с минимальной задержкой"""
+        cmd = [
+            str(ffmpeg_path),
+            '-f', 'dshow',
+            '-rtbufsize', '32M',  # Минимальный буфер
+        ]
+
+        # Добавляем видео и аудио входы
+        if use_audio and audio_device:
+            cmd.extend([
+                '-i', f'video={camera_name}:audio={audio_device}'
+            ])
+        else:
+            cmd.extend([
+                '-i', f'video={camera_name}'
+            ])
+
+        # Видео настройки для минимальной задержки
+        cmd.extend([
+            '-c:v', 'libx264',
+            '-preset', 'ultrafast',
+            '-tune', 'zerolatency',
+            '-g', '15',  # Keyframe каждые 0.5 секунды (при 30fps)
+            '-keyint_min', '15',
+            '-sc_threshold', '0',
+            '-crf', '25',  # Чуть ниже качество для скорости
+            '-profile:v', 'baseline',
+            '-level', '3.1',
+            '-pix_fmt', 'yuv420p',
+            '-vf', 'scale=-1:720',
+            '-bf', '0',  # Без B-фреймов
+        ])
+
+        # Аудио настройки
+        if use_audio and audio_device:
+            cmd.extend([
+                '-c:a', 'aac',
+                '-b:a', '64k',
+                '-ar', '44100',
+                '-ac', '1',  # Моно для меньшей задержки
+            ])
+
+        # Вывод с минимальной задержкой
+        cmd.extend([
+            '-f', 'rtsp',
+            '-rtsp_transport', 'udp',  # UDP вместо TCP для меньшей задержки
+            '-fflags', '+nobuffer',
+            '-flags', '+low_delay',
+            '-muxdelay', '0',  # Нулевая задержка mux
+            '-muxpreload', '0',
+            f'rtsp://:@127.0.0.1:8554/live/stream'
+        ])
+
+        return cmd
+
+    def _build_ffmpeg_command_low_res(self, camera_name: str, audio_device: str, ffmpeg_path) -> list:
+        """Команда с низким разрешением для максимальной скорости"""
+        cmd = [
+            str(ffmpeg_path),
+            '-f', 'dshow',
+            '-video_size', '640x480',
+            '-framerate', '30',
+            '-rtbufsize', '32M',
+        ]
+
+        if audio_device:
+            cmd.extend(['-i', f'video={camera_name}:audio={audio_device}'])
+        else:
+            cmd.extend(['-i', f'video={camera_name}'])
+
+        cmd.extend([
+            '-c:v', 'libx264',
+            '-preset', 'ultrafast',
+            '-tune', 'zerolatency',
+            '-g', '30',
+            '-keyint_min', '30',
+            '-crf', '25',
+            '-profile:v', 'baseline',
+            '-level', '3.0',
+            '-pix_fmt', 'yuv420p',
+        ])
+
+        if audio_device:
+            cmd.extend([
+                '-c:a', 'aac',
+                '-b:a', '96k',
+                '-ar', '44100',
+                '-ac', '1',
+            ])
+
+        cmd.extend([
+            '-f', 'rtsp',
+            '-rtsp_transport', 'tcp',
+            '-fflags', '+nobuffer',
+            '-flags', '+low_delay',
+            f'rtsp://localhost:8554/live/stream'
+        ])
+
+        return cmd
+
+    def _get_audio_device_for_camera(self, camera_name: str) -> str:
+        """Получение имени аудиоустройства для камеры"""
+        try:
+            result = subprocess.run([
+                str(self.config.get_ffmpeg_path()),
+                '-list_devices', 'true',
+                '-f', 'dshow',
+                '-i', 'dummy'
+            ], capture_output=True, text=True, timeout=10, encoding='utf-8', errors='ignore')
+
+            output = result.stderr
+            lines = output.split('\n')
+
+            # Ищем микрофон с похожим именем
+            for line in lines:
+                if 'audio' in line.lower() and '"' in line:
+                    # Извлекаем имя устройства
+                    start = line.find('"') + 1
+                    end = line.find('"', start)
+                    if end > start:
+                        device_name = line[start:end]
+                        # Проверяем если это микрофон камеры или просто Microphone
+                        if camera_name.split()[0] in device_name or 'Microphone' in device_name:
+                            logger.info(f"🎤 Найдено аудиоустройство: {device_name}")
+                            return device_name
+
+            # Если не нашли, пробуем первый доступный микрофон
+            for line in lines:
+                if 'audio' in line.lower() and '"' in line:
+                    start = line.find('"') + 1
+                    end = line.find('"', start)
+                    if end > start:
+                        device_name = line[start:end]
+                        if 'Microphone' in device_name or 'Микрофон' in device_name:
+                            logger.info(f"🎤 Используем микрофон: {device_name}")
+                            return device_name
+
+            logger.warning("⚠️ Аудиоустройство не найдено, стрим без звука")
+            return None
+
+        except Exception as e:
+            logger.debug(f"ℹ️ Ошибка поиска аудиоустройства: {e}")
+            return None
 
     def _log_ffmpeg_errors(self):
         """Логирование ошибок FFmpeg из stderr"""
@@ -407,3 +517,38 @@ class StreamManager:
         except Exception as e:
             logger.error(f"❌ Ошибка получения списка камер: {e}")
             return []
+
+    def _send_signal_to_android(self, local_url: str, external_url: str):
+        """Отправка сигнала на Android устройство о готовности трансляции"""
+        try:
+            payload = {
+                "local_url": local_url,
+                "external_url": external_url
+            }
+
+            logger.info(f"📡 Отправка сигнала на Android устройства: {payload}")
+
+            # Если есть заданные IP - отправляем только на них
+            if self.android_ips:
+                for ip in self.android_ips:
+                    # Добавляем порт если не указан
+                    if ':' not in ip:
+                        ip = f"{ip}:8080"
+                    android_url = f"http://{ip}/stream"
+                    try:
+                        response = requests.post(android_url, json=payload, timeout=3)
+                        if response.status_code == 200:
+                            logger.info(f"✅ Сигнал отправлен на {ip}")
+                        else:
+                            logger.warning(f"⚠️ Ответ от {ip}: {response.status_code}")
+                    except requests.exceptions.Timeout:
+                        logger.warning(f"⚠️ Таймаут при отправке на {ip}")
+                    except requests.exceptions.ConnectionError:
+                        logger.warning(f"⚠️ Устройство недоступно на {ip}")
+                    except Exception as e:
+                        logger.debug(f"ℹ️ Ошибка отправки на {ip}: {e}")
+            else:
+                logger.info("ℹ️ Список IP пуст - отправка сигнала пропущена")
+
+        except Exception as e:
+            logger.debug(f"ℹ️ Ошибка отправки сигнала Android: {e}")
