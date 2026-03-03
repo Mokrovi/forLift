@@ -305,10 +305,10 @@ class WebApp:
             """API для тестирования подключения к Android"""
             data = request.get_json() or {}
             ip = data.get('ip', '')
-            
+
             if not ip:
                 return jsonify({"success": False, "message": "❌ Не указан IP"})
-            
+
             try:
                 import requests
                 test_url = f"http://{ip}/stream"
@@ -328,6 +328,267 @@ class WebApp:
                 return jsonify({"success": False, "message": "❌ Таймаут - устройство не отвечает"})
             except requests.exceptions.ConnectionError:
                 return jsonify({"success": False, "message": "❌ Устройство недоступно"})
+            except Exception as e:
+                return jsonify({"success": False, "message": f"❌ Ошибка: {e}"})
+
+        # ===== API для управления мультиками на Android =====
+
+        @self.app.route('/api/android/videos', methods=['GET'])
+        def get_android_videos():
+            """API для получения списка видео файлов с Android устройства"""
+            ip = request.args.get('ip', '')
+            if not ip:
+                # Берем первый IP из списка
+                if self.android_ips:
+                    ip = self.android_ips[0]
+                else:
+                    return jsonify({"success": False, "message": "❌ Не указан IP Android устройства"})
+
+            try:
+                import requests
+                response = requests.get(f"http://{ip}/videos", timeout=5)
+                if response.status_code == 200:
+                    videos = response.json()
+                    return jsonify({
+                        "success": True,
+                        "videos": videos,
+                        "ip": ip
+                    })
+                else:
+                    return jsonify({
+                        "success": False,
+                        "message": f"⚠️ Ответ сервера: {response.status_code}"
+                    })
+            except requests.exceptions.Timeout:
+                return jsonify({"success": False, "message": "❌ Таймаут - устройство не отвечает"})
+            except requests.exceptions.ConnectionError:
+                return jsonify({"success": False, "message": "❌ Устройство недоступно"})
+            except Exception as e:
+                return jsonify({"success": False, "message": f"❌ Ошибка: {e}"})
+
+        @self.app.route('/api/android/play', methods=['POST'])
+        def play_animation():
+            """API для запуска видео на Android"""
+            data = request.get_json() or {}
+            ip = data.get('ip', '')
+            video_name = data.get('video_name', '')
+
+            if not ip:
+                if self.android_ips:
+                    ip = self.android_ips[0]
+                else:
+                    return jsonify({"success": False, "message": "❌ Не указан IP Android устройства"})
+
+            if not video_name:
+                return jsonify({"success": False, "message": "❌ Не указано название видео"})
+
+            try:
+                import requests
+                response = requests.post(
+                    f"http://{ip}/play-animation",
+                    json={"video_name": video_name},
+                    timeout=5
+                )
+                if response.status_code == 200:
+                    return jsonify({
+                        "success": True,
+                        "message": f"▶️ Видео '{video_name}' запущено",
+                        "ip": ip
+                    })
+                else:
+                    return jsonify({
+                        "success": False,
+                        "message": f"⚠️ Ответ сервера: {response.status_code}"
+                    })
+            except requests.exceptions.Timeout:
+                return jsonify({"success": False, "message": "❌ Таймаут - устройство не отвечает"})
+            except requests.exceptions.ConnectionError:
+                return jsonify({"success": False, "message": "❌ Устройство недоступно"})
+            except Exception as e:
+                return jsonify({"success": False, "message": f"❌ Ошибка: {e}"})
+
+        @self.app.route('/api/android/stop', methods=['POST'])
+        def stop_animation():
+            """API для остановки видео на Android"""
+            data = request.get_json() or {}
+            ip = data.get('ip', '')
+
+            if not ip:
+                if self.android_ips:
+                    ip = self.android_ips[0]
+                else:
+                    return jsonify({"success": False, "message": "❌ Не указан IP Android устройства"})
+
+            try:
+                import requests
+                response = requests.post(f"http://{ip}/stop-animation", timeout=5)
+                if response.status_code == 200:
+                    return jsonify({
+                        "success": True,
+                        "message": "⏹️ Видео остановлено",
+                        "ip": ip
+                    })
+                else:
+                    return jsonify({
+                        "success": False,
+                        "message": f"⚠️ Ответ сервера: {response.status_code}"
+                    })
+            except requests.exceptions.Timeout:
+                return jsonify({"success": False, "message": "❌ Таймаут - устройство не отвечает"})
+            except requests.exceptions.ConnectionError:
+                return jsonify({"success": False, "message": "❌ Устройство недоступно"})
+            except Exception as e:
+                return jsonify({"success": False, "message": f"❌ Ошибка: {e}"})
+
+        @self.app.route('/api/android/volume', methods=['POST'])
+        def set_animation_volume():
+            """API для управления громкостью видео на Android"""
+            data = request.get_json() or {}
+            ip = data.get('ip', '')
+            volume = data.get('volume', 1.0)
+
+            if not ip:
+                if self.android_ips:
+                    ip = self.android_ips[0]
+                else:
+                    return jsonify({"success": False, "message": "❌ Не указан IP Android устройства"})
+
+            try:
+                import requests
+                response = requests.post(
+                    f"http://{ip}/animation-volume",
+                    json={"volume": volume},
+                    timeout=5
+                )
+                if response.status_code == 200:
+                    return jsonify({
+                        "success": True,
+                        "message": f"🔊 Громкость установлена на {int(volume * 100)}%",
+                        "ip": ip
+                    })
+                else:
+                    return jsonify({
+                        "success": False,
+                        "message": f"⚠️ Ответ сервера: {response.status_code}"
+                    })
+            except requests.exceptions.Timeout:
+                return jsonify({"success": False, "message": "❌ Таймаут - устройство не отвечает"})
+            except requests.exceptions.ConnectionError:
+                return jsonify({"success": False, "message": "❌ Устройство недоступно"})
+            except Exception as e:
+                return jsonify({"success": False, "message": f"❌ Ошибка: {e}"})
+
+        @self.app.route('/api/android/display-mode', methods=['POST'])
+        def set_display_mode():
+            """API для управления режимом отображения на Android"""
+            data = request.get_json() or {}
+            ip = data.get('ip', '')
+            mode = data.get('mode', 'both')  # 'only_webcam', 'only_cartoon', 'both'
+
+            if not ip:
+                if self.android_ips:
+                    ip = self.android_ips[0]
+                else:
+                    return jsonify({"success": False, "message": "❌ Не указан IP Android устройства"})
+
+            try:
+                import requests
+                response = requests.post(
+                    f"http://{ip}/{mode.replace('_', '-')}",
+                    timeout=5
+                )
+                if response.status_code == 200:
+                    mode_names = {
+                        'only_webcam': 'только веб-камера',
+                        'only_cartoon': 'только мультик',
+                        'both': 'оба окна'
+                    }
+                    return jsonify({
+                        "success": True,
+                        "message": f"📺 Режим: {mode_names.get(mode, mode)}",
+                        "ip": ip
+                    })
+                else:
+                    return jsonify({
+                        "success": False,
+                        "message": f"⚠️ Ответ сервера: {response.status_code}"
+                    })
+            except requests.exceptions.Timeout:
+                return jsonify({"success": False, "message": "❌ Таймаут - устройство не отвечает"})
+            except requests.exceptions.ConnectionError:
+                return jsonify({"success": False, "message": "❌ Устройство недоступно"})
+            except Exception as e:
+                return jsonify({"success": False, "message": f"❌ Ошибка: {e}"})
+
+        # ===== API для управления громкостью и видимостью =====
+
+        @self.app.route('/api/webcam/volume', methods=['POST'])
+        def set_webcam_volume():
+            """API для управления громкостью вебкамеры"""
+            data = request.get_json() or {}
+            volume = data.get('volume', 1.0)
+            muted = data.get('muted', False)
+
+            try:
+                if muted:
+                    self.stream_manager.mute_webcam(True)
+                else:
+                    self.stream_manager.set_webcam_volume(volume)
+                
+                return jsonify({
+                    "success": True,
+                    "message": f"🔊 Громкость вебкамеры: {int(self.stream_manager.webcam_volume * 100)}%",
+                    "volume": self.stream_manager.webcam_volume,
+                    "muted": self.stream_manager.webcam_muted
+                })
+            except Exception as e:
+                return jsonify({"success": False, "message": f"❌ Ошибка: {e}"})
+
+        @self.app.route('/api/webcam/mute', methods=['POST'])
+        def toggle_webcam_mute():
+            """API для вкл/выкл звука вебкамеры"""
+            data = request.get_json() or {}
+            mute = data.get('mute', True)
+
+            try:
+                self.stream_manager.mute_webcam(mute)
+                return jsonify({
+                    "success": True,
+                    "message": "🔇 Звук выключен" if mute else "🔊 Звук включен",
+                    "muted": self.stream_manager.webcam_muted
+                })
+            except Exception as e:
+                return jsonify({"success": False, "message": f"❌ Ошибка: {e}"})
+
+        @self.app.route('/api/webcam/visibility', methods=['POST'])
+        def set_webcam_visibility():
+            """API для скрытия/показа вебкамеры"""
+            data = request.get_json() or {}
+            visible = data.get('visible', True)
+
+            try:
+                self.stream_manager.set_webcam_visibility(visible)
+                return jsonify({
+                    "success": True,
+                    "message": "📷 Вебкамера показана" if visible else "🙈 Вебкамера скрыта",
+                    "hidden": self.stream_manager.webcam_hidden
+                })
+            except Exception as e:
+                return jsonify({"success": False, "message": f"❌ Ошибка: {e}"})
+
+        @self.app.route('/api/cartoon/visibility', methods=['POST'])
+        def set_cartoon_visibility():
+            """API для скрытия/показа мультика"""
+            data = request.get_json() or {}
+            visible = data.get('visible', True)
+
+            try:
+                self.stream_manager.set_cartoon_visibility(visible)
+                return jsonify({
+                    "success": True,
+                    "message": "🎬 Мультик показан" if visible else "🙈 Мультик скрыт",
+                    "hidden": self.stream_manager.cartoon_hidden
+                })
             except Exception as e:
                 return jsonify({"success": False, "message": f"❌ Ошибка: {e}"})
 

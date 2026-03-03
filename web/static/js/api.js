@@ -380,4 +380,101 @@ class APIManager {
             throw error;
         }
     }
+
+    // === Управление мультиком ===
+    async getAndroidVideos() {
+        try {
+            return await this.request('/api/android/videos');
+        } catch (error) {
+            console.error('Ошибка получения видео:', error);
+            return { success: false, message: error.message };
+        }
+    }
+
+    async playAnimation(videoName) {
+        try {
+            return await this.request('/api/android/play', {
+                method: 'POST',
+                body: JSON.stringify({ video_name: videoName })
+            });
+        } catch (error) {
+            throw error;
+        }
+    }
+
+    async stopAnimation() {
+        try {
+            return await this.request('/api/android/stop', {
+                method: 'POST'
+            });
+        } catch (error) {
+            throw error;
+        }
+    }
+
+    async setCartoonVolume(volume) {
+        try {
+            return await this.request('/api/android/volume', {
+                method: 'POST',
+                body: JSON.stringify({ volume: volume })
+            });
+        } catch (error) {
+            throw error;
+        }
+    }
+
+    async setDisplayMode(mode) {
+        try {
+            return await this.request('/api/android/display-mode', {
+                method: 'POST',
+                body: JSON.stringify({ mode: mode })
+            });
+        } catch (error) {
+            throw error;
+        }
+    }
+
+    async setWebcamVolume(volume) {
+        try {
+            return await this.request('/api/webcam/volume', {
+                method: 'POST',
+                body: JSON.stringify({ volume: volume })
+            });
+        } catch (error) {
+            throw error;
+        }
+    }
+
+    async muteWebcam(mute) {
+        try {
+            return await this.request('/api/webcam/mute', {
+                method: 'POST',
+                body: JSON.stringify({ mute: mute })
+            });
+        } catch (error) {
+            throw error;
+        }
+    }
+
+    async setWebcamVisibility(visible) {
+        try {
+            return await this.request('/api/webcam/visibility', {
+                method: 'POST',
+                body: JSON.stringify({ visible: visible })
+            });
+        } catch (error) {
+            throw error;
+        }
+    }
+
+    async setCartoonVisibility(visible) {
+        try {
+            return await this.request('/api/cartoon/visibility', {
+                method: 'POST',
+                body: JSON.stringify({ visible: visible })
+            });
+        } catch (error) {
+            throw error;
+        }
+    }
 }

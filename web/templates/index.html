@@ -250,7 +250,7 @@
                         <div class="info-group">
                             <h4 class="info-group-title">📋 IP адреса для уведомления</h4>
                             <div class="d-flex" style="gap: 8px; margin-bottom: 12px">
-                                <input type="text" id="androidIpInput" placeholder="192.168.1.100 или 45.67.89.123:8080" 
+                                <input type="text" id="androidIpInput" placeholder="192.168.1.100 или 45.67.89.123:8080"
                                        class="form-input" style="flex: 1">
                                 <button type="button" onclick="addAndroidIp()" class="btn btn-primary btn-sm">
                                     ➕ Добавить
@@ -271,6 +271,106 @@
                                 <p>2. Введите IP Android устройства</p>
                                 <p>3. Нажмите "Добавить"</p>
                                 <p>4. При запуске стрима Android автоматически откроет поток</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Управление мультиком -->
+            <div class="bottom-right">
+                <div class="panel">
+                    <div class="panel-header">
+                        <h3>🎬 Управление мультиком</h3>
+                        <div class="panel-subtitle">Воспроизведение видео на Android</div>
+                    </div>
+
+                    <div class="panel-content">
+                        <!-- Выбор видео -->
+                        <div class="info-group">
+                            <h4 class="info-group-title">📹 Видео файлы</h4>
+                            <div class="d-flex" style="gap: 8px; margin-bottom: 12px">
+                                <button type="button" onclick="loadAndroidVideos()" class="btn btn-primary btn-sm">
+                                    🔄 Загрузить список
+                                </button>
+                            </div>
+                            <select id="videoSelect" class="form-select" style="margin-bottom: 12px">
+                                <option value="">-- Выберите видео --</option>
+                            </select>
+                            <div class="grid grid-2">
+                                <button type="button" onclick="playVideo()" class="btn btn-primary btn-sm">
+                                    ▶️ Запустить
+                                </button>
+                                <button type="button" onclick="stopVideo()" class="btn btn-danger btn-sm">
+                                    ⏹️ Остановить
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Громкость мультика -->
+                        <div class="info-group">
+                            <h4 class="info-group-title">🔊 Громкость мультика</h4>
+                            <input type="range" id="cartoonVolume" min="0" max="100" value="100"
+                                   class="form-range" style="width: 100%"
+                                   oninput="updateCartoonVolume(this.value)">
+                            <div class="d-flex justify-between" style="margin-top: 8px">
+                                <span id="cartoonVolumeValue">100%</span>
+                                <button type="button" onclick="muteCartoon(true)" class="btn btn-secondary btn-sm">
+                                    🔇 Мут
+                                </button>
+                                <button type="button" onclick="muteCartoon(false)" class="btn btn-secondary btn-sm">
+                                    🔊 Вкл
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Режимы отображения -->
+                        <div class="info-group">
+                            <h4 class="info-group-title">📺 Режим отображения</h4>
+                            <div class="grid grid-3" style="margin-top: 8px">
+                                <button type="button" onclick="setDisplayMode('only_webcam')" class="btn btn-secondary btn-sm">
+                                    📷 Только вебка
+                                </button>
+                                <button type="button" onclick="setDisplayMode('only_cartoon')" class="btn btn-secondary btn-sm">
+                                    🎬 Только мультик
+                                </button>
+                                <button type="button" onclick="setDisplayMode('both')" class="btn btn-primary btn-sm">
+                                    📺 Оба
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Громкость и видимость вебкамеры -->
+                        <div class="info-group">
+                            <h4 class="info-group-title">📷 Вебкамера</h4>
+                            <input type="range" id="webcamVolume" min="0" max="100" value="100"
+                                   class="form-range" style="width: 100%"
+                                   oninput="updateWebcamVolume(this.value)">
+                            <div class="d-flex justify-between" style="margin-top: 8px">
+                                <span id="webcamVolumeValue">100%</span>
+                                <button type="button" onclick="muteWebcam(true)" class="btn btn-secondary btn-sm">
+                                    🔇 Мут
+                                </button>
+                                <button type="button" onclick="muteWebcam(false)" class="btn btn-secondary btn-sm">
+                                    🔊 Вкл
+                                </button>
+                            </div>
+                            <div class="grid grid-2" style="margin-top: 12px">
+                                <button type="button" onclick="toggleWebcamVisibility(true)" class="btn btn-secondary btn-sm">
+                                    👁️ Показать
+                                </button>
+                                <button type="button" onclick="toggleWebcamVisibility(false)" class="btn btn-secondary btn-sm">
+                                    🙈 Скрыть
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="help-section">
+                            <h4 class="help-title">💡 Управление</h4>
+                            <div class="help-content">
+                                <p>1. Загрузите список видео с Android</p>
+                                <p>2. Выберите видео и запустите</p>
+                                <p>3. Настройте громкость и режим отображения</p>
                             </div>
                         </div>
                     </div>

@@ -243,3 +243,163 @@ document.addEventListener('DOMContentLoaded', function() {
     // Загружаем список микрофонов
     refreshMicrophones();
 });
+
+// === Управление мультиком на Android ===
+
+async function loadAndroidVideos() {
+    if (!window.app || !window.app.api) return;
+
+    const select = document.getElementById('videoSelect');
+    if (!select) return;
+
+    try {
+        select.innerHTML = '<option>Загрузка...</option>';
+        const result = await window.app.api.getAndroidVideos();
+        
+        if (result.success && result.videos) {
+            select.innerHTML = '<option value="">-- Выберите видео --</option>';
+            result.videos.forEach(video => {
+                const option = document.createElement('option');
+                option.value = video.name;
+                option.textContent = video.name;
+                select.appendChild(option);
+            });
+            
+            if (window.app && window.app.terminal) {
+                window.app.terminal.log(`📹 Загружено ${result.videos.length} видео файлов`);
+            }
+        } else {
+            select.innerHTML = '<option value="">-- Ошибка загрузки --</option>';
+            if (window.app && window.app.terminal) {
+                window.app.terminal.log('❌ Ошибка загрузки видео: ' + result.message);
+            }
+        }
+    } catch (error) {
+        select.innerHTML = '<option value="">-- Ошибка --</option>';
+        console.error('Ошибка загрузки видео:', error);
+    }
+}
+
+async function playVideo() {
+    const select = document.getElementById('videoSelect');
+    if (!select) return;
+
+    const videoName = select.value;
+    if (!videoName) {
+        alert('❌ Выберите видео из списка');
+        return;
+    }
+
+    try {
+        const result = await window.app.api.playAnimation(videoName);
+        if (window.app && window.app.terminal) {
+            window.app.terminal.log(result.message);
+        }
+        alert(result.message);
+    } catch (error) {
+        alert('❌ Ошибка: ' + error.message);
+    }
+}
+
+async function stopVideo() {
+    try {
+        const result = await window.app.api.stopAnimation();
+        if (window.app && window.app.terminal) {
+            window.app.terminal.log(result.message);
+        }
+        alert(result.message);
+    } catch (error) {
+        alert('❌ Ошибка: ' + error.message);
+    }
+}
+
+async function updateCartoonVolume(value) {
+    const display = document.getElementById('cartoonVolumeValue');
+    if (display) {
+        display.textContent = `${value}%`;
+    }
+
+    try {
+        const result = await window.app.api.setCartoonVolume(value / 100);
+        if (window.app && window.app.terminal && value > 0) {
+            window.app.terminal.log(result.message);
+        }
+    } catch (error) {
+        console.error('Ошибка установки громкости:', error);
+    }
+}
+
+async function muteCartoon(mute) {
+    try {
+        const volume = mute ? 0 : 100;
+        const result = await window.app.api.setCartoonVolume(volume / 100);
+        const display = document.getElementById('cartoonVolumeValue');
+        const slider = document.getElementById('cartoonVolume');
+        
+        if (display) display.textContent = `${volume}%`;
+        if (slider) slider.value = volume;
+        
+        if (window.app && window.app.terminal) {
+            window.app.terminal.log(mute ? '🔇 Мультик выключен' : '🔊 Мультик включен');
+        }
+    } catch (error) {
+        console.error('Ошибка:', error);
+    }
+}
+
+async function setDisplayMode(mode) {
+    try {
+        const result = await window.app.api.setDisplayMode(mode);
+        if (window.app && window.app.terminal) {
+            window.app.terminal.log(result.message);
+        }
+        alert(result.message);
+    } catch (error) {
+        alert('❌ Ошибка: ' + error.message);
+    }
+}
+
+async function updateWebcamVolume(value) {
+    const display = document.getElementById('webcamVolumeValue');
+    if (display) {
+        display.textContent = `${value}%`;
+    }
+
+    try {
+        const result = await window.app.api.setWebcamVolume(value / 100);
+        if (window.app && window.app.terminal && value > 0) {
+            window.app.terminal.log(result.message);
+        }
+    } catch (error) {
+        console.error('Ошибка установки громкости:', error);
+    }
+}
+
+async function muteWebcam(mute) {
+    try {
+        const result = await window.app.api.muteWebcam(mute);
+        const display = document.getElementById('webcamVolumeValue');
+        const slider = document.getElementById('webcamVolume');
+        
+        if (display) display.textContent = mute ? '0%' : '100%';
+        if (slider) slider.value = mute ? 0 : 100;
+        
+        if (window.app && window.app.terminal) {
+            window.app.terminal.log(mute ? '🔇 Вебкамера выключена' : '🔊 Вебкамера включена');
+        }
+    } catch (error) {
+        console.error('Ошибка:', error);
+    }
+}
+
+async function toggleWebcamVisibility(visible) {
+    try {
+        const result = await window.app.api.setWebcamVisibility(visible);
+        if (window.app && window.app.terminal) {
+            window.app.terminal.log(result.message);
+        }
+        alert(result.message);
+    } catch (error) {
+        alert('❌ Ошибка: ' + error.message);
+    }
+}

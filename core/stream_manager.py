@@ -20,6 +20,12 @@ class StreamManager:
         self.current_camera: Optional[str] = None
         self.current_microphone: Optional[str] = None  # Выбранный микрофон
         self.android_ips: list = []  # Список IP для отправки сигнала
+        
+        # Настройки громкости и видимости
+        self.webcam_volume: float = 1.0  # Громкость вебкамеры (0.0 - 1.0)
+        self.webcam_muted: bool = False  # Мут вебкамеры
+        self.webcam_hidden: bool = False  # Скрыта ли вебкамера
+        self.cartoon_hidden: bool = False  # Скрыт ли мультик
 
     def kill_process_on_port(self, port: int):
         """Убить процесс на указанном порту"""
@@ -487,8 +493,33 @@ paths:
             "mediamtx_running": self.mediamtx_process and self.mediamtx_process.poll() is None,
             "ffmpeg_running": self.ffmpeg_process and self.ffmpeg_process.poll() is None,
             "current_camera": self.current_camera,
-            "stream_url": stream_url
+            "stream_url": stream_url,
+            "webcam_volume": self.webcam_volume,
+            "webcam_muted": self.webcam_muted,
+            "webcam_hidden": self.webcam_hidden,
+            "cartoon_hidden": self.cartoon_hidden
         }
+
+    def set_webcam_volume(self, volume: float) -> None:
+        """Установка громкости вебкамеры"""
+        self.webcam_volume = max(0.0, min(1.0, volume))
+        self.webcam_muted = self.webcam_volume == 0.0
+
+    def mute_webcam(self, mute: bool) -> None:
+        """Вкл/выкл звук вебкамеры"""
+        self.webcam_muted = mute
+        if mute:
+            self.webcam_volume = 0.0
+        elif self.webcam_volume == 0.0:
+            self.webcam_volume = 1.0
+
+    def set_webcam_visibility(self, visible: bool) -> None:
+        """Показать/скрыть вебкамеру"""
+        self.webcam_hidden = not visible
+
+    def set_cartoon_visibility(self, visible: bool) -> None:
+        """Показать/скрыть мультик"""
+        self.cartoon_hidden = not visible
 
     def get_available_cameras(self) -> list:
         """Получение списка доступных камер"""
