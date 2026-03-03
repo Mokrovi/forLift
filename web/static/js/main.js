@@ -303,16 +303,34 @@ async function disconnectAndroid() {
         return;
     }
     
-    const ip = selectedAndroidIp;
+    let targetIp = selectedAndroidIp;
+    if (!targetIp.includes(':')) {
+        targetIp = targetIp + ':8080';
+    }
+    
+    try {
+        // Отправляем сигнал закрыть стрим
+        const response = await fetch(`http://${targetIp}/close-stream`, {
+            method: 'POST'
+        });
+        
+        if (response.ok) {
+            alert(`✅ Устройство ${targetIp} отключено\nТрансляция остановлена`);
+        } else {
+            alert(`⚠️ Устройство не ответило: ${response.status}`);
+        }
+    } catch (error) {
+        alert('❌ Ошибка отключения: ' + error.message);
+    }
+    
+    // Очищаем выбор
     selectedAndroidIp = null;
     
     // Обновляем список
     if (window.app && window.app.api) {
-        window.app.api.cachedIps = window.app.api.cachedIps.filter(i => i !== ip);
+        window.app.api.cachedIps = window.app.api.cachedIps.filter(i => i !== targetIp.replace(':8080', ''));
     }
     renderAndroidIpList(window.app.api.cachedIps || []);
-    
-    alert(`✅ Устройство ${ip} отключено`);
 }
 
 async function testStreamConnection() {
@@ -496,25 +514,19 @@ async function muteCartoon(mute) {
 }
 
 async function toggleMicrophone(mute) {
-    const micSelect = document.getElementById('microphone_name');
     const micStatus = document.getElementById('micStatusValue');
     
-    if (micSelect) {
-        if (mute) {
-            // Запоминаем текущий микрофон и выключаем
-            micSelect.setAttribute('data-prev-value', micSelect.value);
-            micSelect.value = '';
-            if (micStatus) micStatus.textContent = 'Выкл';
-        } else {
-            // Восстанавливаем предыдущий микрофон
-            const prevValue = micSelect.getAttribute('data-prev-value') || '';
-            micSelect.value = prevValue;
-            if (micStatus) micStatus.textContent = 'Вкл';
-        }
+    if (micStatus) {
+        micStatus.textContent = mute ? 'Выкл' : 'Вкл';
     }
     
-    // Если стрим уже запущен - перезапускаем с новыми настройками
-    console.log('Микрофон:', mute ? 'выключен' : 'включен');
+    // Если стрим запущен - перезапускаем его с новыми настройками
+    const streamForm = document.getElementById('streamForm');
+    if (streamForm) {
+        // Просто обновляем UI - пользователь должен сам перезапустить стрим
+        console.log('Микрофон:', mute ? 'выключен' : 'включен');
+        console.log('⚠️ Перезапустите стрим чтобы изменения вступили в силу');
+    }
 }
 
 async function setDisplayMode(mode) {
